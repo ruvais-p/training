@@ -4,9 +4,9 @@ import Logo from "./Logo";
 import { headerData } from "./Navigation/menuData";
 import HeaderLinks from "./Navigation/headerLinks";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
 import MobileHeaderLink from "./Navigation/mobileheaderLinks";
 import LanguageChanger from "./LanguageChanger";
+import { Icon } from "@iconify/react";
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);

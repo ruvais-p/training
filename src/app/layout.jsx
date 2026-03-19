@@ -1,3 +1,4 @@
+import localFont from "next/font/local";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -9,6 +10,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const agrandir = localFont({
+  src: "../../public/fonts/PPAgrandir-Regular.otf",
+  variable: "--font-agrandir",
 });
 
 export const metadata = {
@@ -30,7 +36,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${agrandir.variable} antialiased`}
       >
         <LanguageProvider>
           <Header />

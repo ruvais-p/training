@@ -4,31 +4,31 @@ export default function CtaButton() {
     return (
         <button
             style={{
-                padding: "1.1rem 2.6rem",
-                fontSize: "1.05rem",
-                fontWeight: 700,
-                borderRadius: "14px",
-                background: "var(--secondary)",
+                padding: "1rem 2.2rem",
+                fontSize: "1rem",
+                fontWeight: 600,
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, var(--secondary), var(--tertiary))",
                 color: "var(--background)",
-                border: "none",
+                border: "1px solid rgba(255,255,255,0.12)",
                 cursor: "pointer",
-                letterSpacing: "0.02em",
+                letterSpacing: "-0.01em",
                 boxShadow:
-                    "0 0 0 0 rgba(46,204,113,0.5), 0 12px 40px rgba(46,204,113,0.35)",
+                    "0 10px 28px rgba(90,155,104,0.24)",
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
             }}
             onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px) scale(1.03)";
+                e.currentTarget.style.transform = "translateY(-2px)";
                 e.currentTarget.style.boxShadow =
-                    "0 0 0 6px rgba(46,204,113,0.18), 0 16px 48px rgba(46,204,113,0.45)";
+                    "0 14px 34px rgba(90,155,104,0.3)";
             }}
             onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow =
-                    "0 0 0 0 rgba(46,204,113,0.5), 0 12px 40px rgba(46,204,113,0.35)";
+                    "0 10px 28px rgba(90,155,104,0.24)";
             }}
         >
-            Claim Your Spot {"->"}
+            Claim Your Spot
         </button>
     );
 }
