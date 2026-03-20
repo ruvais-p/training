@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -28,7 +34,18 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/contexts/LanguageContext.jsx",
+    "src/components/Header/LanguageChanger.jsx",
+    "src/components/Header/index.jsx",
+    "src/components/Header/Sidebar/index.jsx",
+    "src/components/Header/Navigation/mobileheaderLinks.jsx",
+    "src/components/Header/Navigation/menuData.jsx",
+    "src/components/Header/Navigation/headerLinks.jsx",
+    "src/app/layout.jsx",
+    "src/app/page.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
