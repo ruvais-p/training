@@ -67,7 +67,7 @@ body {
   transform: translateY(-8px);
 }
 
-/* ── Scrollbar Hidden (as requested: "remove this white slider") ── */
+/* ── Custom Scrollbar (Hidden) ── */
 ::-webkit-scrollbar {
   display: none;
   width: 0px;
@@ -87,8 +87,8 @@ body {
   background: #020e04 !important;
 }
 
-/* ── High-End Scroll Reveal (Apple/Linear Style) ── */
-/* Universal clipping to keep the viewport 100% clean of horizontal "popping" */
+/* ── Viewport Containment ── */
+/* Ensures transform and filter effects do not cause horizontal overflow */
 html, body {
   position: relative;
   width: 100%;
