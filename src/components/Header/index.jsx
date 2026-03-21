@@ -32,30 +32,23 @@ const Header = () => {
             : "bg-white/10 backdrop-blur-sm"
         }`}
       >
-        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) flex justify-between items-center xl:gap-16 lg:gap-8 py-4">
+        <div className="container mx-auto max-w-full 2xl:max-w-[1400px] flex justify-between items-center xl:gap-8 lg:gap-4 py-4 w-full px-4">
           <div className="text-white">
             <Logo />
           </div>
 
-          <nav className="hidden lg:flex grow items-center justify-center space-x-10 text-base">
+          <nav className="hidden lg:flex grow items-center justify-end xl:space-x-8 lg:space-x-6 space-x-4 text-sm whitespace-nowrap pr-8">
             {headerData.map((item, index) => (
               <HeaderLinks key={index} item={item} />
             ))}
           </nav>
 
-          <div className="nav-right gap-10 hidden lg:flex items-center">
-            <LanguageChanger />
+          <div className="nav-right hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="text-white bg-dark h-[50px] rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 w-auto justify-center items-center tracking-wider group"
+              className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
             >
-              Let&apos;s Talk
-              <Icon
-                icon="tabler:arrow-right"
-                width="24"
-                height="24"
-                className="bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
-              />
+              CHAT WITH US
             </Link>
           </div>
 
@@ -106,22 +99,12 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex flex-col gap-4 mt-4">
-          <div className="w-fit">
-            <LanguageChanger />
-          </div>
-
+        <div className="flex flex-col mt-4">
           <Link
             href="/contact"
-            className="text-white bg-dark h-[50px] w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group"
+            className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
           >
-            Let&apos;s Talk
-            <Icon
-              icon="tabler:arrow-right"
-              width="24"
-              height="24"
-              className="bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
-            />
+            CHAT WITH US
           </Link>
         </div>
       </div>

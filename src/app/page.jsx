@@ -14,7 +14,11 @@ import BorderGlow from "@/components/Hero/BorderGlow";
 import CtaButton from "@/components/Hero/CtaButton";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import Methodology from "@/components/Methodology";
+import SkillStack from "@/components/SkillStack";
 import Testimonial from "@/components/Testimonial";
+import Investors from "@/components/Investors";
+import SectionReveal from "@/components/SectionReveal";
 
 const HERO_BADGES = [
   { icon: LayoutGrid, text: "3 HOURS" },
@@ -52,7 +56,28 @@ const BENEFIT_CARDS = [
   },
 ];
 
-const HERO_SECTION_STYLE = { background: "var(--background)" };
+const SKILL_STACK_ITEMS = [
+  { name: "Descript", accent: "#6ab0ff", imageSrc: "/Skills/t1.webp" },
+  { name: "HeyGen", accent: "#8c7dff", imageSrc: "/Skills/t2.webp" },
+  { name: "Tome", accent: "#f06be7", imageSrc: "/Skills/tome.webp" },
+  { name: "ChatGPT", accent: "#5A9B68", imageSrc: "/Skills/Gpt.webp" },
+  { name: "D-ID", accent: "#f3a35c", imageSrc: "/Skills/t5.webp" },
+  { name: "vidyo.ai", accent: "#90a1ff", imageSrc: "/Skills/t6.webp" },
+  { name: "Opus Clip", accent: "#f3f7f3", imageSrc: "/Skills/t7.webp" },
+  { name: "InVideo", accent: "#ff6f93", imageSrc: "/Skills/t8.webp" },
+  { name: "Midjourney", accent: "#c6d5cb", imageSrc: "/Skills/midjounrey.webp" },
+  { name: "Engage AI", accent: "#7d93ff", imageSrc: "/Skills/t10.webp" },
+  { name: "Humata", accent: "#b8d1bf", imageSrc: "/Skills/t11.webp" },
+  { name: "Simplified", accent: "#ffb84d", imageSrc: "/Skills/t12.webp" },
+  { name: "Uberduck", accent: "#ffd36a", imageSrc: "/Skills/t13.webp" },
+  { name: "Feedly", accent: "#69b877", imageSrc: "/Skills/t14.webp" },
+  { name: "Compose AI", accent: "#78c3ff", imageSrc: "/Skills/t15.webp" },
+  { name: "Adobe Audition", accent: "#9688ff", imageSrc: "/Skills/t16.webp" },
+  { name: "Gamma", accent: "#c4ef9b", imageSrc: "/Skills/t17.webp" },
+  { name: "Claude", accent: "#d9b08a", imageSrc: "/Skills/t18.webp" },
+];
+
+const HERO_SECTION_STYLE = { background: "transparent" };
 const HERO_ANIMATION_STYLE = {
   animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both",
 };
@@ -90,14 +115,10 @@ const MOBILE_HERO_DESCRIPTION_STYLE = {
   color: "rgba(255,255,255,0.7)",
   fontWeight: 400,
 };
+
 const MOBILE_CTA_PANEL_STYLE = {
-  background: "var(--background)",
+  background: "transparent",
   borderTop: "1px solid rgba(255,255,255,0.08)",
-};
-const HIGHLIGHT_TEXT_STYLE = {
-  background: "linear-gradient(90deg, var(--secondary), #5ef0a0)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
 };
 const HIGHLIGHT_ANIMATION_FROM = {
   filter: "blur(10px)",
@@ -108,7 +129,7 @@ const HIGHLIGHT_ANIMATION_TO = [
   { filter: "blur(4px)", opacity: 0.65, y: 4 },
   { filter: "blur(0px)", opacity: 1, y: 0 },
 ];
-const ABOUT_SECTION_STYLE = { background: "var(--background)" };
+const ABOUT_SECTION_STYLE = { background: "transparent" };
 const ABOUT_COPY_STYLE = { color: "rgba(255,255,255,0.55)" };
 const MOBILE_CTA_GLOW_PROPS = {
   edgeSensitivity: 12,
@@ -148,12 +169,38 @@ const HERO_KEYFRAMES = `
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-hidden font-sans" style={HERO_SECTION_STYLE}>
+    <main className="relative w-full overflow-x-hidden font-sans" style={{ ...HERO_SECTION_STYLE, maxWidth: "100%" }}>
       <HeroSection />
-      <AboutSection />
-      <Testimonial />
-      <FAQ />
-      <Footer />
+      
+      <SectionReveal delay={100}>
+        <AboutSection />
+      </SectionReveal>
+
+      <Methodology />
+
+      <SectionReveal delay={100}>
+        <Investors />
+      </SectionReveal>
+
+      <SectionReveal delay={100}>
+        <Testimonial />
+      </SectionReveal>
+
+      <SectionReveal delay={100}>
+        <SkillStack
+          eyebrow="SKILL STACK"
+          title="Tools you will learn"
+          items={SKILL_STACK_ITEMS}
+        />
+      </SectionReveal>
+
+      <SectionReveal delay={100}>
+        <FAQ />
+      </SectionReveal>
+
+      <SectionReveal>
+        <Footer />
+      </SectionReveal>
     </main>
   );
 }
@@ -246,9 +293,8 @@ function MobileHero() {
 function WorkshopBadge({ mobile }) {
   return (
     <div
-      className={`inline-flex items-center gap-2 rounded-full border border-white/20 ${
-        mobile ? "mb-4 px-3 py-1" : "mb-6 px-4 py-1.5"
-      }`}
+      className={`inline-flex items-center gap-2 rounded-full border border-white/20 ${mobile ? "mb-4 px-3 py-1" : "mb-6 px-4 py-1.5"
+        }`}
       style={{
         background: "rgba(255,255,255,0.06)",
         backdropFilter: mobile ? "blur(8px)" : "blur(12px)",
@@ -259,9 +305,8 @@ function WorkshopBadge({ mobile }) {
         style={{ background: "var(--secondary)" }}
       />
       <span
-        className={`font-semibold uppercase ${
-          mobile ? "text-[10px] tracking-[0.16em]" : "text-xs tracking-[0.18em]"
-        }`}
+        className={`font-semibold uppercase ${mobile ? "text-[10px] tracking-[0.16em]" : "text-xs tracking-[0.18em]"
+          }`}
         style={{ color: mobile ? "rgba(255,255,255,0.65)" : "rgba(255,255,255,0.7)" }}
       >
         {mobile ? "Live Workshop" : "Live Workshop · Limited Seats"}
@@ -272,16 +317,28 @@ function WorkshopBadge({ mobile }) {
 
 function HeroHeadline({ mobile }) {
   return (
-    <h1 style={mobile ? MOBILE_HERO_TITLE_STYLE : HERO_TITLE_STYLE}>
+    <h1
+      className="font-editorial-regular"
+      style={{
+        ...(mobile ? MOBILE_HERO_TITLE_STYLE : HERO_TITLE_STYLE),
+        fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+        fontWeight: 400,
+      }}
+    >
       Master ChatGPT &amp;{" "}
       <BlurText
         text="15+ AI Tools"
         as="span"
-        delay={300}
+        delay={400}
         animateBy="words"
         direction="top"
-        className="inline-flex"
-        segmentStyle={HIGHLIGHT_TEXT_STYLE}
+        className="font-editorial-italic inline-flex"
+        segmentStyle={{
+          color: "var(--tertiary)",
+          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+          fontStyle: "italic",
+          fontWeight: 200,
+        }}
         animationFrom={HIGHLIGHT_ANIMATION_FROM}
         animationTo={HIGHLIGHT_ANIMATION_TO}
         stepDuration={0.28}
@@ -311,43 +368,63 @@ function HeroDescription({ mobile }) {
 
 function AboutSection() {
   return (
-    <section className="w-full px-6 py-24 md:px-12 md:py-32" style={ABOUT_SECTION_STYLE}>
+    <section
+      className="relative overflow-hidden w-full px-6 py-24 md:px-12 md:py-32"
+      style={ABOUT_SECTION_STYLE}
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-32 flex flex-col items-end justify-between gap-12 md:flex-row">
-          <div className="max-w-[650px] flex-1">
+        <div className="relative mb-24 grid gap-12 lg:grid-cols-[1.2fr_0.78fr] lg:items-start lg:gap-16">
+          <div className="relative">
+            <div
+              className="pointer-events-none absolute -left-6 top-10 hidden h-48 w-48 rounded-full border lg:block"
+              style={{ borderColor: "rgba(90,155,104,0.12)" }}
+            />
             <p
-              className="mb-6 text-sm font-bold uppercase tracking-widest"
-              style={{ color: "var(--tertiary)" }}
+              className="font-editorial-regular mb-6 text-sm uppercase tracking-widest"
+              style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
             >
               In 16-Weeks
             </p>
 
             <h2
-              className="mb-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl"
-              style={{ color: "var(--foreground)" }}
+              className="font-editorial-regular mb-8 max-w-[10ch] text-5xl leading-[0.98] tracking-tight md:text-7xl"
+              style={{
+                color: "var(--foreground)",
+                fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+                fontWeight: 400,
+              }}
             >
               Master AI. Build <br /> Smarter. Become a PM.
             </h2>
 
-            <p className="text-lg leading-relaxed md:text-xl" style={ABOUT_COPY_STYLE}>
+            <p
+              className="max-w-[32rem] text-lg leading-relaxed md:text-xl"
+              style={ABOUT_COPY_STYLE}
+            >
               PMs who know how to leverage AI will have an unfair advantage in the next
               decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
               the real skills that top companies want.
             </p>
           </div>
 
-          <div className="flex w-full flex-col gap-6 md:min-w-[320px] md:w-auto">
-            <EnrollmentCard />
-            <div className="flex gap-4">
-              {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
-                <StatCard
-                  key={label}
-                  value={value}
-                  label={label}
-                  icon={<Icon size={14} />}
-                  color={color}
-                />
-              ))}
+          <div className="relative lg:pt-4">
+            <div
+              className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
+              style={{ borderColor: "rgba(90,155,104,0.08)" }}
+            />
+            <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
+              <EnrollmentCard />
+              <div className="grid grid-cols-2 gap-4">
+                {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
+                  <StatCard
+                    key={label}
+                    value={value}
+                    label={label}
+                    icon={<Icon size={14} />}
+                    color={color}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -371,24 +448,42 @@ function AboutSection() {
 function EnrollmentCard() {
   return (
     <div
-      className="rounded-3xl border p-8"
-      style={{ background: "var(--primary)", borderColor: "var(--secondary)" }}
+      className="relative overflow-hidden rounded-[2rem] border p-8"
+      style={{
+        background:
+          "radial-gradient(circle at top left, rgba(133,199,145,0.18), transparent 28%), linear-gradient(135deg, rgba(63,116,78,0.98) 0%, rgba(45,92,63,0.98) 100%)",
+        borderColor: "rgba(255,255,255,0.08)",
+        boxShadow: "0 18px 44px rgba(0,0,0,0.18)",
+      }}
     >
+      <div className="pointer-events-none absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-white/10 blur-2xl" />
       <div className="mb-4 flex items-center gap-2">
-        <CalendarDays size={16} style={{ color: "var(--tertiary)" }} />
+        <CalendarDays size={16} style={{ color: "rgba(196,239,155,0.95)" }} />
         <span
           className="text-xs font-black uppercase tracking-widest"
-          style={{ color: "var(--tertiary)" }}
+          style={{ color: "rgba(196,239,155,0.95)" }}
         >
           Enrolment Ends
         </span>
       </div>
 
-      <div className="flex items-baseline gap-3">
-        <span className="text-7xl font-black" style={{ color: "var(--foreground)" }}>
+      <div className="flex items-end gap-3 md:gap-4">
+        <span
+          className="font-editorial-regular text-[4.6rem] font-bold leading-none md:text-[5.2rem]"
+          style={{
+            color: "var(--foreground)",
+            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+          }}
+        >
           20
         </span>
-        <span className="text-4xl font-bold" style={{ color: "var(--foreground)" }}>
+        <span
+          className="font-editorial-regular mb-2 text-4xl font-bold md:text-[2.8rem]"
+          style={{
+            color: "var(--foreground)",
+            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+          }}
+        >
           MAR
         </span>
       </div>
@@ -400,12 +495,29 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
   const accentColor = color === "tertiary" ? "var(--tertiary)" : "var(--secondary)";
 
   return (
-    <div className="flex-1 rounded-2xl border border-white/5 p-6" style={{ background: "var(--primary)" }}>
-      <div className="mb-3 text-4xl font-black" style={{ color: accentColor }}>
+    <div
+      className="relative overflow-hidden rounded-[1.6rem] border p-5"
+      style={{
+        background:
+          "linear-gradient(180deg, rgba(39,76,56,0.92) 0%, rgba(28,57,43,0.98) 100%)",
+        borderColor: "rgba(255,255,255,0.06)",
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)" }}
+      />
+      <div
+        className="mb-3 font-editorial-regular text-4xl font-bold leading-none"
+        style={{
+          color: accentColor,
+          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+        }}
+      >
         {value}
       </div>
 
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest opacity-50">
+      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/55">
         {icon} {label}
       </div>
     </div>
@@ -414,18 +526,45 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
 
 function BenefitCard({ title, content, accent, icon }) {
   return (
-    <div className="group rounded-[2.5rem] border border-white/5 bg-white/5 p-10 transition-all duration-500 hover:border-white/20">
-      <div className="mb-8 w-fit rounded-2xl border border-white/10 bg-white/5 p-4">
+    <div
+      className="group relative overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-500 hover:-translate-y-1 hover:border-white/12"
+      style={{
+        background:
+          "radial-gradient(circle at top left, rgba(90,155,104,0.1), transparent 24%), linear-gradient(180deg, rgba(21,40,34,0.96) 0%, rgba(18,35,30,0.98) 100%)",
+        borderColor: "rgba(255,255,255,0.05)",
+        boxShadow: "0 20px 44px rgba(0,0,0,0.12)",
+      }}
+    >
+      <div
+        className="pointer-events-none absolute -right-10 top-0 h-32 w-32 rounded-full blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+        style={{ background: `${accent}22`, opacity: 0.55 }}
+      />
+      <div className="relative mb-8 flex w-fit items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
         {icon}
       </div>
 
-      <div className="mb-8 h-1.5 w-12 rounded-full transition-all group-hover:w-24" style={{ background: accent }} />
+      <div
+        className="mb-8 h-1.5 w-12 rounded-full transition-all duration-500 group-hover:w-24"
+        style={{ background: accent }}
+      />
 
-      <h3 className="mb-4 text-3xl font-bold tracking-tight" style={{ color: "var(--foreground)" }}>
+      <h3
+        className="font-editorial-regular mb-4 text-[2.2rem] leading-[0.95] tracking-tight"
+        style={{
+          color: "var(--foreground)",
+          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+          fontWeight: 400,
+        }}
+      >
         {title}
       </h3>
 
-      <p className="text-lg leading-relaxed text-white/50">{content}</p>
+      <p 
+        className="font-editorial-regular max-w-[18rem] text-lg leading-relaxed text-white/52"
+        style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
+      >
+        {content}
+      </p>
     </div>
   );
 }
