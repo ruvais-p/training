@@ -368,8 +368,8 @@ function AboutSection() {
       className="relative w-full px-6 py-24 md:px-12 md:py-32"
       style={ABOUT_SECTION_STYLE}
     >
-      <div className="mx-auto max-w-7xl flex items-start w-full">
-        <div className="sticky top-0 h-fit flex flex-col pt-[12vh] w-1/2 pr-8">
+      <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-start w-full gap-16 md:gap-0">
+        <div className="relative md:sticky top-0 h-fit flex flex-col pt-12 md:pt-[12vh] w-full md:w-1/2 md:pr-8">
           <SectionReveal delay={100}>
             <div className="relative">
             <div
@@ -427,7 +427,7 @@ function AboutSection() {
         </SectionReveal>
       </div>
 
-        <div className="flex flex-col gap-[28px] pt-[20vh] pb-[30vh] w-1/2 pl-8">
+        <div className="flex flex-col gap-[28px] pt-12 pb-16 md:pt-[20vh] md:pb-[30vh] w-full md:w-1/2 md:pl-8">
           {BENEFIT_CARDS.map(({ iconSrc, title, content, accent }, index) => (
             <AnimatedBenefitCard key={title} delayIndex={index}>
               <BenefitCard
