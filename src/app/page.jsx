@@ -190,9 +190,7 @@ export default function Home() {
         />
       </SectionReveal>
 
-      <SectionReveal delay={100}>
-        <FAQ />
-      </SectionReveal>
+      <FAQ />
 
       <SectionReveal>
         <Footer />

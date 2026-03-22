@@ -104,13 +104,13 @@ export default function Investors() {
                     </h2>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[repeat(6,minmax(0,1fr))_1.15fr]">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:gap-6 lg:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_1.15fr]">
                     {INVESTORS.map((investor) => (
                         <InvestorCard key={investor.name} investor={investor} />
                     ))}
 
                     <aside
-                        className="flex min-h-[160px] items-center justify-center border-t px-2 text-center xl:min-h-0 xl:justify-start xl:border-t-0"
+                        className="col-span-2 lg:col-span-3 xl:col-span-1 flex min-h-[160px] items-center justify-center border-t px-2 text-center xl:min-h-0 xl:justify-start xl:border-t-0"
                         style={{ borderColor: "rgba(120,177,131,0.16)" }}
                     >
                         <p

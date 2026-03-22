@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BlurText from "@/components/BlurText";
+import SectionReveal from "@/components/SectionReveal";
 
 const faqItems = [
   {
@@ -55,7 +56,8 @@ export default function FAQ() {
             <BlurText
               text="questions"
               as="span"
-              delay={2000}
+              delay={0}
+              initialDelay={500}
               animateBy="words"
               direction="top"
               className="font-editorial-italic inline-flex align-baseline leading-none"
@@ -80,8 +82,9 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div
-          className="mx-auto mt-14 max-w-6xl rounded-[2.2rem] border p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-sm md:p-6"
+        <SectionReveal delay={150}>
+          <div
+            className="mx-auto mt-14 max-w-6xl rounded-[2.2rem] border p-5 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-sm md:p-6"
           style={{
             background: "linear-gradient(180deg, rgba(12,35,29,0.94) 0%, rgba(10,30,25,0.98) 100%)",
             borderColor: "rgba(90,155,104,0.16)",
@@ -150,7 +153,8 @@ export default function FAQ() {
               </div>
             );
           })}
-        </div>
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );
