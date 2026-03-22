@@ -55,7 +55,7 @@ export default function FAQ() {
             <BlurText
               text="questions"
               as="span"
-              delay={400}
+              delay={2000}
               animateBy="words"
               direction="top"
               className="font-editorial-italic inline-flex align-baseline leading-none"

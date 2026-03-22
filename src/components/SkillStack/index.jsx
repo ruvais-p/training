@@ -78,8 +78,7 @@ function SkillCard({ item }) {
     <article
       className="group relative flex min-h-[92px] items-center justify-center overflow-hidden rounded-[1.35rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1"
       style={{
-        background:
-          "linear-gradient(180deg, rgba(25,53,42,0.98) 0%, rgba(20,43,35,0.98) 100%)",
+        background: "#ffffff",
         borderColor: "rgba(120,177,131,0.15)",
         boxShadow: "inset 0 1px 0 rgba(255,255,255,0.03)",
       }}

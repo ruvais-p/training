@@ -75,26 +75,29 @@ body {
 }
 
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-  overflow-x: hidden !important;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  overflow-x: clip !important;
   background: #020e04 !important;
 }
 
 body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   -webkit-overflow-scrolling: touch;
   background: #020e04 !important;
 }
 
 /* ── Viewport Containment ── */
 /* Ensures transform and filter effects do not cause horizontal overflow */
-html, body {
+html,
+body {
   position: relative;
   width: 100%;
   margin: 0;
   padding: 0;
-  max-width: 100%; 
+  max-width: 100%;
 }
 
 
@@ -103,11 +106,12 @@ html, body {
   transform: translateY(64px) scale(0.97);
   filter: blur(14px);
   /* Prevents any children or effects (like blur) from expanding the viewport */
-  overflow: clip; /* Modern browsers: strictly clips effects to the box */
+  overflow: clip;
+  /* Modern browsers: strictly clips effects to the box */
   overflow-x: hidden;
   max-width: 100%;
-  contain: paint; 
-  transition: 
+  contain: paint;
+  transition:
     opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
     transform 1s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);

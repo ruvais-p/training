@@ -8,7 +8,7 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
- 
+
     /**
      * Use IntersectionObserver to trigger the reveal animation
      * when the section enters the viewport. 
@@ -17,8 +17,8 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Once visible, we no longer need to observe
-          observer.unobserve(el);
+        } else {
+          setIsVisible(false); // Reset to re-animate next time
         }
       },
       {
@@ -26,7 +26,7 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
         rootMargin: "0px 0px -50px 0px", // Slight offset for smoother scroll feel
       }
     );
- 
+
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
@@ -35,9 +35,9 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
     <div
       ref={ref}
       className={`reveal-wrapper ${isVisible ? "reveal-visible" : ""} ${className}`}
-      style={{ 
+      style={{
         "--reveal-delay": `${delay}ms`,
-        overflowX: "hidden",
+        overflowX: "clip",
         maxWidth: "100%"
       }}
     >

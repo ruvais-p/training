@@ -19,6 +19,7 @@ import SkillStack from "@/components/SkillStack";
 import Testimonial from "@/components/Testimonial";
 import Investors from "@/components/Investors";
 import SectionReveal from "@/components/SectionReveal";
+import AnimatedBenefitCard from "@/components/AnimatedBenefitCard";
 
 const HERO_BADGES = [
   { icon: LayoutGrid, text: "3 HOURS" },
@@ -33,23 +34,20 @@ const STAT_CARDS = [
 
 const BENEFIT_CARDS = [
   {
-    iconClassName: "text-green-400",
-    icon: Zap,
+    iconSrc: "/home_page/69943a0470a4c0034cac1220_Group-239788.svg",
     title: "10x Efficiency",
     content:
       "Master the art of AI orchestration to turn exhaustive tasks into instant workflows.",
     accent: "var(--tertiary)",
   },
   {
-    iconClassName: "text-green-500",
-    icon: Sparkles,
+    iconSrc: "/home_page/69943a0484956dac1bb0d050_Group-240381.svg",
     title: "Strategic Thinking",
     content: "Move beyond prompts. Learn to integrate AI into product strategy.",
     accent: "var(--secondary)",
   },
   {
-    iconClassName: "text-emerald-500",
-    icon: ShieldCheck,
+    iconSrc: "/home_page/69943a04de6ccc1c0a5efeae_Group-239780.svg",
     title: "Future-Proof",
     content: "Stay ahead of the disruption. Build skills that remain relevant.",
     accent: "var(--tertiary)",
@@ -169,12 +167,10 @@ const HERO_KEYFRAMES = `
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-hidden font-sans" style={{ ...HERO_SECTION_STYLE, maxWidth: "100%" }}>
+    <main className="relative w-full overflow-x-clip font-sans" style={{ ...HERO_SECTION_STYLE, maxWidth: "100%" }}>
       <HeroSection />
-      
-      <SectionReveal delay={100}>
-        <AboutSection />
-      </SectionReveal>
+
+      <AboutSection />
 
       <Methodology />
 
@@ -329,7 +325,7 @@ function HeroHeadline({ mobile }) {
       <BlurText
         text="15+ AI Tools"
         as="span"
-        delay={400}
+        delay={500}
         animateBy="words"
         direction="top"
         className="font-editorial-italic inline-flex"
@@ -369,12 +365,13 @@ function HeroDescription({ mobile }) {
 function AboutSection() {
   return (
     <section
-      className="relative overflow-hidden w-full px-6 py-24 md:px-12 md:py-32"
+      className="relative w-full px-6 py-24 md:px-12 md:py-32"
       style={ABOUT_SECTION_STYLE}
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="relative mb-24 grid gap-12 lg:grid-cols-[1.2fr_0.78fr] lg:items-start lg:gap-16">
-          <div className="relative">
+      <div className="mx-auto max-w-7xl flex items-start w-full">
+        <div className="sticky top-0 h-fit flex flex-col pt-[12vh] w-1/2 pr-8">
+          <SectionReveal delay={100}>
+            <div className="relative">
             <div
               className="pointer-events-none absolute -left-6 top-10 hidden h-48 w-48 rounded-full border lg:block"
               style={{ borderColor: "rgba(90,155,104,0.12)" }}
@@ -394,11 +391,11 @@ function AboutSection() {
                 fontWeight: 400,
               }}
             >
-              Master AI. Build <br /> Smarter. Become a PM.
+              Master <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>AI</span>. Build <br /> Smarter. Become a <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>PM</span>.
             </h2>
 
             <p
-              className="max-w-[32rem] text-lg leading-relaxed md:text-xl"
+              className="max-w-[32rem] text-lg leading-relaxed md:text-xl md:mb-12 mb-8"
               style={ABOUT_COPY_STYLE}
             >
               PMs who know how to leverage AI will have an unfair advantage in the next
@@ -407,7 +404,7 @@ function AboutSection() {
             </p>
           </div>
 
-          <div className="relative lg:pt-4">
+          <div className="relative w-full max-w-[32rem]">
             <div
               className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
               style={{ borderColor: "rgba(90,155,104,0.08)" }}
@@ -427,17 +424,19 @@ function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </SectionReveal>
+      </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {BENEFIT_CARDS.map(({ icon: Icon, iconClassName, title, content, accent }) => (
-            <BenefitCard
-              key={title}
-              icon={<Icon className={iconClassName} size={32} />}
-              title={title}
-              content={content}
-              accent={accent}
-            />
+        <div className="flex flex-col gap-[28px] pt-[20vh] pb-[30vh] w-1/2 pl-8">
+          {BENEFIT_CARDS.map(({ iconSrc, title, content, accent }, index) => (
+            <AnimatedBenefitCard key={title} delayIndex={index}>
+              <BenefitCard
+                icon={<img src={iconSrc} alt={title} className="w-8 h-8 object-contain" />}
+                title={title}
+                content={content}
+                accent={accent}
+              />
+            </AnimatedBenefitCard>
           ))}
         </div>
       </div>
@@ -559,7 +558,7 @@ function BenefitCard({ title, content, accent, icon }) {
         {title}
       </h3>
 
-      <p 
+      <p
         className="font-editorial-regular max-w-[18rem] text-lg leading-relaxed text-white/52"
         style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
       >

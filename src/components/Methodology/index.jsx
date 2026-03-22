@@ -55,7 +55,7 @@ export default function Methodology() {
               <BlurText
                 text="Methodology"
                 as="span"
-                delay={400}
+                delay={500}
                 animateBy="words"
                 direction="top"
                 className="font-editorial-italic inline-flex align-baseline"
