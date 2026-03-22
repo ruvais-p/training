@@ -30,13 +30,16 @@ const HeaderLinks = ({ item, isLight }) => {
       <Link
         href={item.href}
         className={`flex items-center gap-1 text-base font-normal transition-colors
-          ${path === item.href
+          ${item.label === 'Home' ? 'text-[var(--tertiary)] italic font-editorial-italic font-bold' : ''}
+          ${path === item.href && item.label !== 'Home'
             ? isLight
               ? "text-black"
               : "text-white"
-            : isLight
-              ? "text-black/80 hover:text-black"
-              : "text-white/80 hover:text-white"
+            : item.label !== 'Home' 
+              ? isLight
+                ? "text-black/80 hover:text-black"
+                : "text-white/80 hover:text-white"
+              : ""
           }
         `}
       >

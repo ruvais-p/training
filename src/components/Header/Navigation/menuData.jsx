@@ -1,28 +1,10 @@
 export const headerData = [
-    {
-        label: "Pages",
-        href: "#",
-        submenu: [
-            { label: "About Us", href: "/about" },
-            { label: "Team", href: "/team" },
-            { label: "Faq", href: "/faq" },
-            { label: "Contact", href: "/contact" }
-        ]
-    },
-    {
-        label: "Services",
-        href: "#",
-        submenu: [
-            { label: "Services List", href: "/services" },
-            { label: "Services Details", href: "/services/business-strategy-development" }
-        ]
-    },
-    {
-        label: "Protfolio",
-        href: "/protfolio",
-    },
-    {
-        label: "Contact",
-        href: "/contact"
-    }
+    { label: "Home", href: "/" },
+    { label: "Learning", href: "/learning" },
+    { label: "UG Program", href: "/ug-program" },
+    { label: "Summer School", href: "/summer-school" },
+    { label: "Outcomes", href: "/outcomes" },
+    { label: "MSL", href: "/msl" },
+    { label: "Forge", href: "/forge" },
+    { label: "Online Startup Garage", href: "/online-startup-garage" }
 ];
