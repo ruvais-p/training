@@ -384,7 +384,7 @@ function AboutSection() {
             </p>
 
             <h2
-              className="font-editorial-regular mb-8 max-w-[10ch] text-5xl leading-[0.98] tracking-tight md:text-7xl"
+              className="font-editorial-regular mb-8 max-w-full md:max-w-[10ch] text-[3.2rem] md:text-5xl lg:text-7xl leading-[0.98] tracking-tight"
               style={{
                 color: "var(--foreground)",
                 fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -411,7 +411,7 @@ function AboutSection() {
             />
             <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
               <EnrollmentCard />
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
                   <StatCard
                     key={label}
@@ -447,7 +447,7 @@ function AboutSection() {
 function EnrollmentCard() {
   return (
     <div
-      className="relative overflow-hidden rounded-[2rem] border p-8"
+      className="relative overflow-hidden rounded-[2rem] border p-6 md:p-8"
       style={{
         background:
           "radial-gradient(circle at top left, rgba(133,199,145,0.18), transparent 28%), linear-gradient(135deg, rgba(63,116,78,0.98) 0%, rgba(45,92,63,0.98) 100%)",
@@ -526,7 +526,7 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
 function BenefitCard({ title, content, accent, icon }) {
   return (
     <div
-      className="group relative overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-500 hover:-translate-y-1 hover:border-white/12"
+      className="group relative overflow-hidden rounded-[2.2rem] md:rounded-[2.5rem] border p-6 md:p-10 transition-all duration-500 hover:-translate-y-1 hover:border-white/12"
       style={{
         background:
           "radial-gradient(circle at top left, rgba(90,155,104,0.1), transparent 24%), linear-gradient(180deg, rgba(21,40,34,0.96) 0%, rgba(18,35,30,0.98) 100%)",
@@ -548,7 +548,7 @@ function BenefitCard({ title, content, accent, icon }) {
       />
 
       <h3
-        className="font-editorial-regular mb-4 text-[2.2rem] leading-[0.95] tracking-tight"
+        className="font-editorial-regular mb-4 text-[1.8rem] md:text-[2.2rem] leading-[0.95] tracking-tight"
         style={{
           color: "var(--foreground)",
           fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
