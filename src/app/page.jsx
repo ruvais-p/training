@@ -319,9 +319,9 @@ function HeroHeadline({ mobile }) {
         fontWeight: 400,
       }}
     >
-      Master ChatGPT &amp;{" "}
+      Become A Top 1%   {" "}
       <BlurText
-        text="15+ AI Tools"
+        text="CyberSecurity"
         as="span"
         delay={500}
         animateBy="words"
@@ -337,7 +337,7 @@ function HeroHeadline({ mobile }) {
         animationTo={HIGHLIGHT_ANIMATION_TO}
         stepDuration={0.28}
       />{" "}
-      in Just 3 Hours
+      Expert
     </h1>
   );
 }
@@ -345,17 +345,17 @@ function HeroHeadline({ mobile }) {
 function HeroDescription({ mobile }) {
   return (
     <p style={mobile ? MOBILE_HERO_DESCRIPTION_STYLE : HERO_DESCRIPTION_STYLE}>
-      Join{" "}
+      Master{" "}
       <strong
         style={{
           color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
           fontWeight: 600,
         }}
       >
-        10M+ professionals
+        AI powered Cybersecurity
       </strong>{" "}
-      who&apos;ve transformed their productivity, automated tedious work, and future-proofed
-      their careers&apos;all in one live workshop.
+      with real-world training, real world  mentors, and career-focused
+      support.
     </p>
   );
 }
@@ -370,60 +370,60 @@ function AboutSection() {
         <div className="relative md:sticky top-0 h-fit flex flex-col pt-12 md:pt-[12vh] w-full md:w-1/2 md:pr-8">
           <SectionReveal delay={100}>
             <div className="relative">
-            <div
-              className="pointer-events-none absolute -left-6 top-10 hidden h-48 w-48 rounded-full border lg:block"
-              style={{ borderColor: "rgba(90,155,104,0.12)" }}
-            />
-            <p
-              className="font-editorial-regular mb-6 text-sm uppercase tracking-widest"
-              style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
-            >
-              In 16-Weeks
-            </p>
+              <div
+                className="pointer-events-none absolute -left-6 top-10 hidden h-48 w-48 rounded-full border lg:block"
+                style={{ borderColor: "rgba(90,155,104,0.12)" }}
+              />
+              <p
+                className="font-editorial-regular mb-6 text-sm uppercase tracking-widest"
+                style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
+              >
+                In 16-Weeks
+              </p>
 
-            <h2
-              className="font-editorial-regular mb-8 max-w-full md:max-w-[10ch] text-[3.2rem] md:text-5xl lg:text-7xl leading-[0.98] tracking-tight"
-              style={{
-                color: "var(--foreground)",
-                fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-                fontWeight: 400,
-              }}
-            >
-              Master <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>AI</span>. Build <br /> Smarter. Become a <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>PM</span>.
-            </h2>
+              <h2
+                className="font-editorial-regular mb-8 max-w-full md:max-w-[10ch] text-[3.2rem] md:text-5xl lg:text-7xl leading-[0.98] tracking-tight"
+                style={{
+                  color: "var(--foreground)",
+                  fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+                  fontWeight: 400,
+                }}
+              >
+                Master <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>AI</span>. Build <br /> Smarter. Become a <span style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-italic), Georgia, serif", fontStyle: "italic", fontWeight: 200 }}>PM</span>.
+              </h2>
 
-            <p
-              className="max-w-[32rem] text-lg leading-relaxed md:text-xl md:mb-12 mb-8"
-              style={ABOUT_COPY_STYLE}
-            >
-              PMs who know how to leverage AI will have an unfair advantage in the next
-              decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
-              the real skills that top companies want.
-            </p>
-          </div>
+              <p
+                className="max-w-[32rem] text-lg leading-relaxed md:text-xl md:mb-12 mb-8"
+                style={ABOUT_COPY_STYLE}
+              >
+                PMs who know how to leverage AI will have an unfair advantage in the next
+                decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
+                the real skills that top companies want.
+              </p>
+            </div>
 
-          <div className="relative w-full max-w-[32rem]">
-            <div
-              className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
-              style={{ borderColor: "rgba(90,155,104,0.08)" }}
-            />
-            <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
-              <EnrollmentCard />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
-                  <StatCard
-                    key={label}
-                    value={value}
-                    label={label}
-                    icon={<Icon size={14} />}
-                    color={color}
-                  />
-                ))}
+            <div className="relative w-full max-w-[32rem]">
+              <div
+                className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
+                style={{ borderColor: "rgba(90,155,104,0.08)" }}
+              />
+              <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
+                <EnrollmentCard />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
+                    <StatCard
+                      key={label}
+                      value={value}
+                      label={label}
+                      icon={<Icon size={14} />}
+                      color={color}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </SectionReveal>
-      </div>
+          </SectionReveal>
+        </div>
 
         <div className="flex flex-col gap-[28px] pt-12 pb-16 md:pt-[20vh] md:pb-[30vh] w-full md:w-1/2 md:pl-8">
           {BENEFIT_CARDS.map(({ iconSrc, title, content, accent }, index) => (

@@ -5,38 +5,38 @@ import Reveal from "@/components/Reveal";
 const STEPS = [
   {
     number: "01",
-    title: "LEARN ARENA",
+    title: "FOUNDATION",
     imageSrc: "/Methods/learnareana.svg",
     accent: "var(--tertiary)",
     points: [
-      "A real industry challenge is introduced.",
-      "A mentor breaks it down.",
-      "You learn how to think, frame, and approach the problem.",
-      "You understand the method, not just the answer.",
+      "Build a strong understanding of cybersecurity, AI concepts, and real-world applications"
     ],
   },
   {
     number: "02",
-    title: "INNOVATE ARENA",
+    title: "SECURITY & RISKS",
     imageSrc: "/Methods/arena.svg",
     accent: "var(--secondary)",
     points: [
-      "You work in teams and build the solution.",
-      "Strategy, campaign, and system thinking come together.",
-      "Mentors step in when needed.",
-      "You are guided, but you still figure it out.",
+      "Understand vulnerabilities, attacks, and how to defend modern systems",
     ],
   },
   {
     number: "03",
-    title: "TRANSFORM ARENA",
+    title: "AI & ADVANCED SECURITY ",
     imageSrc: "/Methods/transform.svg",
     accent: "#8cc39a",
     points: [
-      "You present to real judges and get useful feedback.",
-      "Each project becomes proof of your thinking.",
-      "No grades. No filler.",
-      "Just real experience and visible growth.",
+      "Work with AI systems and learn how to secure modern technologies",
+    ],
+  },
+  {
+    number: "04",
+    title: "PRACTICAL & CAREER",
+    imageSrc: "/Methods/learnareana.svg",
+    accent: "#7bc58b",
+    points: [
+      "Apply your skills through real scenarios and prepare for job roles ",
     ],
   },
 ];
@@ -51,9 +51,9 @@ export default function Methodology() {
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <h2 className="font-editorial-regular text-center text-[2.7rem] leading-[0.92] tracking-[-0.06em] text-white md:text-[4.7rem]">
-              The FI Learning{" "}
+              Your Learning{" "}
               <BlurText
-                text="Methodology"
+                text="Journey"
                 as="span"
                 delay={500}
                 animateBy="words"
@@ -78,7 +78,7 @@ export default function Methodology() {
       </div>
 
       <div className="relative px-6 py-16 md:px-12 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 xl:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step, index) => (
             <Reveal key={step.number} delay={index * 90} distance={24}>
               <MethodCard step={step} />
