@@ -23,12 +23,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed h-20 px-4 top-5 left-[2.5%] py-1 z-50 w-[95%] flex navbar items-center transition-all duration-500 rounded-3xl 
-        ${
-          sticky
-            ? "bg-black/80 backdrop-blur-lg shadow-lg w-[90%]"
-            : "bg-white/10 backdrop-blur-sm"
-        }`}
+        className="fixed h-20 px-4 top-5 left-[2.5%] py-1 z-50 w-[95%] flex navbar items-center transition-all duration-500 rounded-3xl bg-white/10 backdrop-blur-md border border-white/5 shadow-lg"
       >
         <div className="container mx-auto max-w-full 2xl:max-w-[1400px] flex justify-between items-center xl:gap-8 lg:gap-4 py-4 w-full px-4">
           <div className="text-white">
