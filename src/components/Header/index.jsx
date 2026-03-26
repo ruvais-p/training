@@ -42,12 +42,20 @@ const Header = () => {
           </nav>
 
           <div className="nav-right hidden lg:flex items-center">
-            <Link
-              href="/contact"
-              className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
-            >
-              CHAT WITH US
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                href="/apply-as-mentor"
+                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
+              >
+                Apply as Mentor
+              </Link>
+            </div>
           </div>
 
           <button
@@ -97,12 +105,18 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col mt-6 gap-3">
           <Link
-            href="/contact"
+            href="/login"
             className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
           >
-            CHAT WITH US
+            Login
+          </Link>
+          <Link
+            href="/apply-as-mentor"
+            className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
+          >
+            Apply as Mentor
           </Link>
         </div>
       </div>

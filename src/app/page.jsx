@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ShieldCheck,
   Sparkles,
@@ -18,13 +20,14 @@ import AudienceSection from "@/components/AudienceSection";
 import CareerAndGrowthSupport from "@/components/CareerAndGrowthSupport";
 import CTASection from "@/components/CTASection";
 import WhatYouGetInside from "@/components/WhatYouGetInside";
+import CommunityExperience from "@/components/CommunityExperience";
+import StandOutSection from "@/components/StandOut";
 
 const HERO_BADGES = [
   { icon: Sparkles, text: "AI-Integrated Learning" },
   { icon: ShieldCheck, text: "Real-World Projects" },
   { icon: Zap, text: "Career-Focused Training" },
 ];
-
 
 const SKILL_STACK_ITEMS = [
   { name: "Descript", accent: "#6ab0ff", imageSrc: "/Skills/t1.webp" },
@@ -142,6 +145,8 @@ export default function Home() {
 
       <AboutSection />
 
+      <StandOutSection />
+
       <SectionReveal delay={80}>
         <AudienceSection />
       </SectionReveal>
@@ -149,6 +154,8 @@ export default function Home() {
       <WhatYouGetInside />
 
       <CareerAndGrowthSupport />
+
+      <CommunityExperience />
 
       <Methodology />
 
@@ -229,8 +236,8 @@ function DesktopHero() {
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
-          {HERO_BADGES.map(({ text }) => (
-            <InfoBadge key={text} text={text} />
+          {HERO_BADGES.map(({ icon: Icon, text }) => (
+            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
           ))}
         </div>
       </div>
@@ -251,8 +258,8 @@ function MobileHero() {
 
       <div className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6" style={MOBILE_CTA_PANEL_STYLE}>
         <div className="flex flex-col gap-2.5">
-          {HERO_BADGES.map(({ text }) => (
-            <InfoBadge key={text} text={text} />
+          {HERO_BADGES.map(({ icon: Icon, text }) => (
+            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
           ))}
         </div>
 
@@ -340,8 +347,7 @@ function HeroDescription({ mobile }) {
   );
 }
 
-
-function InfoBadge({ text }) {
+function InfoBadge({ icon, text }) {
   return (
     <BorderGlow
       edgeSensitivity={10}
@@ -374,6 +380,9 @@ function InfoBadge({ text }) {
         <span
           className="font-editorial-regular"
           style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.75rem",
             fontSize: "0.85rem",
             fontWeight: 500,
             letterSpacing: "0.02em",
@@ -382,6 +391,7 @@ function InfoBadge({ text }) {
             textTransform: "none",
           }}
         >
+          <span style={{ color: "var(--tertiary)" }}>{icon}</span>
           {text}
         </span>
       </div>

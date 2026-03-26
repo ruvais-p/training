@@ -49,10 +49,10 @@ export default function AudienceSection() {
           >
             Who this{" "}
             <span
-              className="font-editorial-ultralight"
+              className="font-editorial-italic"
               style={{
                 color: "var(--tertiary)",
-                fontFamily: "var(--font-pp-editorial-ultralight), Georgia, serif",
+                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                 fontStyle: "italic",
                 fontWeight: 200,
               }}

@@ -53,7 +53,7 @@ const HIGHLIGHT_ANIMATION_TO = [
 function BenefitCard({ item, className = "", wide = false }) {
   return (
     <article
-      className={`relative overflow-hidden rounded-[2rem] border px-7 py-7 md:px-9 md:py-8 ${className}`}
+      className={`relative flex h-full flex-col overflow-hidden rounded-[2rem] border px-8 py-8 text-left md:px-10 md:py-9 ${className}`}
       style={{
         background: "linear-gradient(180deg, rgba(15,44,29,0.96) 0%, rgba(10,31,21,0.98) 100%)",
         borderColor: "rgba(90,155,104,0.14)",
@@ -61,8 +61,8 @@ function BenefitCard({ item, className = "", wide = false }) {
       }}
     >
       <h3
-        className={`font-editorial-regular text-[1.45rem] leading-[1.08] tracking-[-0.035em] text-white md:text-[1.7rem] ${
-          wide ? "max-w-[18ch]" : "max-w-[22ch]"
+        className={`font-editorial-regular text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${
+          wide ? "max-w-none" : "max-w-none"
         }`}
         style={{
           fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -73,8 +73,8 @@ function BenefitCard({ item, className = "", wide = false }) {
       </h3>
 
       <p
-        className={`font-editorial-regular mt-5 text-[1rem] leading-8 text-white/88 md:text-[1.04rem] ${
-          wide ? "max-w-[52ch]" : "max-w-[34ch]"
+        className={`font-editorial-regular mt-6 text-pretty text-[1rem] leading-7 text-white/88 md:text-[1.04rem] ${
+          wide ? "max-w-none" : "max-w-none"
         }`}
         style={{
           fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -125,7 +125,7 @@ export default function WhatYouGetInside() {
           </h2>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-3">
           {BENEFITS.slice(0, 6).map((item) => (
             <BenefitCard key={item.title} item={item} />
           ))}

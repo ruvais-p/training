@@ -31,6 +31,7 @@ const ABOUT_CARDS = [
 export default function AboutSection() {
   return (
     <section
+      id="about"
       className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24"
       style={{ background: "transparent" }}
     >

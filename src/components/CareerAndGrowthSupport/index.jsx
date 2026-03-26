@@ -100,7 +100,7 @@ export default function CareerAndGrowthSupport() {
               className="inline-flex"
               segmentStyle={{
                 color: "var(--tertiary)",
-                fontFamily: "var(--font-pp-editorial-ultralight), Georgia, serif",
+                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                 fontStyle: "italic",
                 fontWeight: 200,
               }}
