@@ -18,7 +18,7 @@ import SectionReveal from "@/components/SectionReveal";
 import AboutSection from "@/components/AboutSection";
 import AudienceSection from "@/components/AudienceSection";
 import CareerAndGrowthSupport from "@/components/CareerAndGrowthSupport";
-import CTASection from "@/components/CTASection";
+
 import WhatYouGetInside from "@/components/WhatYouGetInside";
 import CommunityExperience from "@/components/CommunityExperience";
 import StandOutSection from "@/components/StandOut";
@@ -177,7 +177,7 @@ export default function Home() {
 
       <FAQ />
 
-      <CTASection />
+
 
       <SectionReveal>
         <Footer />

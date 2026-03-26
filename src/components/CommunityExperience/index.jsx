@@ -154,15 +154,7 @@ export default function CommunityExperience() {
                     WebkitBackdropFilter: "blur(14px)",
                   }}
                 >
-                  <div className="relative flex items-start gap-4">
-                    <span
-                      className="mt-1.5 inline-flex h-3.5 w-3.5 shrink-0 rounded-full"
-                      style={{
-                        background: "rgba(90,155,104,0.7)",
-                        boxShadow: "0 0 0 1px rgba(255,255,255,0.05) inset",
-                      }}
-                    />
-
+                  <div className="relative flex items-start">
                     <p
                       className="font-editorial-regular text-[1.06rem] leading-7 text-white md:text-[1.12rem]"
                       style={{

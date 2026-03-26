@@ -154,14 +154,7 @@ function AudienceCard({
       />
 
       <div className="relative flex h-full flex-col justify-between gap-6">
-        <div className="flex items-start gap-4">
-          <span
-            className="mt-1 h-3.5 w-3.5 shrink-0 rounded-full"
-            style={{
-              background: "linear-gradient(135deg, var(--secondary), var(--tertiary))",
-              boxShadow: "0 0 14px rgba(90,155,104,0.35)",
-            }}
-          />
+        <div className="flex items-start">
           <p
             className="text-[1rem] font-medium leading-[1.45] tracking-[-0.02em] md:text-[1.08rem]"
             style={{
