@@ -67,12 +67,12 @@ const HERO_TITLE_STYLE = {
   textShadow: "0 4px 40px rgba(0,0,0,0.6)",
 };
 const MOBILE_HERO_TITLE_STYLE = {
-  fontSize: "2.3rem",
+  fontSize: "2.1rem",
   fontWeight: 800,
   color: "#fff",
   lineHeight: 1.1,
   letterSpacing: "-0.02em",
-  marginBottom: "1rem",
+  marginBottom: "1.2rem",
 };
 const HERO_DESCRIPTION_STYLE = {
   fontSize: "1.15rem",
@@ -229,15 +229,14 @@ function DesktopHero() {
     <div className="relative z-20 hidden h-full items-end px-16 pb-20 md:flex">
       <div className="flex w-full items-end justify-between" style={HERO_ANIMATION_STYLE}>
         <div className="max-w-[640px]">
-          <WorkshopBadge mobile={false} />
+
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
-          <CtaButton />
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
-          {HERO_BADGES.map(({ icon: Icon, text }) => (
-            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
+          {HERO_BADGES.map(({ text }) => (
+            <InfoBadge key={text} text={text} />
           ))}
         </div>
       </div>
@@ -250,7 +249,6 @@ function MobileHero() {
     <div className="relative z-20 flex flex-col md:hidden">
       <div className="flex flex-1 items-end px-6 pb-8">
         <div style={MOBILE_HERO_ANIMATION_STYLE}>
-          <WorkshopBadge mobile />
           <HeroHeadline mobile />
           <HeroDescription mobile />
         </div>
@@ -258,43 +256,16 @@ function MobileHero() {
 
       <div className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6" style={MOBILE_CTA_PANEL_STYLE}>
         <div className="flex flex-col gap-2.5">
-          {HERO_BADGES.map(({ icon: Icon, text }) => (
-            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
+          {HERO_BADGES.map(({ text }) => (
+            <InfoBadge key={text} text={text} />
           ))}
         </div>
-
-        <BorderGlow {...MOBILE_CTA_GLOW_PROPS} className="border-glow-plain mt-2 w-full">
-          <button style={MOBILE_CTA_BUTTON_STYLE}>Claim Your Spot</button>
-        </BorderGlow>
       </div>
     </div>
   );
 }
 
-function WorkshopBadge({ mobile }) {
-  return (
-    <div
-      className={`inline-flex items-center gap-2 rounded-full border border-white/20 ${mobile ? "mb-4 px-3 py-1" : "mb-6 px-4 py-1.5"
-        }`}
-      style={{
-        background: "rgba(255,255,255,0.06)",
-        backdropFilter: mobile ? "blur(8px)" : "blur(12px)",
-      }}
-    >
-      <span
-        className="h-1.5 w-1.5 animate-pulse rounded-full"
-        style={{ background: "var(--secondary)" }}
-      />
-      <span
-        className={`font-semibold uppercase ${mobile ? "text-[10px] tracking-[0.16em]" : "text-xs tracking-[0.18em]"
-          }`}
-        style={{ color: mobile ? "rgba(255,255,255,0.65)" : "rgba(255,255,255,0.7)" }}
-      >
-        {mobile ? "Live Workshop" : "Live Workshop · Limited Seats"}
-      </span>
-    </div>
-  );
-}
+
 
 function HeroHeadline({ mobile }) {
   return (
@@ -347,7 +318,7 @@ function HeroDescription({ mobile }) {
   );
 }
 
-function InfoBadge({ icon, text }) {
+function InfoBadge({ text }) {
   return (
     <BorderGlow
       edgeSensitivity={10}
@@ -380,18 +351,14 @@ function InfoBadge({ icon, text }) {
         <span
           className="font-editorial-regular"
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.75rem",
-            fontSize: "0.85rem",
-            fontWeight: 500,
+            fontSize: "0.92rem",
+            fontWeight: 400,
             letterSpacing: "0.02em",
             color: "rgba(255,255,255,0.95)",
             fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
             textTransform: "none",
           }}
         >
-          <span style={{ color: "var(--tertiary)" }}>{icon}</span>
           {text}
         </span>
       </div>

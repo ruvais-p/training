@@ -61,12 +61,13 @@ function BenefitCard({ item, className = "", wide = false }) {
       }}
     >
       <h3
-        className={`font-editorial-regular text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${
+        className={`font-editorial-italic text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${
           wide ? "max-w-none" : "max-w-none"
         }`}
         style={{
-          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-          fontWeight: 400,
+          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+          fontStyle: "italic",
+          fontWeight: 200,
         }}
       >
         {item.title}

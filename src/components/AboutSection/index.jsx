@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BlurText from "@/components/BlurText";
 
 const ABOUT_CARDS = [
   {
@@ -50,17 +51,26 @@ export default function AboutSection() {
             }}
           >
             About the{" "}
-            <span
-              className="font-editorial-italic"
-              style={{
+            <BlurText
+              text="Program"
+              as="span"
+              delay={500}
+              animateBy="words"
+              direction="top"
+              className="font-editorial-italic inline-flex align-baseline"
+              segmentStyle={{
                 color: "var(--tertiary)",
-                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-                fontStyle: "italic",
+                lineHeight: 1,
                 fontWeight: 200,
+                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
               }}
-            >
-              Program
-            </span>
+              animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+              animationTo={[
+                { filter: "blur(4px)", opacity: 0.7, y: 2 },
+                { filter: "blur(0px)", opacity: 1, y: 0 },
+              ]}
+              stepDuration={0.28}
+            />
           </h2>
         </div>
 

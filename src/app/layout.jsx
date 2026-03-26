@@ -57,8 +57,8 @@ const ppEditorialUltralight = localFont({
 });
 
 export const metadata = {
-  title: "Forum Invest | Master AI & Strategic Product Management",
-  description: "Advanced AI workshops and strategic product management training for top-tier professionals. Learn to build smarter with the industry's best.",
+  title: "CyberSecurity Expert | Master AI-Powered Security",
+  description: "Advanced Cybersecurity training and AI-integrated security workshops for top-tier professionals. Learn to protect and build smarter with industry experts.",
 };
 
 import Header from "@/components/Header";
