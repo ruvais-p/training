@@ -246,8 +246,8 @@ function DesktopHero() {
 
 function MobileHero() {
   return (
-    <div className="relative z-20 flex flex-col md:hidden">
-      <div className="flex flex-1 items-end px-6 pb-8">
+    <div className="relative z-20 flex h-full flex-col px-6 pb-16 pt-[9rem] md:hidden">
+      <div className="flex-1 items-end">
         <div style={MOBILE_HERO_ANIMATION_STYLE}>
           <HeroHeadline mobile />
           <HeroDescription mobile />
@@ -295,6 +295,7 @@ function HeroHeadline({ mobile }) {
         animationTo={HIGHLIGHT_ANIMATION_TO}
         stepDuration={0.28}
       />{" "}
+      {mobile && <br />}
       Expert
     </h1>
   );
