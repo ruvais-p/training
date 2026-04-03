@@ -10,7 +10,6 @@ const HeaderLinks = ({ item, isLight }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -26,16 +25,15 @@ const HeaderLinks = ({ item, isLight }) => {
       onMouseEnter={() => setSubmenuOpen(true)}
       onMouseLeave={() => setSubmenuOpen(false)}
     >
-      {/* Main Menu Item */}
       <Link
         href={item.href}
         className={`flex items-center gap-1 text-base font-normal transition-colors
-          ${item.label === 'Home' ? 'text-[var(--tertiary)] italic font-editorial-italic font-bold' : ''}
+          ${item.label === 'Home' ? 'text-[var(--tertiary)] font-editorial-italic' : ''}
           ${path === item.href && item.label !== 'Home'
             ? isLight
               ? "text-black"
               : "text-white"
-            : item.label !== 'Home' 
+            : item.label !== 'Home'
               ? isLight
                 ? "text-black/80 hover:text-black"
                 : "text-white/80 hover:text-white"
@@ -56,7 +54,6 @@ const HeaderLinks = ({ item, isLight }) => {
         )}
       </Link>
 
-      {/* Dropdown */}
       {item.submenu && (
         <div
           className={`
@@ -75,7 +72,6 @@ const HeaderLinks = ({ item, isLight }) => {
             }
           `}
         >
-          {/* Gloss highlight */}
           <div
             className={`
               absolute inset-0 pointer-events-none

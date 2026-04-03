@@ -5,8 +5,6 @@ import { headerData } from "./Navigation/menuData";
 import HeaderLinks from "./Navigation/headerLinks";
 import Link from "next/link";
 import MobileHeaderLink from "./Navigation/mobileheaderLinks";
-import LanguageChanger from "./LanguageChanger";
-import { Icon } from "@iconify/react";
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);
@@ -25,12 +23,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed h-20 px-4 top-5 left-[2.5%] py-1 z-50 w-[95%] flex navbar items-center transition-all duration-500 rounded-3xl 
-        ${
-          sticky
-            ? "bg-black/80 backdrop-blur-lg shadow-lg w-[90%]"
-            : "bg-white/10 backdrop-blur-sm"
-        }`}
+        className="fixed h-20 px-4 top-5 left-[2.5%] py-1 z-50 w-[95%] flex navbar items-center transition-all duration-500 rounded-3xl bg-white/10 backdrop-blur-md border border-white/5 shadow-lg"
       >
         <div className="container mx-auto max-w-full 2xl:max-w-[1400px] flex justify-between items-center xl:gap-8 lg:gap-4 py-4 w-full px-4">
           <div className="text-white">
@@ -44,12 +37,20 @@ const Header = () => {
           </nav>
 
           <div className="nav-right hidden lg:flex items-center">
-            <Link
-              href="/contact"
-              className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
-            >
-              CHAT WITH US
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                href="/apply-as-mentor"
+                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
+              >
+                Apply as Mentor
+              </Link>
+            </div>
           </div>
 
           <button
@@ -99,12 +100,18 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex flex-col mt-4">
+        <div className="flex flex-col mt-6 gap-3">
           <Link
-            href="/contact"
+            href="/login"
             className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
           >
-            CHAT WITH US
+            Login
+          </Link>
+          <Link
+            href="/apply-as-mentor"
+            className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
+          >
+            Apply as Mentor
           </Link>
         </div>
       </div>

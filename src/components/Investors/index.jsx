@@ -1,6 +1,7 @@
 import Image from "next/image";
+import BlurText from "@/components/BlurText";
 
-const INVESTORS = [
+const investors = [
     {
         name: "Kunal Shah",
         role: "CRED Founder",
@@ -62,26 +63,10 @@ export default function Investors() {
         <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24">
             <div className="relative mx-auto max-w-7xl">
                 <div className="mb-12 max-w-3xl">
-                    <p
-                        className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] md:text-sm"
-                        style={{ color: "rgba(159,208,166,0.84)" }}
-                    >
-                        Backed By
-                    </p>
                     <h2
                         className="text-[2.35rem] font-semibold leading-[0.95] tracking-[-0.05em] md:text-[3.2rem]"
                         style={{ color: "#f3f7f3" }}
                     >
-                        <span
-                            className="font-editorial-italic"
-                            style={{
-                                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-                                fontStyle: "italic",
-                                fontWeight: 200,
-                            }}
-                        >
-                            Supporters
-                        </span>{" "}
                         <span
                             className="font-editorial-regular"
                             style={{
@@ -89,28 +74,38 @@ export default function Investors() {
                                 fontWeight: 400,
                             }}
                         >
-                            and
+                            Meet your
                         </span>{" "}
-                        <span
-                            className="font-editorial-italic"
-                            style={{
-                                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-                                fontStyle: "italic",
+                        <BlurText
+                            text="Mentors"
+                            as="span"
+                            delay={500}
+                            animateBy="words"
+                            direction="top"
+                            className="font-editorial-italic inline-flex align-baseline"
+                            segmentStyle={{
+                                color: "var(--tertiary)",
+                                lineHeight: 1,
                                 fontWeight: 200,
+                                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                             }}
-                        >
-                            Investors
-                        </span>
+                            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+                            animationTo={[
+                                { filter: "blur(4px)", opacity: 0.7, y: 2 },
+                                { filter: "blur(0px)", opacity: 1, y: 0 },
+                            ]}
+                            stepDuration={0.28}
+                        />
                     </h2>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-[repeat(6,minmax(0,1fr))_1.15fr]">
-                    {INVESTORS.map((investor) => (
+                <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:gap-6 lg:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_1.15fr]">
+                    {investors.map((investor) => (
                         <InvestorCard key={investor.name} investor={investor} />
                     ))}
 
                     <aside
-                        className="flex min-h-[160px] items-center justify-center border-t px-2 text-center xl:min-h-0 xl:justify-start xl:border-t-0"
+                        className="col-span-2 lg:col-span-3 xl:col-span-1 flex min-h-[160px] items-center justify-center border-t px-2 text-center xl:min-h-0 xl:justify-start xl:border-t-0"
                         style={{ borderColor: "rgba(120,177,131,0.16)" }}
                     >
                         <p

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function SectionReveal({ children, delay = 0, className = "" }) {
+export default function AnimatedBenefitCard({ children, delayIndex }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,10 +17,7 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
           setIsVisible(false);
         }
       },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
+      { threshold: 0.2 }
     );
 
     observer.observe(el);
@@ -30,11 +27,12 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
   return (
     <div
       ref={ref}
-      className={`reveal-wrapper ${isVisible ? "reveal-visible" : ""} ${className}`}
+      className={isVisible ? "visible" : ""}
       style={{
-        "--reveal-delay": `${delay}ms`,
-        overflowX: "clip",
-        maxWidth: "100%"
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0) scale(1)" : "translateY(36px) scale(0.98)",
+        transition: "opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1)",
+        transitionDelay: `${delayIndex * 0.1}s`,
       }}
     >
       {children}

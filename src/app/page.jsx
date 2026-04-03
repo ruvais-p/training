@@ -1,14 +1,6 @@
-import {
-  Calendar,
-  CalendarDays,
-  Clock,
-  LayoutGrid,
-  Radio,
-  ShieldCheck,
-  Sparkles,
-  Users,
-  Zap,
-} from "lucide-react";
+"use client";
+
+import { ShieldCheck, Sparkles, Zap } from "lucide-react";
 import BlurText from "@/components/BlurText";
 import BorderGlow from "@/components/Hero/BorderGlow";
 import CtaButton from "@/components/Hero/CtaButton";
@@ -19,44 +11,20 @@ import SkillStack from "@/components/SkillStack";
 import Testimonial from "@/components/Testimonial";
 import Investors from "@/components/Investors";
 import SectionReveal from "@/components/SectionReveal";
+import AboutSection from "@/components/AboutSection";
+import AudienceSection from "@/components/AudienceSection";
+import CareerAndGrowthSupport from "@/components/CareerAndGrowthSupport";
+import WhatYouGetInside from "@/components/WhatYouGetInside";
+import CommunityExperience from "@/components/CommunityExperience";
+import StandOutSection from "@/components/StandOut";
 
-const HERO_BADGES = [
-  { icon: LayoutGrid, text: "3 HOURS" },
-  { icon: Calendar, text: "STARTS 12TH MAR" },
-  { icon: Clock, text: "7PM TO 10PM" },
+const heroBadges = [
+  { icon: Sparkles, text: "AI-Integrated Learning" },
+  { icon: ShieldCheck, text: "Real-World Projects" },
+  { icon: Zap, text: "Career-Focused Training" },
 ];
 
-const STAT_CARDS = [
-  { value: "15+", label: "Experts", icon: Users, color: "tertiary" },
-  { value: "25+", label: "Sessions", icon: Radio, color: "secondary" },
-];
-
-const BENEFIT_CARDS = [
-  {
-    iconClassName: "text-green-400",
-    icon: Zap,
-    title: "10x Efficiency",
-    content:
-      "Master the art of AI orchestration to turn exhaustive tasks into instant workflows.",
-    accent: "var(--tertiary)",
-  },
-  {
-    iconClassName: "text-green-500",
-    icon: Sparkles,
-    title: "Strategic Thinking",
-    content: "Move beyond prompts. Learn to integrate AI into product strategy.",
-    accent: "var(--secondary)",
-  },
-  {
-    iconClassName: "text-emerald-500",
-    icon: ShieldCheck,
-    title: "Future-Proof",
-    content: "Stay ahead of the disruption. Build skills that remain relevant.",
-    accent: "var(--tertiary)",
-  },
-];
-
-const SKILL_STACK_ITEMS = [
+const skillItems = [
   { name: "Descript", accent: "#6ab0ff", imageSrc: "/Skills/t1.webp" },
   { name: "HeyGen", accent: "#8c7dff", imageSrc: "/Skills/t2.webp" },
   { name: "Tome", accent: "#f06be7", imageSrc: "/Skills/tome.webp" },
@@ -77,14 +45,7 @@ const SKILL_STACK_ITEMS = [
   { name: "Claude", accent: "#d9b08a", imageSrc: "/Skills/t18.webp" },
 ];
 
-const HERO_SECTION_STYLE = { background: "transparent" };
-const HERO_ANIMATION_STYLE = {
-  animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both",
-};
-const MOBILE_HERO_ANIMATION_STYLE = {
-  animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both",
-};
-const HERO_TITLE_STYLE = {
+const titleStyle = {
   fontSize: "clamp(2.6rem, 5.5vw, 4.25rem)",
   fontWeight: 800,
   color: "#ffffff",
@@ -93,15 +54,17 @@ const HERO_TITLE_STYLE = {
   marginBottom: "1.5rem",
   textShadow: "0 4px 40px rgba(0,0,0,0.6)",
 };
-const MOBILE_HERO_TITLE_STYLE = {
-  fontSize: "2.3rem",
+
+const mobileTitleStyle = {
+  fontSize: "2.1rem",
   fontWeight: 800,
   color: "#fff",
   lineHeight: 1.1,
   letterSpacing: "-0.02em",
-  marginBottom: "1rem",
+  marginBottom: "1.2rem",
 };
-const HERO_DESCRIPTION_STYLE = {
+
+const descStyle = {
   fontSize: "1.15rem",
   lineHeight: 1.75,
   color: "rgba(255,255,255,0.72)",
@@ -109,58 +72,15 @@ const HERO_DESCRIPTION_STYLE = {
   maxWidth: "520px",
   fontWeight: 400,
 };
-const MOBILE_HERO_DESCRIPTION_STYLE = {
+
+const mobileDescStyle = {
   fontSize: "1rem",
   lineHeight: 1.65,
   color: "rgba(255,255,255,0.7)",
   fontWeight: 400,
 };
 
-const MOBILE_CTA_PANEL_STYLE = {
-  background: "transparent",
-  borderTop: "1px solid rgba(255,255,255,0.08)",
-};
-const HIGHLIGHT_ANIMATION_FROM = {
-  filter: "blur(10px)",
-  opacity: 0,
-  y: -22,
-};
-const HIGHLIGHT_ANIMATION_TO = [
-  { filter: "blur(4px)", opacity: 0.65, y: 4 },
-  { filter: "blur(0px)", opacity: 1, y: 0 },
-];
-const ABOUT_SECTION_STYLE = { background: "transparent" };
-const ABOUT_COPY_STYLE = { color: "rgba(255,255,255,0.55)" };
-const MOBILE_CTA_GLOW_PROPS = {
-  edgeSensitivity: 12,
-  glowColor: "138 30 68",
-  backgroundColor: "rgba(63, 116, 78, 0.98)",
-  borderRadius: 14,
-  glowRadius: 22,
-  glowIntensity: 1.05,
-  coneSpread: 22,
-  animated: false,
-  colors: [
-    "rgba(90,155,104,0.95)",
-    "rgba(133,199,145,0.82)",
-    "rgba(63,116,78,0.9)",
-  ],
-  fillOpacity: 0.22,
-};
-const MOBILE_CTA_BUTTON_STYLE = {
-  padding: "1rem 1.5rem",
-  fontSize: "1rem",
-  fontWeight: 600,
-  borderRadius: "999px",
-  background: "linear-gradient(135deg, var(--secondary), var(--tertiary))",
-  color: "var(--background)",
-  border: "1px solid rgba(255,255,255,0.12)",
-  cursor: "pointer",
-  letterSpacing: "-0.01em",
-  boxShadow: "0 12px 30px rgba(90,155,104,0.22)",
-  width: "100%",
-};
-const HERO_KEYFRAMES = `
+const heroKeyframes = `
   @keyframes heroFadeUp {
     from { opacity: 0; transform: translateY(32px); }
     to { opacity: 1; transform: translateY(0); }
@@ -169,12 +89,22 @@ const HERO_KEYFRAMES = `
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-hidden font-sans" style={{ ...HERO_SECTION_STYLE, maxWidth: "100%" }}>
+    <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
       <HeroSection />
-      
-      <SectionReveal delay={100}>
-        <AboutSection />
+
+      <AboutSection />
+
+      <StandOutSection />
+
+      <SectionReveal delay={80}>
+        <AudienceSection />
       </SectionReveal>
+
+      <WhatYouGetInside />
+
+      <CareerAndGrowthSupport />
+
+      <CommunityExperience />
 
       <Methodology />
 
@@ -190,13 +120,11 @@ export default function Home() {
         <SkillStack
           eyebrow="SKILL STACK"
           title="Tools you will learn"
-          items={SKILL_STACK_ITEMS}
+          items={skillItems}
         />
       </SectionReveal>
 
-      <SectionReveal delay={100}>
-        <FAQ />
-      </SectionReveal>
+      <FAQ />
 
       <SectionReveal>
         <Footer />
@@ -222,7 +150,7 @@ function HeroSection() {
       <DesktopHero />
       <MobileHero />
 
-      <style>{HERO_KEYFRAMES}</style>
+      <style>{heroKeyframes}</style>
     </section>
   );
 }
@@ -246,17 +174,18 @@ function HeroOverlay() {
 function DesktopHero() {
   return (
     <div className="relative z-20 hidden h-full items-end px-16 pb-20 md:flex">
-      <div className="flex w-full items-end justify-between" style={HERO_ANIMATION_STYLE}>
+      <div
+        className="flex w-full items-end justify-between"
+        style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
+      >
         <div className="max-w-[640px]">
-          <WorkshopBadge mobile={false} />
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
-          <CtaButton />
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
-          {HERO_BADGES.map(({ icon: Icon, text }) => (
-            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
+          {heroBadges.map(({ text }) => (
+            <InfoBadge key={text} text={text} />
           ))}
         </div>
       </div>
@@ -266,51 +195,24 @@ function DesktopHero() {
 
 function MobileHero() {
   return (
-    <div className="relative z-20 flex flex-col md:hidden">
-      <div className="flex flex-1 items-end px-6 pb-8">
-        <div style={MOBILE_HERO_ANIMATION_STYLE}>
-          <WorkshopBadge mobile />
+    <div className="relative z-20 flex h-full flex-col px-6 pb-16 pt-[9rem] md:hidden">
+      <div className="flex-1 items-end">
+        <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
           <HeroHeadline mobile />
           <HeroDescription mobile />
         </div>
       </div>
 
-      <div className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6" style={MOBILE_CTA_PANEL_STYLE}>
+      <div
+        className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6"
+        style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
+      >
         <div className="flex flex-col gap-2.5">
-          {HERO_BADGES.map(({ icon: Icon, text }) => (
-            <InfoBadge key={text} icon={<Icon size={16} />} text={text} />
+          {heroBadges.map(({ text }) => (
+            <InfoBadge key={text} text={text} />
           ))}
         </div>
-
-        <BorderGlow {...MOBILE_CTA_GLOW_PROPS} className="border-glow-plain mt-2 w-full">
-          <button style={MOBILE_CTA_BUTTON_STYLE}>Claim Your Spot</button>
-        </BorderGlow>
       </div>
-    </div>
-  );
-}
-
-function WorkshopBadge({ mobile }) {
-  return (
-    <div
-      className={`inline-flex items-center gap-2 rounded-full border border-white/20 ${mobile ? "mb-4 px-3 py-1" : "mb-6 px-4 py-1.5"
-        }`}
-      style={{
-        background: "rgba(255,255,255,0.06)",
-        backdropFilter: mobile ? "blur(8px)" : "blur(12px)",
-      }}
-    >
-      <span
-        className="h-1.5 w-1.5 animate-pulse rounded-full"
-        style={{ background: "var(--secondary)" }}
-      />
-      <span
-        className={`font-semibold uppercase ${mobile ? "text-[10px] tracking-[0.16em]" : "text-xs tracking-[0.18em]"
-          }`}
-        style={{ color: mobile ? "rgba(255,255,255,0.65)" : "rgba(255,255,255,0.7)" }}
-      >
-        {mobile ? "Live Workshop" : "Live Workshop · Limited Seats"}
-      </span>
     </div>
   );
 }
@@ -320,16 +222,16 @@ function HeroHeadline({ mobile }) {
     <h1
       className="font-editorial-regular"
       style={{
-        ...(mobile ? MOBILE_HERO_TITLE_STYLE : HERO_TITLE_STYLE),
+        ...(mobile ? mobileTitleStyle : titleStyle),
         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
         fontWeight: 400,
       }}
     >
-      Master ChatGPT &amp;{" "}
+      Become A Top 1%   {" "}
       <BlurText
-        text="15+ AI Tools"
+        text="CyberSecurity"
         as="span"
-        delay={400}
+        delay={500}
         animateBy="words"
         direction="top"
         className="font-editorial-italic inline-flex"
@@ -339,237 +241,38 @@ function HeroHeadline({ mobile }) {
           fontStyle: "italic",
           fontWeight: 200,
         }}
-        animationFrom={HIGHLIGHT_ANIMATION_FROM}
-        animationTo={HIGHLIGHT_ANIMATION_TO}
+        animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+        animationTo={[
+          { filter: "blur(4px)", opacity: 0.65, y: 4 },
+          { filter: "blur(0px)", opacity: 1, y: 0 },
+        ]}
         stepDuration={0.28}
       />{" "}
-      in Just 3 Hours
+      {mobile && <br />}
+      Expert
     </h1>
   );
 }
 
 function HeroDescription({ mobile }) {
   return (
-    <p style={mobile ? MOBILE_HERO_DESCRIPTION_STYLE : HERO_DESCRIPTION_STYLE}>
-      Join{" "}
+    <p style={mobile ? mobileDescStyle : descStyle}>
+      Master{" "}
       <strong
         style={{
           color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
           fontWeight: 600,
         }}
       >
-        10M+ professionals
+        AI powered Cybersecurity
       </strong>{" "}
-      who&apos;ve transformed their productivity, automated tedious work, and future-proofed
-      their careers&apos;all in one live workshop.
+      with real-world training, real world  mentors, and career-focused
+      support. Cohort-Based Program - Learn in a structured batch with guided mentorship and peer collaboration.
     </p>
   );
 }
 
-function AboutSection() {
-  return (
-    <section
-      className="relative overflow-hidden w-full px-6 py-24 md:px-12 md:py-32"
-      style={ABOUT_SECTION_STYLE}
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="relative mb-24 grid gap-12 lg:grid-cols-[1.2fr_0.78fr] lg:items-start lg:gap-16">
-          <div className="relative">
-            <div
-              className="pointer-events-none absolute -left-6 top-10 hidden h-48 w-48 rounded-full border lg:block"
-              style={{ borderColor: "rgba(90,155,104,0.12)" }}
-            />
-            <p
-              className="font-editorial-regular mb-6 text-sm uppercase tracking-widest"
-              style={{ color: "var(--tertiary)", fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
-            >
-              In 16-Weeks
-            </p>
-
-            <h2
-              className="font-editorial-regular mb-8 max-w-[10ch] text-5xl leading-[0.98] tracking-tight md:text-7xl"
-              style={{
-                color: "var(--foreground)",
-                fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-                fontWeight: 400,
-              }}
-            >
-              Master AI. Build <br /> Smarter. Become a PM.
-            </h2>
-
-            <p
-              className="max-w-[32rem] text-lg leading-relaxed md:text-xl"
-              style={ABOUT_COPY_STYLE}
-            >
-              PMs who know how to leverage AI will have an unfair advantage in the next
-              decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
-              the real skills that top companies want.
-            </p>
-          </div>
-
-          <div className="relative lg:pt-4">
-            <div
-              className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
-              style={{ borderColor: "rgba(90,155,104,0.08)" }}
-            />
-            <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
-              <EnrollmentCard />
-              <div className="grid grid-cols-2 gap-4">
-                {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
-                  <StatCard
-                    key={label}
-                    value={value}
-                    label={label}
-                    icon={<Icon size={14} />}
-                    color={color}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {BENEFIT_CARDS.map(({ icon: Icon, iconClassName, title, content, accent }) => (
-            <BenefitCard
-              key={title}
-              icon={<Icon className={iconClassName} size={32} />}
-              title={title}
-              content={content}
-              accent={accent}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function EnrollmentCard() {
-  return (
-    <div
-      className="relative overflow-hidden rounded-[2rem] border p-8"
-      style={{
-        background:
-          "radial-gradient(circle at top left, rgba(133,199,145,0.18), transparent 28%), linear-gradient(135deg, rgba(63,116,78,0.98) 0%, rgba(45,92,63,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.08)",
-        boxShadow: "0 18px 44px rgba(0,0,0,0.18)",
-      }}
-    >
-      <div className="pointer-events-none absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-white/10 blur-2xl" />
-      <div className="mb-4 flex items-center gap-2">
-        <CalendarDays size={16} style={{ color: "rgba(196,239,155,0.95)" }} />
-        <span
-          className="text-xs font-black uppercase tracking-widest"
-          style={{ color: "rgba(196,239,155,0.95)" }}
-        >
-          Enrolment Ends
-        </span>
-      </div>
-
-      <div className="flex items-end gap-3 md:gap-4">
-        <span
-          className="font-editorial-regular text-[4.6rem] font-bold leading-none md:text-[5.2rem]"
-          style={{
-            color: "var(--foreground)",
-            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-          }}
-        >
-          20
-        </span>
-        <span
-          className="font-editorial-regular mb-2 text-4xl font-bold md:text-[2.8rem]"
-          style={{
-            color: "var(--foreground)",
-            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-          }}
-        >
-          MAR
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function StatCard({ value, label, icon, color = "tertiary" }) {
-  const accentColor = color === "tertiary" ? "var(--tertiary)" : "var(--secondary)";
-
-  return (
-    <div
-      className="relative overflow-hidden rounded-[1.6rem] border p-5"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(39,76,56,0.92) 0%, rgba(28,57,43,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.06)",
-      }}
-    >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)" }}
-      />
-      <div
-        className="mb-3 font-editorial-regular text-4xl font-bold leading-none"
-        style={{
-          color: accentColor,
-          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-        }}
-      >
-        {value}
-      </div>
-
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/55">
-        {icon} {label}
-      </div>
-    </div>
-  );
-}
-
-function BenefitCard({ title, content, accent, icon }) {
-  return (
-    <div
-      className="group relative overflow-hidden rounded-[2.5rem] border p-10 transition-all duration-500 hover:-translate-y-1 hover:border-white/12"
-      style={{
-        background:
-          "radial-gradient(circle at top left, rgba(90,155,104,0.1), transparent 24%), linear-gradient(180deg, rgba(21,40,34,0.96) 0%, rgba(18,35,30,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.05)",
-        boxShadow: "0 20px 44px rgba(0,0,0,0.12)",
-      }}
-    >
-      <div
-        className="pointer-events-none absolute -right-10 top-0 h-32 w-32 rounded-full blur-3xl transition-opacity duration-500 group-hover:opacity-100"
-        style={{ background: `${accent}22`, opacity: 0.55 }}
-      />
-      <div className="relative mb-8 flex w-fit items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
-        {icon}
-      </div>
-
-      <div
-        className="mb-8 h-1.5 w-12 rounded-full transition-all duration-500 group-hover:w-24"
-        style={{ background: accent }}
-      />
-
-      <h3
-        className="font-editorial-regular mb-4 text-[2.2rem] leading-[0.95] tracking-tight"
-        style={{
-          color: "var(--foreground)",
-          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-          fontWeight: 400,
-        }}
-      >
-        {title}
-      </h3>
-
-      <p 
-        className="font-editorial-regular max-w-[18rem] text-lg leading-relaxed text-white/52"
-        style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
-      >
-        {content}
-      </p>
-    </div>
-  );
-}
-
-function InfoBadge({ icon, text }) {
+function InfoBadge({ text }) {
   return (
     <BorderGlow
       edgeSensitivity={10}
@@ -592,21 +295,22 @@ function InfoBadge({ icon, text }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "0.8rem",
-          padding: "0.95rem 1.25rem",
+          justifyContent: "center",
+          padding: "0.95rem 1.6rem",
           borderRadius: "18px",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
         }}
       >
-        <span style={{ color: "var(--tertiary)", display: "flex" }}>{icon}</span>
-
         <span
+          className="font-editorial-regular"
           style={{
-            fontSize: "0.72rem",
-            fontWeight: 800,
-            letterSpacing: "0.16em",
-            color: "rgba(255,255,255,0.86)",
+            fontSize: "0.92rem",
+            fontWeight: 400,
+            letterSpacing: "0.02em",
+            color: "rgba(255,255,255,0.95)",
+            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+            textTransform: "none",
           }}
         >
           {text}
