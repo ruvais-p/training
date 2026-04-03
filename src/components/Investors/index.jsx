@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
 
-const INVESTORS = [
+const investors = [
     {
         name: "Kunal Shah",
         role: "CRED Founder",
@@ -100,7 +100,7 @@ export default function Investors() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:gap-6 lg:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_1.15fr]">
-                    {INVESTORS.map((investor) => (
+                    {investors.map((investor) => (
                         <InvestorCard key={investor.name} investor={investor} />
                     ))}
 

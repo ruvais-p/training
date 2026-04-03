@@ -2,7 +2,7 @@ import Image from "next/image";
 import BlurText from "@/components/BlurText";
 import Reveal from "@/components/Reveal";
 
-const STEPS = [
+const steps = [
   {
     number: "01",
     title: "FOUNDATION",
@@ -79,7 +79,7 @@ export default function Methodology() {
 
       <div className="relative px-6 py-16 md:px-12 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step, index) => (
+          {steps.map((step, index) => (
             <Reveal key={step.number} delay={index * 90} distance={24}>
               <MethodCard step={step} />
             </Reveal>

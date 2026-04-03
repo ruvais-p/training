@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
 
-const CARDS = [
+const standoutCards = [
   {
     title: "AI + Cybersecurity Combined",
     imgSrc: "/Cards/2.png",
@@ -111,7 +111,7 @@ export default function StandOutSection() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CARDS.map((c, idx) => (
+            {standoutCards.map((c, idx) => (
               <StandOutCard key={c.title} {...c} index={idx} />
             ))}
           </div>

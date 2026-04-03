@@ -2,7 +2,7 @@
 
 import BlurText from "@/components/BlurText";
 
-const BENEFITS = [
+const benefits = [
   {
     title: "Industry-Ready Portfolio & Personal Branding",
     description:
@@ -40,15 +40,6 @@ const BENEFITS = [
   },
 ];
 
-const HIGHLIGHT_ANIMATION_FROM = {
-  filter: "blur(10px)",
-  opacity: 0,
-  y: -18,
-};
-const HIGHLIGHT_ANIMATION_TO = [
-  { filter: "blur(4px)", opacity: 0.7, y: 2 },
-  { filter: "blur(0px)", opacity: 1, y: 0 },
-];
 
 function BenefitCard({ item, className = "", wide = false }) {
   return (
@@ -119,19 +110,22 @@ export default function WhatYouGetInside() {
                 fontStyle: "italic",
                 fontWeight: 200,
               }}
-              animationFrom={HIGHLIGHT_ANIMATION_FROM}
-              animationTo={HIGHLIGHT_ANIMATION_TO}
+              animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+              animationTo={[
+                { filter: "blur(4px)", opacity: 0.7, y: 2 },
+                { filter: "blur(0px)", opacity: 1, y: 0 },
+              ]}
               stepDuration={0.24}
             />
           </h2>
         </div>
 
         <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {BENEFITS.slice(0, 6).map((item) => (
+          {benefits.slice(0, 6).map((item) => (
             <BenefitCard key={item.title} item={item} />
           ))}
           <BenefitCard
-            item={BENEFITS[6]}
+            item={benefits[6]}
             wide
             className="md:col-span-2 xl:col-span-3"
           />

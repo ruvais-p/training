@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import BlurText from "@/components/BlurText";
 
-const TAGS = [
+const careerTags = [
   "Placement Assistance",
   "Referral Assistance",
   "Internship Opportunities (Based on performance & company criteria)",
@@ -130,8 +130,8 @@ export default function CareerAndGrowthSupport() {
 
       <div className="relative left-1/2 w-screen -translate-x-1/2">
         <div className="flex flex-col gap-3">
-          <MarqueeRow items={TAGS} duration={22} />
-          <MarqueeRow items={TAGS} duration={26} reverse />
+          <MarqueeRow items={careerTags} duration={22} />
+          <MarqueeRow items={careerTags} duration={26} reverse />
         </div>
       </div>
     </section>

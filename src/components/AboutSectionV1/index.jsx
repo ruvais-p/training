@@ -3,12 +3,12 @@ import AnimatedBenefitCard from "@/components/AnimatedBenefitCard";
 import SectionReveal from "@/components/SectionReveal";
 import Image from "next/image";
 
-const STAT_CARDS = [
+const statCards = [
   { value: "15+", label: "Experts", icon: Users, color: "tertiary" },
   { value: "25+", label: "Sessions", icon: Radio, color: "secondary" },
 ];
 
-const BENEFIT_CARDS = [
+const benefitCards = [
   {
     iconSrc: "/home_page/69943a0470a4c0034cac1220_Group-239788.svg",
     title: "10x Efficiency",
@@ -30,14 +30,12 @@ const BENEFIT_CARDS = [
   },
 ];
 
-const ABOUT_SECTION_STYLE = { background: "transparent" };
-const ABOUT_COPY_STYLE = { color: "rgba(255,255,255,0.55)" };
 
 export default function OldAbout() {
   return (
     <section
       className="relative w-full px-6 py-24 md:px-12 md:py-32"
-      style={ABOUT_SECTION_STYLE}
+      style={{ background: "transparent" }}
     >
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-start w-full gap-16 md:gap-0">
         <div className="relative md:sticky top-0 h-fit flex flex-col pt-12 md:pt-[12vh] w-full md:w-1/2 md:pr-8">
@@ -92,7 +90,7 @@ export default function OldAbout() {
 
               <p
                 className="max-w-[32rem] text-lg leading-relaxed md:text-xl md:mb-12 mb-8"
-                style={ABOUT_COPY_STYLE}
+                style={{ color: "rgba(255,255,255,0.55)" }}
               >
                 PMs who know how to leverage AI will have an unfair advantage in the next
                 decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
@@ -108,7 +106,7 @@ export default function OldAbout() {
               <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
                 <EnrollmentCard />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {STAT_CARDS.map(({ value, label, icon: Icon, color }) => (
+                  {statCards.map(({ value, label, icon: Icon, color }) => (
                     <StatCard
                       key={label}
                       value={value}
@@ -124,7 +122,7 @@ export default function OldAbout() {
         </div>
 
         <div className="flex flex-col gap-[28px] pt-12 pb-16 md:pt-[20vh] md:pb-[30vh] w-full md:w-1/2 md:pl-8">
-          {BENEFIT_CARDS.map(({ iconSrc, title, content, accent }, index) => (
+          {benefitCards.map(({ iconSrc, title, content, accent }, index) => (
             <AnimatedBenefitCard key={title} delayIndex={index}>
               <BenefitCard
                 icon={

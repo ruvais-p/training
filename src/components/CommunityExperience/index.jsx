@@ -1,10 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
 import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
 
-const ITEMS = [
+const communityItems = [
   "Hands-on learning to build and use hardware hacking tools",
   "Access to an active learning community",
   "Guest sessions from industry experts",
@@ -12,17 +11,15 @@ const ITEMS = [
   "Collaborative learning environment",
 ];
 
+const cardLayout = [
+  { span: "md:col-span-7", tone: "a" },
+  { span: "md:col-span-5", tone: "b" },
+  { span: "md:col-span-6", tone: "c" },
+  { span: "md:col-span-6", tone: "d" },
+  { span: "md:col-span-12", tone: "e" },
+];
+
 export default function CommunityExperience() {
-  const layout = useMemo(
-    () => [
-      { span: "md:col-span-7", tone: "a" },
-      { span: "md:col-span-5", tone: "b" },
-      { span: "md:col-span-6", tone: "c" },
-      { span: "md:col-span-6", tone: "d" },
-      { span: "md:col-span-12", tone: "e" },
-    ],
-    []
-  );
 
   return (
     <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-28">
@@ -140,8 +137,8 @@ export default function CommunityExperience() {
           </svg>
 
           <div className="relative grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
-            {ITEMS.map((text, index) => {
-              const meta = layout[index] ?? { span: "md:col-span-6", tone: "a" };
+            {communityItems.map((text, index) => {
+              const meta = cardLayout[index] ?? { span: "md:col-span-6", tone: "a" };
 
               return (
                 <motion.article

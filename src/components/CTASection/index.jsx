@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-const CTA_LINES = [
+const ctaLines = [
   "BECOME INDUSTRY-READY",
   "IN 4 MONTHS",
   "BECOME INDUSTRY-READY",
@@ -73,9 +73,9 @@ export default function CTASection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,155,104,0.12),transparent_44%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_58%,rgba(63,116,78,0.1),transparent_34%)]" />
         <div className="absolute inset-0">
-          <MarqueeTextRow text={CTA_LINES[0]} duration={28} top="6%" />
-          <MarqueeTextRow text={CTA_LINES[1]} duration={24} reverse top="39%" />
-          <MarqueeTextRow text={CTA_LINES[2]} duration={30} top="70%" />
+          <MarqueeTextRow text={ctaLines[0]} duration={28} top="6%" />
+          <MarqueeTextRow text={ctaLines[1]} duration={24} reverse top="39%" />
+          <MarqueeTextRow text={ctaLines[2]} duration={30} top="70%" />
         </div>
       </div>
 

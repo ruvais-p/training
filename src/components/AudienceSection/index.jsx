@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
 
-const AUDIENCE_ITEMS = [
+const audienceItems = [
   "Students & fresh graduates looking to start a cybersecurity career",
   "Working professionals planning a career switch into cybersecurity",
   "IT / Networking beginners who want to upgrade their skills",
@@ -83,7 +83,7 @@ export default function AudienceSection() {
         </div>
 
         <div className="flex flex-col gap-4">
-          {AUDIENCE_ITEMS.map((item, index) => (
+          {audienceItems.map((item, index) => (
             <AudienceCard
               key={item}
               text={item}

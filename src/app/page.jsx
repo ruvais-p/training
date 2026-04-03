@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  ShieldCheck,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { ShieldCheck, Sparkles, Zap } from "lucide-react";
 import BlurText from "@/components/BlurText";
 import BorderGlow from "@/components/Hero/BorderGlow";
 import CtaButton from "@/components/Hero/CtaButton";
@@ -18,18 +14,17 @@ import SectionReveal from "@/components/SectionReveal";
 import AboutSection from "@/components/AboutSection";
 import AudienceSection from "@/components/AudienceSection";
 import CareerAndGrowthSupport from "@/components/CareerAndGrowthSupport";
-
 import WhatYouGetInside from "@/components/WhatYouGetInside";
 import CommunityExperience from "@/components/CommunityExperience";
 import StandOutSection from "@/components/StandOut";
 
-const HERO_BADGES = [
+const heroBadges = [
   { icon: Sparkles, text: "AI-Integrated Learning" },
   { icon: ShieldCheck, text: "Real-World Projects" },
   { icon: Zap, text: "Career-Focused Training" },
 ];
 
-const SKILL_STACK_ITEMS = [
+const skillItems = [
   { name: "Descript", accent: "#6ab0ff", imageSrc: "/Skills/t1.webp" },
   { name: "HeyGen", accent: "#8c7dff", imageSrc: "/Skills/t2.webp" },
   { name: "Tome", accent: "#f06be7", imageSrc: "/Skills/tome.webp" },
@@ -50,14 +45,7 @@ const SKILL_STACK_ITEMS = [
   { name: "Claude", accent: "#d9b08a", imageSrc: "/Skills/t18.webp" },
 ];
 
-const HERO_SECTION_STYLE = { background: "transparent" };
-const HERO_ANIMATION_STYLE = {
-  animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both",
-};
-const MOBILE_HERO_ANIMATION_STYLE = {
-  animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both",
-};
-const HERO_TITLE_STYLE = {
+const titleStyle = {
   fontSize: "clamp(2.6rem, 5.5vw, 4.25rem)",
   fontWeight: 800,
   color: "#ffffff",
@@ -66,7 +54,8 @@ const HERO_TITLE_STYLE = {
   marginBottom: "1.5rem",
   textShadow: "0 4px 40px rgba(0,0,0,0.6)",
 };
-const MOBILE_HERO_TITLE_STYLE = {
+
+const mobileTitleStyle = {
   fontSize: "2.1rem",
   fontWeight: 800,
   color: "#fff",
@@ -74,7 +63,8 @@ const MOBILE_HERO_TITLE_STYLE = {
   letterSpacing: "-0.02em",
   marginBottom: "1.2rem",
 };
-const HERO_DESCRIPTION_STYLE = {
+
+const descStyle = {
   fontSize: "1.15rem",
   lineHeight: 1.75,
   color: "rgba(255,255,255,0.72)",
@@ -82,56 +72,15 @@ const HERO_DESCRIPTION_STYLE = {
   maxWidth: "520px",
   fontWeight: 400,
 };
-const MOBILE_HERO_DESCRIPTION_STYLE = {
+
+const mobileDescStyle = {
   fontSize: "1rem",
   lineHeight: 1.65,
   color: "rgba(255,255,255,0.7)",
   fontWeight: 400,
 };
 
-const MOBILE_CTA_PANEL_STYLE = {
-  background: "transparent",
-  borderTop: "1px solid rgba(255,255,255,0.08)",
-};
-const HIGHLIGHT_ANIMATION_FROM = {
-  filter: "blur(10px)",
-  opacity: 0,
-  y: -22,
-};
-const HIGHLIGHT_ANIMATION_TO = [
-  { filter: "blur(4px)", opacity: 0.65, y: 4 },
-  { filter: "blur(0px)", opacity: 1, y: 0 },
-];
-const MOBILE_CTA_GLOW_PROPS = {
-  edgeSensitivity: 12,
-  glowColor: "138 30 68",
-  backgroundColor: "rgba(63, 116, 78, 0.98)",
-  borderRadius: 14,
-  glowRadius: 22,
-  glowIntensity: 1.05,
-  coneSpread: 22,
-  animated: false,
-  colors: [
-    "rgba(90,155,104,0.95)",
-    "rgba(133,199,145,0.82)",
-    "rgba(63,116,78,0.9)",
-  ],
-  fillOpacity: 0.22,
-};
-const MOBILE_CTA_BUTTON_STYLE = {
-  padding: "1rem 1.5rem",
-  fontSize: "1rem",
-  fontWeight: 600,
-  borderRadius: "999px",
-  background: "linear-gradient(135deg, var(--secondary), var(--tertiary))",
-  color: "var(--background)",
-  border: "1px solid rgba(255,255,255,0.12)",
-  cursor: "pointer",
-  letterSpacing: "-0.01em",
-  boxShadow: "0 12px 30px rgba(90,155,104,0.22)",
-  width: "100%",
-};
-const HERO_KEYFRAMES = `
+const heroKeyframes = `
   @keyframes heroFadeUp {
     from { opacity: 0; transform: translateY(32px); }
     to { opacity: 1; transform: translateY(0); }
@@ -140,7 +89,7 @@ const HERO_KEYFRAMES = `
 
 export default function Home() {
   return (
-    <main className="relative w-full overflow-x-clip font-sans" style={{ ...HERO_SECTION_STYLE, maxWidth: "100%" }}>
+    <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
       <HeroSection />
 
       <AboutSection />
@@ -171,13 +120,11 @@ export default function Home() {
         <SkillStack
           eyebrow="SKILL STACK"
           title="Tools you will learn"
-          items={SKILL_STACK_ITEMS}
+          items={skillItems}
         />
       </SectionReveal>
 
       <FAQ />
-
-
 
       <SectionReveal>
         <Footer />
@@ -203,7 +150,7 @@ function HeroSection() {
       <DesktopHero />
       <MobileHero />
 
-      <style>{HERO_KEYFRAMES}</style>
+      <style>{heroKeyframes}</style>
     </section>
   );
 }
@@ -227,15 +174,17 @@ function HeroOverlay() {
 function DesktopHero() {
   return (
     <div className="relative z-20 hidden h-full items-end px-16 pb-20 md:flex">
-      <div className="flex w-full items-end justify-between" style={HERO_ANIMATION_STYLE}>
+      <div
+        className="flex w-full items-end justify-between"
+        style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
+      >
         <div className="max-w-[640px]">
-
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
-          {HERO_BADGES.map(({ text }) => (
+          {heroBadges.map(({ text }) => (
             <InfoBadge key={text} text={text} />
           ))}
         </div>
@@ -248,15 +197,18 @@ function MobileHero() {
   return (
     <div className="relative z-20 flex h-full flex-col px-6 pb-16 pt-[9rem] md:hidden">
       <div className="flex-1 items-end">
-        <div style={MOBILE_HERO_ANIMATION_STYLE}>
+        <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
           <HeroHeadline mobile />
           <HeroDescription mobile />
         </div>
       </div>
 
-      <div className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6" style={MOBILE_CTA_PANEL_STYLE}>
+      <div
+        className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6"
+        style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
+      >
         <div className="flex flex-col gap-2.5">
-          {HERO_BADGES.map(({ text }) => (
+          {heroBadges.map(({ text }) => (
             <InfoBadge key={text} text={text} />
           ))}
         </div>
@@ -265,14 +217,12 @@ function MobileHero() {
   );
 }
 
-
-
 function HeroHeadline({ mobile }) {
   return (
     <h1
       className="font-editorial-regular"
       style={{
-        ...(mobile ? MOBILE_HERO_TITLE_STYLE : HERO_TITLE_STYLE),
+        ...(mobile ? mobileTitleStyle : titleStyle),
         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
         fontWeight: 400,
       }}
@@ -291,8 +241,11 @@ function HeroHeadline({ mobile }) {
           fontStyle: "italic",
           fontWeight: 200,
         }}
-        animationFrom={HIGHLIGHT_ANIMATION_FROM}
-        animationTo={HIGHLIGHT_ANIMATION_TO}
+        animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+        animationTo={[
+          { filter: "blur(4px)", opacity: 0.65, y: 4 },
+          { filter: "blur(0px)", opacity: 1, y: 0 },
+        ]}
         stepDuration={0.28}
       />{" "}
       {mobile && <br />}
@@ -303,7 +256,7 @@ function HeroHeadline({ mobile }) {
 
 function HeroDescription({ mobile }) {
   return (
-    <p style={mobile ? MOBILE_HERO_DESCRIPTION_STYLE : HERO_DESCRIPTION_STYLE}>
+    <p style={mobile ? mobileDescStyle : descStyle}>
       Master{" "}
       <strong
         style={{

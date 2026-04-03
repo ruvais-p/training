@@ -67,7 +67,6 @@ body {
   transform: translateY(-8px);
 }
 
-/* ── Custom Scrollbar (Hidden) ── */
 ::-webkit-scrollbar {
   display: none;
   width: 0px;
@@ -76,9 +75,7 @@ body {
 
 html {
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE/Edge */
   overflow-x: clip !important;
   background: #020e04 !important;
 }
@@ -89,8 +86,6 @@ body {
   background: #020e04 !important;
 }
 
-/* ── Viewport Containment ── */
-/* Ensures transform and filter effects do not cause horizontal overflow */
 html,
 body {
   position: relative;
@@ -105,9 +100,7 @@ body {
   opacity: 0;
   transform: translateY(64px) scale(0.97);
   filter: blur(14px);
-  /* Prevents any children or effects (like blur) from expanding the viewport */
   overflow: clip;
-  /* Modern browsers: strictly clips effects to the box */
   overflow-x: hidden;
   max-width: 100%;
   contain: paint;

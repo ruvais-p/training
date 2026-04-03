@@ -9,21 +9,17 @@ export default function SectionReveal({ children, delay = 0, className = "" }) {
     const el = ref.current;
     if (!el) return;
 
-    /**
-     * Use IntersectionObserver to trigger the reveal animation
-     * when the section enters the viewport. 
-     */
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          setIsVisible(false); // Reset to re-animate next time
+          setIsVisible(false);
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: "0px 0px -50px 0px", // Slight offset for smoother scroll feel
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 

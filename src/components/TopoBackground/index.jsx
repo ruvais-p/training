@@ -56,14 +56,12 @@ export default function TopoBackground() {
       const w = canvas.width;
       const h = canvas.height;
 
-      // Clear with background colour
       ctx.fillStyle = "#020e04";
       ctx.fillRect(0, 0, w, h);
 
       const cols = Math.ceil(w / STEP) + 2;
       const rows = Math.ceil(h / STEP) + 2;
 
-      // Rebuild field for this frame
       for (let ry = 0; ry < rows; ry++) {
         if (!field[ry]) field[ry] = [];
         for (let cx = 0; cx < cols; cx++) {
@@ -71,7 +69,6 @@ export default function TopoBackground() {
         }
       }
 
-      // Draw each contour level
       for (let lvl = 0; lvl < LEVELS; lvl++) {
         const threshold = -0.9 + (1.8 / (LEVELS - 1)) * lvl;
         const alpha = lvl % 3 === 0 ? 0.10 : 0.06;
@@ -99,7 +96,6 @@ export default function TopoBackground() {
 
             if (config === 0 || config === 15) continue;
 
-            // Edge midpoints via interpolation
             const top    = interpPoint(x, y, tl, x + STEP, y, tr, threshold);
             const right  = interpPoint(x + STEP, y, tr, x + STEP, y + STEP, br, threshold);
             const bottom = interpPoint(x, y + STEP, bl, x + STEP, y + STEP, br, threshold);

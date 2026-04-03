@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
 
-const ABOUT_CARDS = [
+const aboutCards = [
   {
     body: [
       "This is a 4-month online AI-integrated Cybersecurity Cohort Program built for individuals who want to enter the security industry with real skills, not just theory.",
@@ -38,11 +38,6 @@ export default function AboutSection() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 max-w-3xl">
-          <p
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] md:text-sm"
-            style={{ color: "#6f816f" }}
-          >
-          </p>
           <h2
             className="font-editorial-regular text-[2.5rem] leading-[0.95] tracking-[-0.05em] md:text-[4rem]"
             style={{
@@ -75,9 +70,9 @@ export default function AboutSection() {
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
-          <AboutCard card={ABOUT_CARDS[0]} className="lg:col-span-2" />
-          <AboutCard card={ABOUT_CARDS[1]} />
-          <AboutCard card={ABOUT_CARDS[2]} compactTop />
+          <AboutCard card={aboutCards[0]} className="lg:col-span-2" />
+          <AboutCard card={aboutCards[1]} />
+          <AboutCard card={aboutCards[2]} compactTop />
         </div>
       </div>
     </section>
