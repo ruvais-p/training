@@ -1,0 +1,89 @@
+import Image from "next/image";
+
+export default function PlacementPartners({ partners = [] }) {
+    return (
+        <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-28">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden z-0">
+                <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] blur-[120px] opacity-10"
+                    style={{ background: "radial-gradient(circle, var(--tertiary), transparent 70%)" }}
+                />
+            </div>
+
+            <div className="relative z-10 mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <p
+                        className="text-[0.8rem] font-semibold uppercase tracking-[0.45em] mb-4"
+                        style={{ color: "rgba(159,208,166,0.7)" }}
+                    >
+                        CAREER OUTCOMES
+                    </p>
+                    <h2
+                        className="text-[2.5rem] md:text-[3.8rem] font-medium leading-tight tracking-[-0.03em]"
+                        style={{ color: "#f3f7f3" }}
+                    >
+                        <span
+                            className="font-editorial-regular"
+                            style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
+                        >
+                            Our
+                        </span>{" "}
+                        <span
+                            className="font-editorial-italic italic"
+                            style={{
+                                color: "var(--tertiary)",
+                                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+                                fontWeight: 200
+                            }}
+                        >
+                            Strategic
+                        </span>{" "}
+                        <span
+                            className="font-editorial-regular"
+                            style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
+                        >
+                            Hiring Network
+                        </span>
+                    </h2>
+                </div>
+
+                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+                    {partners.map((partner) => (
+                        <div
+                            key={partner.name}
+                            className="group relative flex h-[160px] w-full max-w-[280px] sm:w-[320px] items-center justify-center p-8 rounded-[2.5rem] border transition-all duration-500 hover:-translate-y-2"
+                            style={{
+                                background: "rgba(255, 255, 255, 0.02)",
+                                borderColor: "rgba(120, 177, 131, 0.12)",
+                                backdropFilter: "blur(16px)",
+                                boxShadow: "0 10px 40px rgba(0,0,0,0.12)",
+                            }}
+                        >
+                            <div
+                                className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]"
+                                style={{ background: `radial-gradient(circle at top left, ${partner.accent}15, transparent)` }}
+                            />
+
+                            <div className="relative h-16 w-full transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+                                <Image
+                                    src={partner.imageSrc}
+                                    alt={partner.name}
+                                    fill
+                                    className="object-contain"
+                                    sizes="280px"
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-20 text-center">
+                    <p className="text-[0.95rem] tracking-wide" style={{ color: "rgba(243,247,243,0.35)" }}>
+                        Plus 50+ leading firms recruiting our graduates globally.
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+}

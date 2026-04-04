@@ -2,33 +2,37 @@
 
 export default function CtaButton() {
     return (
-        <button
+        <a
+            href="https://www.airtribe.live/backend-engineering/apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
             style={{
-                padding: "1rem 2.2rem",
-                fontSize: "1rem",
-                fontWeight: 600,
+                padding: "1.1rem 2.8rem",
+                fontSize: "1.05rem",
+                fontWeight: 700,
                 borderRadius: "999px",
                 background: "linear-gradient(135deg, var(--secondary), var(--tertiary))",
                 color: "var(--background)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.2)",
                 cursor: "pointer",
-                letterSpacing: "-0.01em",
-                boxShadow:
-                    "0 10px 28px rgba(90,155,104,0.24)",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                textAlign: "center",
+                textDecoration: "none",
+                letterSpacing: "0.01em",
+                textTransform: "uppercase",
+                boxShadow: "0 12px 34px rgba(90,155,104,0.35)",
+                transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
             onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow =
-                    "0 14px 34px rgba(90,155,104,0.3)";
+                e.currentTarget.style.transform = "translateY(-4px) scale(1.03)";
+                e.currentTarget.style.boxShadow = "0 20px 48px rgba(90,155,104,0.45)";
             }}
             onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                    "0 10px 28px rgba(90,155,104,0.24)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "0 12px 34px rgba(90,155,104,0.35)";
             }}
         >
-            Claim Your Spot
-        </button>
+            Apply Now
+        </a>
     );
 }

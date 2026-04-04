@@ -17,6 +17,8 @@ import CareerAndGrowthSupport from "@/components/CareerAndGrowthSupport";
 import WhatYouGetInside from "@/components/WhatYouGetInside";
 import CommunityExperience from "@/components/CommunityExperience";
 import StandOutSection from "@/components/StandOut";
+import PlacementPartners from "@/components/PlacementPartners";
+
 
 const heroBadges = [
   { icon: Sparkles, text: "AI-Integrated Learning" },
@@ -25,24 +27,31 @@ const heroBadges = [
 ];
 
 const skillItems = [
-  { name: "Descript", accent: "#6ab0ff", imageSrc: "/Skills/t1.webp" },
-  { name: "HeyGen", accent: "#8c7dff", imageSrc: "/Skills/t2.webp" },
-  { name: "Tome", accent: "#f06be7", imageSrc: "/Skills/tome.webp" },
-  { name: "ChatGPT", accent: "#5A9B68", imageSrc: "/Skills/Gpt.webp" },
-  { name: "D-ID", accent: "#f3a35c", imageSrc: "/Skills/t5.webp" },
-  { name: "vidyo.ai", accent: "#90a1ff", imageSrc: "/Skills/t6.webp" },
-  { name: "Opus Clip", accent: "#f3f7f3", imageSrc: "/Skills/t7.webp" },
-  { name: "InVideo", accent: "#ff6f93", imageSrc: "/Skills/t8.webp" },
-  { name: "Midjourney", accent: "#c6d5cb", imageSrc: "/Skills/midjounrey.webp" },
-  { name: "Engage AI", accent: "#7d93ff", imageSrc: "/Skills/t10.webp" },
-  { name: "Humata", accent: "#b8d1bf", imageSrc: "/Skills/t11.webp" },
-  { name: "Simplified", accent: "#ffb84d", imageSrc: "/Skills/t12.webp" },
-  { name: "Uberduck", accent: "#ffd36a", imageSrc: "/Skills/t13.webp" },
-  { name: "Feedly", accent: "#69b877", imageSrc: "/Skills/t14.webp" },
-  { name: "Compose AI", accent: "#78c3ff", imageSrc: "/Skills/t15.webp" },
-  { name: "Adobe Audition", accent: "#9688ff", imageSrc: "/Skills/t16.webp" },
-  { name: "Gamma", accent: "#c4ef9b", imageSrc: "/Skills/t17.webp" },
-  { name: "Claude", accent: "#d9b08a", imageSrc: "/Skills/t18.webp" },
+  { name: "ChatGPT", accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png" },
+  { name: "Claude AI", accent: "#D97757", imageSrc: "/Skills/claude-ai-icon.png" },
+  { name: "LangChain", accent: "#1C3C3C", imageSrc: "/Skills/langchain-color.png" },
+  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow.png" },
+  { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langgraph-color.png" },
+  { name: "OpenClaw", accent: "#E11D48", imageSrc: "/Skills/openclaw.png" },
+];
+
+const hackingTools = [
+  { name: "Burp Suite", accent: "#FF6633", imageSrc: "/hacking_tools/Burp icon.jpeg" },
+  { name: "Frida", accent: "#6E57E0", imageSrc: "/hacking_tools/Frida icon.png" },
+  { name: "Metasploit", accent: "#3D7E9A", imageSrc: "/hacking_tools/Metasploit icon.jpg" },
+  { name: "MobSF", accent: "#34495E", imageSrc: "/hacking_tools/MobSF icon.png" },
+  { name: "Nessus", accent: "#004D9D", imageSrc: "/hacking_tools/Nessus icon.png" },
+  { name: "Nikto", accent: "#9B59B6", imageSrc: "/hacking_tools/Nikto icon.jpg" },
+  { name: "Nmap", accent: "#5087CE", imageSrc: "/hacking_tools/Nmap icon.png" },
+  { name: "Postman", accent: "#FF6C37", imageSrc: "/hacking_tools/Postman icon.png" },
+  { name: "w3af", accent: "#E67E22", imageSrc: "/hacking_tools/W3af icon.png" },
+  { name: "Wireshark", accent: "#2A6E91", imageSrc: "/hacking_tools/Wireshark icon.png" },
+  { name: "Nexpose", accent: "#EE2E31", imageSrc: "/hacking_tools/nexpose icon.png" },
+];
+
+const placementPartners = [
+  { name: "Gladius & Schild", accent: "#2A6E91", imageSrc: "/placement_partner/Gladius & Schild 2.png" },
+  { name: "Tofence", accent: "#EE2E31", imageSrc: "/placement_partner/Tofence.png" },
 ];
 
 const titleStyle = {
@@ -122,6 +131,15 @@ export default function Home() {
           title="Tools you will learn"
           items={skillItems}
         />
+        <SkillStack
+          eyebrow=""
+          title="Hacking Tools you will learn"
+          items={hackingTools}
+        />
+      </SectionReveal>
+
+      <SectionReveal delay={100}>
+        <PlacementPartners partners={placementPartners} />
       </SectionReveal>
 
       <FAQ />
@@ -181,6 +199,9 @@ function DesktopHero() {
         <div className="max-w-[640px]">
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
+          <div className="mt-4">
+            <CtaButton />
+          </div>
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
@@ -200,6 +221,9 @@ function MobileHero() {
         <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
           <HeroHeadline mobile />
           <HeroDescription mobile />
+          <div className="mt-6">
+            <CtaButton />
+          </div>
         </div>
       </div>
 

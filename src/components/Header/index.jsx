@@ -39,16 +39,16 @@ const Header = () => {
           <div className="nav-right hidden lg:flex items-center">
             <div className="flex items-center gap-3">
               <Link
-                href="/login"
-                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
-              >
-                Login
-              </Link>
-              <Link
                 href="/apply-as-mentor"
-                className="text-[#d8f435] border border-[#d8f435] rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-[#d8f435]/10 transition-colors"
+                className="text-tertiary border border-tertiary rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
               >
                 Apply as Mentor
+              </Link>
+              <Link
+                href="/offsec-training"
+                className="text-tertiary border border-tertiary rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
+              >
+                Offsec Training
               </Link>
             </div>
           </div>
@@ -102,16 +102,16 @@ const Header = () => {
 
         <div className="flex flex-col mt-6 gap-3">
           <Link
-            href="/login"
-            className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
-          >
-            Login
-          </Link>
-          <Link
             href="/apply-as-mentor"
-            className="text-[#d8f435] border border-[#d8f435] rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-[#d8f435]/10 transition-colors w-fit mx-auto"
+            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
           >
             Apply as Mentor
+          </Link>
+          <Link
+            href="/offsec-training"
+            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
+          >
+            Offsec Training
           </Link>
         </div>
       </div>

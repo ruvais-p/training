@@ -76,7 +76,7 @@ export default function SkillStack({
 function SkillCard({ item }) {
   return (
     <article
-      className="group relative flex min-h-[92px] items-center justify-center overflow-hidden rounded-[1.35rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1"
+      className="group relative flex min-h-[120px] items-center justify-center overflow-hidden rounded-[1.35rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1"
       style={{
         background: "#ffffff",
         borderColor: "rgba(120,177,131,0.15)",
@@ -93,13 +93,13 @@ function SkillCard({ item }) {
 
       <div className="flex w-full items-center justify-center">
         {item.imageSrc ? (
-          <div className="relative flex h-11 w-full max-w-[148px] items-center justify-center md:h-12 md:max-w-[156px]">
+          <div className="relative flex h-14 w-full max-w-[160px] items-center justify-center md:h-16 md:max-w-[180px]">
             <Image
               src={item.imageSrc}
               alt={item.name}
               fill
-              className="object-contain object-center"
-              sizes="156px"
+              className="object-contain object-center scale-110"
+              sizes="(max-width: 768px) 160px, 180px"
             />
           </div>
         ) : (
@@ -143,9 +143,9 @@ function hexToRgba(hex, alpha) {
   const normalized =
     safeHex.length === 3
       ? safeHex
-          .split("")
-          .map((char) => char + char)
-          .join("")
+        .split("")
+        .map((char) => char + char)
+        .join("")
       : safeHex;
 
   const bigint = Number.parseInt(normalized, 16);
