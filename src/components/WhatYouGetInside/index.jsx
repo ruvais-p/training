@@ -21,23 +21,24 @@ const StarIcon = ({ className }) => (
 const TopCard = ({
   title,
   description,
-  gradientFrom,
+  gradientStyle,
   bgImage,
   iconColor,
 }) => (
   <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-[#0a0a0a] p-8 md:p-10 transition-all duration-300 hover:border-white/20">
-    {/* Background Image Placeholder */}
+    {/* Background Image */}
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
       style={{ backgroundImage: `url(${bgImage})` }}
     />
 
-    {/* Color Gradient Overlay (Left to Right) */}
+    {/* Brand Gradient Overlay */}
     <div
-      className={`absolute inset-0 bg-gradient-to-r ${gradientFrom} to-transparent w-[85%] md:w-[70%] opacity-80`}
+      className="absolute inset-0 w-[85%] md:w-[70%] opacity-80"
+      style={gradientStyle}
     />
 
-    {/* Dark Gradient Overlay (Bottom to Top for text readability) */}
+    {/* Dark Overlay */}
     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
 
     {/* Header */}
@@ -146,16 +147,23 @@ export default function FeaturesSection() {
             <TopCard
               title="Program"
               description="Master the full LIT curriculum through structured, hands-on learning built on the LIT Learning Methodology."
-              gradientFrom="from-[#f97316] via-[#ea580c]/80"
+              gradientStyle={{
+                background:
+                  "linear-gradient(90deg, rgba(90,155,104,0.78) 0%, rgba(217, 227, 138,0.55) 45%, rgba(59,130,246,0.12) 100%)",
+              }}
               bgImage="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
-              iconColor="text-[#f97316]"
+              iconColor="text-[#FFFFFF]"
             />
+
             <TopCard
               title="Gigs"
               description="Apply your skills in the real world by completing gigs that match your level and build your creator career portfolio."
-              gradientFrom="from-[#a855f7] via-[#9333ea]/80"
+              gradientStyle={{
+                background:
+                  "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
+              }}
               bgImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-              iconColor="text-[#d8b4fe]"
+              iconColor="text-[#FFFFFF]"
             />
           </div>
 

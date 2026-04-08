@@ -43,10 +43,7 @@ const steps = [
 
 export default function Methodology() {
   return (
-    <section
-      className="relative overflow-hidden bg-[#040d07]/80 backdrop-blur-xl border border-white/10 shadow-2xl"
-    >
-
+    <section className="relative overflow-hidden bg-transparent">
       <div className="relative border-b border-white/8 px-6 py-18 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>

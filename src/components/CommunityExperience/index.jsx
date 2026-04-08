@@ -11,15 +11,9 @@ const communityItems = [
   "Collaborative learning environment",
 ];
 
-
-
 export default function CommunityExperience() {
-
   return (
-    <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-28">
-      {/* Background Darkness matched to Investors section */}
-      <div className="pointer-events-none absolute inset-0 bg-[#020e04]" />
-
+    <section className="relative overflow-hidden bg-transparent px-6 py-20 md:px-12 md:py-28">
       <div className="relative mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <div className="pt-2">
           <h2
@@ -68,11 +62,9 @@ export default function CommunityExperience() {
         <div className="relative pt-4">
           <div className="flex flex-col gap-10">
             {communityItems.map((text, index) => {
-              // Map icons to custom shapes from /public/community/
               const shapeIndex = (index % 5) + 1;
               const shapeSrc = `/community/shape${shapeIndex}.svg`;
 
-              // Vibrant colors for the shapes
               const colors = ["#4ADE80", "#60A5FA", "#A78BFA", "#FBBF24", "#FB7185", "#34D399"];
               const color = colors[index % colors.length];
 
@@ -87,11 +79,11 @@ export default function CommunityExperience() {
                     delay: 0.1 * index,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="flex items-start gap-6 group"
+                  className="group flex items-start gap-6"
                 >
                   <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                     <div
-                      className="w-10 h-10"
+                      className="h-10 w-10"
                       style={{
                         backgroundColor: color,
                         WebkitMaskImage: `url(${shapeSrc})`,
@@ -106,7 +98,8 @@ export default function CommunityExperience() {
                       }}
                     />
                   </div>
-                  <div className="flex flex-col justify-center min-h-[40px]">
+
+                  <div className="flex min-h-[40px] flex-col justify-center">
                     <p
                       className="font-editorial-regular text-[1.12rem] leading-relaxed text-white md:text-[1.25rem]"
                       style={{
@@ -124,8 +117,6 @@ export default function CommunityExperience() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
-
