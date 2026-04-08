@@ -103,19 +103,20 @@ export default function Home() {
 
       <AboutSection />
 
-      <StandOutSection />
-
       <SectionReveal delay={80}>
         <AudienceSection />
       </SectionReveal>
+
+      <StandOutSection />
 
       <WhatYouGetInside />
 
       <CareerAndGrowthSupport />
 
-      <CommunityExperience />
 
       <Methodology />
+
+      <CommunityExperience />
 
       <SectionReveal delay={100}>
         <Investors />
