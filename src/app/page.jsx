@@ -122,9 +122,9 @@ export default function Home() {
         <Investors />
       </SectionReveal>
 
-      <SectionReveal delay={100}>
+      {/* <SectionReveal delay={100}>
         <Testimonial />
-      </SectionReveal>
+      </SectionReveal> */}
 
       <SectionReveal delay={100}>
         <SkillStack
