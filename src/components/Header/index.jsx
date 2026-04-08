@@ -40,15 +40,15 @@ const Header = () => {
             <div className="flex items-center gap-3">
               <Link
                 href="/apply-as-mentor"
-                className="text-tertiary border border-tertiary rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
+                className="text-tertiary border border-tertiary rounded-full text-[13px] font-bold px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
               >
                 Apply as Mentor
               </Link>
               <Link
                 href="/offsec-training"
-                className="text-tertiary border border-tertiary rounded-full text-[13px] font-medium px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
+                className="bg-tertiary text-white rounded-full text-[13px] font-bold px-6 py-2.5 tracking-wider hover:bg-tertiary/90 transition-colors"
               >
-                Offsec Training
+                APPLY NOW
               </Link>
             </div>
           </div>
@@ -103,15 +103,15 @@ const Header = () => {
         <div className="flex flex-col mt-6 gap-3">
           <Link
             href="/apply-as-mentor"
-            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
+            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-bold px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
           >
             Apply as Mentor
           </Link>
           <Link
             href="/offsec-training"
-            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-medium px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
+            className="bg-tertiary text-white rounded-full text-center text-[13px] font-bold px-6 py-3 tracking-wider hover:bg-tertiary/90 transition-colors w-fit mx-auto"
           >
-            Offsec Training
+            Apply now
           </Link>
         </div>
       </div>

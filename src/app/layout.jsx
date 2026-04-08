@@ -72,11 +72,21 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={cn("font-sans", inter.variable)}
+      className="font-sans"
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${neueMetanaBlack.variable} ${ppEditorialItalic.variable} ${ppEditorialRegular.variable} ${ppEditorialUltralight.variable} antialiased`}
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          inter.variable,
+          neueMetanaBlack.variable,
+          ppEditorialItalic.variable,
+          ppEditorialRegular.variable,
+          ppEditorialUltralight.variable,
+          "antialiased"
+        )}
+        suppressHydrationWarning
       >
         <TopoBackground />
         <LanguageProvider>

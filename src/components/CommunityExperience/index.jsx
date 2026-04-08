@@ -11,13 +11,7 @@ const communityItems = [
   "Collaborative learning environment",
 ];
 
-const cardLayout = [
-  { span: "md:col-span-7", tone: "a" },
-  { span: "md:col-span-5", tone: "b" },
-  { span: "md:col-span-6", tone: "c" },
-  { span: "md:col-span-6", tone: "d" },
-  { span: "md:col-span-12", tone: "e" },
-];
+
 
 export default function CommunityExperience() {
 
@@ -76,125 +70,66 @@ export default function CommunityExperience() {
           </p>
         </div>
 
-        <div
-          className="relative overflow-hidden rounded-[2.25rem] border p-7 md:p-10"
-          style={{
-            borderColor: "rgba(255,255,255,0.08)",
-            background: "rgba(0,0,0,0.22)",
-            boxShadow:
-              "0 34px 90px rgba(0,0,0,0.46), 0 0 0 1px rgba(255,255,255,0.03) inset",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-          }}
-        >
-
-
-          <div
-            className="pointer-events-none absolute inset-0 opacity-[0.28]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
-              backgroundSize: "44px 44px",
-              maskImage:
-                "radial-gradient(circle at 50% 40%, black 0%, black 62%, transparent 80%)",
-            }}
-          />
-
-          <svg
-            className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.6]"
-            viewBox="0 0 1000 520"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="rgba(255,255,255,0.0)" />
-                <stop offset="0.52" stopColor="rgba(255,255,255,0.16)" />
-                <stop offset="1" stopColor="rgba(255,255,255,0.0)" />
-              </linearGradient>
-            </defs>
-
-            <path
-              d="M120 90 C 320 140, 380 140, 510 110 S 760 80, 900 150"
-              fill="none"
-              stroke="url(#trace)"
-              strokeWidth="2"
-              className="ce-trace ce-trace-one"
-            />
-            <path
-              d="M80 260 C 300 220, 380 240, 520 260 S 760 300, 920 260"
-              fill="none"
-              stroke="url(#trace)"
-              strokeWidth="2"
-              className="ce-trace ce-trace-two"
-            />
-            <path
-              d="M160 430 C 330 360, 420 360, 520 390 S 740 470, 920 420"
-              fill="none"
-              stroke="url(#trace)"
-              strokeWidth="2"
-              className="ce-trace ce-trace-three"
-            />
-          </svg>
-
-          <div className="relative grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
+        <div className="relative pt-4">
+          <div className="flex flex-col gap-10">
             {communityItems.map((text, index) => {
-              const meta = cardLayout[index] ?? { span: "md:col-span-6", tone: "a" };
+              // Map icons to custom shapes from /public/community/
+              const shapeIndex = (index % 5) + 1;
+              const shapeSrc = `/community/shape${shapeIndex}.svg`;
+
+              // Vibrant colors for the shapes
+              const colors = ["#4ADE80", "#60A5FA", "#A78BFA", "#FBBF24", "#FB7185", "#34D399"];
+              const color = colors[index % colors.length];
 
               return (
-                <motion.article
+                <motion.div
                   key={text}
-                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
+                  whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{
-                    duration: 0.7,
-                    delay: 0.08 * index,
+                    duration: 0.6,
+                    delay: 0.1 * index,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className={`relative ${meta.span} rounded-[1.65rem] border p-5 md:p-6`}
-                  style={{
-                    borderColor: "rgba(255,255,255,0.08)",
-                    background: "rgba(0,0,0,0.32)",
-                    boxShadow:
-                      "0 18px 46px rgba(0,0,0,0.28), 0 0 0 1px rgba(255,255,255,0.02) inset",
-                    backdropFilter: "blur(14px)",
-                    WebkitBackdropFilter: "blur(14px)",
-                  }}
+                  className="flex items-start gap-6 group"
                 >
-                  <div className="relative flex items-start">
+                  <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                    <div
+                      className="w-10 h-10"
+                      style={{
+                        backgroundColor: color,
+                        WebkitMaskImage: `url(${shapeSrc})`,
+                        maskImage: `url(${shapeSrc})`,
+                        WebkitMaskRepeat: "no-repeat",
+                        maskRepeat: "no-repeat",
+                        WebkitMaskPosition: "center",
+                        maskPosition: "center",
+                        WebkitMaskSize: "contain",
+                        maskSize: "contain",
+                        boxShadow: `0 0 20px ${color}33`,
+                      }}
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center min-h-[40px]">
                     <p
-                      className="font-editorial-regular text-[1.06rem] leading-7 text-white md:text-[1.12rem]"
+                      className="font-editorial-regular text-[1.12rem] leading-relaxed text-white md:text-[1.25rem]"
                       style={{
                         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
                         fontWeight: 400,
+                        color: "rgba(255, 255, 255, 0.9)",
                       }}
                     >
                       {text}
                     </p>
                   </div>
-                </motion.article>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </div>
 
-      <style>{`
-        .ce-trace {
-          stroke-dasharray: 90 420;
-          stroke-dashoffset: 0;
-          animation: ceTrace 5.2s linear infinite;
-          opacity: 0.8;
-        }
-
-        .ce-trace-two { animation-duration: 6.2s; opacity: 0.65; }
-        .ce-trace-three { animation-duration: 7.2s; opacity: 0.55; }
-
-        @keyframes ceTrace {
-          0% { stroke-dashoffset: 0; }
-          100% { stroke-dashoffset: -510; }
-        }
-      `}</style>
     </section>
   );
 }

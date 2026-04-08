@@ -52,9 +52,8 @@ function BenefitCard({ item, className = "", wide = false }) {
       }}
     >
       <h3
-        className={`font-editorial-italic text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${
-          wide ? "max-w-none" : "max-w-none"
-        }`}
+        className={`font-editorial-italic text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${wide ? "max-w-none" : "max-w-none"
+          }`}
         style={{
           fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
           fontStyle: "italic",
@@ -65,9 +64,8 @@ function BenefitCard({ item, className = "", wide = false }) {
       </h3>
 
       <p
-        className={`font-editorial-regular mt-6 text-pretty text-[1rem] leading-7 text-white/88 md:text-[1.04rem] ${
-          wide ? "max-w-none" : "max-w-none"
-        }`}
+        className={`font-editorial-regular mt-6 text-pretty text-[1rem] leading-7 text-white/88 md:text-[1.04rem] ${wide ? "max-w-none" : "max-w-none"
+          }`}
         style={{
           fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
         }}
