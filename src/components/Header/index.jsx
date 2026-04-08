@@ -45,10 +45,10 @@ const Header = () => {
                 Apply as Mentor
               </Link>
               <Link
-                href="/offsec-training"
+                href="https://www.airtribe.live/backend-engineering/apply"
                 className="bg-tertiary text-white rounded-full text-[13px] font-bold px-6 py-2.5 tracking-wider hover:bg-tertiary/90 transition-colors"
               >
-                APPLY NOW
+                Apply Now
               </Link>
             </div>
           </div>
@@ -108,10 +108,10 @@ const Header = () => {
             Apply as Mentor
           </Link>
           <Link
-            href="/offsec-training"
+            href="https://www.airtribe.live/backend-engineering/apply"
             className="bg-tertiary text-white rounded-full text-center text-[13px] font-bold px-6 py-3 tracking-wider hover:bg-tertiary/90 transition-colors w-fit mx-auto"
           >
-            Apply now
+            Apply Now
           </Link>
         </div>
       </div>

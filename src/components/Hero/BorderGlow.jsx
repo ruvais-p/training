@@ -43,16 +43,26 @@ function easeOutCubic(x) {
   return 1 - Math.pow(1 - x, 3);
 }
 
-function easeInCubic(x) {
-  return x * x * x;
+function easeInOutCubic(x) {
+  return x < 0.5
+    ? 4 * x * x * x
+    : 1 - Math.pow(-2 * x + 2, 3) / 2;
 }
 
-function animateValue({ start = 0, end = 100, duration = 1000, delay = 0, ease = easeOutCubic, onUpdate, onEnd }) {
+function animateValue({
+  start = 0,
+  end = 100,
+  duration = 1000,
+  delay = 0,
+  ease = easeOutCubic,
+  onUpdate,
+  onEnd,
+}) {
   const t0 = performance.now() + delay;
 
   function tick() {
     const elapsed = performance.now() - t0;
-    const t = Math.min(elapsed / duration, 1);
+    const t = Math.min(Math.max(elapsed / duration, 0), 1);
     onUpdate(start + (end - start) * ease(t));
 
     if (t < 1) requestAnimationFrame(tick);
@@ -73,11 +83,15 @@ export default function BorderGlow({
   glowIntensity = 1,
   coneSpread = 25,
   animated = false,
+  autoAnimate = true,
+  autoMoveInterval = [1800, 3200], // random delay range
   colors = ["#c084fc", "#f472b6", "#38bdf8"],
   fillOpacity = 0.5,
   style,
 }) {
   const cardRef = useRef(null);
+  const autoTimeoutRef = useRef(null);
+  const isHoveringRef = useRef(false);
 
   const getCenterOfElement = useCallback((el) => {
     const { width, height } = el.getBoundingClientRect();
@@ -109,6 +123,72 @@ export default function BorderGlow({
     return degrees;
   }, [getCenterOfElement]);
 
+  const updateGlowFromPoint = useCallback((el, x, y) => {
+    const edge = getEdgeProximity(el, x, y);
+    const angle = getCursorAngle(el, x, y);
+
+    el.style.setProperty("--edge-proximity", `${(edge * 100).toFixed(3)}`);
+    el.style.setProperty("--cursor-angle", `${angle.toFixed(3)}deg`);
+  }, [getCursorAngle, getEdgeProximity]);
+
+  const animateToPoint = useCallback((el, startX, startY, endX, endY, duration = 1600) => {
+    const startTime = performance.now();
+
+    function tick(now) {
+      const t = Math.min((now - startTime) / duration, 1);
+      const eased = easeInOutCubic(t);
+
+      const x = startX + (endX - startX) * eased;
+      const y = startY + (endY - startY) * eased;
+
+      updateGlowFromPoint(el, x, y);
+
+      if (t < 1 && !isHoveringRef.current) {
+        requestAnimationFrame(tick);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }, [updateGlowFromPoint]);
+
+  const getRandomPoint = useCallback((el) => {
+    const rect = el.getBoundingClientRect();
+
+    // Keep glow more toward edges, not center
+    const paddingX = rect.width * 0.12;
+    const paddingY = rect.height * 0.12;
+
+    const edgePoints = [
+      [Math.random() * rect.width, paddingY], // top
+      [Math.random() * rect.width, rect.height - paddingY], // bottom
+      [paddingX, Math.random() * rect.height], // left
+      [rect.width - paddingX, Math.random() * rect.height], // right
+      [Math.random() * rect.width, Math.random() * rect.height], // anywhere
+    ];
+
+    return edgePoints[Math.floor(Math.random() * edgePoints.length)];
+  }, []);
+
+  const runAutoAnimation = useCallback(() => {
+    const card = cardRef.current;
+    if (!card || !autoAnimate || isHoveringRef.current) return;
+
+    const rect = card.getBoundingClientRect();
+    const currentX = parseFloat(card.dataset.x || rect.width / 2);
+    const currentY = parseFloat(card.dataset.y || rect.height / 2);
+
+    const [nextX, nextY] = getRandomPoint(card);
+    card.dataset.x = nextX;
+    card.dataset.y = nextY;
+
+    animateToPoint(card, currentX, currentY, nextX, nextY, 1400 + Math.random() * 1000);
+
+    const [minDelay, maxDelay] = autoMoveInterval;
+    const nextDelay = minDelay + Math.random() * (maxDelay - minDelay);
+
+    autoTimeoutRef.current = setTimeout(runAutoAnimation, nextDelay);
+  }, [autoAnimate, autoMoveInterval, animateToPoint, getRandomPoint]);
+
   const handlePointerMove = useCallback((e) => {
     const card = cardRef.current;
     if (!card) return;
@@ -116,12 +196,47 @@ export default function BorderGlow({
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const edge = getEdgeProximity(card, x, y);
-    const angle = getCursorAngle(card, x, y);
 
-    card.style.setProperty("--edge-proximity", `${(edge * 100).toFixed(3)}`);
-    card.style.setProperty("--cursor-angle", `${angle.toFixed(3)}deg`);
-  }, [getCursorAngle, getEdgeProximity]);
+    card.dataset.x = x;
+    card.dataset.y = y;
+
+    updateGlowFromPoint(card, x, y);
+  }, [updateGlowFromPoint]);
+
+  const handlePointerEnter = useCallback(() => {
+    isHoveringRef.current = true;
+    if (autoTimeoutRef.current) clearTimeout(autoTimeoutRef.current);
+  }, []);
+
+  const handlePointerLeave = useCallback(() => {
+    isHoveringRef.current = false;
+    runAutoAnimation();
+  }, [runAutoAnimation]);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const startX = rect.width / 2;
+    const startY = rect.height / 2;
+
+    card.dataset.x = startX;
+    card.dataset.y = startY;
+
+    updateGlowFromPoint(card, startX, startY);
+
+    if (autoAnimate) {
+      const timeout = setTimeout(() => {
+        runAutoAnimation();
+      }, 500);
+
+      return () => {
+        clearTimeout(timeout);
+        if (autoTimeoutRef.current) clearTimeout(autoTimeoutRef.current);
+      };
+    }
+  }, [autoAnimate, runAutoAnimation, updateGlowFromPoint]);
 
   useEffect(() => {
     if (!animated || !cardRef.current) return;
@@ -133,17 +248,22 @@ export default function BorderGlow({
     card.classList.add("sweep-active");
     card.style.setProperty("--cursor-angle", `${angleStart}deg`);
 
-    animateValue({ duration: 500, onUpdate: (v) => card.style.setProperty("--edge-proximity", v) });
     animateValue({
-      ease: easeInCubic,
+      duration: 500,
+      onUpdate: (v) => card.style.setProperty("--edge-proximity", v),
+    });
+
+    animateValue({
+      ease: easeInOutCubic,
       duration: 1500,
       end: 50,
       onUpdate: (v) => {
         card.style.setProperty("--cursor-angle", `${(angleEnd - angleStart) * (v / 100) + angleStart}deg`);
       },
     });
+
     animateValue({
-      ease: easeOutCubic,
+      ease: easeInOutCubic,
       delay: 1500,
       duration: 2250,
       start: 50,
@@ -152,8 +272,9 @@ export default function BorderGlow({
         card.style.setProperty("--cursor-angle", `${(angleEnd - angleStart) * (v / 100) + angleStart}deg`);
       },
     });
+
     animateValue({
-      ease: easeInCubic,
+      ease: easeInOutCubic,
       delay: 2500,
       duration: 1500,
       start: 100,
@@ -169,6 +290,8 @@ export default function BorderGlow({
     <div
       ref={cardRef}
       onPointerMove={handlePointerMove}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
       className={`border-glow-card ${className}`}
       style={{
         "--card-bg": backgroundColor,
