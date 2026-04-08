@@ -105,7 +105,7 @@ export default function Investors() {
 function MentorCard({ mentor }) {
     return (
         <article
-            className="group flex h-full min-h-[560px] flex-col overflow-hidden rounded-[2rem] border transition-all duration-300 hover:-translate-y-2"
+            className="group flex h-full min-h-[500px] flex-col overflow-hidden rounded-[2rem] border transition-all duration-300 hover:-translate-y-2"
             style={{
                 background:
                     "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
@@ -128,7 +128,7 @@ function MentorCard({ mentor }) {
                     href={mentor.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white transition-all hover:bg-[#0077B5] hover:border-[#0077B5]"
+                    className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-md transition-all hover:border-[#0077B5] hover:bg-[#0077B5]"
                     title="Connect on LinkedIn"
                 >
                     <Linkedin size={20} />
@@ -136,13 +136,13 @@ function MentorCard({ mentor }) {
             </div>
 
             {/* Content Section */}
-            <div className="flex flex-1 flex-col p-6">
+            <div className="flex flex-1 flex-col p-5">
                 {/* Top Content Block */}
                 <div className="flex flex-col">
                     {/* Name */}
-                    <div className="min-h-[56px]">
+                    <div className="min-h-[48px]">
                         <h3
-                            className="line-clamp-2 font-editorial-regular text-[1.35rem] font-medium tracking-[-0.04em] leading-tight"
+                            className="line-clamp-2 font-editorial-regular text-[1.3rem] font-medium leading-tight tracking-[-0.04em]"
                             style={{
                                 color: "#f3f7f3",
                                 fontFamily:
@@ -154,16 +154,16 @@ function MentorCard({ mentor }) {
                     </div>
 
                     {/* Role */}
-                    <div className="mt-2 min-h-[52px]">
-                        <p className="line-clamp-2 text-[0.85rem] font-semibold tracking-wide text-[#9fd0a6] uppercase italic leading-relaxed">
+                    <div className="mt-1.5 min-h-[44px]">
+                        <p className="line-clamp-2 text-[0.82rem] font-semibold uppercase italic leading-relaxed tracking-wide text-[#9fd0a6]">
                             {mentor.role}
                         </p>
                     </div>
 
                     {/* Designation */}
-                    <div className="mt-3 min-h-[72px]">
+                    <div className="mt-2 min-h-[58px]">
                         <p
-                            className="line-clamp-3 text-[0.9rem] leading-relaxed"
+                            className="line-clamp-3 text-[0.88rem] leading-relaxed"
                             style={{ color: "rgba(224,236,227,0.7)" }}
                         >
                             {mentor.designation}
@@ -173,11 +173,11 @@ function MentorCard({ mentor }) {
 
                 {/* Bio Section */}
                 <div
-                    className="mt-6 flex-1 border-t pt-4"
+                    className="mt-4 flex-1 border-t pt-3"
                     style={{ borderColor: "rgba(120,177,131,0.1)" }}
                 >
                     <p
-                        className="line-clamp-5 text-[0.8rem] leading-relaxed"
+                        className="line-clamp-5 text-[0.79rem] leading-relaxed"
                         style={{ color: "rgba(224,236,227,0.5)" }}
                     >
                         {mentor.bio}
@@ -186,4 +186,4 @@ function MentorCard({ mentor }) {
             </div>
         </article>
     );
-}
+}   

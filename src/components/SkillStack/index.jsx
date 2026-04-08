@@ -50,19 +50,22 @@ export default function SkillStack({
 
           <div
             className="h-px w-full md:max-w-[280px]"
-            style={{ background: "linear-gradient(90deg, rgba(120,177,131,0.6), transparent)" }}
+            style={{
+              background: "linear-gradient(90deg, rgba(120,177,131,0.6), transparent)",
+            }}
           />
         </div>
 
         <div
-          className="rounded-[2rem] border p-4 md:p-5"
+          className="rounded-[1.75rem] border p-3 md:p-4"
           style={{
-            background: "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
+            background:
+              "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
             borderColor: "rgba(120,177,131,0.14)",
             boxShadow: "0 22px 70px rgba(0,0,0,0.18)",
           }}
         >
-          <div className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-3.5 lg:grid-cols-4 xl:grid-cols-6">
             {items.map((item) => (
               <SkillCard key={item.name} item={item} />
             ))}
@@ -76,11 +79,12 @@ export default function SkillStack({
 function SkillCard({ item }) {
   return (
     <article
-      className="group relative flex min-h-[120px] items-center justify-center overflow-hidden rounded-[1.35rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1"
+      className="group relative flex min-h-[92px] items-center justify-center overflow-hidden rounded-[1.1rem] border px-3 py-3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]"
       style={{
-        background: "#ffffff",
-        borderColor: "rgba(120,177,131,0.15)",
-        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.03)",
+        background: "rgba(255,255,255,0.98)",
+        borderColor: "rgba(120,177,131,0.12)",
+        boxShadow:
+          "0 8px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.4)",
       }}
     >
       <div
@@ -93,13 +97,13 @@ function SkillCard({ item }) {
 
       <div className="flex w-full items-center justify-center">
         {item.imageSrc ? (
-          <div className="relative flex h-14 w-full max-w-[160px] items-center justify-center md:h-16 md:max-w-[180px]">
+          <div className="relative flex h-10 w-full max-w-[120px] items-center justify-center md:h-12 md:max-w-[140px]">
             <Image
               src={item.imageSrc}
               alt={item.name}
               fill
-              className="object-contain object-center scale-110"
-              sizes="(max-width: 768px) 160px, 180px"
+              className="object-contain object-center scale-105 transition-transform duration-300 group-hover:scale-110"
+              sizes="(max-width: 768px) 120px, 140px"
             />
           </div>
         ) : (
@@ -113,25 +117,25 @@ function SkillCard({ item }) {
 function LogoFallback({ name, accent }) {
   return (
     <div
-      className="relative flex h-10 w-[132px] items-center justify-center md:h-12 md:w-[150px]"
+      className="relative flex h-8 w-[110px] items-center justify-center md:h-10 md:w-[125px]"
       aria-label={name}
       title={name}
     >
       <div
-        className="absolute left-2.5 top-1/2 h-9 w-9 -translate-y-1/2 rounded-[1rem] border"
+        className="absolute left-2 top-1/2 h-7 w-7 -translate-y-1/2 rounded-[0.85rem] border"
         style={{
           borderColor: hexToRgba(accent, 0.26),
           background: `linear-gradient(135deg, ${hexToRgba(accent, 0.26)}, rgba(255,255,255,0.05))`,
         }}
       />
       <div
-        className="absolute left-[3rem] right-2 top-1/2 h-[0.82rem] -translate-y-1/2 rounded-full"
+        className="absolute left-[2.6rem] right-2 top-1/2 h-[0.72rem] -translate-y-1/2 rounded-full"
         style={{
           background: `linear-gradient(90deg, ${hexToRgba(accent, 0.95)} 0%, ${hexToRgba(accent, 0.46)} 58%, rgba(255,255,255,0.08) 100%)`,
         }}
       />
       <div
-        className="absolute left-[3rem] right-12 top-[58%] h-[0.24rem] rounded-full"
+        className="absolute left-[2.6rem] right-10 top-[58%] h-[0.22rem] rounded-full"
         style={{ background: hexToRgba(accent, 0.28) }}
       />
     </div>
