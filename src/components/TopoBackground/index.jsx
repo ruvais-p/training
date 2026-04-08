@@ -1,148 +1,130 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-const STEP = 6;
-const LEVELS = 12;
-
-function noise(x, y, t) {
-  return (
-    Math.sin(x * 0.008 + t * 0.4) * 0.3 +
-    Math.sin(y * 0.011 + t * 0.3) * 0.25 +
-    Math.sin((x + y) * 0.006 + t * 0.5) * 0.25 +
-    Math.sin(x * 0.014 - y * 0.009 + t * 0.6) * 0.2
-  );
-}
-
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
-
-function interpPoint(x1, y1, v1, x2, y2, v2, threshold) {
-  const t = (threshold - v1) / (v2 - v1);
-  return [lerp(x1, x2, t), lerp(y1, y2, t)];
-}
-
-export default function TopoBackground() {
+export default function GridBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    let animId;
-    let t = 0;
-    let field = [];
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
-    function buildField(w, h) {
-      const cols = Math.ceil(w / STEP) + 2;
-      const rows = Math.ceil(h / STEP) + 2;
-      field = Array.from({ length: rows }, (_, ry) =>
-        Array.from({ length: cols }, (_, cx) =>
-          noise(cx * STEP, ry * STEP, t)
-        )
-      );
-      return { cols, rows };
-    }
+    let animationFrame;
+    let offset = 0;
+
+    const GRID_SIZE = 24;
+    const SPEED = 0.08;
 
     function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    resize();
-
-    function draw() {
-      const ctx = canvas.getContext("2d");
-      const w = canvas.width;
-      const h = canvas.height;
-
-      ctx.fillStyle = "#020e04";
+    function drawBackground(w, h) {
+      // dark base
+      ctx.fillStyle = "#020202";
       ctx.fillRect(0, 0, w, h);
 
-      const cols = Math.ceil(w / STEP) + 2;
-      const rows = Math.ceil(h / STEP) + 2;
+      // center soft glow
+      const radial = ctx.createRadialGradient(
+        w / 2,
+        h / 2,
+        100,
+        w / 2,
+        h / 2,
+        h * 0.7
+      );
+      radial.addColorStop(0, "rgba(255,255,255,0.025)");
+      radial.addColorStop(0.4, "rgba(255,255,255,0.012)");
+      radial.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = radial;
+      ctx.fillRect(0, 0, w, h);
 
-      for (let ry = 0; ry < rows; ry++) {
-        if (!field[ry]) field[ry] = [];
-        for (let cx = 0; cx < cols; cx++) {
-          field[ry][cx] = noise(cx * STEP, ry * STEP, t);
-        }
-      }
+      // top fade
+      const topFade = ctx.createLinearGradient(0, 0, 0, 220);
+      topFade.addColorStop(0, "rgba(255,255,255,0.04)");
+      topFade.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = topFade;
+      ctx.fillRect(0, 0, w, 220);
 
-      for (let lvl = 0; lvl < LEVELS; lvl++) {
-        const threshold = -0.9 + (1.8 / (LEVELS - 1)) * lvl;
-        const alpha = lvl % 3 === 0 ? 0.10 : 0.06;
-        const lineWidth = lvl % 4 === 0 ? 1.2 : 0.6;
+      // bottom vignette
+      const bottomFade = ctx.createLinearGradient(0, h - 240, 0, h);
+      bottomFade.addColorStop(0, "rgba(0,0,0,0)");
+      bottomFade.addColorStop(1, "rgba(0,0,0,0.35)");
+      ctx.fillStyle = bottomFade;
+      ctx.fillRect(0, h - 240, w, 240);
+    }
 
+    function drawGrid(w, h) {
+      ctx.save();
+
+      // minor grid
+      ctx.strokeStyle = "rgba(255,255,255,0.05)";
+      ctx.lineWidth = 0.6;
+
+      for (let x = -GRID_SIZE + (offset % GRID_SIZE); x < w + GRID_SIZE; x += GRID_SIZE) {
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(200,245,60,${alpha})`;
-        ctx.lineWidth = lineWidth;
-
-        for (let ry = 0; ry < rows - 1; ry++) {
-          for (let cx = 0; cx < cols - 1; cx++) {
-            const x = cx * STEP;
-            const y = ry * STEP;
-
-            const tl = field[ry][cx];
-            const tr = field[ry][cx + 1];
-            const br = field[ry + 1][cx + 1];
-            const bl = field[ry + 1][cx];
-
-            const config =
-              (tl > threshold ? 8 : 0) |
-              (tr > threshold ? 4 : 0) |
-              (br > threshold ? 2 : 0) |
-              (bl > threshold ? 1 : 0);
-
-            if (config === 0 || config === 15) continue;
-
-            const top    = interpPoint(x, y, tl, x + STEP, y, tr, threshold);
-            const right  = interpPoint(x + STEP, y, tr, x + STEP, y + STEP, br, threshold);
-            const bottom = interpPoint(x, y + STEP, bl, x + STEP, y + STEP, br, threshold);
-            const left   = interpPoint(x, y, tl, x, y + STEP, bl, threshold);
-
-            const segments = {
-              1:  [left, bottom],
-              2:  [bottom, right],
-              3:  [left, right],
-              4:  [top, right],
-              5:  [left, top, bottom, right],
-              6:  [top, bottom],
-              7:  [left, top],
-              8:  [top, left],
-              9:  [top, bottom],
-              10: [top, right, left, bottom],
-              11: [top, right],
-              12: [left, right],
-              13: [bottom, right],
-              14: [left, bottom],
-            };
-
-            const pts = segments[config];
-            if (!pts) continue;
-
-            for (let i = 0; i < pts.length; i += 2) {
-              ctx.moveTo(pts[i][0], pts[i][1]);
-              ctx.lineTo(pts[i + 1][0], pts[i + 1][1]);
-            }
-          }
-        }
-
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
         ctx.stroke();
       }
 
-      t += 0.008;
-      animId = requestAnimationFrame(draw);
+      for (let y = -GRID_SIZE + (offset % GRID_SIZE); y < h + GRID_SIZE; y += GRID_SIZE) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+
+      // major grid
+      ctx.strokeStyle = "rgba(255,255,255,0.09)";
+      ctx.lineWidth = 0.8;
+
+      const major = GRID_SIZE * 5;
+
+      for (let x = -major + (offset % major); x < w + major; x += major) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+
+      for (let y = -major + (offset % major); y < h + major; y += major) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+
+      ctx.restore();
     }
 
+    function draw() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      ctx.clearRect(0, 0, w, h);
+      drawBackground(w, h);
+      drawGrid(w, h);
+
+      offset += SPEED;
+      animationFrame = requestAnimationFrame(draw);
+    }
+
+    resize();
     draw();
 
-    const onResize = () => { resize(); buildField(canvas.width, canvas.height); };
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", resize);
 
     return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", onResize);
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
@@ -156,8 +138,6 @@ export default function TopoBackground() {
         height: "100%",
         zIndex: 0,
         pointerEvents: "none",
-        display: "block",
-        overflow: "hidden",
       }}
     />
   );
