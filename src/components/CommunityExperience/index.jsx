@@ -17,13 +17,8 @@ export default function CommunityExperience() {
 
   return (
     <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-28">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.22]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 14% 18%, rgba(90,155,104,0.22) 0, transparent 42%), radial-gradient(circle at 76% 12%, rgba(63,116,78,0.16) 0, transparent 46%), radial-gradient(circle at 72% 78%, rgba(90,155,104,0.12) 0, transparent 55%)",
-        }}
-      />
+      {/* Background Darkness matched to Investors section */}
+      <div className="pointer-events-none absolute inset-0 bg-[#020e04]" />
 
       <div className="relative mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <div className="pt-2">

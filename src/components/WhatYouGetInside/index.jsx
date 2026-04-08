@@ -1,6 +1,70 @@
 "use client";
-
 import BlurText from "@/components/BlurText";
+
+import React from "react";
+
+// The four-pointed sparkle icon used in the top headers
+const StarIcon = ({ className }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M12 1.5L13.5 10.5L22.5 12L13.5 13.5L12 22.5L10.5 13.5L1.5 12L10.5 10.5L12 1.5Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+const TopCard = ({
+  title,
+  description,
+  gradientFrom,
+  bgImage,
+  iconColor,
+}) => (
+  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-[#0a0a0a] p-8 md:p-10 transition-all duration-300 hover:border-white/20">
+    {/* Background Image Placeholder */}
+    <div
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    />
+
+    {/* Color Gradient Overlay (Left to Right) */}
+    <div
+      className={`absolute inset-0 bg-gradient-to-r ${gradientFrom} to-transparent w-[85%] md:w-[70%] opacity-80`}
+    />
+
+    {/* Dark Gradient Overlay (Bottom to Top for text readability) */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+
+    {/* Header */}
+    <div className="relative z-10 flex items-center gap-4">
+      <StarIcon className={`h-8 w-8 ${iconColor}`} />
+      <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-white leading-none">
+        {title}
+      </h2>
+    </div>
+
+    {/* Footer Text */}
+    <p className="relative z-10 max-w-[95%] text-[0.95rem] md:text-base leading-relaxed text-white/90">
+      {description}
+    </p>
+  </div>
+);
+
+const BottomCard = ({ title, description }) => (
+  <div className="flex flex-col gap-4 rounded-[20px] bg-[#141414] p-6 md:p-8 border border-white/5 transition-colors hover:bg-[#1a1a1a]">
+    <h3 className="text-xl md:text-[1.35rem] font-semibold tracking-tight text-white">
+      {title}
+    </h3>
+    <p className="text-sm md:text-[0.95rem] leading-relaxed text-[#a1a1aa]">
+      {description}
+    </p>
+  </div>
+);
 
 const benefits = [
   {
@@ -40,51 +104,9 @@ const benefits = [
   },
 ];
 
-
-function BenefitCard({ item, className = "", wide = false }) {
+export default function FeaturesSection() {
   return (
-    <article
-      className={`relative flex h-full flex-col overflow-hidden rounded-[2rem] border px-8 py-8 text-left md:px-10 md:py-9 ${className}`}
-      style={{
-        background: "linear-gradient(180deg, rgba(15,44,29,0.96) 0%, rgba(10,31,21,0.98) 100%)",
-        borderColor: "rgba(90,155,104,0.14)",
-        boxShadow: "0 18px 40px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.03)",
-      }}
-    >
-      <h3
-        className={`font-editorial-italic text-pretty text-[1.45rem] leading-[1.12] tracking-[-0.03em] text-white md:text-[1.7rem] ${wide ? "max-w-none" : "max-w-none"
-          }`}
-        style={{
-          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-          fontStyle: "italic",
-          fontWeight: 200,
-        }}
-      >
-        {item.title}
-      </h3>
-
-      <p
-        className={`font-editorial-regular mt-6 text-pretty text-[1rem] leading-7 text-white/88 md:text-[1.04rem] ${wide ? "max-w-none" : "max-w-none"
-          }`}
-        style={{
-          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-        }}
-      >
-        {item.description}
-      </p>
-    </article>
-  );
-}
-
-export default function WhatYouGetInside() {
-  return (
-    <section
-      className="font-editorial-regular relative overflow-hidden px-6 py-20 md:px-12 md:py-24"
-      style={{
-        background: "transparent",
-        fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-      }}
-    >
+    <section className="relative min-h-screen w-full overflow-hidden bg-transparent px-4 py-16 md:px-8 lg:px-12 font-sans">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h2
@@ -118,15 +140,45 @@ export default function WhatYouGetInside() {
           </h2>
         </div>
 
-        <div className="grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {benefits.slice(0, 6).map((item) => (
-            <BenefitCard key={item.title} item={item} />
-          ))}
-          <BenefitCard
-            item={benefits[6]}
-            wide
-            className="md:col-span-2 xl:col-span-3"
-          />
+        <div className="mx-auto max-w-[1400px]">
+          {/* Top Row - 2 Main Highlight Columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <TopCard
+              title="Program"
+              description="Master the full LIT curriculum through structured, hands-on learning built on the LIT Learning Methodology."
+              gradientFrom="from-[#f97316] via-[#ea580c]/80"
+              bgImage="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+              iconColor="text-[#f97316]"
+            />
+            <TopCard
+              title="Gigs"
+              description="Apply your skills in the real world by completing gigs that match your level and build your creator career portfolio."
+              gradientFrom="from-[#a855f7] via-[#9333ea]/80"
+              bgImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+              iconColor="text-[#d8b4fe]"
+            />
+          </div>
+
+          {/* Blueprint Style Divider Line with Ticks */}
+          <div className="relative my-8 hidden h-[1px] w-full bg-white/10 lg:block">
+            <div className="absolute left-[25%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
+            <div className="absolute left-[50%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
+            <div className="absolute left-[75%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
+          </div>
+
+          {/* Responsive gap fallback for mobile */}
+          <div className="h-6 lg:hidden" />
+
+          {/* Bottom Row - Benefits */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <BottomCard
+                key={index}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
