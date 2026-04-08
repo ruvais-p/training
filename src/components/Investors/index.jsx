@@ -104,14 +104,17 @@ export default function Investors() {
 
 function MentorCard({ mentor }) {
     return (
-        <article className="group flex h-full flex-col overflow-hidden rounded-[2rem] border transition-all duration-300 hover:-translate-y-2"
+        <article
+            className="group flex h-full min-h-[560px] flex-col overflow-hidden rounded-[2rem] border transition-all duration-300 hover:-translate-y-2"
             style={{
-                background: "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
+                background:
+                    "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
                 borderColor: "rgba(120,177,131,0.14)",
                 boxShadow: "0 22px 70px rgba(0,0,0,0.18)",
             }}
         >
-            <div className="relative h-[220px] w-full overflow-hidden">
+            {/* Image Section */}
+            <div className="relative h-[220px] w-full overflow-hidden shrink-0">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
@@ -132,29 +135,51 @@ function MentorCard({ mentor }) {
                 </a>
             </div>
 
+            {/* Content Section */}
             <div className="flex flex-1 flex-col p-6">
-                <div className="min-h-[110px]">
-                    <h3
-                        className="font-editorial-regular text-[1.35rem] font-medium tracking-[-0.04em]"
-                        style={{
-                            color: "#f3f7f3",
-                            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-                        }}
-                    >
-                        {mentor.name}
-                    </h3>
+                {/* Top Content Block */}
+                <div className="flex flex-col">
+                    {/* Name */}
+                    <div className="min-h-[56px]">
+                        <h3
+                            className="line-clamp-2 font-editorial-regular text-[1.35rem] font-medium tracking-[-0.04em] leading-tight"
+                            style={{
+                                color: "#f3f7f3",
+                                fontFamily:
+                                    "var(--font-pp-editorial-regular), Georgia, serif",
+                            }}
+                        >
+                            {mentor.name}
+                        </h3>
+                    </div>
 
-                    <p className="mt-1 text-[0.85rem] font-semibold tracking-wide text-[#9fd0a6] uppercase italic">
-                        {mentor.role}
-                    </p>
+                    {/* Role */}
+                    <div className="mt-2 min-h-[52px]">
+                        <p className="line-clamp-2 text-[0.85rem] font-semibold tracking-wide text-[#9fd0a6] uppercase italic leading-relaxed">
+                            {mentor.role}
+                        </p>
+                    </div>
 
-                    <p className="mt-3 text-[0.9rem] leading-relaxed" style={{ color: "rgba(224,236,227,0.7)" }}>
-                        {mentor.designation}
-                    </p>
+                    {/* Designation */}
+                    <div className="mt-3 min-h-[72px]">
+                        <p
+                            className="line-clamp-3 text-[0.9rem] leading-relaxed"
+                            style={{ color: "rgba(224,236,227,0.7)" }}
+                        >
+                            {mentor.designation}
+                        </p>
+                    </div>
                 </div>
 
-                <div className="mt-6 flex-1 border-t pt-4" style={{ borderColor: "rgba(120,177,131,0.1)" }}>
-                    <p className="text-[0.8rem] leading-snug" style={{ color: "rgba(224,236,227,0.5)" }}>
+                {/* Bio Section */}
+                <div
+                    className="mt-6 flex-1 border-t pt-4"
+                    style={{ borderColor: "rgba(120,177,131,0.1)" }}
+                >
+                    <p
+                        className="line-clamp-5 text-[0.8rem] leading-relaxed"
+                        style={{ color: "rgba(224,236,227,0.5)" }}
+                    >
                         {mentor.bio}
                     </p>
                 </div>
