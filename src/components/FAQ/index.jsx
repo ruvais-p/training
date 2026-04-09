@@ -3,6 +3,7 @@
 import { useState } from "react";
 import BlurText from "@/components/BlurText";
 import SectionReveal from "@/components/SectionReveal";
+import { Plus } from "lucide-react";
 
 const faqItems = [
   {
@@ -119,7 +120,7 @@ export default function FAQ() {
                     </span>
 
                     <span
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-[1.8rem] font-light leading-none transition-all duration-300"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-300"
                       style={{
                         color: isOpen ? "#ffffff" : "var(--tertiary)",
                         borderColor: isOpen
@@ -131,7 +132,7 @@ export default function FAQ() {
                         transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                       }}
                     >
-                      +
+                      <Plus size={22} strokeWidth={1.5} />
                     </span>
                   </button>
 

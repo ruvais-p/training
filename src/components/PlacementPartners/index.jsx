@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BlurText from "@/components/BlurText";
 
 export default function PlacementPartners({ partners = [] }) {
     return (
@@ -29,16 +30,25 @@ export default function PlacementPartners({ partners = [] }) {
                         >
                             Our
                         </span>{" "}
-                        <span
-                            className="font-editorial-italic italic"
-                            style={{
+                        <BlurText
+                            text="Strategic"
+                            as="span"
+                            delay={300}
+                            animateBy="words"
+                            direction="top"
+                            className="font-editorial-italic italic inline-flex"
+                            segmentStyle={{
                                 color: "var(--tertiary)",
                                 fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                                 fontWeight: 200
                             }}
-                        >
-                            Strategic
-                        </span>{" "}
+                            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+                            animationTo={[
+                                { filter: "blur(4px)", opacity: 0.7, y: 2 },
+                                { filter: "blur(0px)", opacity: 1, y: 0 },
+                            ]}
+                            stepDuration={0.28}
+                        />{" "}
                         <span
                             className="font-editorial-regular"
                             style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}

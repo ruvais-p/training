@@ -65,6 +65,7 @@ import Header from "@/components/Header";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import TopoBackground from "@/components/TopoBackground";
+import FloatingContact from "@/components/FloatingContact";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -92,6 +93,7 @@ export default function RootLayout({ children }) {
         <LanguageProvider>
           <Header />
           <main style={{ position: "relative", zIndex: 10 }}>{children}</main>
+          <FloatingContact />
         </LanguageProvider>
       </body>
     </html>

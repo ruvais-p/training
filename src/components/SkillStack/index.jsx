@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BlurText from "@/components/BlurText";
 
 export default function SkillStack({
   eyebrow = "SKILL STACK",
@@ -25,17 +26,26 @@ export default function SkillStack({
               className="text-[2.35rem] font-semibold leading-[0.95] tracking-[-0.05em] md:text-[3.75rem]"
               style={{ color: "#f3f7f3" }}
             >
-              <span
-                className="font-editorial-italic"
-                style={{
+              <BlurText
+                text={highlightWord}
+                as="span"
+                delay={300}
+                animateBy="words"
+                direction="top"
+                className="font-editorial-italic inline-flex"
+                segmentStyle={{
                   color: "var(--tertiary)",
                   fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                   fontStyle: "italic",
                   fontWeight: 200,
                 }}
-              >
-                {highlightWord}
-              </span>{" "}
+                animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+                animationTo={[
+                  { filter: "blur(4px)", opacity: 0.7, y: 2 },
+                  { filter: "blur(0px)", opacity: 1, y: 0 },
+                ]}
+                stepDuration={0.28}
+              />{" "}
               <span
                 className="font-editorial-regular"
                 style={{

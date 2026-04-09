@@ -5,6 +5,7 @@ import { headerData } from "./Navigation/menuData";
 import HeaderLinks from "./Navigation/headerLinks";
 import Link from "next/link";
 import MobileHeaderLink from "./Navigation/mobileheaderLinks";
+import { Icon } from "@iconify/react";
 
 const uiFont = {
   fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
@@ -63,15 +64,33 @@ const Header = () => {
             </div>
           </div>
 
-          <button
-            onClick={() => setNavbarOpen(!navbarOpen)}
-            className="group block cursor-pointer p-2 lg:hidden"
-            aria-label="Toggle mobile menu"
-          >
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="mt-1.5 block h-0.5 w-4 bg-white transition-all duration-300 ease-in-out group-hover:w-6"></span>
-            <span className="mt-1.5 block h-0.5 w-6 bg-white"></span>
-          </button>
+          <div className="flex items-center gap-2.5 lg:hidden">
+            <a
+              href="tel:+910000000000"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3F744E]/90 border border-white/5 transition-colors hover:bg-white/20 active:scale-95"
+              aria-label="Call Us"
+            >
+              <Icon icon="mdi:phone-in-talk" className="text-white text-lg" />
+            </a>
+            <a
+              href="https://wa.me/910000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366]/90 border border-white/5 transition-colors hover:bg-[#25D366] active:scale-95"
+              aria-label="Chat on WhatsApp"
+            >
+              <Icon icon="mdi:whatsapp" className="text-white text-[1.35rem]" />
+            </a>
+            <button
+              onClick={() => setNavbarOpen(!navbarOpen)}
+              className="group ml-1 block cursor-pointer p-2"
+              aria-label="Toggle mobile menu"
+            >
+              <span className="block h-0.5 w-6 bg-white"></span>
+              <span className="mt-1.5 block h-0.5 w-4 bg-white transition-all duration-300 ease-in-out group-hover:w-6"></span>
+              <span className="mt-1.5 block h-0.5 w-6 bg-white"></span>
+            </button>
+          </div>
         </div>
       </header>
 
