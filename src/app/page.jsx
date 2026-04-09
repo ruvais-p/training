@@ -175,7 +175,7 @@ function HeroSection() {
       <style>{heroKeyframes}</style>
     </section>
   );
-} sss
+}
 
 function HeroOverlay() {
   return (
