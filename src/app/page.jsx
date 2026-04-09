@@ -155,15 +155,18 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute left-0 top-0 z-0 h-full w-full object-cover"
-      >
-        <source src="/home_page/videoplayback.mp4" type="video/mp4" />
-      </video>
+      {/* YouTube Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <iframe
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.77vh] min-w-full -translate-x-1/2 -translate-y-1/2"
+          src="https://www.youtube.com/embed/tC8h6Y31yKg?autoplay=1&mute=1&controls=0&loop=1&playlist=tC8h6Y31yKg&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3"
+          title="Hero Background Video"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
 
       <HeroOverlay />
       <DesktopHero />
@@ -172,7 +175,7 @@ function HeroSection() {
       <style>{heroKeyframes}</style>
     </section>
   );
-}
+} sss
 
 function HeroOverlay() {
   return (

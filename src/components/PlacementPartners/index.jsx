@@ -78,10 +78,37 @@ export default function PlacementPartners({ partners = [] }) {
                     ))}
                 </div>
 
-                <div className="mt-20 text-center">
-                    <p className="text-[0.95rem] tracking-wide" style={{ color: "rgba(243,247,243,0.35)" }}>
-                        Plus 50+ leading firms recruiting our graduates globally.
+                <div className="mt-20 flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left">
+                    <p
+                        className="max-w-2xl text-[0.98rem] md:text-[1.04rem] leading-7 tracking-[0.01em]"
+                        style={{
+                            color: "rgba(243,247,243,0.58)",
+                            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                        }}
+                    >
+                        And this is just the beginning — our learners also gain visibility to a
+                        wider ecosystem of fast-growing startups, product companies, and
+                        hiring teams actively looking for skilled cybersecurity talent.
                     </p>
+
+                    <a
+                        href="https://www.airtribe.live/backend-engineering/apply"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.02]"
+                        style={{
+                            background: "rgba(217, 227, 138, 0.78)",
+                            color: "#000000",
+                            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                            boxShadow:
+                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                            backdropFilter: "blur(10px)",
+                            WebkitBackdropFilter: "blur(10px)",
+                        }}
+                    >
+                        APPLY NOW
+                        <span className="text-base leading-none">↗</span>
+                    </a>
                 </div>
             </div>
         </section>

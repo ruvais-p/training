@@ -57,6 +57,34 @@ export default function CommunityExperience() {
             A cohort should feel like a lab: hands-on practice, real conversations, and
             a community that keeps you moving even after the live sessions end.
           </p>
+          <motion.a
+            href="https://www.airtribe.live/backend-engineering/apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.65,
+              delay: 0.25,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{ y: -2, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-7 inline-flex w-fit items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+            style={{
+              background: "rgba(217, 227, 138, 0.78)",
+              color: "#000000",
+              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+              boxShadow:
+                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+            }}
+          >
+            APPLY NOW
+            <span className="text-base leading-none">↗</span>
+          </motion.a>
         </div>
 
         <div className="relative pt-4">

@@ -6,6 +6,10 @@ import HeaderLinks from "./Navigation/headerLinks";
 import Link from "next/link";
 import MobileHeaderLink from "./Navigation/mobileheaderLinks";
 
+const uiFont = {
+  fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+};
+
 const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -23,30 +27,36 @@ const Header = () => {
   return (
     <>
       <header
-        className="fixed h-20 px-4 top-5 left-[2.5%] py-1 z-50 w-[95%] flex navbar items-center transition-all duration-500 rounded-3xl bg-white/10 backdrop-blur-md border border-white/5 shadow-lg"
+        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500"
+        style={uiFont}
       >
-        <div className="container mx-auto max-w-full 2xl:max-w-[1400px] flex justify-between items-center xl:gap-8 lg:gap-4 py-4 w-full px-4">
+        <div className="container mx-auto flex w-full max-w-full items-center justify-between px-2 py-4 lg:px-4 2xl:max-w-[1400px]">
           <div className="text-white">
             <Logo />
           </div>
 
-          <nav className="hidden lg:flex grow items-center justify-end xl:space-x-8 lg:space-x-6 space-x-4 text-sm whitespace-nowrap pr-8">
+          <nav
+            className="hidden grow items-center justify-end whitespace-nowrap pr-8 text-sm lg:flex lg:space-x-6 xl:space-x-8"
+            style={uiFont}
+          >
             {headerData.map((item, index) => (
               <HeaderLinks key={index} item={item} />
             ))}
           </nav>
 
-          <div className="nav-right hidden lg:flex items-center">
+          <div className="nav-right hidden items-center lg:flex" style={uiFont}>
             <div className="flex items-center gap-3">
               <Link
                 href="/apply-as-mentor"
-                className="text-tertiary border border-tertiary rounded-full text-[13px] font-bold px-6 py-2.5 tracking-wider hover:bg-tertiary/10 transition-colors"
+                className="rounded-full border border-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
+                style={uiFont}
               >
                 Apply as Mentor
               </Link>
               <Link
                 href="https://www.airtribe.live/backend-engineering/apply"
-                className="bg-tertiary text-white rounded-full text-[13px] font-bold px-6 py-2.5 tracking-wider hover:bg-tertiary/90 transition-colors"
+                className="rounded-full bg-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
+                style={uiFont}
               >
                 Apply Now
               </Link>
@@ -55,26 +65,28 @@ const Header = () => {
 
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="lg:hidden block p-2 cursor-pointer group"
+            className="group block cursor-pointer p-2 lg:hidden"
             aria-label="Toggle mobile menu"
           >
-            <span className="block w-6 h-0.5 bg-white"></span>
-            <span className="block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6"></span>
-            <span className="block w-6 h-0.5 bg-white mt-1.5"></span>
+            <span className="block h-0.5 w-6 bg-white"></span>
+            <span className="mt-1.5 block h-0.5 w-4 bg-white transition-all duration-300 ease-in-out group-hover:w-6"></span>
+            <span className="mt-1.5 block h-0.5 w-6 bg-white"></span>
           </button>
         </div>
       </header>
 
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-0 right-0 h-screen w-full sm:w-[50%] lg:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 z-50 transform transition-transform overflow-y-scroll duration-500 ease-in-out ${navbarOpen ? "-translate-x-0" : "translate-x-[110%]"
+        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-dark-blur p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
           }`}
+        style={uiFont}
       >
-        <div className="text-white flex justify-between items-center w-full">
+        <div className="flex w-full items-center justify-between text-white">
           <Logo />
           <button
             onClick={() => setNavbarOpen(false)}
             aria-label="Close mobile menu"
+            className="p-1"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,22 +106,24 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex flex-col items-start py-4">
+        <nav className="flex flex-col items-start py-6" style={uiFont}>
           {headerData.map((item, index) => (
             <MobileHeaderLink key={index} item={item} />
           ))}
         </nav>
 
-        <div className="flex flex-col mt-6 gap-3">
+        <div className="mt-6 flex flex-col gap-3" style={uiFont}>
           <Link
             href="/apply-as-mentor"
-            className="text-tertiary border border-tertiary rounded-full text-center text-[13px] font-bold px-6 py-3 tracking-wider hover:bg-tertiary/10 transition-colors w-fit mx-auto"
+            className="mx-auto inline-flex w-fit rounded-full border border-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
+            style={uiFont}
           >
             Apply as Mentor
           </Link>
           <Link
             href="https://www.airtribe.live/backend-engineering/apply"
-            className="bg-tertiary text-white rounded-full text-center text-[13px] font-bold px-6 py-3 tracking-wider hover:bg-tertiary/90 transition-colors w-fit mx-auto"
+            className="mx-auto inline-flex w-fit rounded-full bg-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
+            style={uiFont}
           >
             Apply Now
           </Link>

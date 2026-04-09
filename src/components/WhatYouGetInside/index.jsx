@@ -1,6 +1,6 @@
 "use client";
+import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
-
 import React from "react";
 
 // The four-pointed sparkle icon used in the top headers
@@ -187,6 +187,47 @@ export default function FeaturesSection() {
               />
             ))}
           </div>
+        </div>
+        {/* Bottom CTA */}
+        <div className="mt-16 md:mt-20 flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left">
+          <p
+            className="max-w-2xl text-[1rem] md:text-[1.08rem] leading-7 md:leading-8"
+            style={{
+              color: "rgba(232,245,239,0.72)",
+              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+            }}
+          >
+            Go from learning cybersecurity to actually proving your skills with projects, mentorship, and real-world practice.
+          </p>
+
+          <motion.a
+            href="https://www.airtribe.live/backend-engineering/apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.65,
+              delay: 0.15,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{ y: -2, scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+            style={{
+              background: "rgba(217, 227, 138, 0.78)",
+              color: "#000000",
+              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+              boxShadow:
+                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+            }}
+          >
+            APPLY NOW
+            <span className="text-base leading-none">↗</span>
+          </motion.a>
         </div>
       </div>
     </section>
