@@ -1,4 +1,3 @@
-import Image from "next/image";
 import BlurText from "@/components/BlurText";
 import Reveal from "@/components/Reveal";
 
@@ -6,26 +5,29 @@ const steps = [
   {
     number: "01",
     title: "FOUNDATION",
-    imageSrc: "/Methods/learnareana.svg",
-    accent: "var(--tertiary)",
+    imageSrc: "/Methods/shape1.svg",
+    accent: "linear-gradient(135deg, #6EE7B7, #3B82F6)",
+    glow: "#6EE7B7",
     points: [
-      "Build a strong understanding of cybersecurity, AI concepts, and real-world applications"
+      "Build a strong understanding of cybersecurity, AI concepts, and real-world applications",
     ],
   },
   {
     number: "02",
     title: "SECURITY & RISKS",
-    imageSrc: "/Methods/arena.svg",
-    accent: "var(--secondary)",
+    imageSrc: "/Methods/shape2.svg",
+    accent: "linear-gradient(135deg, #FDE68A, #F97316)",
+    glow: "#F97316",
     points: [
       "Understand vulnerabilities, attacks, and how to defend modern systems",
     ],
   },
   {
     number: "03",
-    title: "AI & ADVANCED SECURITY ",
-    imageSrc: "/Methods/transform.svg",
-    accent: "#8cc39a",
+    title: "AI & ADVANCED SECURITY",
+    imageSrc: "/Methods/shape3.svg",
+    accent: "linear-gradient(135deg, #A78BFA, #EC4899)",
+    glow: "#A78BFA",
     points: [
       "Work with AI systems and learn how to secure modern technologies",
     ],
@@ -33,10 +35,11 @@ const steps = [
   {
     number: "04",
     title: "PRACTICAL & CAREER",
-    imageSrc: "/Methods/learnareana.svg",
-    accent: "#7bc58b",
+    imageSrc: "/Methods/shape4.svg",
+    accent: "linear-gradient(135deg, #22D3EE, #0EA5E9)",
+    glow: "#22D3EE",
     points: [
-      "Apply your skills through real scenarios and prepare for job roles ",
+      "Apply your skills through real scenarios and prepare for job roles",
     ],
   },
 ];
@@ -44,7 +47,8 @@ const steps = [
 export default function Methodology() {
   return (
     <section className="relative overflow-hidden bg-transparent">
-      <div className="relative border-b border-white/8 px-6 py-18 md:px-12 md:py-24">
+      {/* Title */}
+      <div className="relative border-b border-white/10 px-6 py-18 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>
             <h2 className="font-editorial-regular text-center text-[2.7rem] leading-[0.92] tracking-[-0.06em] text-white md:text-[4.7rem]">
@@ -60,7 +64,8 @@ export default function Methodology() {
                   color: "var(--tertiary)",
                   lineHeight: 1,
                   fontWeight: 200,
-                  fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+                  fontFamily:
+                    "var(--font-pp-editorial-italic), Georgia, serif",
                 }}
                 animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
                 animationTo={[
@@ -74,6 +79,7 @@ export default function Methodology() {
         </div>
       </div>
 
+      {/* Cards */}
       <div className="relative px-6 py-16 md:px-12 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
@@ -83,6 +89,26 @@ export default function Methodology() {
           ))}
         </div>
       </div>
+
+      {/* Extra Styles */}
+      <style jsx>{`
+        .interactive-card {
+          transition: all 0.35s ease;
+        }
+
+        .interactive-card:hover {
+          transform: translateY(-6px);
+        }
+
+        .icon-glow {
+          transition: all 0.35s ease;
+        }
+
+        .interactive-card:hover .icon-glow {
+          transform: scale(1.08);
+          filter: brightness(1.15);
+        }
+      `}</style>
     </section>
   );
 }
@@ -90,31 +116,40 @@ export default function Methodology() {
 function MethodCard({ step }) {
   return (
     <article className="interactive-card relative px-4 pb-2 pt-1">
+      {/* Top */}
       <div className="mb-8 flex items-center justify-between">
         <span className="text-[4.2rem] font-light leading-none tracking-[-0.06em] text-white md:text-[5rem]">
           {step.number}
         </span>
+
         <span
-          className="h-4 w-4 rounded-full pulse-glow"
+          className="h-4 w-4 rounded-full"
           style={{
-            background: step.accent,
-            boxShadow: `0 0 18px ${step.accent}`,
+            background: step.glow,
+            boxShadow: `0 0 14px ${step.glow}, 0 0 28px ${step.glow}`,
           }}
         />
       </div>
 
       <div className="mb-9 h-px w-full bg-white/10" />
 
+      {/* Icon + Title */}
       <div className="mb-10 flex items-center gap-5">
-        <div
-          className="relative h-20 w-20 overflow-hidden rounded-2xl"
-        >
-          <Image
-            src={step.imageSrc}
-            alt={step.title}
-            fill
-            className="object-cover"
-            sizes="80px"
+        <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl ">
+          <div
+            className="h-full w-full icon-glow"
+            style={{
+              background: step.accent,
+              maskImage: `url(${step.imageSrc})`,
+              maskSize: "contain",
+              maskRepeat: "no-repeat",
+              maskPosition: "center",
+              WebkitMaskImage: `url(${step.imageSrc})`,
+              WebkitMaskSize: "contain",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+              filter: `drop-shadow(0 0 10px ${step.glow})`,
+            }}
           />
         </div>
 
@@ -123,7 +158,8 @@ function MethodCard({ step }) {
         </h3>
       </div>
 
-      <div className="space-y-1.5 text-[0.95rem] leading-8 text-white/50 md:text-[1rem]">
+      {/* Text */}
+      <div className="space-y-1.5 text-[0.95rem] leading-8 text-white/60 md:text-[1rem]">
         {step.points.map((point) => (
           <p key={point}>{point}</p>
         ))}

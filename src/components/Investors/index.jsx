@@ -43,28 +43,27 @@ const mentors = [
         linkedin: "https://www.linkedin.com/in/shabeeraliibrahim/", // Keeping as provided
         imageSrc: "/Investors/Eldho George.webp",
     },
-];
-
-export default function Investors() {
+];export default function Investors() {
     return (
-        <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24">
+        <section className="relative overflow-hidden px-6 py-20 lg:px-12 lg:py-32">
             <div className="relative mx-auto max-w-7xl">
-                <div className="mb-12 max-w-3xl">
+                {/* Header Section */}
+                <div className="mb-16 max-w-3xl">
                     <p
-                        className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] md:text-sm"
-                        style={{ color: "rgba(159,208,166,0.8)" }}
+                        className="mb-5 text-xs font-bold uppercase tracking-[0.4em] md:text-sm"
+                        style={{ color: "rgba(159,208,166,0.9)" }}
                     >
                         LEARN FROM THE BEST
                     </p>
                     <h2
-                        className="text-[2.35rem] font-semibold leading-[0.95] tracking-[-0.05em] md:text-[3.2rem]"
+                        className="text-[2.8rem] font-medium leading-[0.9] tracking-[-0.04em] sm:text-[3.5rem] md:text-[4.5rem]"
                         style={{ color: "#f3f7f3" }}
                     >
                         <span
-                            className="font-editorial-regular"
+                            className="font-editorial-regular italic opacity-90"
                             style={{
                                 fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-                                fontWeight: 400,
+                                fontWeight: 300,
                             }}
                         >
                             Meet your
@@ -72,7 +71,7 @@ export default function Investors() {
                         <BlurText
                             text="Mentors"
                             as="span"
-                            delay={500}
+                            delay={400}
                             animateBy="words"
                             direction="top"
                             className="font-editorial-italic inline-flex align-baseline"
@@ -82,19 +81,20 @@ export default function Investors() {
                                 fontWeight: 200,
                                 fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
                             }}
-                            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -18 }}
+                            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -20 }}
                             animationTo={[
                                 { filter: "blur(4px)", opacity: 0.7, y: 2 },
                                 { filter: "blur(0px)", opacity: 1, y: 0 },
                             ]}
-                            stepDuration={0.28}
+                            stepDuration={0.3}
                         />
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                    {mentors.map((mentor) => (
-                        <MentorCard key={mentor.name} mentor={mentor} />
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                    {mentors.map((mentor, index) => (
+                        <MentorCard key={mentor.name} mentor={mentor} index={index} />
                     ))}
                 </div>
             </div>
@@ -102,88 +102,82 @@ export default function Investors() {
     );
 }
 
-function MentorCard({ mentor }) {
+function MentorCard({ mentor, index }) {
     return (
         <article
-            className="group flex h-full min-h-[500px] flex-col overflow-hidden rounded-[2rem] border transition-all duration-300 hover:-translate-y-2"
+            className="group relative flex h-full min-h-[580px] flex-col overflow-hidden rounded-[2.5rem] border border-white/5 bg-gradient-to-b from-[#11261f]/40 to-[#0d1f1a]/80 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_30px_70px_-20px_rgba(20,50,40,0.6)]"
             style={{
-                background:
-                    "linear-gradient(180deg, rgba(16,38,31,0.88) 0%, rgba(13,31,26,0.94) 100%)",
-                borderColor: "rgba(120,177,131,0.14)",
-                boxShadow: "0 22px 70px rgba(0,0,0,0.18)",
+                transitionDelay: `${index * 50}ms`,
             }}
         >
-            {/* Image Section */}
-            <div className="relative h-[220px] w-full overflow-hidden shrink-0">
+            {/* Image Container - Significantly increased height on mobile/tablet */}
+            <div className="relative h-[340px] sm:h-[300px] lg:h-[260px] w-full overflow-hidden shrink-0">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:brightness-110"
+                    style={{ filter: "grayscale(20%)" }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F1A] via-transparent to-transparent opacity-60" />
+                
+                {/* Advanced Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A14] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A14]/20 via-transparent to-transparent opacity-40" />
 
+                {/* LinkedIn Badge */}
                 <a
                     href={mentor.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-md transition-all hover:border-[#0077B5] hover:bg-[#0077B5]"
+                    className="absolute right-6 top-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-[#0077B5] hover:bg-[#0077B5] hover:shadow-[0_0_25px_#0077B580]"
                     title="Connect on LinkedIn"
                 >
-                    <Linkedin size={20} />
+                    <Linkedin size={22} strokeWidth={1.5} />
                 </a>
+
+                {/* Subtile Hover Glow */}
+                <div className="absolute -inset-1 z-0 bg-gradient-to-r from-transparent via-[#9fd0a6]/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
             </div>
 
-            {/* Content Section */}
-            <div className="flex flex-1 flex-col p-5">
-                {/* Top Content Block */}
+            {/* Profile Content */}
+            <div className="flex flex-1 flex-col p-7 sm:p-8">
+                {/* Visual Accent */}
+                <div className="mb-6 h-px w-full bg-white/5 group-hover:bg-[#9fd0a6]/20 transition-colors duration-500" />
+
                 <div className="flex flex-col">
-                    {/* Name */}
-                    <div className="min-h-[48px]">
-                        <h3
-                            className="line-clamp-2 font-editorial-regular text-[1.3rem] font-medium leading-tight tracking-[-0.04em]"
-                            style={{
-                                color: "#f3f7f3",
-                                fontFamily:
-                                    "var(--font-pp-editorial-regular), Georgia, serif",
-                            }}
-                        >
-                            {mentor.name}
-                        </h3>
-                    </div>
-
-                    {/* Role */}
-                    <div className="mt-1.5 min-h-[44px]">
-                        <p className="line-clamp-2 text-[0.82rem] font-semibold uppercase italic leading-relaxed tracking-wide text-[#9fd0a6]">
+                    <h3
+                        className="font-editorial-regular text-2xl font-light leading-tight tracking-tight text-white sm:text-3xl"
+                        style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
+                    >
+                        {mentor.name}
+                    </h3>
+                    
+                    <div className="mt-3 flex items-center">
+                        <span className="h-[2px] w-4 bg-[#9fd0a6] mr-2 transition-all duration-500 group-hover:w-8" />
+                        <p className="text-[0.8rem] font-black uppercase tracking-[0.2em] text-[#9fd0a6]">
                             {mentor.role}
-                        </p>
-                    </div>
-
-                    {/* Designation */}
-                    <div className="mt-2 min-h-[58px]">
-                        <p
-                            className="line-clamp-3 text-[0.88rem] leading-relaxed"
-                            style={{ color: "rgba(224,236,227,0.7)" }}
-                        >
-                            {mentor.designation}
                         </p>
                     </div>
                 </div>
 
-                {/* Bio Section */}
-                <div
-                    className="mt-4 flex-1 border-t pt-3"
-                    style={{ borderColor: "rgba(120,177,131,0.1)" }}
-                >
-                    <p
-                        className="line-clamp-5 text-[0.79rem] leading-relaxed"
-                        style={{ color: "rgba(224,236,227,0.5)" }}
-                    >
+                <div className="mt-6 min-h-[60px]">
+                    <p className="text-[0.95rem] leading-[1.6] text-white/70 transition-colors duration-500 group-hover:text-white/90">
+                        {mentor.designation}
+                    </p>
+                </div>
+
+                {/* Biography with expansion effect feel */}
+                <div className="mt-auto border-t border-white/5 pt-6">
+                    <p className="line-clamp-4 text-[0.88rem] leading-[1.8] text-white/40 transition-all duration-500 group-hover:text-white/60">
                         {mentor.bio}
                     </p>
                 </div>
             </div>
+
+            {/* Premium Animated Border Bottom */}
+            <div className="absolute bottom-0 h-[3px] w-0 bg-gradient-to-r from-transparent via-[#5A9B68] to-transparent transition-all duration-1000 group-hover:w-full" />
         </article>
     );
 }   
+  
