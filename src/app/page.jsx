@@ -18,13 +18,11 @@ import WhatYouGetInside from "@/components/WhatYouGetInside";
 import CommunityExperience from "@/components/CommunityExperience";
 import StandOutSection from "@/components/StandOut";
 import PlacementPartners from "@/components/PlacementPartners";
+import PreAboutSection from "@/components/PreAboutSection";
+import LearningProblemsSection from "@/components/LearningProblemsSection";
 
 
-const heroBadges = [
-  { icon: Sparkles, text: "AI-Integrated Learning" },
-  { icon: ShieldCheck, text: "Real-World Projects" },
-  { icon: Zap, text: "Career-Focused Training" },
-];
+
 
 const skillItems = [
   { name: "ChatGPT", accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png" },
@@ -96,16 +94,22 @@ const heroKeyframes = `
   }
 `;
 
+
+
 export default function Home() {
   return (
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
       <HeroSection />
 
+      <PreAboutSection />
+      <LearningProblemsSection />
       <AboutSection />
 
       <SectionReveal delay={80}>
         <AudienceSection />
       </SectionReveal>
+
+
 
       <StandOutSection />
 
@@ -151,6 +155,8 @@ export default function Home() {
     </main>
   );
 }
+
+
 
 function HeroSection() {
   return (
@@ -200,18 +206,14 @@ function DesktopHero() {
         className="flex w-full items-end justify-between"
         style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
       >
-        <div className="max-w-[640px]">
+        <div className="max-w-[720px]">
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
-          <div className="mt-4">
-            <CtaButton />
-          </div>
         </div>
 
         <div className="flex flex-col gap-3 pb-1">
-          {heroBadges.map(({ text }) => (
-            <InfoBadge key={text} text={text} />
-          ))}
+          <InfoBadge text="Train Like a Pro." />
+          <InfoBadge text="Think Like a Hacker." />
         </div>
       </div>
     </div>
@@ -225,9 +227,6 @@ function MobileHero() {
         <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
           <HeroHeadline mobile />
           <HeroDescription mobile />
-          <div className="mt-6">
-            <CtaButton />
-          </div>
         </div>
       </div>
 
@@ -236,9 +235,8 @@ function MobileHero() {
         style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="flex flex-col gap-2.5">
-          {heroBadges.map(({ text }) => (
-            <InfoBadge key={text} text={text} />
-          ))}
+          <InfoBadge text="Train Like a Pro." />
+          <InfoBadge text="Think Like a Hacker." />
         </div>
       </div>
     </div>
@@ -247,55 +245,48 @@ function MobileHero() {
 
 function HeroHeadline({ mobile }) {
   return (
-    <h1
-      className="font-editorial-regular"
-      style={{
-        ...(mobile ? mobileTitleStyle : titleStyle),
-        fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-        fontWeight: 400,
-      }}
-    >
-      Become A Top 1%   {" "}
-      <BlurText
-        text="CyberSecurity"
-        as="span"
-        delay={500}
-        animateBy="words"
-        direction="top"
-        className="font-editorial-italic inline-flex"
-        segmentStyle={{
-          color: "var(--tertiary)",
-          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-          fontStyle: "italic",
-          fontWeight: 200,
+    <div className="flex flex-col gap-3">
+      <span className="text-[0.75rem] font-medium tracking-[0.25em] text-white/50 uppercase">
+        COHORT BASED • AI-INTEGRATED • CAREER FOCUSED
+      </span>
+      <h1
+        className="font-editorial-regular"
+        style={{
+          ...(mobile ? mobileTitleStyle : titleStyle),
+          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+          fontWeight: 400,
         }}
-        animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
-        animationTo={[
-          { filter: "blur(4px)", opacity: 0.65, y: 4 },
-          { filter: "blur(0px)", opacity: 1, y: 0 },
-        ]}
-        stepDuration={0.28}
-      />{" "}
-      {mobile && <br />}
-      Expert
-    </h1>
+      >
+        Get Hired Like a {" "}
+        <BlurText
+          text="Top 1%."
+          as="span"
+          delay={500}
+          animateBy="words"
+          direction="top"
+          className="font-editorial-italic inline-flex"
+          segmentStyle={{
+            color: "var(--tertiary)",
+            fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+            fontStyle: "italic",
+            fontWeight: 200,
+          }}
+          animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+          animationTo={[
+            { filter: "blur(4px)", opacity: 0.65, y: 4 },
+            { filter: "blur(0px)", opacity: 1, y: 0 },
+          ]}
+          stepDuration={0.28}
+        />
+      </h1>
+    </div>
   );
 }
 
 function HeroDescription({ mobile }) {
   return (
     <p style={mobile ? mobileDescStyle : descStyle}>
-      Master{" "}
-      <strong
-        style={{
-          color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
-          fontWeight: 600,
-        }}
-      >
-        AI powered Cybersecurity
-      </strong>{" "}
-      with real-world training, real world  mentors, and career-focused
-      support. Cohort-Based Program - Learn in a structured batch with guided mentorship and peer collaboration.
+      The AI powered Cybersecurity Cohort that turns beginners into industry ready security professionals in 4 months.
     </p>
   );
 }
