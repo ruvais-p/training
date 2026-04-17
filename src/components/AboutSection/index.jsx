@@ -61,7 +61,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative px-6 py-24 md:px-12 bg-transparent overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        
+
         {/* Section Header */}
         <div className="mb-16 md:mb-24">
           <h2
@@ -89,19 +89,26 @@ export default function AboutSection() {
 
         {/* 2x2 Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
-          
-          {/* Container 1: Headline (Transparent) */}
-          <div className="flex flex-col justify-center p-4">
+
+          {/* Container 1: Headline (Right Aligned) */}
+          <div className="flex flex-col justify-center items-end text-right p-4">
             <h3 className="text-[2.5rem] md:text-[4rem] font-bold text-white mb-6 leading-[1.05] tracking-tighter">
-              This Isn't a Course. It's a Career Launch.
+              This Isn't a Course.
             </h3>
+            <h3 className="text-[2.5rem] md:text-[4rem] font-bold text-white mb-6 leading-[1.05] tracking-tighter">
+              It's a Career Launch.
+            </h3>
+
             <h4 className="text-[1.5rem] md:text-[2rem] font-bold text-white/80 leading-tight">
-              Built on Real Outcomes. Not Empty Promises.
+              Built on Real Outcomes.
+            </h4>
+            <h4 className="text-[1.5rem] md:text-[2rem] font-bold text-white/80 leading-tight">
+              Not Empty Promises.
             </h4>
           </div>
 
           {/* Container 2: Paragraph 1 (TopCard Style) */}
-          <Card 
+          <Card
             title="The Logic"
             description={p1}
             gradientStyle={cardGradient}
@@ -110,7 +117,7 @@ export default function AboutSection() {
           />
 
           {/* Container 3: Paragraph 2 (TopCard Style) */}
-          <Card 
+          <Card
             title="The Mentors"
             description={p2}
             gradientStyle={cardGradient}
@@ -122,7 +129,7 @@ export default function AboutSection() {
           <div className="flex items-center justify-center lg:justify-start p-8">
             <div className="flex items-center gap-6">
               <span className="text-[6rem] md:text-[10rem] font-black text-white/5 leading-none select-none">
-                THE
+                the
               </span>
               <div className="flex flex-col text-3xl md:text-[3.5rem] font-bold text-white/90 leading-[1.1] tracking-tighter">
                 <span>skills.</span>

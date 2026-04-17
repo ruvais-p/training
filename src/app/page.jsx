@@ -34,8 +34,14 @@ const skillItems = [
 ];
 
 const hackingTools = [
+  { name: "Aircrack-ng", accent: "#00A6D6", imageSrc: "/hacking_tools/Air crack.jpg" },
+  { name: "BloodHound", accent: "#E31B23", imageSrc: "/hacking_tools/Blood Hound.png" },
   { name: "Burp Suite", accent: "#FF6633", imageSrc: "/hacking_tools/Burp icon.jpeg" },
   { name: "Frida", accent: "#6E57E0", imageSrc: "/hacking_tools/Frida icon.png" },
+  { name: "Ghidra", accent: "#2F2F2F", imageSrc: "/hacking_tools/Ghidra.png" },
+  { name: "Hashcat", accent: "#FBC02D", imageSrc: "/hacking_tools/Hashcat.png" },
+  { name: "JADX", accent: "#5C6BC0", imageSrc: "/hacking_tools/JADX.png" },
+  { name: "John the Ripper", accent: "#8D6E63", imageSrc: "/hacking_tools/John the Ripper.png" },
   { name: "Metasploit", accent: "#3D7E9A", imageSrc: "/hacking_tools/Metasploit icon.jpg" },
   { name: "MobSF", accent: "#34495E", imageSrc: "/hacking_tools/MobSF icon.png" },
   { name: "Nessus", accent: "#004D9D", imageSrc: "/hacking_tools/Nessus icon.png" },
@@ -43,6 +49,7 @@ const hackingTools = [
   { name: "Nmap", accent: "#5087CE", imageSrc: "/hacking_tools/Nmap icon.png" },
   { name: "Postman", accent: "#FF6C37", imageSrc: "/hacking_tools/Postman icon.png" },
   { name: "w3af", accent: "#E67E22", imageSrc: "/hacking_tools/W3af icon.png" },
+  { name: "Wifite", accent: "#607D8B", imageSrc: "/hacking_tools/WIFIte.png" },
   { name: "Wireshark", accent: "#2A6E91", imageSrc: "/hacking_tools/Wireshark icon.png" },
   { name: "Nexpose", accent: "#EE2E31", imageSrc: "/hacking_tools/nexpose icon.png" },
 ];
@@ -101,8 +108,8 @@ export default function Home() {
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
       <HeroSection />
 
-      <PreAboutSection />
-      <LearningProblemsSection />
+      {/* <PreAboutSection /> */}
+      {/* <LearningProblemsSection /> */}
       <AboutSection />
 
       <SectionReveal delay={80}>
@@ -292,49 +299,26 @@ function HeroDescription({ mobile }) {
 }
 
 function InfoBadge({ text }) {
+  const [first, ...rest] = text.split(" ");
+
   return (
-    <BorderGlow
-      edgeSensitivity={10}
-      glowColor="140 34 66"
-      backgroundColor="rgba(30, 30, 30, 0.74)"
-      borderRadius={18}
-      glowRadius={28}
-      glowIntensity={1.25}
-      coneSpread={24}
-      animated={false}
-      colors={[
-        "rgba(90,155,104,0.95)",
-        "rgba(63,116,78,0.88)",
-        "rgba(133,199,145,0.82)",
-      ]}
-      fillOpacity={0.32}
-      className="w-[270px] max-w-full"
-    >
-      <div
+    <div className="flex items-center gap-4 group">
+
+      {/* Text */}
+      <p
+        className="leading-none"
         style={{
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "0.95rem 1.6rem",
-          borderRadius: "18px",
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
+          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+          fontStyle: "italic",
+          fontSize: "3rem",   // 🔥 increased size
+          fontWeight: 300,
+          letterSpacing: "0.03em",
+          color: "rgba(255,255,255,0.9)",
         }}
       >
-        <span
-          className="font-editorial-regular"
-          style={{
-            fontSize: "0.92rem",
-            fontWeight: 400,
-            letterSpacing: "0.02em",
-            color: "rgba(255,255,255,0.95)",
-            fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-            textTransform: "none",
-          }}
-        >
-          {text}
-        </span>
-      </div>
-    </BorderGlow>
+        <span style={{ color: "#a3e635" }}>{first}</span>{" "}
+        <span className="opacity-80">{rest.join(" ")}</span>
+      </p>
+    </div>
   );
 }
