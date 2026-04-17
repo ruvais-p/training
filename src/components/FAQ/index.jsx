@@ -7,34 +7,41 @@ import { Plus } from "lucide-react";
 
 const faqItems = [
   {
-    question: "Do I need prior experience?",
-    answer:
-      "No, this program is designed for beginners as well as professionals.",
+    question: "Do I need prior experience to join the YACS cybersecurity cohort?",
+    answer: "No. YACS is specifically designed for beginners and career switchers. Whether you're a fresh graduate, an IT professional, or completely new to technology, you can join. We start from the fundamentals and build up systematically through 4 structured phases.",
   },
   {
-    question: "Is this program fully online?",
-    answer:
-      "Yes, it is a fully online cohort-based program with live sessions.",
+    question: "Is the YACS program fully online?",
+    answer: "Yes. YACS is 100% online with live mentor sessions. You can join from anywhere in Kerala — Kozhikode, Kochi, Thrissur, Malappuram, Kannur, Calicut, or any other city. All you need is a laptop and a stable internet connection.",
   },
   {
-    question: "Will I get placement support?",
-    answer:
-      "Yes, we provide placement assistance, referrals, and interview preparation.",
+    question: "What is the program fee for the YACS cybersecurity cohort?",
+    answer: "Program fee details are available on application. We also offer EMI options and certification voucher support to make the program accessible. Contact us on WhatsApp or fill the application form to get complete fee details.",
   },
   {
-    question: "Will I work on real projects?",
-    answer:
-      "Yes, you will work on real-world cybersecurity scenarios and projects.",
+    question: "What certifications will I be ready for after YACS?",
+    answer: "You will be prepared for CompTIA A+, CompTIA Security+, and CEH (Certified Ethical Hacker). YACS provides structured exam preparation AND voucher support to cover certification costs.",
   },
   {
-    question: "Are there internships included?",
-    answer:
-      "Internship opportunities are provided based on performance and company criteria.",
+    question: "What makes YACS different from other cybersecurity courses in Kerala?",
+    answer: "YACS is the only program in Kerala that combines AI and cybersecurity in a single cohort. We also include hardware hacking labs, HR-led mock interviews with real professionals, CompTIA/CEH voucher support, and a cohort-based structure — none of which are available at competing institutes.",
+  },
+  {
+    question: "Will I get placement support after completing YACS?",
+    answer: "Yes. YACS provides placement assistance, referral support to our hiring network (including Gladius & Schild and TOFENCE®), internship opportunities based on performance, and resume and LinkedIn profile guidance.",
+  },
+  {
+    question: "What tools will I learn in the YACS cybersecurity cohort?",
+    answer: "You will train on professional tools including Burp Suite, Metasploit, Wireshark, Nmap, Nessus, Frida, MobSF, Nikto, w3af, and Nexpose. On the AI side, you will use ChatGPT, Claude AI, LangChain, LangGraph, and LangFlow.",
+  },
+  {
+    question: "How long is the YACS cohort program?",
+    answer: "The program is 4 months long, structured across 4 phases: Foundation, Security & Risks, AI & Advanced Security, and Practical & Career. Sessions are live and scheduled to accommodate working professionals.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(2);
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <section className="relative overflow-hidden px-6 py-24 md:px-12 md:py-28">
@@ -176,24 +183,14 @@ export default function FAQ() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "Do I need prior experience to join YACS?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Built for beginners and career switchers."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is YACS available across Kerala outside Kozhikode?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. 100% online. Available in Kochi, Thrissur, Malappuram, Kannur, Calicut."
-                }
+            "mainEntity": faqItems.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
               }
-            ]
+            }))
           })
         }}
       />
