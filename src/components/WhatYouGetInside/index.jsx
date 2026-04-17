@@ -103,6 +103,11 @@ const benefits = [
     description:
       "Get evaluated and guided by actual HR professionals to improve your interview performance",
   },
+  {
+    title: "Job Assistance & Placement Support",
+    description:
+      "Get guided support with job applications, referrals, and strategies to land your first cybersecurity role",
+  }
 ];
 
 export default function FeaturesSection() {

@@ -106,26 +106,42 @@ const heroKeyframes = `
 export default function Home() {
   return (
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
-      <HeroSection />
+      <section id="cybersecurity-cohort">
+        <h2 className="sr-only">Cybersecurity Cohort Program Kerala | YACS — 4 Months Online</h2>
+        <HeroSection />
+      </section>
 
       {/* <PreAboutSection /> */}
       {/* <LearningProblemsSection /> */}
-      <AboutSection />
+      
+      <section id="mentors">
+        <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
+        <AboutSection />
+      </section>
 
       <SectionReveal delay={80}>
-        <AudienceSection />
+        <section id="ai-ml-cohort">
+          <h2 className="sr-only">AI & ML Cohort Program Kerala | YACS — Online, Beginner Friendly</h2>
+          <AudienceSection />
+        </section>
       </SectionReveal>
-
-
 
       <StandOutSection />
 
-      <WhatYouGetInside />
+      <section id="certifications">
+        <h2 className="sr-only">CompTIA Security+, CEH Certification Prep | YACS Kerala</h2>
+        <WhatYouGetInside />
+      </section>
 
-      <CareerAndGrowthSupport />
+      <section id="placement">
+        <h2 className="sr-only">Cybersecurity Job Placement Support Kerala | YACS Career Coaching</h2>
+        <CareerAndGrowthSupport />
+      </section>
 
-
-      <Methodology />
+      <section id="curriculum">
+        <h2 className="sr-only">Cybersecurity Course Curriculum | 4-Phase Program | YACS Kerala</h2>
+        <Methodology />
+      </section>
 
       <CommunityExperience />
 
@@ -154,11 +170,43 @@ export default function Home() {
         <PlacementPartners partners={placementPartners} />
       </SectionReveal>
 
-      <FAQ />
+      <section id="faq">
+        <h2 className="sr-only">Cybersecurity Course FAQ Kerala | YACS Program Questions</h2>
+        <FAQ />
+      </section>
 
-      <SectionReveal>
-        <Footer />
-      </SectionReveal>
+      <section id="apply">
+        <h2 className="sr-only">Apply Now | YACS Cybersecurity Cohort Kerala — Limited Seats</h2>
+        <SectionReveal>
+          <Footer />
+        </SectionReveal>
+      </section>
+
+      {/* Course Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "AI-Integrated Cybersecurity Cohort Program",
+            "description": "4-month online cohort in Kerala. Live mentors, HR coaching, CompTIA/CEH vouchers.",
+            "provider": {
+              "@type": "Organization",
+              "name": "YACS",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Kozhikode",
+                "addressRegion": "Kerala",
+                "addressCountry": "IN"
+              }
+            },
+            "courseMode": "online",
+            "timeRequired": "P4M",
+            "educationalCredentialAwarded": "CompTIA Security+, CEH Readiness"
+          })
+        }}
+      />
     </main>
   );
 }
@@ -172,7 +220,7 @@ function HeroSection() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
           className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.77vh] min-w-full -translate-x-1/2 -translate-y-1/2"
-          src="https://www.youtube.com/embed/tC8h6Y31yKg?autoplay=1&mute=1&controls=0&loop=1&playlist=tC8h6Y31yKg&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3"
+          src="https://www.youtube.com/embed/CcGWe62X8A8?autoplay=1&mute=1&controls=0&loop=1&playlist=CcGWe62X8A8&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3"
           title="Hero Background Video"
           frameBorder="0"
           allow="autoplay; encrypted-media; picture-in-picture"
@@ -208,17 +256,17 @@ function HeroOverlay() {
 
 function DesktopHero() {
   return (
-    <div className="relative z-20 hidden h-full items-end px-16 pb-20 md:flex">
+    <div className="relative z-20 hidden h-full items-center lg:items-end px-8 md:px-12 lg:px-16 pb-20 md:flex">
       <div
-        className="flex w-full items-end justify-between"
+        className="flex w-full flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-0"
         style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
       >
-        <div className="max-w-[720px]">
+        <div className="max-w-[720px] text-center lg:text-left">
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
         </div>
 
-        <div className="flex flex-col gap-3 pb-1">
+        <div className="flex flex-col gap-3 pb-1 items-center lg:items-end">
           <InfoBadge text="Train Like a Pro." />
           <InfoBadge text="Think Like a Hacker." />
         </div>
@@ -242,8 +290,8 @@ function MobileHero() {
         style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="flex flex-col gap-2.5">
-          <InfoBadge text="Train Like a Pro." />
-          <InfoBadge text="Think Like a Hacker." />
+          <InfoBadge text="Train Like a Pro." mobile />
+          <InfoBadge text="Think Like a Hacker." mobile />
         </div>
       </div>
     </div>
@@ -253,7 +301,10 @@ function MobileHero() {
 function HeroHeadline({ mobile }) {
   return (
     <div className="flex flex-col gap-3">
-      <span className="text-[0.75rem] font-medium tracking-[0.25em] text-white/50 uppercase">
+      <span
+        className="font-medium tracking-[0.25em] text-white/50 uppercase"
+        style={{ fontSize: mobile ? "0.6rem" : "0.75rem" }}
+      >
         COHORT BASED • AI-INTEGRATED • CAREER FOCUSED
       </span>
       <h1
@@ -264,7 +315,7 @@ function HeroHeadline({ mobile }) {
           fontWeight: 400,
         }}
       >
-        Get Hired Like a {" "}
+        Get Hired <br /> Like a {" "}
         <BlurText
           text="Top 1%."
           as="span"
@@ -292,13 +343,18 @@ function HeroHeadline({ mobile }) {
 
 function HeroDescription({ mobile }) {
   return (
-    <p style={mobile ? mobileDescStyle : descStyle}>
-      The AI powered Cybersecurity Cohort that turns beginners into industry ready security professionals in 4 months.
-    </p>
+    <div className="flex justify-center lg:justify-start">
+      <p
+        style={mobile ? mobileDescStyle : descStyle}
+        className={!mobile ? "mx-auto lg:mx-0" : ""}
+      >
+        The AI powered Cybersecurity Cohort that turns beginners into industry ready security professionals in 4 months.
+      </p>
+    </div>
   );
 }
 
-function InfoBadge({ text }) {
+function InfoBadge({ text, mobile }) {
   const [first, ...rest] = text.split(" ");
 
   return (
@@ -310,7 +366,7 @@ function InfoBadge({ text }) {
         style={{
           fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
           fontStyle: "italic",
-          fontSize: "3rem",   // 🔥 increased size
+          fontSize: mobile ? "1.5rem" : "clamp(2rem, 3.8vw, 3rem)",   // 🔥 dynamic scaling for tablet/desktop
           fontWeight: 300,
           letterSpacing: "0.03em",
           color: "rgba(255,255,255,0.9)",

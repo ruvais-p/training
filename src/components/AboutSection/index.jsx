@@ -63,7 +63,7 @@ export default function AboutSection() {
       <div className="mx-auto max-w-7xl">
 
         {/* Section Header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-12 md:mb-16 lg:mb-24 px-4">
           <h2
             className="font-editorial-regular text-[2.5rem] md:text-[4.5rem] leading-[0.95] tracking-[-0.05em]"
             style={{
@@ -90,20 +90,22 @@ export default function AboutSection() {
         {/* 2x2 Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
 
-          {/* Container 1: Headline (Right Aligned) */}
-          <div className="flex flex-col justify-center items-end text-right p-4">
-            <h3 className="text-[2.5rem] md:text-[4rem] font-bold text-white mb-6 leading-[1.05] tracking-tighter">
-              This Isn't a Course.
-            </h3>
-            <h3 className="text-[2.5rem] md:text-[4rem] font-bold text-white mb-6 leading-[1.05] tracking-tighter">
-              It's a Career Launch.
+          {/* Container 1: Headline (Center-aligned on Mobile, Right-aligned on Desktop) */}
+          <div className="flex flex-col justify-center items-center text-center lg:items-end lg:text-right px-4 mb-16 lg:mb-0">
+            <h3 className="text-[1.5rem] xs:text-[2rem] sm:text-[1.9rem] md:text-[2.2rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-bold text-white mb-4 leading-[1.05] tracking-tighter whitespace-nowrap">
+              This Isn't a Course<span style={{ color: "var(--primary)" }}>.</span>
             </h3>
 
-            <h4 className="text-[1.5rem] md:text-[2rem] font-bold text-white/80 leading-tight">
-              Built on Real Outcomes.
+            <h3 className="text-[1.5rem] xs:text-[2rem] sm:text-[1.9rem] md:text-[2.2rem] lg:text-[3rem] xl:text-[3.5rem] 2xl:text-[4rem] font-bold text-white mb-4 leading-[1.05] tracking-tighter whitespace-nowrap">
+              It's a Career Launch<span style={{ color: "var(--secondary)" }}>.</span>
+            </h3>
+
+            <h4 className="text-[1rem] xs:text-[1.1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem] xl:text-[1.9rem] 2xl:text-[2.1rem] font-bold text-white/80 leading-tight">
+              Built on Real Outcomes<span style={{ color: "var(--tertiary)" }}>.</span>
             </h4>
-            <h4 className="text-[1.5rem] md:text-[2rem] font-bold text-white/80 leading-tight">
-              Not Empty Promises.
+
+            <h4 className="text-[1rem] xs:text-[1.1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem] xl:text-[1.9rem] 2xl:text-[2.1rem] font-bold text-white/80 leading-tight">
+              Not Empty Promises<span style={{ color: "#a3e635" }}>.</span>
             </h4>
           </div>
 
@@ -126,9 +128,15 @@ export default function AboutSection() {
           />
 
           {/* Container 4: Tagline (Transparent) */}
-          <div className="flex items-center justify-center lg:justify-start p-8">
+          <div className="flex items-center justify-center p-4 lg:p-8">
             <div className="flex items-center gap-6">
-              <span className="text-[6rem] md:text-[10rem] font-black text-white/5 leading-none select-none">
+              <span
+                className="text-[6rem] md:text-[10rem] font-black leading-none select-none text-transparent"
+                style={{
+                  WebkitTextStroke: "1.5px white",
+                  opacity: 0.2
+                }}
+              >
                 the
               </span>
               <div className="flex flex-col text-3xl md:text-[3.5rem] font-bold text-white/90 leading-[1.1] tracking-tighter">
@@ -139,6 +147,16 @@ export default function AboutSection() {
             </div>
           </div>
 
+        </div>
+
+        {/* Mentors Team Image */}
+        <div className="mt-16 w-full lg:mt-24 px-4 pb-8">
+
+          <img
+            src="/about/about_mentors.png"
+            alt="YACS Mentors Team"
+            className="w-full h-auto object-cover opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
+          />
         </div>
       </div>
     </section>

@@ -57,8 +57,16 @@ const ppEditorialUltralight = localFont({
 });
 
 export const metadata = {
-  title: "CyberSecurity Expert | Master AI-Powered Security",
-  description: "Advanced Cybersecurity training and AI-integrated security workshops for top-tier professionals. Learn to protect and build smarter with industry experts.",
+  title: "YACS | AI Cybersecurity & AI/ML Cohort — Kerala",
+  description: "Join Kerala's only AI-powered Cybersecurity & AI/ML Cohort. 4-month live program, industry mentors, HR coaching, CompTIA/CEH prep + vouchers. Limited seats — apply now.",
+  openGraph: {
+    title: "YACS | Kerala's AI Cybersecurity Cohort — Train. Build. Get Hired.",
+    description: "4-month AI-integrated cybersecurity program. Live mentors, HR coaching, CEH prep. Kerala-based. Apply now.",
+    url: 'https://yacs.in',
+    siteName: 'YACS',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 import Header from "@/components/Header";

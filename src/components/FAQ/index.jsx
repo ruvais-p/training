@@ -169,6 +169,34 @@ export default function FAQ() {
           </div>
         </SectionReveal>
       </div>
+      {/* FAQ Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need prior experience to join YACS?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Built for beginners and career switchers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is YACS available across Kerala outside Kozhikode?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. 100% online. Available in Kochi, Thrissur, Malappuram, Kannur, Calicut."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </section>
   );
 }

@@ -21,6 +21,13 @@
   --font-editorial-italic: var(--font-pp-editorial-italic);
   --font-editorial-regular: var(--font-pp-editorial-regular);
   --font-editorial-ultralight: var(--font-pp-editorial-ultralight);
+
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 425px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-2xl: 1440px;
 }
 
 body {
