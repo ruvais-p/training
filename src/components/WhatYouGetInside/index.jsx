@@ -69,47 +69,38 @@ const BottomCard = ({ title, description }) => (
 
 const benefits = [
   {
-    title: "Industry-Ready Portfolio & Personal Branding",
-    description:
-      "Build a powerful profile that showcases real skills and makes you stand out to recruiters",
+    "title": "Industry-Ready Cybersecurity Portfolio & Personal Branding",
+    "description": "Build a strong cybersecurity portfolio with real-world projects and create a profile that stands out to recruiters in Kerala and beyond."
   },
   {
-    title: "Exclusive Community & High-Value Networking",
-    description:
-      "Get access to a focused community of learners, mentors, and professionals",
+    "title": "Exclusive Community & Cybersecurity Networking",
+    "description": "Join a focused cybersecurity community of learners, mentors, and professionals to grow your network and career opportunities."
   },
   {
-    title: "Real-World Cybersecurity Projects",
-    description:
-      "Work on practical scenarios based on real industry use cases",
+    "title": "Real-World Cybersecurity Projects",
+    "description": "Work on practical cybersecurity scenarios based on real industry use cases, including ethical hacking and threat detection."
   },
   {
-    title: "Live Mentorship from Industry Experts",
-    description:
-      "Learn directly from professionals actively working in cybersecurity",
+    "title": "Live Mentorship from Cybersecurity Experts",
+    "description": "Learn directly from experienced cybersecurity professionals working in real-world security roles and environments."
   },
   {
-    title: "Hands-On Practical Training",
-    description:
-      "Apply what you learn through guided labs and real-time problem solving",
+    "title": "Hands-On Cybersecurity Training",
+    "description": "Apply your skills through guided labs, real-time problem solving, and hands-on cybersecurity training designed to make you job-ready."
   },
   {
-    title: "Access to Professional Tools & Resources",
-    description:
-      "Train using tools and environments used in real security roles",
+    "title": "Access to Professional Cybersecurity Tools",
+    "description": "Train using industry-standard cybersecurity tools and environments used in real security operations and ethical hacking roles."
   },
   {
-    title: "Mock Interviews with Real Company HRs",
-    description:
-      "Get evaluated and guided by actual HR professionals to improve your interview performance",
+    "title": "Mock Interviews with Real HR Professionals",
+    "description": "Prepare for cybersecurity job interviews with mock sessions led by HR experts who understand hiring trends in Kerala."
   },
   {
-    title: "Job Assistance & Placement Support",
-    description:
-      "Get guided support with job applications, referrals, and strategies to land your first cybersecurity role",
+    "title": "Job Assistance & Cybersecurity Placement Support",
+    "description": "Get structured support with job applications, referrals, and strategies to land your first cybersecurity job in Kerala or remotely."
   }
-];
-
+]
 export default function FeaturesSection() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-transparent px-4 py-16 md:px-8 lg:px-12 font-sans">
@@ -147,27 +138,26 @@ export default function FeaturesSection() {
         </div>
 
         <div className="mx-auto max-w-[1400px]">
-          {/* Top Row - 2 Main Highlight Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <TopCard
               title="Program"
-              description="Master the full LIT curriculum through structured, hands-on learning built on the LIT Learning Methodology."
+              description="Master a structured, hands-on cybersecurity curriculum in Kerala, built on a proven learning methodology focused on real-world skills, AI-powered training, and career readiness."
               gradientStyle={{
                 background:
                   "linear-gradient(90deg, rgba(90,155,104,0.78) 0%, rgba(217, 227, 138,0.55) 45%, rgba(59,130,246,0.12) 100%)",
               }}
-              bgImage="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+              bgImage="/whatgetyouinside/whatgetyouinside2.avif"
               iconColor="text-[#FFFFFF]"
             />
 
             <TopCard
               title="Gigs"
-              description="Apply your skills in the real world by completing gigs that match your level and build your creator career portfolio."
+              description="Apply your cybersecurity skills in real-world projects and gigs in Kerala, building a job-ready portfolio through hands-on experience and practical training."
               gradientStyle={{
                 background:
                   "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
               }}
-              bgImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+              bgImage="/whatgetyouinside/whatgetyouinside.avif"
               iconColor="text-[#FFFFFF]"
             />
           </div>
@@ -202,7 +192,7 @@ export default function FeaturesSection() {
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
-            Go from learning cybersecurity to actually proving your skills with projects, mentorship, and real-world practice.
+            Go from learning cybersecurity to proving your skills with real-world projects, expert mentorship, and hands-on cybersecurity training in Kerala-designed to make you job-ready.
           </p>
 
           <motion.a

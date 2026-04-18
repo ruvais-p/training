@@ -3,47 +3,46 @@ import Reveal from "@/components/Reveal";
 
 const steps = [
   {
-    number: "01",
-    title: "FOUNDATION",
-    imageSrc: "/Methods/shape1.svg",
-    accent: "linear-gradient(135deg, #6EE7B7, #3B82F6)",
-    glow: "#6EE7B7",
-    points: [
-      "Build a strong understanding of cybersecurity, AI concepts, and real-world applications",
-    ],
+    "number": "01",
+    "title": "CFOUNDATION",
+    "imageSrc": "/Methods/shape1.svg",
+    "accent": "linear-gradient(135deg, #6EE7B7, #3B82F6)",
+    "glow": "#6EE7B7",
+    "points": [
+      "Build a strong foundation in cybersecurity, AI fundamentals, and real-world security concepts used in modern systems"
+    ]
   },
   {
-    number: "02",
-    title: "SECURITY & RISKS",
-    imageSrc: "/Methods/shape2.svg",
-    accent: "linear-gradient(135deg, #FDE68A, #F97316)",
-    glow: "#F97316",
-    points: [
-      "Understand vulnerabilities, attacks, and how to defend modern systems",
-    ],
+    "number": "02",
+    "title": "SECURITY & RISKS",
+    "imageSrc": "/Methods/shape2.svg",
+    "accent": "linear-gradient(135deg, #FDE68A, #F97316)",
+    "glow": "#F97316",
+    "points": [
+      "Learn vulnerabilities, cyber attacks, ethical hacking basics, and how to defend systems against real-world threats"
+    ]
   },
   {
-    number: "03",
-    title: "AI & ADVANCED SECURITY",
-    imageSrc: "/Methods/shape3.svg",
-    accent: "linear-gradient(135deg, #A78BFA, #EC4899)",
-    glow: "#A78BFA",
-    points: [
-      "Work with AI systems and learn how to secure modern technologies",
-    ],
+    "number": "03",
+    "title": "AI & ADVANCED SECURITY",
+    "imageSrc": "/Methods/shape3.svg",
+    "accent": "linear-gradient(135deg, #A78BFA, #EC4899)",
+    "glow": "#A78BFA",
+    "points": [
+      "Work with AI in cybersecurity, including threat detection, automation, and securing modern AI-driven technologies"
+    ]
   },
   {
-    number: "04",
-    title: "PRACTICAL & CAREER",
-    imageSrc: "/Methods/shape4.svg",
-    accent: "linear-gradient(135deg, #22D3EE, #0EA5E9)",
-    glow: "#22D3EE",
-    points: [
-      "Apply your skills through real scenarios and prepare for job roles",
-    ],
-  },
-];
-
+    "number": "04",
+    "title": "PRACTICAL & CAREER",
+    "imageSrc": "/Methods/shape4.svg",
+    "accent": "linear-gradient(135deg, #22D3EE, #0EA5E9)",
+    "glow": "#22D3EE",
+    "points": [
+      "Apply your skills through real-world cybersecurity projects, build a portfolio, and prepare for job roles in Kerala and beyond"
+    ]
+  }
+]
 export default function Methodology() {
   return (
     <section className="relative overflow-hidden bg-transparent">
@@ -81,7 +80,7 @@ export default function Methodology() {
 
       {/* Cards */}
       <div className="relative px-6 py-16 md:px-12 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 min-[670px]:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-10 min-[670px]:grid-cols-2 min-[1400px]:grid-cols-4">
           {steps.map((step, index) => (
             <Reveal key={step.number} delay={index * 90} distance={24}>
               <MethodCard step={step} />
@@ -134,8 +133,8 @@ function MethodCard({ step }) {
       <div className="mb-9 h-px w-full bg-white/10" />
 
       {/* Icon + Title */}
-      <div className="mb-10 flex items-center gap-5">
-        <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-2xl ">
+      <div className="mb-10 flex items-start gap-4">
+        <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl mt-1">
           <div
             className="h-full w-full icon-glow"
             style={{
@@ -153,7 +152,7 @@ function MethodCard({ step }) {
           />
         </div>
 
-        <h3 className="font-metana-black text-[2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white">
+        <h3 className="font-metana-black text-[1.75rem] md:text-[2rem] font-semibold leading-[1.1] md:leading-[0.95] tracking-[-0.05em] text-white">
           {step.title}
         </h3>
       </div>

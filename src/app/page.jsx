@@ -28,8 +28,8 @@ const skillItems = [
   { name: "ChatGPT", accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png" },
   { name: "Claude AI", accent: "#D97757", imageSrc: "/Skills/claude-ai-icon.png" },
   { name: "LangChain", accent: "#1C3C3C", imageSrc: "/Skills/langchain-color.png" },
-  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow.jpg" },
-  { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langgraph-color.png" },
+  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow New.png" },
+  { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langchain new.png" },
   { name: "OpenClaw", accent: "#E11D48", imageSrc: "/Skills/openclaw.png" },
 ];
 
@@ -338,21 +338,22 @@ function HeroHeadline({ mobile }) {
 function HeroDescription({ mobile }) {
   return (
     <p style={mobile ? mobileDescStyle : descStyle}>
-      Master{" "}
+      Join a{" "}
       <strong
         style={{
           color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
           fontWeight: 600,
         }}
       >
-        AI powered Cybersecurity
+        AI-powered Cybersecurity Course in Kerala
       </strong>{" "}
-      with real-world training, real world  mentors, and career-focused
-      support. Cohort-Based Program - Learn in a structured batch with guided mentorship and peer collaboration.
+      designed for real-world skills, hands-on projects, and career-focused mentorship.
+      This cohort-based cybersecurity training program is accessible across Kerala,
+      including Kozhikode (Calicut), with structured learning, expert mentors,
+      and strong peer collaboration.
     </p>
   );
 }
-
 function InfoBadge({ text, mobile }) {
   const [first, ...rest] = text.split(" ");
 

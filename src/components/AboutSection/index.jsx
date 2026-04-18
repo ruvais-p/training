@@ -50,9 +50,9 @@ const Card = ({ title, description, gradientStyle, bgImage, iconColor }) => (
 );
 
 export default function AboutSection() {
-  const p1 = "Most cybersecurity programs teach you tools. We teach you how to think like a security professional from day one. This is a 4 month, fully online, cohort based program built around AI-integrated training, real world attack scenarios, and career support that doesn't stop at graduation.";
-  const p2 = "You won't sit through lectures and memorise theory. You'll be trained by mentors with 5+ years of live industry experience, guided by AI Security Engineers shaping the future of defence, and coached by real HR professionals who know exactly what hiring teams look for.";
+  const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 4-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
 
+  const p2 = "No passive lectures or memorisation. In this AI-powered cybersecurity course in Kerala, you’ll learn from experienced mentors, AI security engineers, and HR professionals who know what hiring teams expect-preparing you for real-world cybersecurity roles.";
   const cardGradient = {
     background: "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
   };
@@ -114,7 +114,7 @@ export default function AboutSection() {
             title="The Logic"
             description={p1}
             gradientStyle={cardGradient}
-            bgImage={cardBgImage}
+            bgImage="/about/about_card_1.jpg"
             iconColor="text-white"
           />
 
@@ -123,7 +123,7 @@ export default function AboutSection() {
             title="The Mentors"
             description={p2}
             gradientStyle={cardGradient}
-            bgImage={cardBgImage}
+            bgImage="/about/about_card_2.jpg"
             iconColor="text-white"
           />
 

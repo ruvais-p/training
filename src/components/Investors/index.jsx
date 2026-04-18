@@ -4,46 +4,41 @@ import { Linkedin } from "lucide-react";
 
 const mentors = [
     {
-        name: "Akshay P",
-        role: "Data Scientist",
-        designation: "Data Scientist with 3+ years experience",
-        bio: "Specialized in building ML pipelines, NLP systems, and AI-driven solutions across cybersecurity, insurance, and FMCG domains.",
-        linkedin: "https://www.linkedin.com/in/akshayp12/",
-        imageSrc: "/Investors/Akshay.P.webp",
+        name: "Febi Dan Jose",
+        designation: "Senior Talent Acquisition at Collabera",
+        bio: "I/O Psychology & Human Resource professional with 5+ years of experience in Talent Acquisition and HR, specialising in identifying and placing top 1% talent across industries.",
+        linkedin: "https://www.linkedin.com/in/febi-dan-jose-741407179/",
+        imageSrc: "/Investors/YACS mentor 3.png",
     },
     {
         name: "Anil Tom",
-        role: "Senior Offensive Security Engineer",
-        designation: "Senior Offensive Security Engineer at Unisys",
-        bio: "6+ years in InfoSec, specializing in Red Teaming and Pentesting. OSCP, CRTO certified. Bug bounty hunter for Google, Microsoft & Apple.",
+        designation: "Senior Offensive Security Engineer",
+        bio: "Offensive Security Engineer with 6 years in InfoSec, specialising in Red Teaming, Penetration Testing, and Bug Bounty — having uncovered vulnerabilities in 70+ companies including Google, Microsoft, and Apple. Certified in OSEP, OSCP, CRTO, eWPTX, BSCP & OSDA.",
         linkedin: "https://www.linkedin.com/in/aniltomank/",
-        imageSrc: "/Investors/Anil Tom.webp",
-    },
-    {
-        name: "Febi Dan Jose",
-        role: "Senior Talent Specialist",
-        designation: "Senior Talent Specialist at Collabera",
-        bio: "HR professional specializing in I/O Psychology and Talent Acquisition with 4+ years of experience in recruitment.",
-        linkedin: "https://www.linkedin.com/in/febi-dan-jose-741407179/",
-        imageSrc: "/Investors/Febin Dan Jose.webp",
-    },
-    {
-        name: "Shabeer Ali Ibrahim",
-        role: "Cyber Risk Security Consultant",
-        designation: "Founder of TOFENCE®",
-        bio: "Expert in cyber risk, compliance, and enterprise security (CISA, US DHS ISO/IEC 27001). Extensive experience across the Middle East.",
-        linkedin: "https://www.linkedin.com/in/shabeeraliibrahim/",
-        imageSrc: "/Investors/Shabeer Ali Ibrahim.webp",
+        imageSrc: "/Investors/YACS mentor 2.png",
     },
     {
         name: "Eldho George",
-        role: "Cyber Risk Security Consultant",
-        designation: "Entrepreneur & Cyber Risk Consultant",
-        bio: "Founder of TOFENCE®. Expertise in cyber risk, compliance, and enterprise security with track record in cyber threat intelligence.",
-        linkedin: "https://www.linkedin.com/in/shabeeraliibrahim/", // Keeping as provided
-        imageSrc: "/Investors/Eldho George.webp",
+        designation: "Application Security Engineer & Founder, YAS",
+        bio: "Experienced Application Security Engineer with a strong blend of offensive security and digital forensics. Founder of the YAS Community and a Forensic Expert at the Income Tax Department, holding an MSc in Cyber Forensics & Information Security with hands-on experience at UST Global.",
+        linkedin: "https://www.linkedin.com/in/eldhogeorgeofficial",
+        imageSrc: "/Investors/YACS mentor 1 (1).png",
     },
-];export default function Investors() {
+    {
+        name: "Akshay P",
+        designation: "Data Scientist at dSights AI",
+        bio: "Data Scientist at dSights AI with 4 years of experience, building AI-driven solutions and machine learning pipelines to turn complex business data into actionable insights specialising in AML & AI Security.",
+        linkedin: "https://www.linkedin.com/in/akshayp12/",
+        imageSrc: "/Investors/YACS mentor 4.png",
+    },
+    {
+        name: "Krishnaraj G",
+        designation: "Security Consultant & Team Lead",
+        bio: "Cybersecurity professional specialising in penetration testing, vulnerability assessment, and securing enterprise IT infrastructure — leading teams, managing client engagements, and delivering business-driven security outcomes. Certified in CompTIA PenTest+, MCSE, CCNA & RHCE.",
+        linkedin: "https://www.linkedin.com/in/krishnaraj-g-9ab8b2142",
+        imageSrc: "/Investors/YACS mentor 5.png",
+    },
+]; export default function Investors() {
     return (
         <section className="relative overflow-hidden px-6 py-20 lg:px-12 lg:py-32">
             <div className="relative mx-auto max-w-7xl">
@@ -91,10 +86,15 @@ const mentors = [
                     </h2>
                 </div>
 
-                {/* Grid Layout */}
-                <div className="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                {/* Grid Layout - 2 in first row, 3 in second row (5 total) */}
+                <div className="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-6">
                     {mentors.map((mentor, index) => (
-                        <MentorCard key={mentor.name} mentor={mentor} index={index} />
+                        <MentorCard
+                            key={mentor.name}
+                            mentor={mentor}
+                            index={index}
+                            className={`lg:col-span-2 ${index === 0 ? "lg:col-start-2" : ""}`}
+                        />
                     ))}
                 </div>
             </div>
@@ -102,28 +102,26 @@ const mentors = [
     );
 }
 
-function MentorCard({ mentor, index }) {
+function MentorCard({ mentor, index, className }) {
     return (
         <article
-            className="group relative flex h-full min-h-[580px] flex-col overflow-hidden rounded-[2.5rem] border border-white/5 bg-gradient-to-b from-[#11261f]/40 to-[#0d1f1a]/80 transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_30px_70px_-20px_rgba(20,50,40,0.6)]"
+            className={`group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 ${className}`}
             style={{
                 transitionDelay: `${index * 50}ms`,
             }}
         >
-            {/* Image Container - Significantly increased height on mobile/tablet */}
-            <div className="relative h-[340px] sm:h-[300px] lg:h-[260px] w-full overflow-hidden shrink-0">
+            {/* Image Container */}
+            <div className="relative h-[550px] sm:h-[600px] md:h-[650px] lg:h-[500px] w-full overflow-hidden rounded-[2.5rem]">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
                     fill
-                    className="object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:brightness-110"
-                    style={{ filter: "grayscale(20%)" }}
+                    className="object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:brightness-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
                 />
-                
-                {/* Advanced Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A14] via-transparent to-transparent opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A14]/20 via-transparent to-transparent opacity-40" />
+
+                {/* Subtle Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
 
                 {/* LinkedIn Badge */}
                 <a
@@ -135,49 +133,17 @@ function MentorCard({ mentor, index }) {
                 >
                     <Linkedin size={22} strokeWidth={1.5} />
                 </a>
-
-                {/* Subtile Hover Glow */}
-                <div className="absolute -inset-1 z-0 bg-gradient-to-r from-transparent via-[#9fd0a6]/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
             </div>
 
-            {/* Profile Content */}
-            <div className="flex flex-1 flex-col p-7 sm:p-8">
-                {/* Visual Accent */}
-                <div className="mb-6 h-px w-full bg-white/5 group-hover:bg-[#9fd0a6]/20 transition-colors duration-500" />
-
-                <div className="flex flex-col">
-                    <h3
-                        className="font-editorial-regular text-2xl font-light leading-tight tracking-tight text-white sm:text-3xl"
-                        style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
-                    >
-                        {mentor.name}
-                    </h3>
-                    
-                    <div className="mt-3 flex items-center">
-                        <span className="h-[2px] w-4 bg-[#9fd0a6] mr-2 transition-all duration-500 group-hover:w-8" />
-                        <p className="text-[0.8rem] font-black uppercase tracking-[0.2em] text-[#9fd0a6]">
-                            {mentor.role}
-                        </p>
-                    </div>
-                </div>
-
-                <div className="mt-6 min-h-[60px]">
-                    <p className="text-[0.95rem] leading-[1.6] text-white/70 transition-colors duration-500 group-hover:text-white/90">
-                        {mentor.designation}
-                    </p>
-                </div>
-
-                {/* Biography with expansion effect feel */}
-                <div className="mt-auto border-t border-white/5 pt-6">
-                    <p className="line-clamp-4 text-[0.88rem] leading-[1.8] text-white/40 transition-all duration-500 group-hover:text-white/60">
-                        {mentor.bio}
-                    </p>
-                </div>
+            {/* Simplified Content Area - Centered */}
+            <div className="mt-6 px-2 text-center">
+                <p className="text-[1.1rem] font-medium leading-tight text-white/90">
+                    {mentor.designation}
+                </p>
+                <p className="mt-4 line-clamp-3 text-[0.88rem] leading-relaxed text-white/50 transition-colors duration-500 group-hover:text-white/70">
+                    {mentor.bio}
+                </p>
             </div>
-
-            {/* Premium Animated Border Bottom */}
-            <div className="absolute bottom-0 h-[3px] w-0 bg-gradient-to-r from-transparent via-[#5A9B68] to-transparent transition-all duration-1000 group-hover:w-full" />
         </article>
     );
-}   
-  
+}

@@ -78,7 +78,7 @@ export default function AudienceSection() {
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
-            Find where you fit in
+            Where Do You Fit in Cybersecurity?
           </p>
 
           <motion.a

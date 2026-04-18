@@ -54,8 +54,7 @@ export default function CommunityExperience() {
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
-            A cohort should feel like a lab: hands-on practice, real conversations, and
-            a community that keeps you moving even after the live sessions end.
+            A cybersecurity cohort in Kerala should feel like a lab, hands-on training, real-world security practice, and a community that keeps you learning beyond live sessions.
           </p>
           <motion.a
             href="https://www.airtribe.live/backend-engineering/apply"

@@ -7,31 +7,37 @@ import BlurText from "@/components/BlurText";
 const standoutCards = [
   {
     title: "AI + Cybersecurity Combined",
+    description: "Learn how AI and cybersecurity work together to secure modern systems, preparing you for next-generation security roles.",
     imgSrc: "/Cards/2.png",
   },
   {
     title: "Mentors with Real Experience",
+    description: "Learn cybersecurity from industry professionals with real-world experience in threat detection, ethical hacking, and security operations across Kerala and beyond.",
     imgSrc: "/Cards/3.png",
   },
   {
     title: "AI Security Engineer Training",
+    description: "Master AI-powered cybersecurity techniques, including threat detection, automation, and modern defence strategies used by AI security engineers.",
     imgSrc: "/Cards/4.png",
   },
   {
     title: "HR-Led Soft Skills Training",
+    description: "Build communication, interview, and workplace skills with HR experts who understand hiring trends in the cybersecurity industry in Kerala.",
     imgSrc: "/Cards/5.png",
   },
   {
     title: "1-on-1 Mentorship",
+    description: "Get personalized guidance throughout this cybersecurity cohort program with dedicated mentorship to accelerate your learning and career growth.",
     imgSrc: "/Cards/6.png",
   },
   {
     title: "Guest Mentors from Each Domain",
+    description: "Learn from cybersecurity specialists across domains like penetration testing, AI security, and cloud security through expert-led sessions.",
     imgSrc: "/Cards/download (1).png",
   },
 ];
 
-function StandOutCard({ title, imgSrc, index }) {
+function StandOutCard({ title, description, imgSrc, index }) {
 
   return (
     <motion.article
@@ -49,6 +55,12 @@ function StandOutCard({ title, imgSrc, index }) {
           "0 26px 70px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.03) inset",
       }}
     >
+      {/* SEO Hidden Content */}
+      <div className="sr-only">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+
       <div className="relative w-full aspect-[4/3]">
         <Image
           src={imgSrc}
@@ -105,8 +117,7 @@ export default function StandOutSection() {
                 fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               }}
             >
-              Built for people who want real outcomes: hands-on training, mentors who
-              ship in the real world, and support that turns learning into a career.
+              Built for people who want real outcomes - hands-on cybersecurity training in Kerala, guidance from industry mentors, and career support that turns learning into a job-ready cybersecurity career.
             </p>
 
             <motion.a
