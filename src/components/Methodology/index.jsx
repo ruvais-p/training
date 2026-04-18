@@ -81,7 +81,7 @@ export default function Methodology() {
 
       {/* Cards */}
       <div className="relative px-6 py-16 md:px-12 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-10 min-[670px]:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <Reveal key={step.number} delay={index * 90} distance={24}>
               <MethodCard step={step} />

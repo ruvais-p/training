@@ -43,7 +43,7 @@ function StandOutCard({ title, imgSrc, index }) {
         delay: index * 0.07,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative w-full overflow-hidden rounded-[40px] border border-white/10"
+      className="relative w-full overflow-hidden rounded-[28px] sm:rounded-[28px] md:rounded-[28px] lg:rounded-[28px] border border-white/10"
       style={{
         boxShadow:
           "0 26px 70px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.03) inset",

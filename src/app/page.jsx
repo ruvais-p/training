@@ -28,7 +28,7 @@ const skillItems = [
   { name: "ChatGPT", accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png" },
   { name: "Claude AI", accent: "#D97757", imageSrc: "/Skills/claude-ai-icon.png" },
   { name: "LangChain", accent: "#1C3C3C", imageSrc: "/Skills/langchain-color.png" },
-  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow.png" },
+  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow.jpg" },
   { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langgraph-color.png" },
   { name: "OpenClaw", accent: "#E11D48", imageSrc: "/Skills/openclaw.png" },
 ];
@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* <PreAboutSection /> */}
       {/* <LearningProblemsSection /> */}
-      
+
       <section id="mentors">
         <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
         <AboutSection />
@@ -220,7 +220,7 @@ function HeroSection() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
           className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.77vh] min-w-full -translate-x-1/2 -translate-y-1/2"
-          src="https://www.youtube.com/embed/CcGWe62X8A8?autoplay=1&mute=1&controls=0&loop=1&playlist=CcGWe62X8A8&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3"
+          src="https://www.youtube.com/embed/tC8h6Y31yKg?autoplay=1&mute=1&controls=0&loop=1&playlist=tC8h6Y31yKg&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3"
           title="Hero Background Video"
           frameBorder="0"
           allow="autoplay; encrypted-media; picture-in-picture"
@@ -300,57 +300,56 @@ function MobileHero() {
 
 function HeroHeadline({ mobile }) {
   return (
-    <div className="flex flex-col gap-3">
-      <span
-        className="font-medium tracking-[0.25em] text-white/50 uppercase"
-        style={{ fontSize: mobile ? "0.6rem" : "0.75rem" }}
-      >
-        COHORT BASED • AI-INTEGRATED • CAREER FOCUSED
-      </span>
-      <h1
-        className="font-editorial-regular"
-        style={{
-          ...(mobile ? mobileTitleStyle : titleStyle),
-          fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-          fontWeight: 400,
+    <h1
+      className="font-editorial-regular"
+      style={{
+        ...(mobile ? mobileTitleStyle : titleStyle),
+        fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+        fontWeight: 400,
+      }}
+    >
+      Become A Top 1%   {" "}
+      <BlurText
+        text="CyberSecurity"
+        as="span"
+        delay={500}
+        animateBy="words"
+        direction="top"
+        className="font-editorial-italic inline-flex"
+        segmentStyle={{
+          color: "var(--tertiary)",
+          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
+          fontStyle: "italic",
+          fontWeight: 200,
         }}
-      >
-        Get Hired <br /> Like a {" "}
-        <BlurText
-          text="Top 1%."
-          as="span"
-          delay={500}
-          animateBy="words"
-          direction="top"
-          className="font-editorial-italic inline-flex"
-          segmentStyle={{
-            color: "var(--tertiary)",
-            fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-            fontStyle: "italic",
-            fontWeight: 200,
-          }}
-          animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
-          animationTo={[
-            { filter: "blur(4px)", opacity: 0.65, y: 4 },
-            { filter: "blur(0px)", opacity: 1, y: 0 },
-          ]}
-          stepDuration={0.28}
-        />
-      </h1>
-    </div>
+        animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+        animationTo={[
+          { filter: "blur(4px)", opacity: 0.65, y: 4 },
+          { filter: "blur(0px)", opacity: 1, y: 0 },
+        ]}
+        stepDuration={0.28}
+      />{" "}
+      {mobile && <br />}
+      Expert
+    </h1>
   );
 }
 
 function HeroDescription({ mobile }) {
   return (
-    <div className="flex justify-center lg:justify-start">
-      <p
-        style={mobile ? mobileDescStyle : descStyle}
-        className={!mobile ? "mx-auto lg:mx-0" : ""}
+    <p style={mobile ? mobileDescStyle : descStyle}>
+      Master{" "}
+      <strong
+        style={{
+          color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
+          fontWeight: 600,
+        }}
       >
-        The AI powered Cybersecurity Cohort that turns beginners into industry ready security professionals in 4 months.
-      </p>
-    </div>
+        AI powered Cybersecurity
+      </strong>{" "}
+      with real-world training, real world  mentors, and career-focused
+      support. Cohort-Based Program - Learn in a structured batch with guided mentorship and peer collaboration.
+    </p>
   );
 }
 

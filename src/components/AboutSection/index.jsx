@@ -151,12 +151,14 @@ export default function AboutSection() {
 
         {/* Mentors Team Image */}
         <div className="mt-16 w-full lg:mt-24 px-4 pb-8">
-
-          <img
-            src="/about/about_mentors.png"
-            alt="YACS Mentors Team"
-            className="w-full h-auto object-cover opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
-          />
+          <picture>
+            <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.png" />
+            <img
+              src="/about/about_mentors.png"
+              alt="YACS Mentors Team"
+              className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
+            />
+          </picture>
         </div>
       </div>
     </section>
