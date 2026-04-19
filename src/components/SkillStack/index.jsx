@@ -81,6 +81,20 @@ export default function SkillStack({
             ))}
           </div>
         </div>
+
+        {/* SEO-only: visually hidden but fully crawlable tool descriptions */}
+        {items.some((i) => i.description) && (
+          <dl className="sr-only">
+            {items
+              .filter((i) => i.description)
+              .map((i) => (
+                <div key={i.name}>
+                  <dt>{i.name}</dt>
+                  <dd>{i.description}</dd>
+                </div>
+              ))}
+          </dl>
+        )}
       </div>
     </section>
   );
@@ -89,7 +103,7 @@ export default function SkillStack({
 function SkillCard({ item }) {
   return (
     <article
-      className="group relative flex min-h-[92px] items-center justify-center overflow-hidden rounded-[1.1rem] border px-3 py-3 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]"
+      className="group relative flex min-h-[110px] items-center justify-center overflow-hidden rounded-[1.1rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]"
       style={{
         background: "rgba(255,255,255,0.98)",
         borderColor: "rgba(120,177,131,0.12)",
@@ -107,13 +121,14 @@ function SkillCard({ item }) {
 
       <div className="flex w-full items-center justify-center">
         {item.imageSrc ? (
-          <div className="relative h-20 w-20 flex-shrink-0">
+          <div className="relative h-20 w-full" style={{ maxWidth: "130px" }}>
             <Image
               src={item.imageSrc}
               alt={item.name}
               fill
-              className="object-contain object-center transition-transform duration-300 group-hover:scale-110"
-              sizes="48px"
+              quality={100}
+              className="object-contain object-center transition-transform duration-300 group-hover:scale-105"
+              sizes="130px"
             />
           </div>
         ) : (
@@ -127,10 +142,11 @@ function SkillCard({ item }) {
 function LogoFallback({ name, accent }) {
   return (
     <div
-      className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[0.85rem] border"
+      className="relative flex h-14 w-full items-center justify-center rounded-[0.85rem] border"
       aria-label={name}
       title={name}
       style={{
+        maxWidth: "130px",
         borderColor: hexToRgba(accent, 0.26),
         background: `linear-gradient(135deg, ${hexToRgba(accent, 0.26)}, rgba(255,255,255,0.05))`,
       }}
