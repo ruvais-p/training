@@ -107,13 +107,13 @@ function SkillCard({ item }) {
 
       <div className="flex w-full items-center justify-center">
         {item.imageSrc ? (
-          <div className="relative flex h-10 w-full max-w-[120px] items-center justify-center md:h-12 md:max-w-[140px]">
+          <div className="relative h-20 w-20 flex-shrink-0">
             <Image
               src={item.imageSrc}
               alt={item.name}
               fill
-              className="object-contain object-center scale-105 transition-transform duration-300 group-hover:scale-110"
-              sizes="(max-width: 768px) 120px, 140px"
+              className="object-contain object-center transition-transform duration-300 group-hover:scale-110"
+              sizes="48px"
             />
           </div>
         ) : (
@@ -127,27 +127,20 @@ function SkillCard({ item }) {
 function LogoFallback({ name, accent }) {
   return (
     <div
-      className="relative flex h-8 w-[110px] items-center justify-center md:h-10 md:w-[125px]"
+      className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[0.85rem] border"
       aria-label={name}
       title={name}
+      style={{
+        borderColor: hexToRgba(accent, 0.26),
+        background: `linear-gradient(135deg, ${hexToRgba(accent, 0.26)}, rgba(255,255,255,0.05))`,
+      }}
     >
-      <div
-        className="absolute left-2 top-1/2 h-7 w-7 -translate-y-1/2 rounded-[0.85rem] border"
-        style={{
-          borderColor: hexToRgba(accent, 0.26),
-          background: `linear-gradient(135deg, ${hexToRgba(accent, 0.26)}, rgba(255,255,255,0.05))`,
-        }}
-      />
-      <div
-        className="absolute left-[2.6rem] right-2 top-1/2 h-[0.72rem] -translate-y-1/2 rounded-full"
-        style={{
-          background: `linear-gradient(90deg, ${hexToRgba(accent, 0.95)} 0%, ${hexToRgba(accent, 0.46)} 58%, rgba(255,255,255,0.08) 100%)`,
-        }}
-      />
-      <div
-        className="absolute left-[2.6rem] right-10 top-[58%] h-[0.22rem] rounded-full"
-        style={{ background: hexToRgba(accent, 0.28) }}
-      />
+      <span
+        className="text-[0.6rem] font-bold uppercase tracking-widest"
+        style={{ color: hexToRgba(accent, 0.9) }}
+      >
+        {name.slice(0, 2)}
+      </span>
     </div>
   );
 }

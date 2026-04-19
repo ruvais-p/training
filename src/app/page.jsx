@@ -372,7 +372,7 @@ function InfoBadge({ text, mobile }) {
           color: "rgba(255,255,255,0.9)",
         }}
       >
-        <span style={{ color: "#a3e635" }}>{first}</span>{" "}
+        <span style={{ color: "#5A9B68" }}>{first}</span>{" "}
         <span className="opacity-80">{rest.join(" ")}</span>
       </p>
     </div>

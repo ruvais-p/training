@@ -24,7 +24,7 @@ const steps = [
   },
   {
     "number": "03",
-    "title": "AI & ADVANCED SECURITY",
+    "title": "AI & SECURITY",
     "imageSrc": "/Methods/shape3.svg",
     "accent": "linear-gradient(135deg, #A78BFA, #EC4899)",
     "glow": "#A78BFA",
