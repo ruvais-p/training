@@ -55,7 +55,7 @@ const hackingTools = [
 ];
 
 const placementPartners = [
-  { name: "Gladius & Schild", accent: "#2A6E91", imageSrc: "/placement_partner/Gladius & Schild 2.png" },
+  { name: "Gladius & Schild", accent: "#2A6E91", imageSrc: "/placement_partner/Gladius%20%26%20Schild%20%202.png" },
   { name: "Tofence", accent: "#EE2E31", imageSrc: "/placement_partner/Tofence.png" },
 ];
 

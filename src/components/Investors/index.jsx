@@ -88,8 +88,8 @@ export default function Investors() {
                     </h2>
                 </div>
 
-                {/* Grid Layout - 1 col mobile, 2 on md/lg, 2+3 layout on xl (1024px+) */}
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-6">
+                {/* Grid Layout - 1 col mobile/tablet, 2+3 layout on xl (1024px+) */}
+                <div className="grid grid-cols-1 gap-12 xl:grid-cols-6">
                     {mentors.map((mentor, index) => (
                         <MentorCard
                             key={mentor.name}
@@ -112,8 +112,8 @@ function MentorCard({ mentor, index, className }) {
                 transitionDelay: `${index * 50}ms`,
             }}
         >
-            {/* Image Container */}
-            <div className="relative h-[480px] sm:h-[560px] md:h-[500px] lg:h-[450px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem]">
+            {/* Image Container - Fixed hydration sync */}
+            <div className="relative h-[420px] sm:h-[420px] md:h-[500px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem]">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
