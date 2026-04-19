@@ -38,7 +38,9 @@ const mentors = [
         linkedin: "https://www.linkedin.com/in/krishnaraj-g-9ab8b2142",
         imageSrc: "/Investors/YACS mentor 5.png",
     },
-]; export default function Investors() {
+];
+
+export default function Investors() {
     return (
         <section className="relative overflow-hidden px-6 py-20 lg:px-12 lg:py-32">
             <div className="relative mx-auto max-w-7xl">
@@ -86,14 +88,14 @@ const mentors = [
                     </h2>
                 </div>
 
-                {/* Grid Layout - 2 in first row, 3 in second row (5 total) */}
-                <div className="grid grid-cols-1 gap-8 sm:gap-6 md:grid-cols-2 lg:grid-cols-6">
+                {/* Grid Layout - 1 col under 768px, 2 on lg, 3 on xl */}
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3">
                     {mentors.map((mentor, index) => (
                         <MentorCard
                             key={mentor.name}
                             mentor={mentor}
                             index={index}
-                            className={`lg:col-span-2 ${index === 0 ? "lg:col-start-2" : ""}`}
+                            className="w-full mx-auto max-w-[420px]"
                         />
                     ))}
                 </div>
@@ -111,13 +113,13 @@ function MentorCard({ mentor, index, className }) {
             }}
         >
             {/* Image Container */}
-            <div className="relative h-[550px] sm:h-[600px] md:h-[650px] lg:h-[500px] w-full overflow-hidden rounded-[2.5rem]">
+            <div className="relative h-[480px] sm:h-[560px] md:h-[500px] lg:h-[450px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem]">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
                     fill
                     className="object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:brightness-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {/* Subtle Gradient Overlay */}
@@ -135,7 +137,7 @@ function MentorCard({ mentor, index, className }) {
                 </a>
             </div>
 
-            {/* Simplified Content Area - Centered */}
+            {/* Content Area */}
             <div className="mt-6 px-2 text-center">
                 <p className="text-[1.1rem] font-medium leading-tight text-white/90">
                     {mentor.designation}
@@ -144,6 +146,6 @@ function MentorCard({ mentor, index, className }) {
                     {mentor.bio}
                 </p>
             </div>
-        </article>
+        </article >
     );
 }
