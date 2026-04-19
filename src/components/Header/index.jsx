@@ -49,14 +49,14 @@ const Header = () => {
             <div className="flex items-center gap-3">
               <Link
                 href="/apply-as-mentor"
-                className="rounded-full border border-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
+                className="w-[180px] text-center rounded-full border border-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
                 style={uiFont}
               >
                 Apply as Mentor
               </Link>
               <Link
                 href="https://www.airtribe.live/backend-engineering/apply"
-                className="rounded-full bg-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
+                className="w-[180px] text-center rounded-full bg-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
                 style={uiFont}
               >
                 Apply Now
@@ -125,23 +125,23 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex flex-col items-start py-6" style={uiFont}>
+        <nav className="flex flex-col items-center py-6" style={uiFont}>
           {headerData.map((item, index) => (
             <MobileHeaderLink key={index} item={item} />
           ))}
         </nav>
 
-        <div className="mt-6 flex flex-col gap-3" style={uiFont}>
+        <div className="mt-6 flex flex-col items-center gap-3" style={uiFont}>
           <Link
             href="/apply-as-mentor"
-            className="mx-auto inline-flex w-fit rounded-full border border-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
+            className="inline-flex w-[240px] justify-center rounded-full border border-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
             style={uiFont}
           >
             Apply as Mentor
           </Link>
           <Link
             href="https://www.airtribe.live/backend-engineering/apply"
-            className="mx-auto inline-flex w-fit rounded-full bg-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
+            className="inline-flex w-[240px] justify-center rounded-full bg-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
             style={uiFont}
           >
             Apply Now

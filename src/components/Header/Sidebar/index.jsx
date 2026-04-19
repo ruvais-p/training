@@ -6,7 +6,7 @@ import Link from "next/link";
 const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
     return (
         <div
-            className={`hidden lg:block fixed top-0 right-0 h-screen lg:w-[35%] xxl:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 rounded-tl-3xl rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
+            className={`fixed top-0 right-0 h-screen w-full lg:w-[35%] xxl:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 lg:rounded-tl-3xl lg:rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
       ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`}
         >
             <div className="text-white flex justify-between items-center w-full">
@@ -23,28 +23,30 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
                     />
                 </div>
             </div>
-            <p className="text-pera-light py-8">
+            <p className="text-pera-light py-8 text-center">
                 we are committed to delivering innovative solutions that drive growth
                 and add value to our clients. With a team of experienced professionals
                 and a passion for excellence.
             </p>
-            <h3 className="font-chakrapetch pb-3">Search Now!</h3>
-            <form className="search-box relative flex">
-                <input
-                    type="text"
-                    placeholder="Search here..."
-                    className="bg-white ps-3 h-[45px]"
-                    required
-                />
-                <button
-                    type="submit"
-                    className="absolute right-0 h-full border-l border-border cursor-pointer"
-                >
-                    <Icon icon="ei:search" width="50" height="30" />
-                </button>
-            </form>
-            <h3 className="font-chakrapetch pb-3 pt-8">Contact Info</h3>
-            <div className="space-y-3">
+            <h3 className="font-chakrapetch pb-3 text-center w-full">Search Now!</h3>
+            <div className="flex justify-center w-full">
+                <form className="search-box relative flex w-full max-w-sm">
+                    <input
+                        type="text"
+                        placeholder="Search here..."
+                        className="bg-white ps-3 h-[45px] w-full"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="absolute right-0 h-full border-l border-border cursor-pointer px-3"
+                    >
+                        <Icon icon="ei:search" width="24" height="24" />
+                    </button>
+                </form>
+            </div>
+            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full">Contact Info</h3>
+            <div className="space-y-6 text-center">
                 <div>
                     <span className="text-pera-light font-chakrapetch">Phone</span> <br />
                     <Link
@@ -70,14 +72,14 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
                     <br />
                     <Link
                         href="/contact"
-                        className="text-white font-unbounded font-normal"
+                        className="text-white font-unbounded font-normal text-center block"
                     >
                         FF - 42, Procube Complex Vadodara
                     </Link>
                 </div>
             </div>
-            <h3 className="font-chakrapetch pb-3 pt-8">Follow Us</h3>
-            <div className="social-icons flex gap-3">
+            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full">Follow Us</h3>
+            <div className="social-icons flex gap-3 justify-center">
                 <Link href="https://www.facebook.com/">
                     <Icon
                         icon="gg:facebook"

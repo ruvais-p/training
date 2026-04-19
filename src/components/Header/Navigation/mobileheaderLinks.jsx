@@ -14,7 +14,7 @@ const MobileHeaderLink = ({ item }) => {
     return (
         <div className="relative w-full">
             <div
-                className="flex items-center justify-between w-full py-2 text-white cursor-pointer"
+                className="flex items-center justify-center w-full py-2 text-white cursor-pointer relative"
                 onClick={handleToggle}
             >
                 <span>{item.label}</span>
@@ -24,7 +24,7 @@ const MobileHeaderLink = ({ item }) => {
                         icon="iconamoon:arrow-down-2-duotone"
                         width="24"
                         height="24"
-                        className={`transition-transform duration-300 ${submenuOpen ? "rotate-180" : ""
+                        className={`transition-transform duration-300 absolute right-0 ${submenuOpen ? "rotate-180" : ""
                             }`}
                     />
                 )}
