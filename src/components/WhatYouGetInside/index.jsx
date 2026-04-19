@@ -146,7 +146,7 @@ export default function FeaturesSection() {
                 background:
                   "linear-gradient(90deg, rgba(90,155,104,0.78) 0%, rgba(217, 227, 138,0.55) 45%, rgba(59,130,246,0.12) 100%)",
               }}
-              bgImage="/whatgetyouinside/whatgetyouinside2.avif"
+              bgImage="/whatgetyouinside/whatgetyouinside2.webp"
               iconColor="text-[#FFFFFF]"
             />
 
@@ -157,7 +157,7 @@ export default function FeaturesSection() {
                 background:
                   "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
               }}
-              bgImage="/whatgetyouinside/whatgetyouinside.avif"
+              bgImage="/whatgetyouinside/whatgetyouinside.webp"
               iconColor="text-[#FFFFFF]"
             />
           </div>

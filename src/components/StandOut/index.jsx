@@ -8,32 +8,32 @@ const standoutCards = [
   {
     title: "AI + Cybersecurity Combined",
     description: "Learn how AI and cybersecurity work together to secure modern systems, preparing you for next-generation security roles.",
-    imgSrc: "/Cards/2.png",
+    imgSrc: "/Cards/1 (1).webp",
   },
   {
     title: "Mentors with Real Experience",
     description: "Learn cybersecurity from industry professionals with real-world experience in threat detection, ethical hacking, and security operations across Kerala and beyond.",
-    imgSrc: "/Cards/3.png",
+    imgSrc: "/Cards/2 (1).webp",
   },
   {
     title: "AI Security Engineer Training",
     description: "Master AI-powered cybersecurity techniques, including threat detection, automation, and modern defence strategies used by AI security engineers.",
-    imgSrc: "/Cards/4.png",
+    imgSrc: "/Cards/3 (1).webp",
   },
   {
     title: "HR-Led Soft Skills Training",
     description: "Build communication, interview, and workplace skills with HR experts who understand hiring trends in the cybersecurity industry in Kerala.",
-    imgSrc: "/Cards/5.png",
+    imgSrc: "/Cards/4 (1).webp",
   },
   {
     title: "1-on-1 Mentorship",
     description: "Get personalized guidance throughout this cybersecurity cohort program with dedicated mentorship to accelerate your learning and career growth.",
-    imgSrc: "/Cards/6.png",
+    imgSrc: "/Cards/5 (1).webp",
   },
   {
     title: "Guest Mentors from Each Domain",
     description: "Learn from cybersecurity specialists across domains like penetration testing, AI security, and cloud security through expert-led sessions.",
-    imgSrc: "/Cards/download (1).png",
+    imgSrc: "/Cards/6 (1).webp",
   },
 ];
 

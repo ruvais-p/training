@@ -114,7 +114,7 @@ export default function AboutSection() {
             title="The Logic"
             description={p1}
             gradientStyle={cardGradient}
-            bgImage="/about/about_card_1.jpg"
+            bgImage="/about/about_card_1.webp"
             iconColor="text-white"
           />
 
@@ -123,7 +123,7 @@ export default function AboutSection() {
             title="The Mentors"
             description={p2}
             gradientStyle={cardGradient}
-            bgImage="/about/about_card_2.jpg"
+            bgImage="/about/about_card_2.webp"
             iconColor="text-white"
           />
 
@@ -152,9 +152,9 @@ export default function AboutSection() {
         {/* Mentors Team Image */}
         <div className="mt-16 w-full lg:mt-24 px-4 pb-8">
           <picture>
-            <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.png" />
+            <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.webp" />
             <img
-              src="/about/about_mentors.png"
+              src="/about/about_mentors.webp"
               alt="YACS Mentors Team"
               className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
             />
