@@ -25,33 +25,33 @@ import LearningProblemsSection from "@/components/LearningProblemsSection";
 
 
 const skillItems = [
-  { name: "ChatGPT",   accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png",       description: "AI-powered assistant used in cybersecurity training for automation, scripting, and threat analysis in modern security workflows." },
-  { name: "Claude AI", accent: "#D97757", imageSrc: "/Skills/claude-ai-icon.png",      description: "Advanced AI model used in cybersecurity for secure coding, analysis, and AI-driven security workflows." },
-  { name: "LangChain", accent: "#1C3C3C", imageSrc: "/Skills/langchain-color.png",     description: "Framework for building AI-powered cybersecurity tools and automation workflows used in modern security engineering." },
-  { name: "LangFlow",  accent: "#3B82F6", imageSrc: "/Skills/langflow New.png",        description: "Visual tool for designing AI workflows, widely used in cybersecurity automation and pipeline development." },
-  { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langchain new.png",       description: "Graph-based AI orchestration tool used in advanced cybersecurity systems and automation workflows." },
-  { name: "OpenClaw",  accent: "#E11D48", imageSrc: "/Skills/openclaw.png",            description: "Open-source cybersecurity tool used for automation, ethical hacking, and security testing workflows." },
+  { name: "ChatGPT", accent: "#10a37f", imageSrc: "/Skills/chatgpt-icon.png", description: "AI-powered assistant used in cybersecurity training for automation, scripting, and threat analysis in modern security workflows." },
+  { name: "Claude AI", accent: "#D97757", imageSrc: "/Skills/claude-ai-icon.png", description: "Advanced AI model used in cybersecurity for secure coding, analysis, and AI-driven security workflows." },
+  { name: "LangChain", accent: "#1C3C3C", imageSrc: "/Skills/langchain-color.png", description: "Framework for building AI-powered cybersecurity tools and automation workflows used in modern security engineering." },
+  { name: "LangFlow", accent: "#3B82F6", imageSrc: "/Skills/langflow New.png", description: "Visual tool for designing AI workflows, widely used in cybersecurity automation and pipeline development." },
+  { name: "LangGraph", accent: "#F97316", imageSrc: "/Skills/langchain new.png", description: "Graph-based AI orchestration tool used in advanced cybersecurity systems and automation workflows." },
+  { name: "OpenClaw", accent: "#E11D48", imageSrc: "/Skills/openclaw.png", description: "Open-source cybersecurity tool used for automation, ethical hacking, and security testing workflows." },
 ];
 
 const hackingTools = [
-  { name: "Aircrack-ng",    accent: "#00A6D6", imageSrc: "/hacking_tools/Air crack.jpg",          description: "WiFi security auditing tool used in ethical hacking and penetration testing for password cracking and network analysis." },
-  { name: "BloodHound",     accent: "#E31B23", imageSrc: "/hacking_tools/Blood Hound.png",        description: "Active Directory security tool used in cybersecurity to analyze attack paths in enterprise networks." },
-  { name: "Burp Suite",     accent: "#FF6633", imageSrc: "/hacking_tools/Burp icon.jpeg",         description: "Web application security testing tool used in cybersecurity to identify vulnerabilities and perform penetration testing." },
-  { name: "Frida",          accent: "#6E57E0", imageSrc: "/hacking_tools/Frida icon.png",         description: "Dynamic instrumentation toolkit used in cybersecurity for runtime analysis, reverse engineering, and security testing." },
-  { name: "Ghidra",         accent: "#2F2F2F", imageSrc: "/hacking_tools/Ghidra.png",             description: "Reverse engineering tool used in malware analysis and cybersecurity research for vulnerability discovery." },
-  { name: "Hashcat",        accent: "#FBC02D", imageSrc: "/hacking_tools/Hashcat.png",            description: "High-performance password cracking tool used in ethical hacking and cybersecurity training for password security testing." },
-  { name: "JADX",           accent: "#5C6BC0", imageSrc: "/hacking_tools/JADX.png",              description: "Decompiler tool used in mobile security and cybersecurity to analyze Android applications and detect vulnerabilities." },
-  { name: "John the Ripper",accent: "#8D6E63", imageSrc: "/hacking_tools/John the Ripper.png",   description: "Password cracking tool used in ethical hacking and cybersecurity training to test password strength and security." },
-  { name: "Metasploit",     accent: "#3D7E9A", imageSrc: "/hacking_tools/Metasploit icon.jpg",   description: "Industry-standard penetration testing framework used in ethical hacking to exploit vulnerabilities and test system security." },
-  { name: "MobSF",          accent: "#34495E", imageSrc: "/hacking_tools/MobSF icon.png",        description: "Mobile security framework used for analyzing Android and iOS applications in cybersecurity and penetration testing." },
-  { name: "Nessus",         accent: "#004D9D", imageSrc: "/hacking_tools/Nessus icon.png",       description: "Vulnerability scanning tool used in cybersecurity to detect and manage security risks in systems and networks." },
-  { name: "Nikto",          accent: "#9B59B6", imageSrc: "/hacking_tools/Nikto icon.jpg",        description: "Web server scanning tool used in cybersecurity to identify vulnerabilities and misconfigurations in web applications." },
-  { name: "Nmap",           accent: "#5087CE", imageSrc: "/hacking_tools/Nmap icon.png",         description: "Network scanning tool used in cybersecurity and ethical hacking to discover hosts, services, and vulnerabilities." },
-  { name: "Postman",        accent: "#FF6C37", imageSrc: "/hacking_tools/Postman icon.png",      description: "API testing tool used in cybersecurity for secure API development, testing, and vulnerability analysis." },
-  { name: "w3af",           accent: "#E67E22", imageSrc: "/hacking_tools/W3af icon.png",         description: "Web application attack and audit framework used in penetration testing to find security vulnerabilities." },
-  { name: "Wifite",         accent: "#607D8B", imageSrc: "/hacking_tools/WIFIte.png",            description: "Automated wireless auditing tool used in cybersecurity for WiFi penetration testing and network security analysis." },
-  { name: "Wireshark",      accent: "#2A6E91", imageSrc: "/hacking_tools/Wireshark icon.png",    description: "Network protocol analyzer used in cybersecurity to monitor, analyze, and troubleshoot network traffic." },
-  { name: "Nexpose",        accent: "#EE2E31", imageSrc: "/hacking_tools/nexpose icon.png",      description: "Vulnerability management tool used in cybersecurity for risk assessment and security analysis." },
+  { name: "Aircrack-ng", accent: "#00A6D6", imageSrc: "/hacking_tools/Air crack.jpg", description: "WiFi security auditing tool used in ethical hacking and penetration testing for password cracking and network analysis." },
+  { name: "BloodHound", accent: "#E31B23", imageSrc: "/hacking_tools/Blood Hound.png", description: "Active Directory security tool used in cybersecurity to analyze attack paths in enterprise networks." },
+  { name: "Burp Suite", accent: "#FF6633", imageSrc: "/hacking_tools/Burp icon.jpeg", description: "Web application security testing tool used in cybersecurity to identify vulnerabilities and perform penetration testing." },
+  { name: "Frida", accent: "#6E57E0", imageSrc: "/hacking_tools/Frida icon.png", description: "Dynamic instrumentation toolkit used in cybersecurity for runtime analysis, reverse engineering, and security testing." },
+  { name: "Ghidra", accent: "#2F2F2F", imageSrc: "/hacking_tools/Ghidra.png", description: "Reverse engineering tool used in malware analysis and cybersecurity research for vulnerability discovery." },
+  { name: "Hashcat", accent: "#FBC02D", imageSrc: "/hacking_tools/Hashcat.png", description: "High-performance password cracking tool used in ethical hacking and cybersecurity training for password security testing." },
+  { name: "JADX", accent: "#5C6BC0", imageSrc: "/hacking_tools/JADX.png", description: "Decompiler tool used in mobile security and cybersecurity to analyze Android applications and detect vulnerabilities." },
+  { name: "John the Ripper", accent: "#8D6E63", imageSrc: "/hacking_tools/John the Ripper.png", description: "Password cracking tool used in ethical hacking and cybersecurity training to test password strength and security." },
+  { name: "Metasploit", accent: "#3D7E9A", imageSrc: "/hacking_tools/Metasploit icon.jpg", description: "Industry-standard penetration testing framework used in ethical hacking to exploit vulnerabilities and test system security." },
+  { name: "MobSF", accent: "#34495E", imageSrc: "/hacking_tools/MobSF icon.png", description: "Mobile security framework used for analyzing Android and iOS applications in cybersecurity and penetration testing." },
+  { name: "Nessus", accent: "#004D9D", imageSrc: "/hacking_tools/Nessus icon.png", description: "Vulnerability scanning tool used in cybersecurity to detect and manage security risks in systems and networks." },
+  { name: "Nikto", accent: "#9B59B6", imageSrc: "/hacking_tools/Nikto icon.jpg", description: "Web server scanning tool used in cybersecurity to identify vulnerabilities and misconfigurations in web applications." },
+  { name: "Nmap", accent: "#5087CE", imageSrc: "/hacking_tools/Nmap icon.png", description: "Network scanning tool used in cybersecurity and ethical hacking to discover hosts, services, and vulnerabilities." },
+  { name: "Postman", accent: "#FF6C37", imageSrc: "/hacking_tools/Postman icon.png", description: "API testing tool used in cybersecurity for secure API development, testing, and vulnerability analysis." },
+  { name: "w3af", accent: "#E67E22", imageSrc: "/hacking_tools/W3af icon.png", description: "Web application attack and audit framework used in penetration testing to find security vulnerabilities." },
+  { name: "Wifite", accent: "#607D8B", imageSrc: "/hacking_tools/WIFIte.png", description: "Automated wireless auditing tool used in cybersecurity for WiFi penetration testing and network security analysis." },
+  { name: "Wireshark", accent: "#2A6E91", imageSrc: "/hacking_tools/Wireshark icon.png", description: "Network protocol analyzer used in cybersecurity to monitor, analyze, and troubleshoot network traffic." },
+  { name: "Nexpose", accent: "#EE2E31", imageSrc: "/hacking_tools/nexpose icon.png", description: "Vulnerability management tool used in cybersecurity for risk assessment and security analysis." },
 ];
 
 const placementPartners = [
@@ -144,10 +144,7 @@ export default function Home() {
       </section>
 
       <CommunityExperience />
-
-      <SectionReveal delay={100}>
-        <Investors />
-      </SectionReveal>
+      <Investors />
 
       {/* <SectionReveal delay={100}>
         <Testimonial />
@@ -156,11 +153,11 @@ export default function Home() {
       <SectionReveal delay={100}>
         <SkillStack
           eyebrow="SKILL STACK"
-          title="Tools you will learn"
+          title="Major Tools you will learn"
           items={skillItems}
         />
         <SkillStack
-          eyebrow=""
+          eyebrow="BECOME PRO"
           title="Hacking Tools you will learn"
           items={hackingTools}
         />

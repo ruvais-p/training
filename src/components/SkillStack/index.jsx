@@ -2,8 +2,8 @@ import Image from "next/image";
 import BlurText from "@/components/BlurText";
 
 export default function SkillStack({
-  eyebrow = "SKILL STACK",
-  title = "Tools you will learn",
+  eyebrow = "",
+  title = "",
   items = [],
   className = "",
 }) {
