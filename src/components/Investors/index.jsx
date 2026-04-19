@@ -88,14 +88,14 @@ export default function Investors() {
                     </h2>
                 </div>
 
-                {/* Grid Layout - 1 col under 768px, 2 on lg, 3 on xl */}
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-3">
+                {/* Grid Layout - 1 col mobile, 2 on md/lg, 2+3 layout on xl (1024px+) */}
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-6">
                     {mentors.map((mentor, index) => (
                         <MentorCard
                             key={mentor.name}
                             mentor={mentor}
                             index={index}
-                            className="w-full mx-auto max-w-[420px]"
+                            className={`w-full mx-auto max-w-[420px] ${index < 2 ? "xl:col-span-3" : "xl:col-span-2"}`}
                         />
                     ))}
                 </div>
