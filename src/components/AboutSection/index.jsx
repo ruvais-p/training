@@ -289,14 +289,18 @@ export default function AboutSection() {
 
         {/* Mentors Team Image */}
         <div className="mt-16 w-full lg:mt-24 px-4 pb-8">
-          <picture>
-            <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.webp" />
-            <img
-              src="/about/about_mentors.webp"
-              alt="YACS Mentors Team"
-              className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
-            />
-          </picture>
+          <div className="relative overflow-hidden rounded-[40px]">
+            <picture>
+              <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.webp" />
+              <img
+                src="/about/about_mentors.webp"
+                alt="YACS Mentors Team"
+                className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
+              />
+            </picture>
+            {/* Soft blending gradient at the bottom */}
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+          </div>
         </div>
 
       </div>

@@ -79,11 +79,11 @@ const mobileTitleStyle = {
 };
 
 const descStyle = {
-  fontSize: "1.15rem",
+  fontSize: "1rem",
   lineHeight: 1.75,
   color: "rgba(255,255,255,0.72)",
   marginBottom: "2.5rem",
-  maxWidth: "520px",
+  maxWidth: "1100px",
   fontWeight: 400,
 };
 
@@ -259,16 +259,10 @@ function DesktopHero() {
         className="flex w-full flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-0"
         style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
       >
-        <div className="max-w-[720px] text-center lg:text-left">
+        <div className="max-w-[1100px] text-center lg:text-left">
           <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
           <HeroButtons />
-        </div>
-
-        <div className="flex flex-col gap-3 pb-1 items-center lg:items-end">
-          <InfoBadge text="Kerala's AI-Integrated" />
-          <InfoBadge text="Cybersecurity & AI/ML" />
-          <InfoBadge text="Cohort Program" />
         </div>
       </div>
     </div>
@@ -277,23 +271,14 @@ function DesktopHero() {
 
 function MobileHero() {
   return (
-    <div className="relative z-20 flex h-full flex-col px-6 pb-16 pt-[9rem] md:hidden">
-      <div className="flex-1 items-end">
-        <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
-          <HeroHeadline mobile />
+    <div className="relative z-20 flex h-[100dvh] flex-col px-6 pb-20 pt-[8rem] md:hidden text-center items-center justify-center">
+      <div className="w-full" style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
+        <HeroHeadline mobile />
+        <div className="mt-4">
           <HeroDescription mobile />
-          <HeroButtons mobile />
         </div>
-      </div>
-
-      <div
-        className="relative z-20 flex flex-col gap-4 px-6 pb-10 pt-6"
-        style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
-      >
-        <div className="flex flex-col gap-2.5">
-          <InfoBadge text="Kerala's AI-Integrated" mobile />
-          <InfoBadge text="Cybersecurity & AI/ML" mobile />
-          <InfoBadge text="Cohort Program" mobile />
+        <div className="mt-10">
+          <HeroButtons mobile />
         </div>
       </div>
     </div>
@@ -303,7 +288,7 @@ function MobileHero() {
 function HeroHeadline({ mobile }) {
   return (
     <h1
-      className="font-editorial-regular"
+      className="font-editorial-regular text-center lg:text-left"
       style={{
         ...(mobile ? mobileTitleStyle : titleStyle),
         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -318,7 +303,7 @@ function HeroHeadline({ mobile }) {
         delay={500}
         animateBy="words"
         direction="top"
-        className="font-editorial-italic inline-flex"
+        className="font-editorial-italic inline-flex justify-center lg:justify-start"
         segmentStyle={{
           color: "var(--tertiary)",
           fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
@@ -338,7 +323,10 @@ function HeroHeadline({ mobile }) {
 
 function HeroDescription({ mobile }) {
   return (
-    <p style={mobile ? mobileDescStyle : descStyle}>
+    <p 
+      className="text-center lg:text-left"
+      style={{ ...(mobile ? mobileDescStyle : descStyle) }}
+    >
       A fully online, 6-month cohort-based{" "}
       <strong
         style={{
@@ -348,32 +336,31 @@ function HeroDescription({ mobile }) {
       >
         Cybersecurity & AI/ML program
       </strong>{" "}
-      built for career outcomes, not just certificates. Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.{" "}
-
+      built for career outcomes, not just certificates. {!mobile && <br />}
+      Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
     </p>
   );
 }
 
 function HeroButtons({ mobile }) {
   return (
-    <div className={`flex flex-wrap gap-4 ${mobile ? "mt-6" : "mt-8"}`}>
+    <div className={`flex flex-wrap gap-4 justify-center lg:justify-start ${mobile ? "mt-6" : "mt-8"}`}>
       <a
         href="https://www.airtribe.live/backend-engineering/apply"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-pinstripe group h-14 px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+        className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
       >
         <span className="text-black font-mono font-bold text-sm tracking-tight uppercase relative z-10">
           Claim Your Seat
         </span>
-
       </a>
 
       <a
         href="https://wa.me/910000000000"
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-pinstripe group h-14 px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+        className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
       >
         <div className="relative z-10 flex items-center gap-3">
           <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">

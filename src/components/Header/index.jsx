@@ -7,10 +7,6 @@ import Link from "next/link";
 import MobileHeaderLink from "./Navigation/mobileheaderLinks";
 import { Icon } from "@iconify/react";
 
-const uiFont = {
-  fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
-};
-
 const Header = () => {
   const [sticky, setSticky] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -28,8 +24,7 @@ const Header = () => {
   return (
     <>
       <header
-        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500"
-        style={uiFont}
+        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500 font-editorial-regular text-center lg:text-left"
       >
         <div className="container mx-auto flex w-full max-w-full items-center justify-between px-2 py-4 lg:px-4 2xl:max-w-[1400px]">
           <div className="text-white">
@@ -38,26 +33,23 @@ const Header = () => {
 
           <nav
             className="hidden grow items-center justify-end whitespace-nowrap pr-8 text-sm lg:flex lg:space-x-6 xl:space-x-8"
-            style={uiFont}
           >
             {headerData.map((item, index) => (
               <HeaderLinks key={index} item={item} />
             ))}
           </nav>
 
-          <div className="nav-right hidden items-center lg:flex" style={uiFont}>
+          <div className="nav-right hidden items-center lg:flex">
             <div className="flex items-center gap-3">
               <Link
                 href="/apply-as-mentor"
                 className="w-[180px] text-center rounded-full border border-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
-                style={uiFont}
               >
                 Apply as Mentor
               </Link>
               <Link
                 href="https://www.airtribe.live/backend-engineering/apply"
                 className="w-[180px] text-center rounded-full bg-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
-                style={uiFont}
               >
                 Apply Now
               </Link>
@@ -96,9 +88,8 @@ const Header = () => {
 
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-dark-blur p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
+        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-dark-blur p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden font-editorial-regular ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
           }`}
-        style={uiFont}
       >
         <div className="flex w-full items-center justify-between text-white">
           <Logo />
@@ -125,24 +116,22 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex flex-col items-center py-6" style={uiFont}>
+        <nav className="flex flex-col items-center py-6">
           {headerData.map((item, index) => (
             <MobileHeaderLink key={index} item={item} />
           ))}
         </nav>
 
-        <div className="mt-6 flex flex-col items-center gap-3" style={uiFont}>
+        <div className="mt-6 flex flex-col items-center gap-3">
           <Link
             href="/apply-as-mentor"
             className="inline-flex w-[240px] justify-center rounded-full border border-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
-            style={uiFont}
           >
             Apply as Mentor
           </Link>
           <Link
             href="https://www.airtribe.live/backend-engineering/apply"
             className="inline-flex w-[240px] justify-center rounded-full bg-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
-            style={uiFont}
           >
             Apply Now
           </Link>
