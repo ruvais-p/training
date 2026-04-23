@@ -19,7 +19,7 @@ const StarIcon = ({ className }) => (
 );
 
 const Card = ({ title, description, gradientStyle, bgImage, iconColor }) => (
-  <div className="group relative flex h-full min-h-[380px] w-full flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-[#0a0a0a] p-8 md:p-10 transition-all duration-300 hover:border-white/20">
+  <div className="group relative flex h-full min-h-[380px] w-full flex-col justify-between overflow-hidden rounded-[32px] border border-black/5 bg-white/60 p-8 md:p-10 transition-all duration-300 hover:border-black/10">
     {/* Background Image */}
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
@@ -32,19 +32,19 @@ const Card = ({ title, description, gradientStyle, bgImage, iconColor }) => (
       style={{ background: gradientStyle }}
     />
 
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+    {/* Light Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent" />
 
     {/* Header */}
     <div className="relative z-10 flex items-center gap-4">
       <StarIcon className={`h-8 w-8 ${iconColor}`} />
-      <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-white leading-none">
+      <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-black leading-none">
         {title}
       </h2>
     </div>
 
     {/* Footer Text */}
-    <p className="relative z-10 max-w-[95%] text-[1rem] md:text-lg leading-relaxed text-white/90">
+    <p className="relative z-10 max-w-[95%] text-[1rem] md:text-lg leading-relaxed text-black/90">
       {description}
     </p>
   </div>
@@ -62,14 +62,14 @@ const CohortCard = ({
 }) => (
   <div
     className="relative flex flex-col justify-between rounded-[28px] 
-    border border-white/10 bg-transparent backdrop-blur-xl
-    p-8 transition-all duration-300 hover:border-white/20 group overflow-hidden"
+    border border-black/5 bg-white/40 backdrop-blur-xl
+    p-8 transition-all duration-300 hover:border-black/10 group overflow-hidden"
     style={{ minHeight: "460px" }}
   >
     {/* ───── Background Layer ───── */}
     <div className="absolute inset-0">
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-white/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-white/10 to-transparent" />
 
       {/* Accent Glow */}
       <div
@@ -90,19 +90,19 @@ const CohortCard = ({
       </span>
 
       {/* Title */}
-      <h3 className="text-[2rem] md:text-[2.4rem] font-black leading-[1.05] tracking-tight text-white whitespace-pre-line">
+      <h3 className="text-[2rem] md:text-[2.4rem] font-black leading-[1.05] tracking-tight text-black whitespace-pre-line">
         {title}
       </h3>
 
       {/* Subtitle */}
-      <p className="text-sm leading-relaxed text-white/75 max-w-[95%]">
+      <p className="text-sm leading-relaxed text-black/75 max-w-[95%]">
         {subtitle}
       </p>
 
       {/* Feature list */}
       <ul className="flex flex-col gap-2 mt-2">
         {features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-white/80">
+          <li key={i} className="flex items-start gap-2 text-sm text-black/80">
             <span
               className="mt-[3px] text-base leading-none"
               style={{ color: tagColor }}
@@ -191,7 +191,7 @@ export default function AboutSection() {
             <div className="absolute -top-32 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(0,229,160,0.15),transparent_70%)] blur-3xl pointer-events-none" />
 
             {/* Headline */}
-            <h3 className="relative z-10 text-[2.0rem] xs:text-[2.0rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[5rem] font-black text-white leading-[0.9] tracking-tighter mb-6 uppercase">
+            <h3 className="relative z-10 text-[2.0rem] xs:text-[2.0rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[5rem] font-black text-black leading-[0.9] tracking-tighter mb-6 uppercase">
               Your mentors <br />
               have{" "}
               <span className="relative inline-block">
@@ -219,7 +219,7 @@ export default function AboutSection() {
                         <img
                           src={`/hacked/${brand}.png`}
                           alt={brand}
-                          className={`h-16 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-110 ${brand === "Apple" ? "brightness-0 invert" : ""}`}
+                          className={`h-16 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-110 grayscale brightness-0 opacity-80 group-hover:opacity-100 ${brand === "Apple" ? "" : ""}`}
                         />
                       </div>
                     ))}
@@ -245,7 +245,7 @@ export default function AboutSection() {
             description={p1}
             gradientStyle={cardGradient}
             bgImage="/about/about_card_1.webp"
-            iconColor="text-white"
+            iconColor="text-black"
           />
 
           {/* ───────────── Container 3 ───────────── */}
@@ -254,7 +254,7 @@ export default function AboutSection() {
             description={p2}
             gradientStyle={cardGradient}
             bgImage="/about/about_card_2.jpg"
-            iconColor="text-white"
+            iconColor="text-black"
           />
 
           {/* ───────────── Container 4 ───────────── */}
@@ -262,11 +262,11 @@ export default function AboutSection() {
             <div className="flex items-center gap-6">
               <span
                 className="text-[6rem] md:text-[10rem] font-black leading-none select-none text-transparent"
-                style={{ WebkitTextStroke: "1.5px white", opacity: 0.2 }}
+                style={{ WebkitTextStroke: "1.5px black", opacity: 0.15 }}
               >
                 the
               </span>
-              <div className="flex flex-col text-3xl md:text-[3.5rem] font-bold text-white/90 leading-[1.1] tracking-tighter">
+              <div className="flex flex-col text-3xl md:text-[3.5rem] font-bold text-black/90 leading-[1.1] tracking-tighter">
                 <span>skills.</span>
                 <span>proof.</span>
                 <span>career.</span>
@@ -295,7 +295,7 @@ export default function AboutSection() {
               />
             </picture>
             {/* Soft blending gradient at the bottom */}
-            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none" />
           </div>
         </div>
 

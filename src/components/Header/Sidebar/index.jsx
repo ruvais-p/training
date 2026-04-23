@@ -6,13 +6,13 @@ import Link from "next/link";
 const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
     return (
         <div
-            className={`fixed top-0 right-0 h-screen w-full lg:w-[35%] xxl:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 lg:rounded-tl-3xl lg:rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
+            className={`fixed top-0 right-0 h-screen w-full lg:w-[35%] xxl:w-[40%] shadow-2xl bg-white/95 backdrop-blur-lg p-10 lg:rounded-tl-3xl lg:rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
       ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`}
         >
-            <div className="text-white flex justify-between items-center w-full">
+            <div className="text-black flex justify-between items-center w-full">
                 <Logo />
                 <div
-                    className="close-btn group bg-white rounded-sm text-prim p-2 cursor-pointer"
+                    className="close-btn group bg-black rounded-sm text-white p-2 cursor-pointer"
                     onClick={() => setIsOpenSidebar(false)}
                 >
                     <Icon
@@ -23,18 +23,18 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
                     />
                 </div>
             </div>
-            <p className="text-pera-light py-8 text-center">
+            <p className="text-black/60 py-8 text-center text-sm leading-relaxed">
                 we are committed to delivering innovative solutions that drive growth
                 and add value to our clients. With a team of experienced professionals
                 and a passion for excellence.
             </p>
-            <h3 className="font-chakrapetch pb-3 text-center w-full">Search Now!</h3>
+            <h3 className="font-chakrapetch pb-3 text-center w-full text-black">Search Now!</h3>
             <div className="flex justify-center w-full">
                 <form className="search-box relative flex w-full max-w-sm">
                     <input
                         type="text"
                         placeholder="Search here..."
-                        className="bg-white ps-3 h-[45px] w-full"
+                        className="bg-black/5 ps-3 h-[45px] w-full text-black"
                         required
                     />
                     <button
@@ -45,40 +45,40 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
                     </button>
                 </form>
             </div>
-            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full">Contact Info</h3>
+            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full text-black">Contact Info</h3>
             <div className="space-y-6 text-center">
                 <div>
-                    <span className="text-pera-light font-chakrapetch">Phone</span> <br />
+                    <span className="text-black/40 font-chakrapetch">Phone</span> <br />
                     <Link
                         href="/contact"
-                        className="text-white font-unbounded font-normal"
+                        className="text-black font-unbounded font-normal"
                     >
                         (+91) 1232 3456
                     </Link>
                 </div>
 
                 <div>
-                    <span className="text-pera-light font-chakrapetch">Email</span> <br />
+                    <span className="text-black/40 font-chakrapetch">Email</span> <br />
                     <Link
                         href="/contact"
-                        className="text-white font-unbounded font-normal"
+                        className="text-black font-unbounded font-normal"
                     >
                         info@axora.com
                     </Link>
                 </div>
 
                 <div>
-                    <span className="text-pera-light font-chakrapetch">Location</span>{" "}
+                    <span className="text-black/40 font-chakrapetch">Location</span>{" "}
                     <br />
                     <Link
                         href="/contact"
-                        className="text-white font-unbounded font-normal text-center block"
+                        className="text-black font-unbounded font-normal text-center block"
                     >
                         FF - 42, Procube Complex Vadodara
                     </Link>
                 </div>
             </div>
-            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full">Follow Us</h3>
+            <h3 className="font-chakrapetch pb-3 pt-8 text-center w-full text-black">Follow Us</h3>
             <div className="social-icons flex gap-3 justify-center">
                 <Link href="https://www.facebook.com/">
                     <Icon

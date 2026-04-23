@@ -90,7 +90,7 @@ export default function OldAbout() {
 
               <p
                 className="max-w-[32rem] text-lg leading-relaxed md:text-xl md:mb-12 mb-8"
-                style={{ color: "rgba(255,255,255,0.55)" }}
+                style={{ color: "rgba(0,0,0,0.55)" }}
               >
                 PMs who know how to leverage AI will have an unfair advantage in the next
                 decade. This program isn&apos;t about memorizing frameworks&apos;it&apos;s about mastering
@@ -103,7 +103,7 @@ export default function OldAbout() {
                 className="absolute -left-4 -top-4 hidden h-full w-full rounded-[2.5rem] border lg:block"
                 style={{ borderColor: "rgba(90,155,104,0.08)" }}
               />
-              <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-white/6 bg-white/[0.025] p-5 backdrop-blur-sm">
+              <div className="relative flex w-full flex-col gap-5 rounded-[2.4rem] border border-black/5 bg-black/[0.02] p-5 backdrop-blur-sm">
                 <EnrollmentCard />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {statCards.map(({ value, label, icon: Icon, color }) => (
@@ -148,17 +148,17 @@ function EnrollmentCard() {
       className="relative overflow-hidden rounded-[2rem] border p-6 md:p-8"
       style={{
         background:
-          "radial-gradient(circle at top left, rgba(133,199,145,0.18), transparent 28%), linear-gradient(135deg, rgba(63,116,78,0.98) 0%, rgba(45,92,63,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.08)",
-        boxShadow: "0 18px 44px rgba(0,0,0,0.18)",
+          "radial-gradient(circle at top left, rgba(133,199,145,0.18), transparent 28%), linear-gradient(135deg, rgba(230, 245, 235, 0.98) 0%, rgba(215, 235, 220, 0.98) 100%)",
+        borderColor: "rgba(0,0,0,0.05)",
+        boxShadow: "0 18px 44px rgba(0,0,0,0.05)",
       }}
     >
       <div className="pointer-events-none absolute right-[-2rem] top-[-2rem] h-24 w-24 rounded-full bg-white/10 blur-2xl" />
       <div className="mb-4 flex items-center gap-2">
-        <CalendarDays size={16} style={{ color: "rgba(196,239,155,0.95)" }} />
+        <CalendarDays size={16} style={{ color: "rgba(45,92,63,0.95)" }} />
         <span
           className="text-xs font-black uppercase tracking-widest"
-          style={{ color: "rgba(196,239,155,0.95)" }}
+          style={{ color: "rgba(45,92,63,0.95)" }}
         >
           Enrolment Ends
         </span>
@@ -196,14 +196,14 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
       className="relative overflow-hidden rounded-[1.6rem] border p-5"
       style={{
         background:
-          "linear-gradient(180deg, rgba(39,76,56,0.92) 0%, rgba(28,57,43,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.06)",
+          "linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.04) 100%)",
+        borderColor: "rgba(0,0,0,0.04)",
       }}
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{
-          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
+          background: "linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent)",
         }}
       />
       <div
@@ -216,7 +216,7 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
         {value}
       </div>
 
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white/55">
+      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-black/40">
         {icon} {label}
       </div>
     </div>
@@ -226,19 +226,19 @@ function StatCard({ value, label, icon, color = "tertiary" }) {
 function BenefitCard({ title, content, accent, icon }) {
   return (
     <div
-      className="group relative overflow-hidden rounded-[2.2rem] md:rounded-[2.5rem] border p-6 md:p-10 transition-all duration-500 hover:-translate-y-1 hover:border-white/12"
+      className="group relative overflow-hidden rounded-[2.2rem] md:rounded-[2.5rem] border p-6 md:p-10 transition-all duration-500 hover:-translate-y-1 hover:border-black/10"
       style={{
         background:
-          "radial-gradient(circle at top left, rgba(90,155,104,0.1), transparent 24%), linear-gradient(180deg, rgba(21,40,34,0.96) 0%, rgba(18,35,30,0.98) 100%)",
-        borderColor: "rgba(255,255,255,0.05)",
-        boxShadow: "0 20px 44px rgba(0,0,0,0.12)",
+          "radial-gradient(circle at top left, rgba(90,155,104,0.05), transparent 24%), linear-gradient(180deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.02) 100%)",
+        borderColor: "rgba(0,0,0,0.04)",
+        boxShadow: "0 20px 44px rgba(0,0,0,0.03)",
       }}
     >
       <div
         className="pointer-events-none absolute -right-10 top-0 h-32 w-32 rounded-full blur-3xl transition-opacity duration-500 group-hover:opacity-100"
         style={{ background: `${accent}22`, opacity: 0.55 }}
       />
-      <div className="relative mb-8 flex w-fit items-center justify-center rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+      <div className="relative mb-8 flex w-fit items-center justify-center rounded-[1.25rem] border border-black/5 bg-black/[0.02] p-5 shadow-[inset_0_1px_0_rgba(0,0,0,0.02)]">
         {icon}
       </div>
 
@@ -259,7 +259,7 @@ function BenefitCard({ title, content, accent, icon }) {
       </h3>
 
       <p
-        className="font-editorial-regular max-w-[18rem] text-lg leading-relaxed text-white/52"
+        className="font-editorial-regular max-w-[18rem] text-lg leading-relaxed text-black/50"
         style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
       >
         {content}

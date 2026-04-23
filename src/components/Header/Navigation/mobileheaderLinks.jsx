@@ -14,7 +14,7 @@ const MobileHeaderLink = ({ item }) => {
     return (
         <div className="relative w-full">
             <div
-                className="flex items-center justify-center w-full py-2 text-white cursor-pointer relative"
+                className="flex items-center justify-center w-full py-2 text-black cursor-pointer relative"
                 onClick={handleToggle}
             >
                 <span>{item.label}</span>

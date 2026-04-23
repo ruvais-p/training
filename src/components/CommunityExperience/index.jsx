@@ -17,11 +17,11 @@ export default function CommunityExperience() {
       <div className="relative mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <div className="pt-2">
           <h2
-            className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-white md:text-[3.6rem]"
+            className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-black md:text-[3.6rem]"
             style={{
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
               fontWeight: 400,
-              textShadow: "0 22px 80px rgba(0,0,0,0.35)",
+              textShadow: "0 22px 80px rgba(0,0,0,0.08)",
             }}
           >
             Learn Beyond the{" "}
@@ -50,7 +50,7 @@ export default function CommunityExperience() {
           <p
             className="mt-6 max-w-[34rem] text-[1.04rem] leading-7 md:text-[1.12rem]"
             style={{
-              color: "rgba(232,245,239,0.68)",
+              color: "rgba(0,0,0,0.65)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
@@ -76,7 +76,7 @@ export default function CommunityExperience() {
               color: "#000000",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               boxShadow:
-                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(0,0,0,0.08) inset",
               backdropFilter: "blur(10px)",
               WebkitBackdropFilter: "blur(10px)",
             }}
@@ -127,11 +127,11 @@ export default function CommunityExperience() {
 
                   <div className="flex min-h-[40px] flex-col justify-center">
                     <p
-                      className="font-editorial-regular text-[1.12rem] leading-relaxed text-white md:text-[1.25rem]"
+                      className="font-editorial-regular text-[1.12rem] leading-relaxed text-black md:text-[1.25rem]"
                       style={{
                         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
                         fontWeight: 400,
-                        color: "rgba(255, 255, 255, 0.9)",
+                        color: "rgba(0, 0, 0, 0.85)",
                       }}
                     >
                       {text}

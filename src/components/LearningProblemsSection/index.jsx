@@ -57,7 +57,7 @@ export default function LearningProblemsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2
-            className="font-editorial-regular text-[2.5rem] md:text-[4rem] leading-[0.95] tracking-[-0.05em] text-white mb-6"
+            className="font-editorial-regular text-[2.5rem] md:text-[4rem] leading-[0.95] tracking-[-0.05em] text-black mb-6"
             style={{ fontFamily: "var(--font-pp-editorial-regular), Georgia, serif" }}
           >
             Learning Problems{" "}
@@ -83,22 +83,22 @@ export default function LearningProblemsSection() {
             />
           </h2>
 
-          <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-black/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             Sound familiar? These are the exact reasons most people never break into cybersecurity even when they try hard.
           </p>
         </div>
 
         {/* Table */}
-        <div className="rounded-3xl border border-white/10 overflow-hidden bg-[#0a0a0a] shadow-2xl">
+        <div className="rounded-3xl border border-black/5 overflow-hidden bg-white shadow-2xl shadow-black/5">
 
           {/* Headers */}
-          <div className="grid grid-cols-1 md:grid-cols-2 border-b border-white/10">
-            <div className="flex items-center gap-3 p-6 md:p-8 bg-[#1a1a1a] text-white/40 uppercase tracking-widest text-xs font-bold">
+          <div className="grid grid-cols-1 md:grid-cols-2 border-b border-black/5">
+            <div className="flex items-center gap-3 p-6 md:p-8 bg-black/5 text-black/40 uppercase tracking-widest text-xs font-bold">
               <XIcon />
               Learning Problems We've All Faced
             </div>
 
-            <div className="flex items-center gap-3 p-6 md:p-8 bg-white/5 text-tertiary md:text-[#a3e635] uppercase tracking-widest text-xs font-bold border-t md:border-t-0 md:border-l border-white/10">
+            <div className="flex items-center gap-3 p-6 md:p-8 bg-black/[0.02] text-tertiary md:text-tertiary uppercase tracking-widest text-xs font-bold border-t md:border-t-0 md:border-l border-black/5">
               <CheckIcon />
               The YACS Way
             </div>
@@ -112,7 +112,7 @@ export default function LearningProblemsSection() {
                 }`}
             >
               {/* Problem */}
-              <div className="p-6 md:p-8 text-white/60 text-sm md:text-base leading-relaxed border-b md:border-b-0 md:border-r border-white/5 bg-[#0d0d0d] md:bg-transparent">
+              <div className="p-6 md:p-8 text-black/60 text-sm md:text-base leading-relaxed border-b md:border-b-0 md:border-r border-black/5 bg-black/[0.01] md:bg-transparent">
                 {item.problem}
               </div>
 
@@ -127,8 +127,8 @@ export default function LearningProblemsSection() {
                     `
                   : `
                       bg-[var(--tertiary)]/90 text-black
-                      md:bg-white/[0.03] md:text-white
-                      hover:md:bg-white/[0.06]
+                      md:bg-black/[0.02] md:text-black
+                      hover:md:bg-black/[0.04]
                     `
                   }`}
               >
@@ -177,7 +177,7 @@ export default function LearningProblemsSection() {
             </a>
 
             {/* Divider (desktop only) */}
-            <div className="h-8 w-[1px] bg-white/10 hidden md:block" />
+            <div className="h-8 w-[1px] bg-black/10 hidden md:block" />
 
             <FloatingContact isFloating={false} />
           </div>

@@ -16,9 +16,9 @@ function AudiencePill({ label }) {
     <div
       className="inline-flex cursor-default items-center gap-2 whitespace-nowrap rounded-full border px-5 py-3 text-sm font-medium"
       style={{
-        borderColor: "rgba(255,255,255,0.08)",
-        background: "rgba(0,0,0,0.72)",
-        color: "rgba(255,255,255,0.92)",
+        borderColor: "rgba(0,0,0,0.08)",
+        background: "rgba(255,255,255,0.72)",
+        color: "rgba(0,0,0,0.85)",
       }}
     >
       <span
@@ -75,7 +75,7 @@ export default function CareerAndGrowthSupport() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 text-center">
           <h2
-            className="text-[2.4rem] leading-[0.94] tracking-[-0.05em] text-white md:text-[4rem]"
+            className="text-[2.4rem] leading-[0.94] tracking-[-0.05em] text-black md:text-[4rem]"
             style={{
               fontWeight: 400,
             }}
@@ -83,7 +83,7 @@ export default function CareerAndGrowthSupport() {
             <span
               className="font-editorial-regular"
               style={{
-                color: "#ffffff",
+                color: "#000000",
                 fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
                 fontStyle: "normal",
                 fontWeight: 400,
@@ -117,7 +117,7 @@ export default function CareerAndGrowthSupport() {
             />
           </h2>
           <p
-            className="font-editorial-regular mx-auto mt-4 max-w-3xl text-[1rem] leading-8 text-white/70 md:text-[1.08rem]"
+            className="font-editorial-regular mx-auto mt-4 max-w-3xl text-[1rem] leading-8 text-black/70 md:text-[1.08rem]"
             style={{
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
             }}

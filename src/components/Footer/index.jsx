@@ -7,8 +7,8 @@ export default function Footer() {
     <footer
       className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12 lg:px-16"
       style={{
-        background: "rgba(4, 7, 6, 0.88)",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(255, 255, 255, 0.88)",
+        borderTop: "1px solid rgba(0,0,0,0.06)",
         backdropFilter: "blur(14px)",
       }}
     >
@@ -25,17 +25,17 @@ export default function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="flex flex-col gap-8 rounded-[1.6rem] sm:rounded-[2rem] border border-white/8 bg-white/[0.02] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 shadow-[0_20px_70px_rgba(0,0,0,0.24)] lg:min-h-[240px] lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-8 rounded-[1.6rem] sm:rounded-[2rem] border border-black/5 bg-black/[0.02] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 shadow-[0_20px_70px_rgba(0,0,0,0.06)] lg:min-h-[240px] lg:flex-row lg:items-center lg:justify-between">
 
           {/* LEFT SIDE */}
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
             <div className="text-center lg:text-left">
-              <p className="text-[1.25rem] sm:text-[1.45rem] md:text-[1.8rem] font-semibold tracking-[-0.03em] text-white leading-tight">
+              <p className="text-[1.25rem] sm:text-[1.45rem] md:text-[1.8rem] font-semibold tracking-[-0.03em] text-black leading-tight">
                 Ready to start your journey?
               </p>
               <p
                 className="mt-3 max-w-[520px] text-[0.92rem] sm:text-sm md:text-[1rem] leading-6 sm:leading-7 mx-auto lg:mx-0"
-                style={{ color: "rgba(232,245,239,0.68)" }}
+                style={{ color: "rgba(0,0,0,0.68)" }}
               >
                 Join the cohort, learn from industry mentors, and build real cybersecurity skills.
               </p>
@@ -46,9 +46,9 @@ export default function Footer() {
                 href="/mentor"
                 className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full border px-6 sm:px-7 text-sm font-medium text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10"
                 style={{
-                  color: "#9fd0a6",
+                  color: "#2D5C3F",
                   borderColor: "rgba(90,155,104,0.45)",
-                  background: "rgba(255,255,255,0.02)",
+                  background: "rgba(0,0,0,0.02)",
                 }}
               >
                 Apply as Mentor
@@ -75,7 +75,7 @@ export default function Footer() {
                   src="/logo/YACS LOGO white (1).png"
                   alt="YACS Logo"
                   fill
-                  className="object-contain object-center lg:object-right"
+                  className="object-contain object-center lg:object-right invert"
                   priority
                 />
               </div>
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="mt-8 flex flex-col items-center gap-4 text-center text-sm md:flex-row md:items-center md:justify-between md:text-left">
-          <p style={{ color: "rgba(245,250,246,0.52)" }}>
+          <p style={{ color: "rgba(0,0,0,0.52)" }}>
             © 2026 YACS. All rights reserved.
           </p>
 
@@ -111,8 +111,8 @@ function FooterPolicyLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="transition-colors duration-300 hover:text-white text-[0.88rem] sm:text-sm"
-      style={{ color: "rgba(245,250,246,0.7)" }}
+      className="transition-colors duration-300 hover:text-black text-[0.88rem] sm:text-sm"
+      style={{ color: "rgba(0,0,0,0.7)" }}
     >
       {label}
     </Link>
@@ -124,7 +124,7 @@ function BottomSocial({ href, icon, label }) {
     <Link
       href={href}
       aria-label={label}
-      className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10 hover:text-[#9fd0a6]"
+      className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-black/10 bg-black/[0.03] text-black/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10 hover:text-[#2D5C3F]"
     >
       <Icon icon={icon} width="18" height="18" />
     </Link>

@@ -22,7 +22,7 @@ export default function PlacementPartners({ partners = [] }) {
                     </p>
                     <h2
                         className="text-[2.5rem] md:text-[3.8rem] font-medium leading-tight tracking-[-0.03em]"
-                        style={{ color: "#f3f7f3" }}
+                        style={{ color: "#000000" }}
                     >
                         <span
                             className="font-editorial-regular"
@@ -64,10 +64,10 @@ export default function PlacementPartners({ partners = [] }) {
                             key={partner.name}
                             className="group relative flex h-[160px] w-full max-w-[280px] sm:w-[320px] items-center justify-center p-8 rounded-[2.5rem] border transition-all duration-500 hover:-translate-y-2"
                             style={{
-                                background: "rgba(255, 255, 255, 0.02)",
-                                borderColor: "rgba(120, 177, 131, 0.12)",
+                                background: "rgba(255, 255, 255, 0.6)",
+                                borderColor: "rgba(0, 0, 0, 0.05)",
                                 backdropFilter: "blur(16px)",
-                                boxShadow: "0 10px 40px rgba(0,0,0,0.12)",
+                                boxShadow: "0 10px 40px rgba(0,0,0,0.06)",
                             }}
                         >
                             <div
@@ -92,7 +92,7 @@ export default function PlacementPartners({ partners = [] }) {
                     <p
                         className="max-w-2xl text-[0.98rem] md:text-[1.04rem] leading-7 tracking-[0.01em]"
                         style={{
-                            color: "rgba(243,247,243,0.58)",
+                            color: "rgba(0,0,0,0.6)",
                             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                         }}
                     >
@@ -109,7 +109,7 @@ export default function PlacementPartners({ partners = [] }) {
                             color: "#000000",
                             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                             boxShadow:
-                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(0,0,0,0.08) inset",
                             backdropFilter: "blur(10px)",
                             WebkitBackdropFilter: "blur(10px)",
                         }}

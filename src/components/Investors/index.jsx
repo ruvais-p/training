@@ -70,7 +70,7 @@ export default function Investors() {
                     </p>
                     <h2
                         className="text-[2.8rem] font-medium leading-[0.9] tracking-[-0.04em] sm:text-[3.5rem] md:text-[4.5rem]"
-                        style={{ color: "#f3f7f3" }}
+                        style={{ color: "#000000" }}
                     >
                         <span
                             className="font-editorial-regular italic opacity-90"
@@ -123,8 +123,8 @@ export default function Investors() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="max-w-2xl text-[1rem] md:text-[1.12rem] font-medium leading-relaxed text-white"
-                        style={{ fontFamily: 'var(--font-geist-sans)', color: '#ffffff' }}
+                        className="max-w-2xl text-[1rem] md:text-[1.12rem] font-medium leading-relaxed text-black"
+                        style={{ fontFamily: 'var(--font-geist-sans)', color: '#000000' }}
                     >
                         All mentors are verifiable on LinkedIn. No fake profiles. No borrowed credentials. <br className="hidden md:block" />
                         Click any link above and verify before you apply.
@@ -150,7 +150,7 @@ export default function Investors() {
                             color: "#000000",
                             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                             boxShadow:
-                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(0,0,0,0.08) inset",
                             backdropFilter: "blur(10px)",
                             WebkitBackdropFilter: "blur(10px)",
                         }}
@@ -186,7 +186,7 @@ function MentorCard({ mentor, index, className }) {
 
                 {/* Role Badge (Top Left over image) */}
                 {mentor.role && (
-                    <div className="absolute left-6 top-6 z-10 px-3 py-1 rounded-md bg-black/40 backdrop-blur-md border border-white/10">
+                    <div className="absolute left-6 top-6 z-10 px-3 py-1 rounded-md bg-black/40 backdrop-blur-md border border-black/5">
                         <span className="text-[0.6rem] font-bold tracking-[0.2em] text-white/90">
                             {mentor.role}
                         </span>
@@ -198,7 +198,7 @@ function MentorCard({ mentor, index, className }) {
                     href={mentor.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-[#0077B5] hover:bg-[#0077B5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)]"
+                    className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-black/5 bg-black/30 text-white backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-[#0077B5] hover:bg-[#0077B5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)]"
                     title="Connect on LinkedIn"
                 >
                     <Linkedin size={18} strokeWidth={1.5} />
@@ -206,10 +206,10 @@ function MentorCard({ mentor, index, className }) {
 
                 {/* Bottom Content Over Image */}
                 <div className="absolute bottom-6 left-6 right-6 text-center">
-                    <p className="text-[1.1rem] font-medium text-white/90 leading-tight">
+                    <p className="text-[1.1rem] font-medium text-white/90 leading-tight drop-shadow-md">
                         {mentor.designation}
                     </p>
-                    <p className="text-[0.75rem] text-white/40 mt-1.5 font-medium">
+                    <p className="text-[0.75rem] text-white/60 mt-1.5 font-medium drop-shadow-sm">
                         {mentor.subDesignation}
                     </p>
                 </div>
@@ -217,7 +217,7 @@ function MentorCard({ mentor, index, className }) {
 
             {/* Content Area (Below Image) */}
             <div className="mt-6 px-4 text-center">
-                <p className="text-[0.9rem] leading-relaxed text-white/60">
+                <p className="text-[0.9rem] leading-relaxed text-black/60">
                     {mentor.bio}
                 </p>
 

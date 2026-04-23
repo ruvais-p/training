@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020e04;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #000000;
   --primary: #2D5C3F;
   --secondary: #3F744E;
-  --tertiary: #5A9B68;
+  --tertiary: #2D5C3F;
   --accent-green: #14CF6D;
 }
 
@@ -85,13 +85,13 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
   overflow-x: clip !important;
-  background: #020e04 !important;
+  background: #ffffff !important;
 }
 
 body {
   overflow-x: clip !important;
   -webkit-overflow-scrolling: touch;
-  background: #020e04 !important;
+  background: #ffffff !important;
 }
 
 html,

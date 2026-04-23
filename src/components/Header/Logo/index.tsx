@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
                 alt="YACS Logo"
                 width={2242}
                 height={686}
-                className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 invert"
                 priority
             />
         </Link>

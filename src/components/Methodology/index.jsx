@@ -47,10 +47,10 @@ export default function Methodology() {
   return (
     <section className="relative overflow-hidden bg-transparent">
       {/* Title */}
-      <div className="relative border-b border-white/10 px-6 py-18 md:px-12 md:py-24">
+      <div className="relative border-b border-black/5 px-6 py-18 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-editorial-regular text-center text-[2.7rem] leading-[0.92] tracking-[-0.06em] text-white md:text-[4.7rem]">
+            <h2 className="font-editorial-regular text-center text-[2.7rem] leading-[0.92] tracking-[-0.06em] text-black md:text-[4.7rem]">
               Your Learning{" "}
               <BlurText
                 text="Journey"
@@ -117,7 +117,7 @@ function MethodCard({ step }) {
     <article className="interactive-card relative px-4 pb-2 pt-1">
       {/* Top */}
       <div className="mb-8 flex items-center justify-between">
-        <span className="text-[4.2rem] font-light leading-none tracking-[-0.06em] text-white md:text-[5rem]">
+        <span className="text-[4.2rem] font-light leading-none tracking-[-0.06em] text-black md:text-[5rem]">
           {step.number}
         </span>
 
@@ -130,7 +130,7 @@ function MethodCard({ step }) {
         />
       </div>
 
-      <div className="mb-9 h-px w-full bg-white/10" />
+      <div className="mb-9 h-px w-full bg-black/5" />
 
       {/* Icon + Title */}
       <div className="mb-10 flex items-start gap-4">
@@ -152,13 +152,13 @@ function MethodCard({ step }) {
           />
         </div>
 
-        <h3 className="font-metana-black text-[1.75rem] md:text-[2rem] font-semibold leading-[1.1] md:leading-[0.95] tracking-[-0.05em] text-white">
+        <h3 className="font-metana-black text-[1.75rem] md:text-[2rem] font-semibold leading-[1.1] md:leading-[0.95] tracking-[-0.05em] text-black">
           {step.title}
         </h3>
       </div>
 
       {/* Text */}
-      <div className="space-y-1.5 text-[0.95rem] leading-8 text-white/60 md:text-[1rem]">
+      <div className="space-y-1.5 text-[0.95rem] leading-8 text-black/60 md:text-[1rem]">
         {step.points.map((point) => (
           <p key={point}>{point}</p>
         ))}

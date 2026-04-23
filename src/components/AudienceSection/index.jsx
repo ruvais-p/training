@@ -22,7 +22,7 @@ export default function AudienceSection() {
         className="pointer-events-none absolute inset-0 opacity-[0.09]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0, transparent 24%), linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+            "radial-gradient(circle at 20% 30%, rgba(0,0,0,0.05) 0, transparent 24%), linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
           backgroundSize: "100% 100%, 42px 42px, 42px 42px",
         }}
       />
@@ -43,7 +43,7 @@ export default function AudienceSection() {
           <h2
             className="mb-5 text-[2.5rem] leading-[0.93] tracking-[-0.05em] md:text-[4rem] font-editorial-regular"
             style={{
-              color: "#f3f7f3",
+              color: "#000000",
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
               fontWeight: 400,
             }}
@@ -74,7 +74,7 @@ export default function AudienceSection() {
           <p
             className="max-w-[22rem] text-[1.02rem] leading-7 md:text-[1.08rem]"
             style={{
-              color: "rgba(232,245,239,0.68)",
+              color: "rgba(0,0,0,0.68)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
@@ -162,10 +162,10 @@ function AudienceCard({
       }}
       className={`group relative overflow-hidden rounded-[1.6rem] border px-6 py-6 md:px-7 md:py-7 ${className}`}
       style={{
-        background: "linear-gradient(180deg, rgba(3,6,4,0.98) 0%, rgba(2,10,5,0.98) 100%)",
+        background: "rgba(255,255,255,0.6)",
         borderColor: "rgba(110,170,124,0.14)",
         boxShadow:
-          "0 18px 40px rgba(0,0,0,0.24), 0 0 0 1px rgba(90,155,104,0.06) inset, 0 0 28px rgba(90,155,104,0.08)",
+          "0 18px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(90,155,104,0.06) inset, 0 0 28px rgba(90,155,104,0.04)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
       }}
@@ -196,7 +196,7 @@ function AudienceCard({
           <p
             className="text-[1rem] font-medium leading-[1.45] tracking-[-0.02em] md:text-[1.08rem]"
             style={{
-              color: "#f3f7f3",
+              color: "#000000",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >

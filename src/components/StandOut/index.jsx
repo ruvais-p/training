@@ -49,10 +49,10 @@ function StandOutCard({ title, description, imgSrc, index }) {
         delay: index * 0.07,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative w-full overflow-hidden rounded-[28px] border border-white/10"
+      className="relative w-full overflow-hidden rounded-[28px] border border-black/5"
       style={{
         boxShadow:
-          "0 26px 70px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.03) inset",
+          "0 26px 70px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03) inset",
       }}
     >
       {/* SEO Content */}
@@ -75,7 +75,7 @@ function StandOutCard({ title, description, imgSrc, index }) {
         {/* Overlay Title - Top Left */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none" />
         <div className="absolute left-6 top-6 z-10 max-w-[85%]">
-          <h3 className="text-[1.25rem] font-medium leading-tight text-white tracking-tight">
+          <h3 className="text-[1.25rem] font-medium leading-tight text-white tracking-tight drop-shadow-md">
             {title}
           </h3>
         </div>
@@ -91,7 +91,7 @@ export default function StandOutSection() {
         <div className="grid items-start gap-10 xl:grid-cols-[420px_1fr] xl:gap-14">
           <div className="pt-6">
             <h2
-              className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-white md:text-[3.2rem]"
+              className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-black md:text-[3.2rem]"
               style={{
                 fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
                 fontWeight: 400,
@@ -120,7 +120,7 @@ export default function StandOutSection() {
               />
             </h2>
             <p
-              className="mt-6 max-w-[30rem] text-[1.02rem] leading-7 text-white/60"
+              className="mt-6 max-w-[30rem] text-[1.02rem] leading-7 text-black/60"
               style={{
                 fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               }}
@@ -148,7 +148,7 @@ export default function StandOutSection() {
                 color: "#000000",
                 fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                 boxShadow:
-                  "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                  "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(0,0,0,0.08) inset",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
               }}

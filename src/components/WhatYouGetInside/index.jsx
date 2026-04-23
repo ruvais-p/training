@@ -25,7 +25,7 @@ const TopCard = ({
   bgImage,
   iconColor,
 }) => (
-  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-[#0a0a0a] p-8 md:p-10 transition-all duration-300 hover:border-white/20">
+  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-black/5 bg-white/60 p-8 md:p-10 transition-all duration-300 hover:border-black/10">
     {/* Background Image */}
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
@@ -38,30 +38,30 @@ const TopCard = ({
       style={gradientStyle}
     />
 
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+    {/* Light Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent" />
 
     {/* Header */}
     <div className="relative z-10 flex items-center gap-4">
       <StarIcon className={`h-8 w-8 ${iconColor}`} />
-      <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-white leading-none">
+      <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-black leading-none">
         {title}
       </h2>
     </div>
 
     {/* Footer Text */}
-    <p className="relative z-10 max-w-[95%] text-[0.95rem] md:text-base leading-relaxed text-white/90">
+    <p className="relative z-10 max-w-[95%] text-[0.95rem] md:text-base leading-relaxed text-black/90">
       {description}
     </p>
   </div>
 );
 
 const BottomCard = ({ title, description }) => (
-  <div className="flex flex-col gap-4 rounded-[20px] bg-[#141414] p-6 md:p-8 border border-white/5 transition-colors hover:bg-[#1a1a1a]">
-    <h3 className="text-xl md:text-[1.35rem] font-semibold tracking-tight text-white">
+  <div className="flex flex-col gap-4 rounded-[20px] bg-black/5 p-6 md:p-8 border border-black/5 transition-colors hover:bg-black/10">
+    <h3 className="text-xl md:text-[1.35rem] font-semibold tracking-tight text-black">
       {title}
     </h3>
-    <p className="text-sm md:text-[0.95rem] leading-relaxed text-[#a1a1aa]">
+    <p className="text-sm md:text-[0.95rem] leading-relaxed text-black/60">
       {description}
     </p>
   </div>
@@ -107,7 +107,7 @@ export default function FeaturesSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
           <h2
-            className="font-editorial-regular text-[2.5rem] leading-[0.94] tracking-[-0.05em] text-white md:text-[4rem]"
+            className="font-editorial-regular text-[2.5rem] leading-[0.94] tracking-[-0.05em] text-black md:text-[4rem]"
             style={{
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
               fontWeight: 400,
@@ -147,7 +147,7 @@ export default function FeaturesSection() {
                   "linear-gradient(90deg, rgba(90,155,104,0.78) 0%, rgba(217, 227, 138,0.55) 45%, rgba(59,130,246,0.12) 100%)",
               }}
               bgImage="/whatgetyouinside/whatgetyouinside2.webp"
-              iconColor="text-[#FFFFFF]"
+              iconColor="text-black"
             />
 
             <TopCard
@@ -158,15 +158,15 @@ export default function FeaturesSection() {
                   "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
               }}
               bgImage="/whatgetyouinside/whatgetyouinside.webp"
-              iconColor="text-[#FFFFFF]"
+              iconColor="text-black"
             />
           </div>
 
           {/* Blueprint Style Divider Line with Ticks */}
-          <div className="relative my-8 hidden h-[1px] w-full bg-white/10 lg:block">
-            <div className="absolute left-[25%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
-            <div className="absolute left-[50%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
-            <div className="absolute left-[75%] top-[-4px] h-[9px] w-[1px] bg-white/30" />
+          <div className="relative my-8 hidden h-[1px] w-full bg-black/10 lg:block">
+            <div className="absolute left-[25%] top-[-4px] h-[9px] w-[1px] bg-black/30" />
+            <div className="absolute left-[50%] top-[-4px] h-[9px] w-[1px] bg-black/30" />
+            <div className="absolute left-[75%] top-[-4px] h-[9px] w-[1px] bg-black/30" />
           </div>
 
           {/* Responsive gap fallback for mobile */}
@@ -188,7 +188,7 @@ export default function FeaturesSection() {
           <p
             className="max-w-2xl text-[1rem] md:text-[1.08rem] leading-7 md:leading-8"
             style={{
-              color: "rgba(232,245,239,0.72)",
+              color: "rgba(0,0,0,0.65)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
@@ -215,7 +215,7 @@ export default function FeaturesSection() {
               color: "#000000",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               boxShadow:
-                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(0,0,0,0.08) inset",
               backdropFilter: "blur(10px)",
               WebkitBackdropFilter: "blur(10px)",
             }}

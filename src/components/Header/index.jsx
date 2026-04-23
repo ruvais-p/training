@@ -24,10 +24,10 @@ const Header = () => {
   return (
     <>
       <header
-        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500 font-editorial-regular text-center lg:text-left"
+        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-black/5 bg-black/5 px-4 py-1 shadow-sm backdrop-blur-md transition-all duration-500 font-editorial-regular text-center lg:text-left"
       >
         <div className="container mx-auto flex w-full max-w-full items-center justify-between px-2 py-4 lg:px-4 2xl:max-w-[1400px]">
-          <div className="text-white">
+          <div className="text-black">
             <Logo />
           </div>
 
@@ -35,7 +35,7 @@ const Header = () => {
             className="hidden grow items-center justify-end whitespace-nowrap pr-8 text-sm lg:flex lg:space-x-6 xl:space-x-8"
           >
             {headerData.map((item, index) => (
-              <HeaderLinks key={index} item={item} />
+              <HeaderLinks key={index} item={item} isLight={true} />
             ))}
           </nav>
 
@@ -78,9 +78,9 @@ const Header = () => {
               className="group ml-1 block cursor-pointer p-2"
               aria-label="Toggle mobile menu"
             >
-              <span className="block h-0.5 w-6 bg-white"></span>
-              <span className="mt-1.5 block h-0.5 w-4 bg-white transition-all duration-300 ease-in-out group-hover:w-6"></span>
-              <span className="mt-1.5 block h-0.5 w-6 bg-white"></span>
+              <span className="block h-0.5 w-6 bg-black"></span>
+              <span className="mt-1.5 block h-0.5 w-4 bg-black transition-all duration-300 ease-in-out group-hover:w-6"></span>
+              <span className="mt-1.5 block h-0.5 w-6 bg-black"></span>
             </button>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Header = () => {
 
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-dark-blur p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden font-editorial-regular ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
+        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-white/95 p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden font-editorial-regular ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
           }`}
       >
         <div className="flex w-full items-center justify-between text-white">
@@ -118,7 +118,7 @@ const Header = () => {
 
         <nav className="flex flex-col items-center py-6">
           {headerData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
+            <MobileHeaderLink key={index} item={item} isLight={true} />
           ))}
         </nav>
 
