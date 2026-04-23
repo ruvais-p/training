@@ -106,7 +106,7 @@ const heroKeyframes = `
 export default function Home() {
   return (
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
-      <section id="cybersecurity-cohort">
+      <section id="cybersecurity-cohort" className="mb-24">
         <h2 className="sr-only">Cybersecurity Cohort Program Kerala | YACS — 4 Months Online</h2>
         <HeroSection />
       </section>
@@ -114,7 +114,7 @@ export default function Home() {
       {/* <PreAboutSection /> */}
       {/* <LearningProblemsSection /> */}
 
-      <section id="mentors">
+      <section id="mentors" className="pt-24 pb-12">
         <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
         <AboutSection />
       </section>
@@ -225,6 +225,8 @@ function HeroSection() {
           <source src="/home_page/hero_section_video (1).mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        {/* Bottom blend overlay */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020202] to-transparent z-10" />
       </div>
       <HeroOverlay />
       <DesktopHero />

@@ -131,7 +131,7 @@ export default function Investors() {
                     </motion.p>
 
                     <motion.a
-                        href="https://www.airtribe.live/backend-engineering/apply"
+                        href="https://form.jotform.com/261102001781440"
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}

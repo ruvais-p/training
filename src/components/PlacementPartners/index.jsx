@@ -100,7 +100,7 @@ export default function PlacementPartners({ partners = [] }) {
                     </p>
 
                     <a
-                        href="https://www.airtribe.live/backend-engineering/apply"
+                        href="https://form.jotform.com/261102001781440"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.02]"

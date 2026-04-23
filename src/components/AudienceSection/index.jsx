@@ -82,7 +82,7 @@ export default function AudienceSection() {
           </p>
 
           <motion.a
-            href="https://www.airtribe.live/backend-engineering/apply"
+            href="https://form.jotform.com/261102001781440"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
@@ -106,7 +106,7 @@ export default function AudienceSection() {
               WebkitBackdropFilter: "blur(10px)",
             }}
           >
-            I WANT A SEAT
+            JOIN THE COHORT
           </motion.a>
         </div>
 

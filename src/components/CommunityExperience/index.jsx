@@ -57,7 +57,7 @@ export default function CommunityExperience() {
             A cybersecurity cohort in Kerala should feel like a lab, hands-on training, real-world security practice, and a community that keeps you learning beyond live sessions.
           </p>
           <motion.a
-            href="https://www.airtribe.live/backend-engineering/apply"
+            href="https://form.jotform.com/261102001781440"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}

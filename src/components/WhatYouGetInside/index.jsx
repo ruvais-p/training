@@ -196,7 +196,7 @@ export default function FeaturesSection() {
           </p>
 
           <motion.a
-            href="https://www.airtribe.live/backend-engineering/apply"
+            href="https://form.jotform.com/261102001781440"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}

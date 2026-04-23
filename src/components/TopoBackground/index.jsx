@@ -14,7 +14,7 @@ export default function GridBackground() {
     let animationFrame;
     let offset = 0;
 
-    const GRID_SIZE = 24;
+    const GRID_SIZE = 30;
     const SPEED = 0.08;
 
     function resize() {
@@ -76,26 +76,6 @@ export default function GridBackground() {
       }
 
       for (let y = -GRID_SIZE + (offset % GRID_SIZE); y < h + GRID_SIZE; y += GRID_SIZE) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(w, y);
-        ctx.stroke();
-      }
-
-      // major grid
-      ctx.strokeStyle = "rgba(255,255,255,0.09)";
-      ctx.lineWidth = 0.8;
-
-      const major = GRID_SIZE * 5;
-
-      for (let x = -major + (offset % major); x < w + major; x += major) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, h);
-        ctx.stroke();
-      }
-
-      for (let y = -major + (offset % major); y < h + major; y += major) {
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(w, y);
