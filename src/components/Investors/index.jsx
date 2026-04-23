@@ -123,8 +123,8 @@ export default function Investors() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="max-w-2xl text-[1rem] md:text-[1.12rem] font-medium leading-relaxed text-white/50"
-                        style={{ fontFamily: 'var(--font-geist-sans)' }}
+                        className="max-w-2xl text-[1rem] md:text-[1.12rem] font-medium leading-relaxed text-white"
+                        style={{ fontFamily: 'var(--font-geist-sans)', color: '#ffffff' }}
                     >
                         All mentors are verifiable on LinkedIn. No fake profiles. No borrowed credentials. <br className="hidden md:block" />
                         Click any link above and verify before you apply.
