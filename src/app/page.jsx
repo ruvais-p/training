@@ -60,36 +60,36 @@ const placementPartners = [
 ];
 
 const titleStyle = {
-  fontSize: "clamp(2.6rem, 5.5vw, 4.25rem)",
+  fontSize: "clamp(2.4rem, 5.2vw, 3.8rem)",
   fontWeight: 800,
   color: "#ffffff",
-  lineHeight: 1.08,
+  lineHeight: 1.1,
   letterSpacing: "-0.025em",
-  marginBottom: "1.5rem",
+  marginBottom: "1.25rem",
   textShadow: "0 4px 40px rgba(0,0,0,0.6)",
 };
 
 const mobileTitleStyle = {
-  fontSize: "2.1rem",
+  fontSize: "1.9rem",
   fontWeight: 800,
   color: "#fff",
-  lineHeight: 1.1,
+  lineHeight: 1.15,
   letterSpacing: "-0.02em",
-  marginBottom: "1.2rem",
+  marginBottom: "1rem",
 };
 
 const descStyle = {
-  fontSize: "1rem",
-  lineHeight: 1.75,
+  fontSize: "0.95rem",
+  lineHeight: 1.7,
   color: "rgba(255,255,255,0.72)",
-  marginBottom: "2.5rem",
+  marginBottom: "2rem",
   maxWidth: "1100px",
   fontWeight: 400,
 };
 
 const mobileDescStyle = {
-  fontSize: "1rem",
-  lineHeight: 1.65,
+  fontSize: "0.9rem",
+  lineHeight: 1.6,
   color: "rgba(255,255,255,0.7)",
   fontWeight: 400,
 };
@@ -212,7 +212,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[95vh] min-h-[600px] w-full overflow-hidden">
       {/* Local Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -238,10 +238,10 @@ function HeroSection() {
 function SmallBadge({ text, dotColor = "var(--tertiary)", borderColor = "rgba(255,255,255,0.15)" }) {
   return (
     <div
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border backdrop-blur-md"
+      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border backdrop-blur-md"
       style={{ borderColor: borderColor, backgroundColor: "rgba(255,255,255,0.03)" }}
     >
-      <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-white/80 whitespace-nowrap leading-none">
+      <span className="text-[9px] md:text-[11px] font-bold uppercase tracking-wider text-white/80 whitespace-nowrap leading-none">
         {text}
       </span>
     </div>
@@ -266,9 +266,9 @@ function HeroOverlay() {
 
 function DesktopHero() {
   return (
-    <div className="relative z-20 hidden h-full items-center lg:items-end px-8 md:px-12 lg:px-16 pb-20 md:flex">
+    <div className="relative z-20 hidden h-full items-center lg:items-end px-8 md:px-12 lg:px-16 pb-8 md:flex">
       <div
-        className="flex w-full flex-col lg:flex-row items-center lg:items-end justify-between gap-12 lg:gap-0"
+        className="flex w-full flex-col lg:flex-row items-center lg:items-end justify-between gap-10 lg:gap-0"
         style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
       >
         <div className="max-w-[1100px] text-center lg:text-left">
@@ -283,13 +283,13 @@ function DesktopHero() {
 
 function MobileHero() {
   return (
-    <div className="relative z-20 flex h-[100dvh] flex-col px-6 pb-20 pt-[8rem] md:hidden text-center items-center justify-center">
+    <div className="relative z-20 flex h-full flex-col px-6 pb-6 pt-[5rem] md:hidden text-center items-center justify-center">
       <div className="w-full" style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
         <HeroHeadline mobile />
-        <div className="mt-4">
+        <div className="mt-3">
           <HeroDescription mobile />
         </div>
-        <div className="mt-10">
+        <div className="mt-8">
           <HeroButtons mobile />
         </div>
       </div>
@@ -299,9 +299,9 @@ function MobileHero() {
 
 function HeroHeadline({ mobile }) {
   return (
-    <div className="flex flex-col gap-8 mb-6">
+    <div className="flex flex-col gap-6 mb-5">
       {/* Top badges */}
-      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
         <SmallBadge text="Cybersecurity Cohort" dotColor="#00e5a0" borderColor="#00e5a033" />
         <SmallBadge text="AI/ML Cohort" dotColor="#38bdf8" borderColor="#38bdf833" />
       </div>
@@ -346,7 +346,7 @@ function HeroHeadline({ mobile }) {
             segmentStyle={{
               color: "var(--tertiary)",
               fontWeight: 800,
-              fontSize: "1.35em",
+              fontSize: "1.25em",
               lineHeight: 1,
             }}
             animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
@@ -366,7 +366,7 @@ function HeroDescription({ mobile }) {
   return (
     <div className="max-w-[720px] mx-auto lg:mx-0">
       <p
-        className="text-center lg:text-left text-[1rem] md:text-lg leading-relaxed text-white/75"
+        className="text-center lg:text-left text-[0.92rem] md:text-[1.05rem] leading-relaxed text-white/75"
       >
         A fully online, 6-month cohort-based <strong className="text-white font-semibold">Cybersecurity & AI/ML program</strong> built for career outcomes, not just certificates.
         Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
@@ -377,9 +377,9 @@ function HeroDescription({ mobile }) {
 
 function HeroButtons({ mobile }) {
   return (
-    <div className={`flex flex-col gap-8 ${mobile ? "mt-8" : "mt-10"}`}>
+    <div className={`flex flex-col gap-5 ${mobile ? "mt-5" : "mt-6"}`}>
       {/* Lower Badges */}
-      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
         <SmallBadge text="Live Online Sessions" dotColor="#00e5a0" />
         <SmallBadge text="Offline Labs • Kozhikode" dotColor="#38bdf8" />
       </div>
@@ -389,9 +389,9 @@ function HeroButtons({ mobile }) {
           href="https://www.airtribe.live/backend-engineering/apply"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+          className="btn-pinstripe group h-12 w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
         >
-          <span className="text-black font-mono font-bold text-sm tracking-tight uppercase relative z-10">
+          <span className="text-black font-mono font-bold text-[13px] tracking-tight uppercase relative z-10">
             Claim Your Seat
           </span>
         </a>
@@ -400,13 +400,13 @@ function HeroButtons({ mobile }) {
           href="https://wa.me/910000000000"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+          className="btn-pinstripe group h-12 w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
         >
-          <div className="relative z-10 flex items-center gap-3">
-            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+          <div className="relative z-10 flex items-center gap-2.5">
+            <svg className="w-4.5 h-4.5 fill-white" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
-            <span className="text-white font-sans font-bold text-sm tracking-tight">
+            <span className="text-white font-sans font-bold text-[13px] tracking-tight">
               Chat on WhatsApp
             </span>
           </div>
@@ -414,7 +414,7 @@ function HeroButtons({ mobile }) {
       </div>
 
       {/* Footer Text */}
-      <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 mt-4 text-[10px] md:text-sm text-white/40 font-medium">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 mt-3 text-[9px] md:text-[13px] text-white/40 font-medium">
         <span>• Mentors who hacked Google, Microsoft & Apple</span>
         <span>• Real HR professional runs mock interviews</span>
         <span>• OSCP • OSEP • CRTO • eWPTX certified</span>

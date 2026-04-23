@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 export default function Footer() {
   return (
     <footer
-      className="relative w-full overflow-hidden px-4 py-12 sm:px-6 sm:py-14 md:px-12 md:py-16 lg:px-16"
+      className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12 lg:px-16"
       style={{
         background: "rgba(4, 7, 6, 0.88)",
         borderTop: "1px solid rgba(255,255,255,0.06)",
