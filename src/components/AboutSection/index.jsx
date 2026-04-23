@@ -86,10 +86,6 @@ const CohortCard = ({
         className="inline-flex w-fit items-center gap-1.5 rounded-full border px-3 py-1 text-[0.7rem] font-bold uppercase tracking-widest backdrop-blur-md"
         style={{ borderColor: tagColor, color: tagColor }}
       >
-        <span
-          className="h-1.5 w-1.5 rounded-full"
-          style={{ background: tagColor }}
-        />
         {tag}
       </span>
 
