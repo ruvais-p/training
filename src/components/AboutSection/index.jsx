@@ -26,10 +26,10 @@ const Card = ({ title, description, gradientStyle, bgImage, iconColor }) => (
       style={{ backgroundImage: `url(${bgImage})` }}
     />
 
-    {/* Brand Gradient Overlay */}
+    {/* Top Left Color Shade (Matching CohortCard style) */}
     <div
-      className="absolute inset-0 w-[85%] md:w-[70%] opacity-80"
-      style={gradientStyle}
+      className="absolute -top-24 -left-24 h-72 w-72 rounded-full opacity-30 blur-3xl pointer-events-none"
+      style={{ background: gradientStyle }}
     />
 
     {/* Dark Overlay */}
@@ -137,9 +137,7 @@ export default function AboutSection() {
   const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 4-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
 
   const p2 = "No passive lectures or memorisation. In this AI-powered cybersecurity course in Kerala, you'll learn from experienced mentors, AI security engineers, and HR professionals who know what hiring teams expect-preparing you for real-world cybersecurity roles.";
-  const cardGradient = {
-    background: "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
-  };
+  const cardGradient = "#00e5a0";
   const cardBgImage = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop";
 
   const cohorts = [
@@ -147,7 +145,7 @@ export default function AboutSection() {
       tag: "Cybersecurity Cohort",
       tagColor: "#00e5a0",
       accentColor: "#00e5a0",
-      title: "Cybersecurity &\nEthical Hacking",
+      title: "AI-integrated Cybersecurity & Ethical Hacking",
       subtitle: "Kerala's most advanced cybersecurity cohort. Learn to think like an attacker, defend like a pro. AI-integrated security training from mentors who've found bugs in Google, Microsoft, and Apple.",
       mentor: "Anil Tom — Lead Mentor",
       mentorMeta: "OSCP · OSEP · CRTO · eWPTX · BSCP · OSDA · 70+ companies hacked",
@@ -187,31 +185,6 @@ export default function AboutSection() {
     <section id="about" className="relative px-6 py-24 md:px-12 bg-transparent overflow-hidden">
       <div className="mx-auto max-w-7xl">
 
-        {/* Section Header */}
-        {/* <div className="mb-12 md:mb-16 lg:mb-24 px-4">
-          <h2
-            className="font-editorial-regular text-[2.5rem] md:text-[4.5rem] leading-[0.95] tracking-[-0.05em]"
-            style={{
-              color: "#f3f7f3",
-              fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-            }}
-          >
-            About the{" "}
-            <BlurText
-              text="Program"
-              as="span"
-              delay={300}
-              className="font-editorial-italic"
-              segmentStyle={{
-                color: "var(--tertiary)",
-                fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 200,
-              }}
-            />
-          </h2>
-        </div> */}
-
         {/* 2x2 Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
 
@@ -236,7 +209,7 @@ export default function AboutSection() {
 
             {/* Brand Scrolling Marquee */}
             <div className="relative z-10 w-full mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-              <div className="flex w-max animate-scroll gap-32 py-10 hover:[animation-play-state:paused] items-center">
+              <div className="flex w-max animate-scroll gap-8 py-10 hover:[animation-play-state:paused] items-center">
                 {/* Double the array for seamless loop */}
                 {[...Array(2)].map((_, i) => (
                   <React.Fragment key={i}>
@@ -284,7 +257,7 @@ export default function AboutSection() {
             title="The Mentors"
             description={p2}
             gradientStyle={cardGradient}
-            bgImage="/about/about_card_2.webp"
+            bgImage="/about/about_card_2.jpg"
             iconColor="text-white"
           />
 

@@ -96,7 +96,7 @@ export default function PlacementPartners({ partners = [] }) {
                             fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                         }}
                     >
-                        And this is just the beginning, our learners get visibility to a growing ecosystem of startups, product companies, and hiring teams actively recruiting cybersecurity professionals in Kerala and across India.
+                        And this is just the beginning, our learners get visibility to a growing ecosystem of startups, product companies, and hiring teams actively recruiting cybersecurity professionals in India and across World.
                     </p>
 
                     <a

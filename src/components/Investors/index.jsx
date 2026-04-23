@@ -27,7 +27,7 @@ const mentors = [
     {
         name: "Eldho George",
         designation: "AppSec Engineer & Founder, YAS",
-        subDesignation: "Forensic Expert · Income Tax Dept. Govt.",
+        subDesignation: "Forensic Expert · Income Tax Dept. Govt. · Ex-UST Global",
         bio: "Application security engineer and digital forensics expert. Forensic Expert at the Income Tax Department. MSc in Cyber Forensics. UST Global experience. Founder of YAS Community.",
         linkedin: "https://www.linkedin.com/in/eldhogeorgeofficial",
         imageSrc: "/Investors/YACS mentor 3 eldho.webp",

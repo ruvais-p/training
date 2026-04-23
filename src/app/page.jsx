@@ -266,8 +266,9 @@ function DesktopHero() {
         </div>
 
         <div className="flex flex-col gap-3 pb-1 items-center lg:items-end">
-          <InfoBadge text="Train Like a Pro." />
-          <InfoBadge text="Think Like a Hacker." />
+          <InfoBadge text="Kerala's AI-Integrated" />
+          <InfoBadge text="Cybersecurity & AI/ML" />
+          <InfoBadge text="Cohort Program" />
         </div>
       </div>
     </div>
@@ -290,8 +291,9 @@ function MobileHero() {
         style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="flex flex-col gap-2.5">
-          <InfoBadge text="Train Like a Pro." mobile />
-          <InfoBadge text="Think Like a Hacker." mobile />
+          <InfoBadge text="Kerala's AI-Integrated" mobile />
+          <InfoBadge text="Cybersecurity & AI/ML" mobile />
+          <InfoBadge text="Cohort Program" mobile />
         </div>
       </div>
     </div>
@@ -308,9 +310,10 @@ function HeroHeadline({ mobile }) {
         fontWeight: 400,
       }}
     >
-      Kerala's AI-Integrated {" "}
+      Train like a pro. <br />
+      Think like a hacker. <br />
       <BlurText
-        text="Cybersecurity & AI/ML"
+        text="Get hired like top 1%."
         as="span"
         delay={500}
         animateBy="words"
@@ -328,9 +331,7 @@ function HeroHeadline({ mobile }) {
           { filter: "blur(0px)", opacity: 1, y: 0 },
         ]}
         stepDuration={0.28}
-      />{" "}
-      {mobile && <br />}
-      Cohort Program
+      />
     </h1>
   );
 }
