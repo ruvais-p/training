@@ -226,13 +226,25 @@ function HeroSection() {
           Your browser does not support the video tag.
         </video>
       </div>
-
       <HeroOverlay />
       <DesktopHero />
       <MobileHero />
 
       <style>{heroKeyframes}</style>
     </section>
+  );
+}
+
+function SmallBadge({ text, dotColor = "var(--tertiary)", borderColor = "rgba(255,255,255,0.15)" }) {
+  return (
+    <div
+      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border backdrop-blur-md"
+      style={{ borderColor: borderColor, backgroundColor: "rgba(255,255,255,0.03)" }}
+    >
+      <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-white/80 whitespace-nowrap leading-none">
+        {text}
+      </span>
+    </div>
   );
 }
 
@@ -287,90 +299,126 @@ function MobileHero() {
 
 function HeroHeadline({ mobile }) {
   return (
-    <h1
-      className="font-editorial-regular text-center lg:text-left"
-      style={{
-        ...(mobile ? mobileTitleStyle : titleStyle),
-        fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
-        fontWeight: 400,
-      }}
-    >
-      Train like a pro. <br />
-      Think like a hacker. <br />
-      <BlurText
-        text="Get hired like top 1%."
-        as="span"
-        delay={500}
-        animateBy="words"
-        direction="top"
-        className="font-editorial-italic inline-flex justify-center lg:justify-start"
-        segmentStyle={{
-          color: "var(--tertiary)",
-          fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",
-          fontStyle: "italic",
-          fontWeight: 200,
+    <div className="flex flex-col gap-8 mb-6">
+      {/* Top badges */}
+      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+        <SmallBadge text="Cybersecurity Cohort" dotColor="#00e5a0" borderColor="#00e5a033" />
+        <SmallBadge text="AI/ML Cohort" dotColor="#38bdf8" borderColor="#38bdf833" />
+      </div>
+
+      <h1
+        className="font-sans text-center lg:text-left"
+        style={{
+          ...(mobile ? mobileTitleStyle : titleStyle),
+          fontWeight: 800,
+          marginBottom: 0,
         }}
-        animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
-        animationTo={[
-          { filter: "blur(4px)", opacity: 0.65, y: 4 },
-          { filter: "blur(0px)", opacity: 1, y: 0 },
-        ]}
-        stepDuration={0.28}
-      />
-    </h1>
+      >
+        Train like a Pro. <br />
+        Think like a <span style={{ color: "var(--tertiary)" }}>Hacker</span> <span style={{ color: "#FFFFFF" }}>.</span> <br />
+        Get hired like{" "}
+        <div className="inline-flex justify-center lg:justify-start items-baseline gap-[0.15em]">
+          <BlurText
+            text="Top"
+            as="span"
+            delay={500}
+            animateBy="words"
+            direction="top"
+            className="inline-flex"
+            segmentStyle={{
+              color: "var(--tertiary)",
+              fontWeight: 800,
+            }}
+            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+            animationTo={[
+              { filter: "blur(4px)", opacity: 0.65, y: 4 },
+              { filter: "blur(0px)", opacity: 1, y: 0 },
+            ]}
+            stepDuration={0.28}
+          />
+          <BlurText
+            text="1%"
+            as="span"
+            delay={600}
+            animateBy="words"
+            direction="Top"
+            className="inline-flex"
+            segmentStyle={{
+              color: "var(--tertiary)",
+              fontWeight: 800,
+              fontSize: "1.35em",
+              lineHeight: 1,
+            }}
+            animationFrom={{ filter: "blur(10px)", opacity: 0, y: -22 }}
+            animationTo={[
+              { filter: "blur(4px)", opacity: 0.65, y: 4 },
+              { filter: "blur(0px)", opacity: 1, y: 0 },
+            ]}
+            stepDuration={0.28}
+          />
+        </div>
+      </h1>
+    </div>
   );
 }
 
 function HeroDescription({ mobile }) {
   return (
-    <p 
-      className="text-center lg:text-left"
-      style={{ ...(mobile ? mobileDescStyle : descStyle) }}
-    >
-      A fully online, 6-month cohort-based{" "}
-      <strong
-        style={{
-          color: mobile ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.95)",
-          fontWeight: 600,
-        }}
+    <div className="max-w-[720px] mx-auto lg:mx-0">
+      <p
+        className="text-center lg:text-left text-[1rem] md:text-lg leading-relaxed text-white/75"
       >
-        Cybersecurity & AI/ML program
-      </strong>{" "}
-      built for career outcomes, not just certificates. {!mobile && <br />}
-      Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
-    </p>
+        A fully online, 6-month cohort-based <strong className="text-white font-semibold">Cybersecurity & AI/ML program</strong> built for career outcomes, not just certificates.
+        Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
+      </p>
+    </div>
   );
 }
 
 function HeroButtons({ mobile }) {
   return (
-    <div className={`flex flex-wrap gap-4 justify-center lg:justify-start ${mobile ? "mt-6" : "mt-8"}`}>
-      <a
-        href="https://www.airtribe.live/backend-engineering/apply"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
-      >
-        <span className="text-black font-mono font-bold text-sm tracking-tight uppercase relative z-10">
-          Claim Your Seat
-        </span>
-      </a>
+    <div className={`flex flex-col gap-8 ${mobile ? "mt-8" : "mt-10"}`}>
+      {/* Lower Badges */}
+      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+        <SmallBadge text="Live Online Sessions" dotColor="#00e5a0" />
+        <SmallBadge text="Offline Labs • Kozhikode" dotColor="#38bdf8" />
+      </div>
 
-      <a
-        href="https://wa.me/910000000000"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
-      >
-        <div className="relative z-10 flex items-center gap-3">
-          <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-          </svg>
-          <span className="text-white font-sans font-bold text-sm tracking-tight">
-            Chat on WhatsApp
+      <div className={`flex flex-wrap gap-4 justify-center lg:justify-start`}>
+        <a
+          href="https://www.airtribe.live/backend-engineering/apply"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+        >
+          <span className="text-black font-mono font-bold text-sm tracking-tight uppercase relative z-10">
+            Claim Your Seat
           </span>
-        </div>
-      </a>
+        </a>
+
+        <a
+          href="https://wa.me/910000000000"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-pinstripe group h-14 w-[240px] px-8 bg-[#14CF6D] rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_12px_30px_-10px_rgba(20,207,109,0.4)]"
+        >
+          <div className="relative z-10 flex items-center gap-3">
+            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            <span className="text-white font-sans font-bold text-sm tracking-tight">
+              Chat on WhatsApp
+            </span>
+          </div>
+        </a>
+      </div>
+
+      {/* Footer Text */}
+      <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 mt-4 text-[10px] md:text-sm text-white/40 font-medium">
+        <span>• Mentors who hacked Google, Microsoft & Apple</span>
+        <span>• Real HR professional runs mock interviews</span>
+        <span>• OSCP • OSEP • CRTO • eWPTX certified</span>
+      </div>
     </div>
   );
 }
