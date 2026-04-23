@@ -1,42 +1,58 @@
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
 import { Linkedin } from "lucide-react";
+import { motion } from "motion/react";
 
 const mentors = [
     {
-        name: "Febi Dan Jose",
-        designation: "Senior Talent Acquisition at Collabera",
-        bio: "I/O Psychology & Human Resource professional with 5+ years of experience in Talent Acquisition and HR, specialising in identifying and placing top 1% talent across industries.",
-        linkedin: "https://www.linkedin.com/in/febi-dan-jose-741407179/",
-        imageSrc: "/Investors/YACS mentor 3.webp",
-    },
-    {
         name: "Anil Tom",
         designation: "Senior Offensive Security Engineer",
-        bio: "Offensive Security Engineer with 6 years in InfoSec, specialising in Red Teaming, Penetration Testing, and Bug Bounty — having uncovered vulnerabilities in 70+ companies including Google, Microsoft, and Apple. Certified in OSEP, OSCP, CRTO, eWPTX, BSCP & OSDA.",
+        subDesignation: "6 years InfoSec · Red Teaming · Bug Bounty",
+        bio: "Found vulnerabilities in 70+ companies including Google, Microsoft, and Apple. Specialist in red teaming, penetration testing, and offensive security research.",
         linkedin: "https://www.linkedin.com/in/aniltomank/",
-        imageSrc: "/Investors/YACS mentor 2.webp",
-    },
-    {
-        name: "Eldho George",
-        designation: "Application Security Engineer & Founder, YAS",
-        bio: "Experienced Application Security Engineer with a strong blend of offensive security and digital forensics. Founder of the YAS Community and a Forensic Expert at the Income Tax Department, holding an MSc in Cyber Forensics & Information Security with hands-on experience at UST Global.",
-        linkedin: "https://www.linkedin.com/in/eldhogeorgeofficial",
-        imageSrc: "/Investors/YACS mentor 1 (1).webp",
+        imageSrc: "/Investors/YACS mentor 2 anil.webp",
+        tags: ["OSCP", "OSEP", "CRTO", "eWPTX", "BSCP", "OSDA"],
+        themeColor: "#10B981"
     },
     {
         name: "Akshay P",
-        designation: "Data Scientist at dSights AI",
-        bio: "Data Scientist at dSights AI with 4 years of experience, building AI-driven solutions and machine learning pipelines to turn complex business data into actionable insights specialising in AML & AI Security.",
+        designation: "Data Scientist, dSights AI",
+        subDesignation: "4 years ML · AML Security Specialist",
+        bio: "Building AI-driven solutions and machine learning pipelines at dSights AI. Specialist in AML (Anti-Money Laundering) & AI Security.",
         linkedin: "https://www.linkedin.com/in/akshayp12/",
-        imageSrc: "/Investors/YACS mentor 4.webp",
+        imageSrc: "/Investors/YACS mentor 4 akshay.webp",
+        tags: ["AI/ML Engineering", "AML Security", "dSights AI"],
+        themeColor: "#EAB308"
+    },
+    {
+        name: "Eldho George",
+        designation: "AppSec Engineer & Founder, YAS",
+        subDesignation: "Forensic Expert · Income Tax Dept. Govt.",
+        bio: "Application security engineer and digital forensics expert. Forensic Expert at the Income Tax Department. MSc in Cyber Forensics. UST Global experience. Founder of YAS Community.",
+        linkedin: "https://www.linkedin.com/in/eldhogeorgeofficial",
+        imageSrc: "/Investors/YACS mentor 3 eldho.webp",
+        tags: ["AppSec", "MSc Cyber Forensics", "Gov. Forensics"],
+        themeColor: "#10B981"
+    },
+    {
+        name: "Febi Dan Jose",
+        designation: "Senior Talent Acquisition · Collabera",
+        subDesignation: "5+ years HR & I/O Psychology",
+        bio: "5+ years in Talent Acquisition and HR. Your mock interviews are run by the person who actually hires people, not a trainer guessing what HR wants. She places candidates for a living.",
+        linkedin: "https://www.linkedin.com/in/febi-dan-jose-741407179/",
+        imageSrc: "/Investors/YACS mentor 1 febi.webp",
+        tags: ["I/O Psychology", "Talent Acquisition", "Collabera"],
+        themeColor: "#EAB308"
     },
     {
         name: "Krishnaraj G",
         designation: "Security Consultant & Team Lead",
-        bio: "Cybersecurity professional specialising in penetration testing, vulnerability assessment, and securing enterprise IT infrastructure — leading teams, managing client engagements, and delivering business-driven security outcomes. Certified in CompTIA PenTest+, MCSE, CCNA & RHCE.",
+        subDesignation: "Enterprise IT Penetration Testing",
+        bio: "Leads security teams in penetration testing, vulnerability assessment, and securing enterprise IT infrastructure. Manages real client security engagements, not lab simulations.",
         linkedin: "https://www.linkedin.com/in/krishnaraj-g-9ab8b2142",
-        imageSrc: "/Investors/YACS mentor 5.webp",
+        imageSrc: "/Investors/YACS mentor 5 krishanaraj.webp",
+        tags: ["CompTIA PenTest+", "MCSE", "CCNA", "RHCE"],
+        themeColor: "#10B981"
     },
 ];
 
@@ -99,6 +115,49 @@ export default function Investors() {
                         />
                     ))}
                 </div>
+
+                {/* LinkedIn Verification and Apply Button */}
+                <div className="mt-24 flex flex-col items-center text-center">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="max-w-2xl text-[1rem] md:text-[1.12rem] font-medium leading-relaxed text-white/50"
+                        style={{ fontFamily: 'var(--font-geist-sans)' }}
+                    >
+                        All mentors are verifiable on LinkedIn. No fake profiles. No borrowed credentials. <br className="hidden md:block" />
+                        Click any link above and verify before you apply.
+                    </motion.p>
+
+                    <motion.a
+                        href="https://www.airtribe.live/backend-engineering/apply"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{
+                            duration: 0.65,
+                            delay: 0.25,
+                            ease: [0.16, 1, 0.3, 1],
+                        }}
+                        whileHover={{ y: -2, scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="mt-7 inline-flex w-fit items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+                        style={{
+                            background: "rgba(217, 227, 138, 0.78)",
+                            color: "#000000",
+                            fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                            boxShadow:
+                                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
+                            backdropFilter: "blur(10px)",
+                            WebkitBackdropFilter: "blur(10px)",
+                        }}
+                    >
+                        LEARN FROM THEM
+                    </motion.a>
+                </div>
             </div>
         </section>
     );
@@ -112,39 +171,72 @@ function MentorCard({ mentor, index, className }) {
                 transitionDelay: `${index * 50}ms`,
             }}
         >
-            {/* Image Container - Fixed hydration sync */}
-            <div className="relative h-[420px] sm:h-[420px] md:h-[500px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem]">
+            {/* Image Container */}
+            <div className="relative h-[420px] sm:h-[420px] md:h-[500px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem] ">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}
                     fill
-                    className="object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:brightness-110"
+                    className="object-contain transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {/* Subtle Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+                {/* Role Badge (Top Left over image) */}
+                {mentor.role && (
+                    <div className="absolute left-6 top-6 z-10 px-3 py-1 rounded-md bg-black/40 backdrop-blur-md border border-white/10">
+                        <span className="text-[0.6rem] font-bold tracking-[0.2em] text-white/90">
+                            {mentor.role}
+                        </span>
+                    </div>
+                )}
 
                 {/* LinkedIn Badge */}
                 <a
                     href={mentor.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="absolute right-6 top-6 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-[#0077B5] hover:bg-[#0077B5] hover:shadow-[0_0_25px_#0077B580]"
+                    className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black/30 text-white backdrop-blur-xl transition-all duration-500 hover:scale-110 hover:border-[#0077B5] hover:bg-[#0077B5] hover:shadow-[0_0_20px_rgba(0,119,181,0.4)]"
                     title="Connect on LinkedIn"
                 >
-                    <Linkedin size={22} strokeWidth={1.5} />
+                    <Linkedin size={18} strokeWidth={1.5} />
                 </a>
+
+                {/* Bottom Content Over Image */}
+                <div className="absolute bottom-6 left-6 right-6 text-center">
+                    <p className="text-[1.1rem] font-medium text-white/90 leading-tight">
+                        {mentor.designation}
+                    </p>
+                    <p className="text-[0.75rem] text-white/40 mt-1.5 font-medium">
+                        {mentor.subDesignation}
+                    </p>
+                </div>
             </div>
 
-            {/* Content Area */}
-            <div className="mt-6 px-2 text-center">
-                <p className="text-[1.1rem] font-medium leading-tight text-white/90">
-                    {mentor.designation}
-                </p>
-                <p className="mt-4 line-clamp-3 text-[0.88rem] leading-relaxed text-white/50 transition-colors duration-500 group-hover:text-white/70">
+            {/* Content Area (Below Image) */}
+            <div className="mt-6 px-4 text-center">
+                <p className="text-[0.9rem] leading-relaxed text-white/60">
                     {mentor.bio}
                 </p>
+
+                {/* Tags Row */}
+                <div className="mt-5 flex flex-wrap justify-center gap-2">
+                    {mentor.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="text-[0.62rem] font-bold tracking-wider px-2.5 py-1 rounded-md uppercase"
+                            style={{
+                                backgroundColor: `${mentor.themeColor}15`,
+                                border: `1px solid ${mentor.themeColor}30`,
+                                color: mentor.themeColor
+                            }}
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
             </div>
         </article >
     );

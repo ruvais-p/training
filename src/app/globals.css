@@ -6,6 +6,7 @@
   --primary: #2D5C3F;
   --secondary: #3F744E;
   --tertiary: #5A9B68;
+  --accent-green: #14CF6D;
 }
 
 @theme inline {
@@ -123,4 +124,23 @@ body {
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0px);
+}
+
+.btn-pinstripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pinstripe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
 }

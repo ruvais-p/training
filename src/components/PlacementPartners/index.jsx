@@ -114,8 +114,7 @@ export default function PlacementPartners({ partners = [] }) {
                             WebkitBackdropFilter: "blur(10px)",
                         }}
                     >
-                        APPLY NOW
-                        <span className="text-base leading-none">↗</span>
+                        APPLY & GET PLACED
                     </a>
                 </div>
             </div>

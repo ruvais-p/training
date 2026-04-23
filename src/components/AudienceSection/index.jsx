@@ -106,8 +106,7 @@ export default function AudienceSection() {
               WebkitBackdropFilter: "blur(10px)",
             }}
           >
-            APPLY NOW
-            <span className="text-base leading-none">↗</span>
+            I WANT A SEAT
           </motion.a>
         </div>
 

@@ -220,8 +220,7 @@ export default function FeaturesSection() {
               WebkitBackdropFilter: "blur(10px)",
             }}
           >
-            APPLY NOW
-            <span className="text-base leading-none">↗</span>
+            JOIN THE COHORT
           </motion.a>
         </div>
       </div>

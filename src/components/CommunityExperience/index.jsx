@@ -81,8 +81,7 @@ export default function CommunityExperience() {
               WebkitBackdropFilter: "blur(10px)",
             }}
           >
-            APPLY NOW
-            <span className="text-base leading-none">↗</span>
+            SECURE A SEAT
           </motion.a>
         </div>
 

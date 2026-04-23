@@ -8,32 +8,32 @@ const standoutCards = [
   {
     title: "AI + Cybersecurity Combined",
     description: "Learn how AI and cybersecurity work together to secure modern systems, preparing you for next-generation security roles.",
-    imgSrc: "/Cards/1 (1).webp",
+    imgSrc: "/cards/2-5 (1).webp",
   },
   {
     title: "Mentors with Real Experience",
     description: "Learn cybersecurity from industry professionals with real-world experience in threat detection, ethical hacking, and security operations across Kerala and beyond.",
-    imgSrc: "/Cards/2 (1).webp",
+    imgSrc: "/cards/2-2 (1).webp",
   },
   {
     title: "AI Security Engineer Training",
     description: "Master AI-powered cybersecurity techniques, including threat detection, automation, and modern defence strategies used by AI security engineers.",
-    imgSrc: "/Cards/3 (1).webp",
+    imgSrc: "/cards/2-3 (1).webp",
   },
   {
     title: "HR-Led Soft Skills Training",
     description: "Build communication, interview, and workplace skills with HR experts who understand hiring trends in the cybersecurity industry in Kerala.",
-    imgSrc: "/Cards/4 (1).webp",
+    imgSrc: "/cards/2-1 (1).webp",
   },
   {
     title: "1-on-1 Mentorship",
     description: "Get personalized guidance throughout this cybersecurity cohort program with dedicated mentorship to accelerate your learning and career growth.",
-    imgSrc: "/Cards/5 (1).webp",
+    imgSrc: "/cards/2-4 (1).webp",
   },
   {
     title: "Guest Mentors from Each Domain",
     description: "Learn from cybersecurity specialists across domains like penetration testing, AI security, and cloud security through expert-led sessions.",
-    imgSrc: "/Cards/6 (1).webp",
+    imgSrc: "/cards/2-6 (1).webp",
   },
 ];
 
@@ -49,28 +49,36 @@ function StandOutCard({ title, description, imgSrc, index }) {
         delay: index * 0.07,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative w-full overflow-hidden rounded-[28px] sm:rounded-[28px] md:rounded-[28px] lg:rounded-[28px] border border-white/10"
+      className="relative w-full overflow-hidden rounded-[28px] border border-white/10"
       style={{
         boxShadow:
           "0 26px 70px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.03) inset",
       }}
     >
-      {/* SEO Hidden Content */}
+      {/* SEO Content */}
       <div className="sr-only">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
 
-      <div className="relative w-full aspect-[4/3]">
+      <div className="relative w-full aspect-[4/3] group">
         <Image
           src={imgSrc}
           alt={title}
           fill
           unoptimized
-          className="select-none object-cover"
+          className="select-none object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
           priority={index < 2}
         />
+
+        {/* Overlay Title - Top Left */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute left-6 top-6 z-10 max-w-[85%]">
+          <h3 className="text-[1.25rem] font-medium leading-tight text-white tracking-tight">
+            {title}
+          </h3>
+        </div>
       </div>
     </motion.article>
   );
@@ -80,7 +88,7 @@ export default function StandOutSection() {
   return (
     <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-start gap-10 lg:grid-cols-[420px_1fr] lg:gap-14">
+        <div className="grid items-start gap-10 xl:grid-cols-[420px_1fr] xl:gap-14">
           <div className="pt-6">
             <h2
               className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-white md:text-[3.2rem]"
@@ -145,12 +153,11 @@ export default function StandOutSection() {
                 WebkitBackdropFilter: "blur(10px)",
               }}
             >
-              APPLY NOW
-              <span className="text-base leading-none">↗</span>
+              I WANT TO STAND OUT
             </motion.a>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 lg:grid-cols-2 2xl:grid-cols-3">
             {standoutCards.map((c, idx) => (
               <StandOutCard key={c.title} {...c} index={idx} />
             ))}
