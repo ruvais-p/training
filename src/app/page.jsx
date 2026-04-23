@@ -260,12 +260,15 @@ function DesktopHero() {
         style={{ animation: "heroFadeUp 1s cubic-bezier(0.16,1,0.3,1) both" }}
       >
         <div className="max-w-[720px] text-center lg:text-left">
+          <HeroHeadline mobile={false} />
           <HeroDescription mobile={false} />
           <HeroButtons />
         </div>
 
         <div className="flex flex-col gap-3 pb-1 items-center lg:items-end">
-          <HeroHeadline mobile={false} />
+          <InfoBadge text="Kerala's AI-Integrated" />
+          <InfoBadge text="Cybersecurity & AI/ML" />
+          <InfoBadge text="Cohort Program" />
         </div>
       </div>
     </div>
@@ -277,6 +280,7 @@ function MobileHero() {
     <div className="relative z-20 flex h-full flex-col px-6 pb-16 pt-[9rem] md:hidden">
       <div className="flex-1 items-end">
         <div style={{ animation: "heroFadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}>
+          <HeroHeadline mobile />
           <HeroDescription mobile />
           <HeroButtons mobile />
         </div>
@@ -287,7 +291,9 @@ function MobileHero() {
         style={{ background: "transparent", borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <div className="flex flex-col gap-2.5">
-          <HeroHeadline mobile />
+          <InfoBadge text="Kerala's AI-Integrated" mobile />
+          <InfoBadge text="Cybersecurity & AI/ML" mobile />
+          <InfoBadge text="Cohort Program" mobile />
         </div>
       </div>
     </div>
@@ -297,19 +303,17 @@ function MobileHero() {
 function HeroHeadline({ mobile }) {
   return (
     <h1
-      className={`font-editorial-regular ${mobile ? 'text-left' : 'text-right'}`}
+      className="font-editorial-regular"
       style={{
         ...(mobile ? mobileTitleStyle : titleStyle),
         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
         fontWeight: 400,
-        letterSpacing: "-0.04em",
       }}
     >
       Train like a pro. <br />
       Think like a hacker. <br />
-      Get hired like <br />
       <BlurText
-        text="top 1%."
+        text="Get hired like top 1%."
         as="span"
         delay={500}
         animateBy="words"
