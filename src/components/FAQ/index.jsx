@@ -36,7 +36,7 @@ const faqItems = [
   },
   {
     question: "How long is the YACS cohort program?",
-    answer: "The program is 4 months long, structured across 4 phases: Foundation, Security & Risks, AI & Advanced Security, and Practical & Career. Sessions are live and scheduled to accommodate working professionals.",
+    answer: "The program is 6 months long, structured across 4 phases: Foundation, Security & Risks, AI & Advanced Security, and Practical & Career. Sessions are live and scheduled to accommodate working professionals.",
   },
 ];
 

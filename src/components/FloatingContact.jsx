@@ -8,7 +8,7 @@ export default function FloatingContact({ isFloating = true }) {
       <div className="flex flex-row items-center gap-4">
         {/* Call Button */}
         <a
-          href="tel:+910000000000"
+          href="tel:+917306648019"
           className="group flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-[#3F744E] shadow-[0_4px_20px_rgba(63,116,78,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(63,116,78,0.5)]"
           aria-label="Call Us"
         >
@@ -17,7 +17,7 @@ export default function FloatingContact({ isFloating = true }) {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/910000000000"
+          href="https://wa.me/+917306648019"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(37,211,102,0.5)]"
@@ -37,7 +37,7 @@ export default function FloatingContact({ isFloating = true }) {
       }}
     >
       <div className="flex flex-col gap-4 scale-90 sm:scale-100 origin-bottom-right">
-        
+
         {/* Call Button */}
         <a
           href="tel:+910000000000"
