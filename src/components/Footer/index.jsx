@@ -131,7 +131,7 @@ function SocialIcon({ href, icon, label }) {
     <Link
       href={href}
       aria-label={label}
-      className="text-xl opacity-70 transition-all hover:opacity-100 hover:text-[#5A9B68] hover:-translate-y-1"
+      className="text-2xl opacity-70 transition-all hover:opacity-100 hover:text-[#5A9B68] hover:-translate-y-1"
     >
       <Icon icon={icon} />
     </Link>
