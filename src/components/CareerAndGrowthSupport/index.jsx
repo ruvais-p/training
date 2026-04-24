@@ -122,7 +122,7 @@ export default function CareerAndGrowthSupport() {
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
             }}
           >
-            We don&apos;t just train you — we help you move forward in your career.
+            We don&apos;t just train you, we help you move forward in your career.
           </p>
         </div>
 

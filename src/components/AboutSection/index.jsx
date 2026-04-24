@@ -37,7 +37,6 @@ const Card = ({ title, description, gradientStyle, bgImage, iconColor }) => (
 
     {/* Header */}
     <div className="relative z-10 flex items-center gap-4">
-      <StarIcon className={`h-8 w-8 ${iconColor}`} />
       <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-white leading-none">
         {title}
       </h2>
@@ -130,7 +129,7 @@ const CohortCard = ({
   </div>
 );
 export default function AboutSection() {
-  const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 4-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
+  const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 6-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
 
   const p2 = "No passive lectures or memorisation. In this AI-powered cybersecurity course in Kerala, you'll learn from experienced mentors, AI security engineers, and HR professionals who know what hiring teams expect-preparing you for real-world cybersecurity roles.";
   const cardGradient = "#00e5a0";
@@ -148,7 +147,7 @@ export default function AboutSection() {
       features: [
         "Penetration testing, ethical hacking & red teaming",
         "Web application security, OWASP Top 10",
-        "Hardware hacking labs — unique to YACS",
+        "Hardware hacking labs, unique to YACS",
         "AI-powered threat detection & security automation",
         "CompTIA Security+ & CEH voucher prep",
         "Placement support + HR mock interviews",
@@ -178,7 +177,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative px-6 py-24 md:px-12 bg-transparent overflow-hidden">
+    <section id="about" className="relative px-6 pt-12 pb-8 md:px-12 bg-transparent overflow-hidden">
       <div className="mx-auto max-w-7xl">
 
         {/* 2x2 Grid Layout */}
@@ -277,14 +276,14 @@ export default function AboutSection() {
         </div>
 
         {/* ── Cohort Cards ── */}
-        <div className="mt-20 lg:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 px-4 pt-10">
+        <div className="mt-10 lg:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16 px-4">
           {cohorts.map((cohort) => (
             <CohortCard key={cohort.tag} {...cohort} />
           ))}
         </div>
 
         {/* Mentors Team Image */}
-        <div className="mt-16 w-full lg:mt-24 px-4 pb-8">
+        <div className="mt-16 w-full lg:mt-24 px-4 pb-16 relative">
           <div className="relative overflow-hidden rounded-[40px]">
             <picture>
               <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.webp" />
@@ -294,9 +293,13 @@ export default function AboutSection() {
                 className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
               />
             </picture>
-            {/* Soft blending gradient at the bottom */}
-            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+
+            {/* Internal soft blend */}
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent via-black/50 to-black pointer-events-none" />
           </div>
+
+          {/* OUTSIDE gradient (this removes the hard edge) */}
+          <div className="pointer-events-none absolute left-0 right-0 -bottom-10 h-32 bg-gradient-to-b from-black to-transparent blur-xl opacity-80" />
         </div>
 
       </div>

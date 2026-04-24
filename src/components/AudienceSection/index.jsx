@@ -15,7 +15,7 @@ const audienceItems = [
 export default function AudienceSection() {
   return (
     <section
-      className="relative overflow-hidden px-6 py-18 md:px-12 md:py-24"
+      className="relative overflow-hidden px-6 py-10 md:px-12 md:py-12"
       style={{ background: "transparent" }}
     >
       <div

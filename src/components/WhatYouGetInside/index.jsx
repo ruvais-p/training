@@ -23,27 +23,28 @@ const TopCard = ({
   description,
   gradientStyle,
   bgImage,
-  iconColor,
 }) => (
-  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-[#0a0a0a] p-8 md:p-10 transition-all duration-300 hover:border-white/20">
-    {/* Background Image */}
-    <div
-      className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    />
+  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-transparent backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-white/20">
+    {/* ───── Background Layer ───── */}
+    <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-    {/* Brand Gradient Overlay */}
-    <div
-      className="absolute inset-0 w-[85%] md:w-[70%] opacity-80"
-      style={gradientStyle}
-    />
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-lighten transition-transform duration-700 group-hover:scale-105"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      />
 
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+      {/* Accent Glow */}
+      <div
+        className="absolute -top-20 -left-20 h-64 w-64 rounded-full opacity-25 blur-3xl"
+        style={gradientStyle}
+      />
+    </div>
 
     {/* Header */}
     <div className="relative z-10 flex items-center gap-4">
-      <StarIcon className={`h-8 w-8 ${iconColor}`} />
       <h2 className="text-3xl md:text-[2.5rem] font-bold tracking-tight text-white leading-none">
         {title}
       </h2>
@@ -142,23 +143,15 @@ export default function FeaturesSection() {
             <TopCard
               title="Program"
               description="Master a structured, hands-on cybersecurity curriculum in Kerala, built on a proven learning methodology focused on real-world skills, AI-powered training, and career readiness."
-              gradientStyle={{
-                background:
-                  "linear-gradient(90deg, rgba(90,155,104,0.78) 0%, rgba(217, 227, 138,0.55) 45%, rgba(59,130,246,0.12) 100%)",
-              }}
+              gradientStyle={{ background: "#00e5a0" }}
               bgImage="/whatgetyouinside/whatgetyouinside2.webp"
-              iconColor="text-[#FFFFFF]"
             />
 
             <TopCard
               title="Gigs"
               description="Apply your cybersecurity skills in real-world projects and gigs in Kerala, building a job-ready portfolio through hands-on experience and practical training."
-              gradientStyle={{
-                background:
-                  "linear-gradient(90deg, rgba(217, 227, 138,0.78) 0%, rgba(90,155,104,0.55) 45%, rgba(90,155,104,0.12) 100%)",
-              }}
+              gradientStyle={{ background: "#00e5a0" }}
               bgImage="/whatgetyouinside/whatgetyouinside.webp"
-              iconColor="text-[#FFFFFF]"
             />
           </div>
 

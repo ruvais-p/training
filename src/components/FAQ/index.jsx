@@ -12,7 +12,7 @@ const faqItems = [
   },
   {
     question: "Is the YACS program fully online?",
-    answer: "Yes. YACS is 100% online with live mentor sessions. You can join from anywhere in Kerala — Kozhikode, Kochi, Thrissur, Malappuram, Kannur, Calicut, or any other city. All you need is a laptop and a stable internet connection.",
+    answer: "Yes. YACS is 100% online with live mentor sessions. You can join from anywhere in Kerala: Kozhikode, Kochi, Thrissur, Malappuram, Kannur, Calicut, or any other city. All you need is a laptop and a stable internet connection.",
   },
   {
     question: "What is the program fee for the YACS cybersecurity cohort?",
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: "What makes YACS different from other cybersecurity courses in Kerala?",
-    answer: "YACS is the only program in Kerala that combines AI and cybersecurity in a single cohort. We also include hardware hacking labs, HR-led mock interviews with real professionals, CompTIA/CEH voucher support, and a cohort-based structure — none of which are available at competing institutes.",
+    answer: "YACS is the only program in Kerala that combines AI and cybersecurity in a single cohort. We also include hardware hacking labs, HR-led mock interviews with real professionals, CompTIA/CEH voucher support, and a cohort-based structure, none of which are available at competing institutes.",
   },
   {
     question: "Will I get placement support after completing YACS?",

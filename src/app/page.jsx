@@ -106,7 +106,7 @@ const heroKeyframes = `
 export default function Home() {
   return (
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
-      <section id="cybersecurity-cohort" className="mb-24">
+      <section id="cybersecurity-cohort" className="mb-0">
         <h2 className="sr-only">Cybersecurity Cohort Program Kerala | YACS — 4 Months Online</h2>
         <HeroSection />
       </section>
@@ -114,7 +114,7 @@ export default function Home() {
       {/* <PreAboutSection /> */}
       {/* <LearningProblemsSection /> */}
 
-      <section id="mentors" className="pt-24 pb-12">
+      <section id="mentors" className="pt-12 pb-4">
         <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
         <AboutSection />
       </section>
@@ -153,7 +153,7 @@ export default function Home() {
       <SectionReveal delay={100}>
         <SkillStack
           eyebrow="SKILL STACK"
-          title="Major Tools you will learn"
+          title="AI & ML Tools you will learn"
           items={skillItems}
         />
         <SkillStack
@@ -212,7 +212,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative h-[95vh] min-h-[600px] w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Local Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
