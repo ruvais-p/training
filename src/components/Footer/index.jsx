@@ -43,7 +43,7 @@ export default function Footer() {
 
             <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:w-auto lg:justify-start">
               <Link
-                href="/mentor"
+                href="/"
                 className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full border px-6 sm:px-7 text-sm font-medium text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10"
                 style={{
                   color: "#9fd0a6",
@@ -55,7 +55,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="https://www.airtribe.live/backend-engineering/apply"
+                href="https://form.jotform.com/261102001781440"
                 className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full px-6 sm:px-7 text-sm font-semibold text-[#07120f] text-center transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
                 style={{
                   background: "linear-gradient(90deg, #5A9B68 0%, #79c28a 100%)",
@@ -82,7 +82,7 @@ export default function Footer() {
             </Link>
 
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-end">
-              <BottomSocial href="/" icon="ri:instagram-line" label="Instagram" />
+              <BottomSocial href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr" icon="ri:instagram-line" label="Instagram" />
               <BottomSocial href="/" icon="ri:linkedin-fill" label="LinkedIn" />
               <BottomSocial href="/" icon="ri:twitter-x-fill" label="Twitter" />
               <BottomSocial href="/" icon="ri:youtube-fill" label="YouTube" />
