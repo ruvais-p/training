@@ -4,102 +4,110 @@ import { Icon } from "@iconify/react";
 
 export default function Footer() {
   return (
-    <footer
-      className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12 lg:px-16"
-      style={{
-        background: "rgba(4, 7, 6, 0.88)",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        backdropFilter: "blur(14px)",
-      }}
-    >
-      {/* subtle glow */}
-      <div className="pointer-events-none absolute inset-0 opacity-70">
-        <div
-          className="absolute left-4 top-0 h-36 w-36 sm:left-20 sm:h-48 sm:w-48 rounded-full blur-3xl"
-          style={{ background: "rgba(90,155,104,0.08)" }}
-        />
-        <div
-          className="absolute right-4 bottom-0 h-36 w-36 sm:right-20 sm:h-48 sm:w-48 rounded-full blur-3xl"
-          style={{ background: "rgba(59,130,246,0.08)" }}
-        />
+    <footer className="relative w-full overflow-hidden bg-[#040706] px-4 pt-16 pb-8 text-white md:px-8 lg:px-16">
+      {/* Decorative SVG Curves */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-20">
+        <svg
+          className="absolute top-[10%] left-[30%] w-[40%] text-[#5A9B68]"
+          viewBox="0 0 400 100"
+          fill="none"
+        >
+          <path
+            d="M0,80 Q100,0 200,80 T400,80"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+        </svg>
+        <svg
+          className="absolute bottom-[20%] right-[5%] w-[30%] text-[#5A9B68]"
+          viewBox="0 0 200 200"
+          fill="none"
+        >
+          <path
+            d="M200,200 Q150,100 100,150 T0,0"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <circle cx="100" cy="150" r="10" stroke="currentColor" fill="none" />
+        </svg>
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="flex flex-col gap-8 rounded-[1.6rem] sm:rounded-[2rem] border border-white/8 bg-white/[0.02] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 shadow-[0_20px_70px_rgba(0,0,0,0.24)] lg:min-h-[240px] lg:flex-row lg:items-center lg:justify-between">
+        {/* Top Row: Address and Nav */}
+        <div className="flex flex-col items-center justify-between gap-12 text-center lg:flex-row lg:items-start lg:text-left">
+          {/* Address */}
+          <div className="max-w-xs space-y-2 text-sm leading-relaxed opacity-80">
+            <p>1st Floor, Carnival Infopark,</p>
+            <p>Kakkanad,Kochi</p>
+            <p>India</p>
+            <p>682030</p>
 
-          {/* LEFT SIDE */}
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
-            <div className="text-center lg:text-left">
-              <p className="text-[1.25rem] sm:text-[1.45rem] md:text-[1.8rem] font-semibold tracking-[-0.03em] text-white leading-tight">
-                Ready to start your journey?
-              </p>
-              <p
-                className="mt-3 max-w-[520px] text-[0.92rem] sm:text-sm md:text-[1rem] leading-6 sm:leading-7 mx-auto lg:mx-0"
-                style={{ color: "rgba(232,245,239,0.68)" }}
-              >
-                Join the cohort, learn from industry mentors, and build real cybersecurity skills.
-              </p>
-            </div>
-
-            <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:w-auto lg:justify-start">
-              <Link
-                href="/"
-                className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full border px-6 sm:px-7 text-sm font-medium text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10"
-                style={{
-                  color: "#9fd0a6",
-                  borderColor: "rgba(90,155,104,0.45)",
-                  background: "rgba(255,255,255,0.02)",
-                }}
-              >
-                Apply as Mentor
-              </Link>
-
-              <Link
-                href="https://form.jotform.com/261102001781440"
-                className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full px-6 sm:px-7 text-sm font-semibold text-[#07120f] text-center transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
-                style={{
-                  background: "linear-gradient(90deg, #5A9B68 0%, #79c28a 100%)",
-                  boxShadow: "0 12px 30px rgba(90,155,104,0.25)",
-                }}
-              >
-                Apply Now
-              </Link>
-            </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="flex flex-col items-center gap-5 lg:items-end">
-            <Link href="/" className="inline-flex items-center justify-center w-full">
-              <div className="relative h-12 w-[180px] xs:w-[200px] sm:h-14 sm:w-[230px] md:h-16 md:w-[290px]">
-                <Image
-                  src="/logo/YACS LOGO white (1).png"
-                  alt="YACS Logo"
-                  fill
-                  className="object-contain object-center lg:object-right"
-                  priority
-                />
+          {/* Nav Links and Socials */}
+          <div className="flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-16 lg:gap-24">
+            <div className="grid grid-cols-2 gap-x-12 gap-y-6 sm:gap-x-16 md:gap-x-20 lg:gap-x-24">
+              <div className="flex flex-col gap-3">
+                <FooterLink href="/" label="Programs" />
+                <FooterLink href="/blog" label="Blog" />
+                <FooterLink href="https://form.jotform.com/261102001781440" label="Apply Now" />
               </div>
-            </Link>
+              <div className="flex flex-col gap-3">
+                <FooterLink href="/" label="Terms & Conditions" />
+                <FooterLink href="/" label="Privacy Policy" />
+                <FooterLink href="/" label="Refund Policy" />
+              </div>
+            </div>
 
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-end">
-              <BottomSocial href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr" icon="ri:instagram-line" label="Instagram" />
-              <BottomSocial href="/" icon="ri:linkedin-fill" label="LinkedIn" />
-              <BottomSocial href="/" icon="ri:twitter-x-fill" label="Twitter" />
-              <BottomSocial href="/" icon="ri:youtube-fill" label="YouTube" />
+            {/* Social Icons */}
+            <div className="flex gap-5 border-t border-white/5 pt-8 md:border-none md:pt-0">
+              <SocialIcon href="/" icon="ri:youtube-fill" label="YouTube" />
+              <SocialIcon href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr" icon="ri:instagram-line" label="Instagram" />
+              <SocialIcon href="/" icon="ri:linkedin-fill" label="LinkedIn" />
+              <SocialIcon href="/" icon="ri:twitter-x-fill" label="Twitter" />
             </div>
           </div>
         </div>
 
-        {/* Bottom row */}
-        <div className="mt-8 flex flex-col items-center gap-4 text-center text-sm md:flex-row md:items-center md:justify-between md:text-left">
-          <p style={{ color: "rgba(245,250,246,0.52)" }}>
-            © 2026 YACS. All rights reserved.
+        {/* High Impact Logo Section */}
+        <div className="relative mt-20 mb-24 flex flex-col items-center justify-center">
+          <div className="relative w-full h-[25vw] sm:h-[20vw] lg:h-[15vw] max-h-[280px] pointer-events-none select-none transition-transform duration-700 hover:scale-[1.02]">
+            <Image
+              src="/logo/YACS LOGO white (1).png"
+              alt="YACS Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
+
+        </div>
+
+        {/* Bottom Row */}
+        <div className="flex flex-col items-center justify-between border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-xs tracking-wider opacity-50 uppercase">
+            © 2026 YACS PRIVATE LIMITED
           </p>
 
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-end">
-            <FooterPolicyLink href="/" label="Privacy Policy" />
-            <FooterPolicyLink href="/" label="Refund Policy" />
-            <FooterPolicyLink href="/" label="Terms & Conditions" />
+          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-0">
+            <Link
+              href="https://form.jotform.com/261102001781440"
+              className="group flex items-center gap-2.5 rounded-full bg-[#5A9B68] px-6 py-3 text-white transition-all hover:bg-[#5A9B68]/90 hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-10px_rgba(90,155,104,0.5)]"
+            >
+              <span className="text-sm font-bold uppercase tracking-wider">Apply Now</span>
+              <Icon icon="lucide:arrow-right" className="text-lg transition-transform group-hover:translate-x-1" />
+            </Link>
+
+            <a
+              href="https://wa.me/+917306648019"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30"
+            >
+              <Icon icon="mdi:chat-outline" className="text-xl text-[#5A9B68]" />
+              <span className="text-sm font-semibold">Let's chat</span>
+            </a>
           </div>
         </div>
       </div>
@@ -107,26 +115,161 @@ export default function Footer() {
   );
 }
 
-function FooterPolicyLink({ href, label }) {
+function FooterLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="transition-colors duration-300 hover:text-white text-[0.88rem] sm:text-sm"
-      style={{ color: "rgba(245,250,246,0.7)" }}
+      className="text-sm font-medium opacity-70 transition-all hover:opacity-100 hover:text-[#5A9B68]"
     >
       {label}
     </Link>
   );
 }
 
-function BottomSocial({ href, icon, label }) {
+function SocialIcon({ href, icon, label }) {
   return (
     <Link
       href={href}
       aria-label={label}
-      className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10 hover:text-[#9fd0a6]"
+      className="text-xl opacity-70 transition-all hover:opacity-100 hover:text-[#5A9B68] hover:-translate-y-1"
     >
-      <Icon icon={icon} width="18" height="18" />
+      <Icon icon={icon} />
     </Link>
   );
 }
+
+
+
+
+// import Link from "next/link";
+// import Image from "next/image";
+// import { Icon } from "@iconify/react";
+
+// export default function Footer() {
+//   return (
+//     <footer
+//       className="relative w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-10 md:px-12 md:py-12 lg:px-16"
+//       style={{
+//         background: "rgba(4, 7, 6, 0.88)",
+//         borderTop: "1px solid rgba(255,255,255,0.06)",
+//         backdropFilter: "blur(14px)",
+//       }}
+//     >
+//       {/* subtle glow */}
+//       <div className="pointer-events-none absolute inset-0 opacity-70">
+//         <div
+//           className="absolute left-4 top-0 h-36 w-36 sm:left-20 sm:h-48 sm:w-48 rounded-full blur-3xl"
+//           style={{ background: "rgba(90,155,104,0.08)" }}
+//         />
+//         <div
+//           className="absolute right-4 bottom-0 h-36 w-36 sm:right-20 sm:h-48 sm:w-48 rounded-full blur-3xl"
+//           style={{ background: "rgba(59,130,246,0.08)" }}
+//         />
+//       </div>
+
+//       <div className="relative mx-auto max-w-7xl">
+//         <div className="flex flex-col gap-8 rounded-[1.6rem] sm:rounded-[2rem] border border-white/8 bg-white/[0.02] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 shadow-[0_20px_70px_rgba(0,0,0,0.24)] lg:min-h-[240px] lg:flex-row lg:items-center lg:justify-between">
+
+//           {/* LEFT SIDE */}
+//           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
+//             <div className="text-center lg:text-left">
+//               <p className="text-[1.25rem] sm:text-[1.45rem] md:text-[1.8rem] font-semibold tracking-[-0.03em] text-white leading-tight">
+//                 Ready to start your journey?
+//               </p>
+//               <p
+//                 className="mt-3 max-w-[520px] text-[0.92rem] sm:text-sm md:text-[1rem] leading-6 sm:leading-7 mx-auto lg:mx-0"
+//                 style={{ color: "rgba(232,245,239,0.68)" }}
+//               >
+//                 Join the cohort, learn from industry mentors, and build real cybersecurity skills.
+//               </p>
+//             </div>
+
+//             <div className="flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:w-auto lg:justify-start">
+//               <Link
+//                 href="/"
+//                 className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full border px-6 sm:px-7 text-sm font-medium text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10"
+//                 style={{
+//                   color: "#9fd0a6",
+//                   borderColor: "rgba(90,155,104,0.45)",
+//                   background: "rgba(255,255,255,0.02)",
+//                 }}
+//               >
+//                 Apply as Mentor
+//               </Link>
+
+//               <Link
+//                 href="https://form.jotform.com/261102001781440"
+//                 className="inline-flex min-h-[48px] sm:min-h-[52px] w-full sm:w-auto items-center justify-center rounded-full px-6 sm:px-7 text-sm font-semibold text-[#07120f] text-center transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+//                 style={{
+//                   background: "linear-gradient(90deg, #5A9B68 0%, #79c28a 100%)",
+//                   boxShadow: "0 12px 30px rgba(90,155,104,0.25)",
+//                 }}
+//               >
+//                 Apply Now
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* RIGHT SIDE */}
+//           <div className="flex flex-col items-center gap-5 lg:items-end">
+//             <Link href="/" className="inline-flex items-center justify-center w-full">
+//               <div className="relative h-12 w-[180px] xs:w-[200px] sm:h-14 sm:w-[230px] md:h-16 md:w-[290px]">
+//                 <Image
+//                   src="/logo/YACS LOGO white (1).png"
+//                   alt="YACS Logo"
+//                   fill
+//                   className="object-contain object-center lg:object-right"
+//                   priority
+//                 />
+//               </div>
+//             </Link>
+
+//             <div className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-end">
+//               <BottomSocial href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr" icon="ri:instagram-line" label="Instagram" />
+//               <BottomSocial href="/" icon="ri:linkedin-fill" label="LinkedIn" />
+//               <BottomSocial href="/" icon="ri:twitter-x-fill" label="Twitter" />
+//               <BottomSocial href="/" icon="ri:youtube-fill" label="YouTube" />
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Bottom row */}
+//         <div className="mt-8 flex flex-col items-center gap-4 text-center text-sm md:flex-row md:items-center md:justify-between md:text-left">
+//           <p style={{ color: "rgba(245,250,246,0.52)" }}>
+//             © 2026 YACS. All rights reserved.
+//           </p>
+
+//           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-end">
+//             <FooterPolicyLink href="/" label="Privacy Policy" />
+//             <FooterPolicyLink href="/" label="Refund Policy" />
+//             <FooterPolicyLink href="/" label="Terms & Conditions" />
+//           </div>
+//         </div>
+//       </div>
+//     </footer>
+//   );
+// }
+
+// function FooterPolicyLink({ href, label }) {
+//   return (
+//     <Link
+//       href={href}
+//       className="transition-colors duration-300 hover:text-white text-[0.88rem] sm:text-sm"
+//       style={{ color: "rgba(245,250,246,0.7)" }}
+//     >
+//       {label}
+//     </Link>
+//   );
+// }
+
+// function BottomSocial({ href, icon, label }) {
+//   return (
+//     <Link
+//       href={href}
+//       aria-label={label}
+//       className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#5A9B68] hover:bg-[#5A9B68]/10 hover:text-[#9fd0a6]"
+//     >
+//       <Icon icon={icon} width="18" height="18" />
+//     </Link>
+//   );
+// }

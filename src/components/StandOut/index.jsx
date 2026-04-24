@@ -125,7 +125,7 @@ export default function StandOutSection() {
                 fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               }}
             >
-              Built for people who want real outcomes - hands-on cybersecurity training in Kerala, guidance from industry mentors, and career support that turns learning into a job-ready cybersecurity career.
+              Built for people who want real outcomes, hands-on cybersecurity training in Kerala, guidance from industry mentors, and career support that turns learning into a job-ready cybersecurity career.
             </p>
 
             <motion.a
