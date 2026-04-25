@@ -184,7 +184,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
 
           {/* ───────────── Container 1: Headline (Improved) ───────────── */}
-          <div className="relative flex flex-col justify-center items-center text-center lg:items-end lg:text-right px-4 mb-20 lg:mb-0">
+          <div className="relative flex flex-col justify-center items-center text-center lg:items-end lg:text-right px-4 mb-6 lg:mb-0">
 
             {/* Background Glow */}
             <div className="absolute -top-32 right-0 w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(0,229,160,0.15),transparent_70%)] blur-3xl pointer-events-none" />
@@ -203,8 +203,8 @@ export default function AboutSection() {
             </h3>
 
             {/* Brand Scrolling Marquee */}
-            <div className="relative z-10 w-full mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-              <div className="flex w-max animate-scroll gap-8 py-10 hover:[animation-play-state:paused] items-center">
+            <div className="relative z-10 w-full mt-4 md:mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+              <div className="flex w-max animate-scroll gap-8 py-4 md:py-10 hover:[animation-play-state:paused] items-center">
                 {/* Double the array for seamless loop */}
                 {[...Array(2)].map((_, i) => (
                   <React.Fragment key={i}>

@@ -7,91 +7,69 @@ import BlurText from "@/components/BlurText";
 const standoutCards = [
   {
     title: "AI + Cybersecurity Combined",
-    description: "Learn how AI and cybersecurity work together to secure modern systems, preparing you for next-generation security roles.",
-    imgSrc: "/cards/2-5 (1).webp",
   },
   {
     title: "Mentors with Real Experience",
-    description: "Learn cybersecurity from industry professionals with real-world experience in threat detection, ethical hacking, and security operations across Kerala and beyond.",
-    imgSrc: "/cards/2-2 (1).webp",
   },
   {
     title: "AI Security Engineer Training",
-    description: "Master AI-powered cybersecurity techniques, including threat detection, automation, and modern defence strategies used by AI security engineers.",
-    imgSrc: "/cards/2-3 (1).webp",
   },
   {
     title: "HR-Led Soft Skills Training",
-    description: "Build communication, interview, and workplace skills with HR experts who understand hiring trends in the cybersecurity industry in Kerala.",
-    imgSrc: "/cards/2-1 (1).webp",
   },
   {
     title: "1-on-1 Mentorship",
-    description: "Get personalized guidance throughout this cybersecurity cohort program with dedicated mentorship to accelerate your learning and career growth.",
-    imgSrc: "/cards/2-4 (1).webp",
   },
   {
     title: "Guest Mentors from Each Domain",
-    description: "Learn from cybersecurity specialists across domains like penetration testing, AI security, and cloud security through expert-led sessions.",
-    imgSrc: "/cards/2-6 (1).webp",
   },
 ];
 
-function StandOutCard({ title, description, imgSrc, index }) {
-
+function StandOutCard({ title, index }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 26, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    <motion.div
+      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{
-        duration: 0.75,
-        delay: index * 0.07,
+        duration: 0.6,
+        delay: index * 0.05,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative w-full overflow-hidden rounded-[28px] border border-white/10"
+      className={`flex items-center gap-4 lg:gap-5 px-6 lg:px-10 py-4 lg:py-5 rounded-[22px] lg:rounded-full border border-white/10 transition-all duration-300 hover:bg-white/[0.08] w-full lg:w-[82%] ${
+        index % 2 === 0 ? "lg:justify-self-start" : "lg:justify-self-end"
+      }`}
       style={{
-        boxShadow:
-          "0 26px 70px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.03) inset",
+        background: "rgba(255, 255, 255, 0.03)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
       }}
     >
-      {/* SEO Content */}
-      <div className="sr-only">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
-
-      <div className="relative w-full aspect-[4/3] group">
+      <div className="relative h-6 w-6 lg:h-8 lg:w-8 flex-shrink-0">
         <Image
-          src={imgSrc}
-          alt={title}
+          src="/cards/tickmark.svg"
+          alt="tick"
           fill
           unoptimized
-          className="select-none object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-          priority={index < 2}
+          className="select-none object-contain"
         />
-
-        {/* Overlay Title - Top Left */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute left-6 top-6 z-10 max-w-[85%]">
-          <h3 className="text-[1.25rem] font-medium leading-tight text-white tracking-tight">
-            {title}
-          </h3>
-        </div>
       </div>
-    </motion.article>
+      <h3 className="text-[1rem] lg:text-[1.15rem] font-medium text-white/90 tracking-tight leading-snug">
+        {title}
+      </h3>
+    </motion.div>
   );
 }
 
 export default function StandOutSection() {
   return (
-    <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24">
+    <section className="relative overflow-hidden px-6 py-20 md:px-12 md:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-start gap-10 xl:grid-cols-[420px_1fr] xl:gap-14">
-          <div className="pt-6">
+        <div className="grid items-center gap-12 lg:gap-20 xl:grid-cols-[500px_1fr]">
+          <div className="flex flex-col justify-center">
             <h2
-              className="font-editorial-regular text-[2.4rem] leading-[0.95] tracking-[-0.05em] text-white md:text-[3.2rem]"
+              className="font-editorial-regular text-[2.8rem] leading-[1.05] tracking-[-0.03em] text-white md:text-[4rem]"
               style={{
                 fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
                 fontWeight: 400,
@@ -120,7 +98,7 @@ export default function StandOutSection() {
               />
             </h2>
             <p
-              className="mt-6 max-w-[30rem] text-[1.02rem] leading-7 text-white/60"
+              className="mt-8 max-w-[32rem] text-[1.1rem] leading-relaxed text-white/50"
               style={{
                 fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
               }}
@@ -128,36 +106,36 @@ export default function StandOutSection() {
               Built for people who want real outcomes, hands-on cybersecurity training in Kerala, guidance from industry mentors, and career support that turns learning into a job-ready cybersecurity career.
             </p>
 
-            <motion.a
-              href="https://form.jotform.com/261102001781440"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.65,
-                delay: 0.25,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="mt-7 inline-flex w-fit items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
-              style={{
-                background: "rgba(217, 227, 138, 0.78)",
-                color: "#000000",
-                fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
-                boxShadow:
-                  "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-              }}
-            >
-              I WANT TO STAND OUT
-            </motion.a>
+            <div className="mt-12">
+              <motion.a
+                href="https://form.jotform.com/261102001781440"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.25,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex w-fit items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+                style={{
+                  background: "var(--tertiary)",
+                  color: "#1a1a1a",
+                  fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                  boxShadow:
+                    "0 10px 30px rgba(90, 155, 104, 0.25)",
+                }}
+              >
+                I WANT TO STAND OUT
+              </motion.a>
+            </div>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-2 2xl:grid-cols-3">
+          <div className="grid gap-5 xl:gap-6 self-center">
             {standoutCards.map((c, idx) => (
               <StandOutCard key={c.title} {...c} index={idx} />
             ))}

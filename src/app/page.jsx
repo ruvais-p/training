@@ -370,7 +370,7 @@ function HeroDescription({ mobile }) {
       <p
         className="text-center lg:text-left text-[0.92rem] md:text-[1.05rem] leading-relaxed text-white/75"
       >
-        A fully online, 6-month cohort-based <strong className="text-white font-semibold">Cybersecurity & AI/ML program</strong> built for career outcomes, not just certificates.
+        A fully online, 6-month cohort-based Cybersecurity & AI/ML program built for career outcomes, not just certificates.
         Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
       </p>
     </div>
