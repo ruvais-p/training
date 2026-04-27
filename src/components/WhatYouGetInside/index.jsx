@@ -202,7 +202,7 @@ export default function FeaturesSection() {
             }}
             whileHover={{ y: -2, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+            className="inline-flex w-full md:w-auto justify-center shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
             style={{
               background: "rgba(217, 227, 138, 0.78)",
               color: "#000000",

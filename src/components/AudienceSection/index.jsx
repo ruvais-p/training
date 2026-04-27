@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import BlurText from "@/components/BlurText";
 
 const audienceItems = [
@@ -13,9 +14,22 @@ const audienceItems = [
 
 
 export default function AudienceSection() {
+  const [activeIdx, setActiveIdx] = useState(-1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIdx(Math.floor(Math.random() * audienceItems.length));
+      
+      // Clear highlight after a short duration
+      setTimeout(() => setActiveIdx(-1), 1500);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
-      className="relative overflow-hidden px-6 py-10 md:px-12 md:py-12"
+      className="relative overflow-hidden px-6 py-16 md:px-12 md:py-24"
       style={{ background: "transparent" }}
     >
       <div
@@ -29,8 +43,8 @@ export default function AudienceSection() {
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#5A9B68]/12 blur-3xl audience-float-one" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-[#29553b]/18 blur-3xl audience-float-two" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
-        <div className="lg:sticky lg:top-24 h-fit">
+      <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="md:sticky md:top-24 h-fit">
           <p
             className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] md:text-sm"
             style={{
@@ -41,7 +55,7 @@ export default function AudienceSection() {
             Audience
           </p>
           <h2
-            className="mb-5 text-[2.5rem] leading-[0.93] tracking-[-0.05em] md:text-[4rem] font-editorial-regular"
+            className="mb-6 text-[2.8rem] leading-[0.95] tracking-[-0.05em] md:text-[4.5rem] font-editorial-regular"
             style={{
               color: "#f3f7f3",
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -72,53 +86,68 @@ export default function AudienceSection() {
             is for
           </h2>
           <p
-            className="max-w-[22rem] text-[1.02rem] leading-7 md:text-[1.08rem]"
+            className="max-w-[24rem] text-[1.05rem] leading-7 md:text-[1.12rem] opacity-80"
             style={{
-              color: "rgba(232,245,239,0.68)",
+              color: "rgba(232,245,239,0.7)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
             }}
           >
-            Where Do You Fit in Cybersecurity?
+            Whether you're starting from zero or leveling up, this program provides the structured path you need.
           </p>
 
-          <motion.a
-            href="https://form.jotform.com/261102001781440"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.65,
-              delay: 0.25,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            whileHover={{ y: -2, scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-7 inline-flex w-fit items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
-            style={{
-              background: "rgba(217, 227, 138, 0.78)",
-              color: "#000000",
-              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
-              boxShadow:
-                "0 10px 30px rgba(217, 227, 138, 0.18), 0 0 0 1px rgba(255,255,255,0.08) inset",
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-            }}
-          >
-            JOIN THE COHORT
-          </motion.a>
+          <div className="mt-10 hidden md:block">
+            <motion.a
+              href="https://form.jotform.com/261102001781440"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.65,
+                delay: 0.25,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex w-fit items-center justify-center rounded-full px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300"
+              style={{
+                background: "rgba(217, 227, 138, 0.85)",
+                color: "#1a1a1a",
+                fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
+                boxShadow: "0 10px 40px rgba(217, 227, 138, 0.2)",
+              }}
+            >
+              SECURE YOUR SPOT
+            </motion.a>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-4">
-          {audienceItems.map((item, index) => (
-            <AudienceCard
-              key={item}
-              text={item}
-              className="w-full"
+        <div className="flex flex-col">
+          {audienceItems.map((text, index) => (
+            <AudienceListItem
+              key={index}
+              text={text}
               index={index}
+              isAutoActive={activeIdx === index}
             />
           ))}
+
+          <div className="mt-12 md:hidden">
+            <motion.a
+              href="https://form.jotform.com/261102001781440"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center rounded-full px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300"
+              style={{
+                background: "rgba(217, 227, 138, 0.85)",
+                color: "#1a1a1a",
+                boxShadow: "0 10px 40px rgba(217, 227, 138, 0.15)",
+              }}
+            >
+              JOIN THE COHORT
+            </motion.a>
+          </div>
         </div>
       </div>
 
@@ -145,65 +174,50 @@ export default function AudienceSection() {
   );
 }
 
-function AudienceCard({
-  text,
-  className,
-  index,
-}) {
+function AudienceListItem({ text, index, isAutoActive }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 36, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.65,
-        delay: index * 0.08,
-        ease: [0.16, 1, 0.3, 1],
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      animate={isAutoActive ? { 
+        borderColor: "rgba(255,255,255,0.2)", 
+        backgroundColor: "rgba(255,255,255,0.06)",
+        scale: 1.01
+      } : { 
+        borderColor: "rgba(255,255,255,0.1)", 
+        backgroundColor: "rgba(255,255,255,0.03)",
+        scale: 1
       }}
-      className={`group relative overflow-hidden rounded-[1.6rem] border px-6 py-6 md:px-7 md:py-7 ${className}`}
-      style={{
-        background: "linear-gradient(180deg, rgba(3,6,4,0.98) 0%, rgba(2,10,5,0.98) 100%)",
-        borderColor: "rgba(110,170,124,0.14)",
-        boxShadow:
-          "0 18px 40px rgba(0,0,0,0.24), 0 0 0 1px rgba(90,155,104,0.06) inset, 0 0 28px rgba(90,155,104,0.08)",
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
-      }}
+      className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 mb-2.5 overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]"
     >
-      <div
-        className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full blur-2xl transition-opacity duration-300"
-        style={{
-          background: "rgba(90,155,104,0.16)",
-          opacity: 0.9,
-        }}
-      />
-      <div
-        className="pointer-events-none absolute -left-10 bottom-0 h-24 w-24 rounded-full blur-3xl"
-        style={{
-          background: "rgba(63,116,78,0.14)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent, rgba(159,208,166,0.42), transparent)",
-        }}
+      {/* Left accent bar */}
+      <div 
+        className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[#5A9B68] transition-opacity duration-300 ${isAutoActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} 
       />
 
-      <div className="relative flex h-full flex-col justify-between gap-6">
-        <div className="flex items-start">
-          <p
-            className="text-[1rem] font-medium leading-[1.45] tracking-[-0.02em] md:text-[1.08rem]"
-            style={{
-              color: "#f3f7f3",
-              fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
-            }}
-          >
-            {text}
-          </p>
-        </div>
-      </div>
-    </motion.article>
+      {/* Index */}
+      <span className={`flex-shrink-0 w-6 font-mono text-xs font-medium transition-colors duration-300 ${isAutoActive ? 'text-[#5A9B68]' : 'text-white/30 group-hover:text-[#5A9B68]'}`}>
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      {/* Text */}
+      <p className={`flex-1 text-[1.05rem] font-medium leading-snug transition-colors duration-300 ${isAutoActive ? 'text-white' : 'text-white/70 group-hover:text-white'}`}>
+        {text}
+      </p>
+
+      {/* Subtle background glow when active */}
+      <AnimatePresence>
+        {isAutoActive && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-x-0 bottom-0 top-0 -z-10 bg-gradient-to-r from-[#5A9B68]/10 to-transparent"
+          />
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
-}
+} 

@@ -36,9 +36,8 @@ function StandOutCard({ title, index }) {
         delay: index * 0.05,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className={`flex items-center gap-4 lg:gap-5 px-6 lg:px-10 py-4 lg:py-5 rounded-[22px] lg:rounded-full border border-white/10 transition-all duration-300 hover:bg-white/[0.08] w-full lg:w-[82%] ${
-        index % 2 === 0 ? "lg:justify-self-start" : "lg:justify-self-end"
-      }`}
+      className={`flex items-center gap-4 lg:gap-5 px-6 lg:px-10 py-4 lg:py-5 rounded-[22px] lg:rounded-full border border-white/10 transition-all duration-300 hover:bg-white/[0.08] w-full lg:w-[82%] ${index % 2 === 0 ? "lg:justify-self-start" : "lg:justify-self-end"
+        }`}
       style={{
         background: "rgba(255, 255, 255, 0.03)",
         backdropFilter: "blur(10px)",
@@ -121,13 +120,13 @@ export default function StandOutSection() {
                 }}
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex w-fit items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+                className="inline-flex w-full md:w-fit items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
                 style={{
-                  background: "var(--tertiary)",
+                  background: "rgba(217, 227, 138, 0.85)",
                   color: "#1a1a1a",
                   fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
                   boxShadow:
-                    "0 10px 30px rgba(90, 155, 104, 0.25)",
+                    "0 10px 30px rgba(217, 227, 138, 0.25)",
                 }}
               >
                 I WANT TO STAND OUT

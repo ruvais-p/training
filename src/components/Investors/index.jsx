@@ -144,7 +144,7 @@ export default function Investors() {
                         }}
                         whileHover={{ y: -2, scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="mt-7 inline-flex w-fit items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+                        className="mt-7 inline-flex w-full md:w-fit items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
                         style={{
                             background: "rgba(217, 227, 138, 0.78)",
                             color: "#000000",

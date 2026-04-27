@@ -90,10 +90,10 @@ export default function Footer() {
             © 2026 YACS PRIVATE LIMITED
           </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-0">
+          <div className="mt-6 flex flex-col sm:flex-row items-center w-full sm:w-auto gap-3 sm:mt-0">
             <Link
               href="https://form.jotform.com/261102001781440"
-              className="group flex items-center gap-2.5 rounded-full bg-[#5A9B68] px-6 py-3 text-white transition-all hover:bg-[#5A9B68]/90 hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-10px_rgba(90,155,104,0.5)]"
+              className="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-[#5A9B68] px-6 py-3 text-white transition-all hover:bg-[#5A9B68]/90 hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-10px_rgba(90,155,104,0.5)]"
             >
               <span className="text-sm font-bold uppercase tracking-wider">Apply Now</span>
               <Icon icon="lucide:arrow-right" className="text-lg transition-transform group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ export default function Footer() {
               href="https://wa.me/+917306648019"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30"
+              className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30"
             >
               <Icon icon="mdi:chat-outline" className="text-xl text-[#5A9B68]" />
               <span className="text-sm font-semibold">Let's chat</span>
