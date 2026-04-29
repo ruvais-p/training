@@ -251,16 +251,15 @@ export default function AboutSection() {
             iconColor="text-white"
           />
 
-          {/* ───────────── Container 4 ───────────── */}
-          <div className="flex items-center justify-center p-4 lg:p-8">
-            <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center p-4 lg:p-8 overflow-hidden">
+            <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-12">
               <span
-                className="text-[6rem] md:text-[10rem] font-black leading-none select-none text-transparent"
+                className="text-[4rem] sm:text-[5.5rem] md:text-[7.5rem] lg:text-[5rem] xl:text-[8rem] font-black leading-none select-none text-transparent flex-shrink-0"
                 style={{ WebkitTextStroke: "1.5px white", opacity: 0.2 }}
               >
                 the
               </span>
-              <div className="flex flex-col text-3xl md:text-[3.5rem] font-bold text-white/90 leading-[1.1] tracking-tighter">
+              <div className="flex flex-col text-[1.5rem] sm:text-[2.2rem] md:text-[2rem] lg:text-[2rem] xl:text-[3.5rem] font-bold text-white/90 leading-[1.1] tracking-tighter">
                 <span>skills.</span>
                 <span>proof.</span>
                 <span>career.</span>
@@ -275,26 +274,6 @@ export default function AboutSection() {
           {cohorts.map((cohort) => (
             <CohortCard key={cohort.tag} {...cohort} />
           ))}
-        </div>
-
-        {/* Mentors Team Image */}
-        <div className="mt-16 w-full lg:mt-24 px-4 pb-16 relative">
-          <div className="relative overflow-hidden rounded-[40px]">
-            <picture>
-              <source media="(max-width: 850px)" srcSet="/about/about_mentors_mobile.webp" />
-              <img
-                src="/about/about_mentors.webp"
-                alt="YACS Mentors Team"
-                className="w-full h-auto max-[850px]:aspect-[1080/1536] object-cover max-[850px]:object-bottom opacity-90 transition-all duration-700 hover:opacity-100 hover:scale-[1.01]"
-              />
-            </picture>
-
-            {/* Internal soft blend */}
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent via-black/50 to-black pointer-events-none" />
-          </div>
-
-          {/* OUTSIDE gradient (this removes the hard edge) */}
-          <div className="pointer-events-none absolute left-0 right-0 -bottom-10 h-32 bg-gradient-to-b from-black to-transparent blur-xl opacity-80" />
         </div>
 
       </div>

@@ -43,10 +43,10 @@ export default function AudienceSection() {
       <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#5A9B68]/12 blur-3xl audience-float-one" />
       <div className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-[#29553b]/18 blur-3xl audience-float-two" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <div className="md:sticky md:top-24 h-fit">
+      <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="lg:sticky lg:top-24 h-fit">
           <p
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] md:text-sm"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] lg:text-sm"
             style={{
               color: "rgba(159,208,166,0.82)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
@@ -55,7 +55,7 @@ export default function AudienceSection() {
             Audience
           </p>
           <h2
-            className="mb-6 text-[2.8rem] leading-[0.95] tracking-[-0.05em] md:text-[4.5rem] font-editorial-regular"
+            className="mb-6 text-[2.8rem] leading-[0.95] tracking-[-0.05em] lg:text-[4.5rem] font-editorial-regular"
             style={{
               color: "#f3f7f3",
               fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
@@ -86,7 +86,7 @@ export default function AudienceSection() {
             is for
           </h2>
           <p
-            className="max-w-[24rem] text-[1.05rem] leading-7 md:text-[1.12rem] opacity-80"
+            className="max-w-[24rem] text-[1.05rem] leading-7 lg:text-[1.12rem] opacity-80"
             style={{
               color: "rgba(232,245,239,0.7)",
               fontFamily: "var(--font-geist-sans), Arial, Helvetica, sans-serif",
@@ -95,7 +95,7 @@ export default function AudienceSection() {
             Whether you're starting from zero or leveling up, this program provides the structured path you need.
           </p>
 
-          <div className="mt-10 hidden md:block">
+          <div className="mt-10">
             <motion.a
               href="https://form.jotform.com/261102001781440"
               target="_blank"
@@ -110,7 +110,7 @@ export default function AudienceSection() {
               }}
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex w-fit items-center justify-center rounded-full px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300"
+              className="inline-flex w-full lg:w-fit items-center justify-center rounded-full px-8 py-4 text-xs font-bold lg:font-semibold uppercase tracking-[0.2em] transition-all duration-300"
               style={{
                 background: "rgba(217, 227, 138, 0.85)",
                 color: "#1a1a1a",
@@ -133,21 +133,7 @@ export default function AudienceSection() {
             />
           ))}
 
-          <div className="mt-12 md:hidden">
-            <motion.a
-              href="https://form.jotform.com/261102001781440"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300"
-              style={{
-                background: "rgba(217, 227, 138, 0.85)",
-                color: "#1a1a1a",
-                boxShadow: "0 10px 40px rgba(217, 227, 138, 0.15)",
-              }}
-            >
-              JOIN THE COHORT
-            </motion.a>
-          </div>
+
         </div>
       </div>
 
