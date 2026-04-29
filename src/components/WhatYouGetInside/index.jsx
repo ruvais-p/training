@@ -87,7 +87,7 @@ const benefits = [
   },
   {
     "title": "Hands-On Cybersecurity Training",
-    "description": "Apply your skills through guided labs, real-time problem solving, and hands-on cybersecurity training designed to make you job-ready."
+    "description": "Apply your skills through guided labs, real-time problem solving, and practical cybersecurity training designed to make you job-ready."
   },
   {
     "title": "Access to Professional Cybersecurity Tools",
@@ -99,7 +99,7 @@ const benefits = [
   },
   {
     "title": "Job Assistance & Cybersecurity Placement Support",
-    "description": "Get structured support with job applications, referrals, and strategies to land your first cybersecurity job in Kerala or remotely."
+    "description": "Get structured support with job applications, referrals, and strategies to land your first cybersecurity job."
   }
 ]
 export default function FeaturesSection() {

@@ -27,7 +27,7 @@ const mentors = [
     {
         name: "Eldho George",
         designation: "AppSec Engineer & Founder, YAS",
-        subDesignation: "Forensic Expert · Income Tax Dept. Govt. · Ex-UST Global",
+        subDesignation: "6+ years · Forensic Expert · Income Tax Dept. Govt. · Ex-UST Global",
         bio: "Application security engineer and digital forensics expert. Forensic Expert at the Income Tax Department. MSc in Cyber Forensics. UST Global experience. Founder of YAS Community.",
         linkedin: "https://www.linkedin.com/in/eldhogeorgeofficial",
         imageSrc: "/Mentors/YACS mentor 3 eldho.webp",
@@ -47,7 +47,7 @@ const mentors = [
     {
         name: "Krishnaraj G",
         designation: "Security Consultant & Team Lead",
-        subDesignation: "Enterprise IT Penetration Testing",
+        subDesignation: "6+ years · Enterprise IT Penetration Testing",
         bio: "Leads security teams in penetration testing, vulnerability assessment, and securing enterprise IT infrastructure. Manages real client security engagements, not lab simulations.",
         linkedin: "https://www.linkedin.com/in/krishnaraj-g-9ab8b2142",
         imageSrc: "/Mentors/YACS mentor 5 krishanaraj.webp",
