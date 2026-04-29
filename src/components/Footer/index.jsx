@@ -108,6 +108,14 @@ export default function Footer() {
               <Icon icon="mdi:chat-outline" className="text-xl text-[#5A9B68]" />
               <span className="text-sm font-semibold">Let's chat</span>
             </a>
+
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("show-registration-popup"))}
+              className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30 cursor-pointer"
+            >
+              <Icon icon="mdi:email-outline" className="text-xl text-[#5A9B68]" />
+              <span className="text-sm font-semibold">Contact us</span>
+            </button>
           </div>
         </div>
       </div>
