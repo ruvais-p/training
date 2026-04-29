@@ -2,14 +2,11 @@
 
 import { ShieldCheck, Sparkles, Zap, ArrowRight, MessageCircle } from "lucide-react";
 import BlurText from "@/components/BlurText";
-import BorderGlow from "@/components/Hero/BorderGlow";
-import CtaButton from "@/components/Hero/CtaButton";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Methodology from "@/components/Methodology";
 import SkillStack from "@/components/SkillStack";
-import Testimonial from "@/components/Testimonial";
-import Investors from "@/components/Investors";
+import Mentors from "@/components/Mentors";
 import SectionReveal from "@/components/SectionReveal";
 import AboutSection from "@/components/AboutSection";
 import AudienceSection from "@/components/AudienceSection";
@@ -18,9 +15,6 @@ import WhatYouGetInside from "@/components/WhatYouGetInside";
 import CommunityExperience from "@/components/CommunityExperience";
 import StandOutSection from "@/components/StandOut";
 import PlacementPartners from "@/components/PlacementPartners";
-import PreAboutSection from "@/components/PreAboutSection";
-import LearningProblemsSection from "@/components/LearningProblemsSection";
-
 
 
 
@@ -110,10 +104,6 @@ export default function Home() {
         <h2 className="sr-only">Cybersecurity Cohort Program Kerala | YACS — 4 Months Online</h2>
         <HeroSection />
       </section>
-
-      {/* <PreAboutSection /> */}
-      {/* <LearningProblemsSection /> */}
-
       <section id="mentors" className="pt-12 pb-4">
         <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
         <AboutSection />
@@ -141,11 +131,7 @@ export default function Home() {
       </section>
 
       <CommunityExperience />
-      <Investors />
-
-      {/* <SectionReveal delay={100}>
-        <Testimonial />
-      </SectionReveal> */}
+      <Mentors />
 
       <SectionReveal delay={70}>
         <SkillStack
@@ -219,7 +205,7 @@ function HeroSection() {
           playsInline
           className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover"
         >
-          <source src="/home_page/hero_section_video (1).mp4" type="video/mp4" />
+          <source src="/home_page/hero_section_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Bottom blend overlay */}

@@ -252,7 +252,7 @@ export default function AboutSection() {
             title="The Mentors"
             description={p2}
             gradientStyle={cardGradient}
-            bgImage="/about/about_card_2.jpg"
+            bgImage="/about/about_card_2.webp"
             iconColor="text-white"
           />
 
