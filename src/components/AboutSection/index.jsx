@@ -58,6 +58,7 @@ const CohortCard = ({
   buttonLabel,
   buttonColor,
   accentColor,
+  isOnline,
 }) => (
   <div
     className="relative flex flex-col justify-between rounded-[28px] 
@@ -80,13 +81,24 @@ const CohortCard = ({
     {/* ───── Content ───── */}
     <div className="relative z-10 flex flex-col gap-5">
 
-      {/* Tag */}
-      <span
-        className="inline-flex w-fit items-center gap-1.5 rounded-full border px-3 py-1 text-[0.7rem] font-bold uppercase tracking-widest backdrop-blur-md"
-        style={{ borderColor: tagColor, color: tagColor }}
-      >
-        {tag}
-      </span>
+      {/* Tag & Online Indicator */}
+      <div className="flex items-center gap-3">
+        <span
+          className="inline-flex w-fit items-center gap-1.5 rounded-full border px-3 py-1 text-[0.7rem] font-bold uppercase tracking-widest backdrop-blur-md"
+          style={{ borderColor: tagColor, color: tagColor }}
+        >
+          {tag}
+        </span>
+        {isOnline && (
+          <span className="flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
+            </span>
+            Online
+          </span>
+        )}
+      </div>
 
       {/* Title */}
       <h3 className="text-[2rem] md:text-[2.4rem] font-black leading-[1.05] tracking-tight text-white whitespace-pre-line">
@@ -136,43 +148,26 @@ export default function AboutSection() {
   const cardBgImage = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop";
 
   const cohorts = [
-    {
-      tag: "Cybersecurity Cohort",
-      tagColor: "#00e5a0",
-      accentColor: "#00e5a0",
-      title: "AI-integrated Cybersecurity & Ethical Hacking",
-      subtitle: "Kerala's most advanced cybersecurity cohort. Learn to think like an attacker, defend like a pro. AI-integrated security training from mentors who've found bugs in Google, Microsoft, and Apple.",
-      mentor: "Anil Tom — Lead Mentor",
-      mentorMeta: "OSCP · OSEP · CRTO · eWPTX · BSCP · OSDA · 70+ companies hacked",
-      features: [
-        "Penetration testing, ethical hacking & red teaming",
-        "Web application security, OWASP Top 10",
-        "Hardware hacking labs, unique to YACS",
-        "AI-powered threat detection & security automation",
-        "CompTIA Security+ & CEH voucher prep",
-        "Placement support + HR mock interviews",
-      ],
-      buttonLabel: "Apply for Cybersecurity",
-      buttonColor: "#00e5a0",
-    },
+    { tag: "Cybersecurity Cohort", tagColor: "#00e5a0", accentColor: "#00e5a0", title: "AI-integrated \n& Ethical Hacking", subtitle: "Kerala's most advanced cybersecurity cohort. Learn to think like an attacker, defend like a pro. AI-integrated security training from mentors who've found bugs in Google, Microsoft, and Apple.", mentor: "Anil Tom — Lead Mentor", mentorMeta: "OSCP · OSEP · CRTO · eWPTX · BSCP · OSDA · 70+ companies hacked", features: ["Web Application Security (OWASP Top 10)", "Penetration Testing & Ethical Hacking", "Network Pentesting", "Mobile Security & Paper Presentation", "Hardware Hacking Labs (Unique to YACS)", "AI-Powered Security Automation", "Community Engagement", "Placement Support + HR Mock Interviews",], buttonLabel: "Apply for Cybersecurity", buttonColor: "#00e5a0", },
     {
       tag: "AI/ML Cohort",
       tagColor: "#38bdf8",
       accentColor: "#38bdf8",
-      title: "AI & Machine\nLearning Security",
-      subtitle: "Kerala's only AI/ML cohort with a security focus. Build, deploy, and secure AI-driven systems. Learn from a working data scientist building real ML pipelines, not recycled YouTube content.",
+      title: "AI & Machine\nLearning",
+      subtitle:
+        "Kerala's only AI/ML cohort with a security focus. Build, deploy, and secure AI-driven systems. Learn from a working data scientist building real ML pipelines, not recycled YouTube content.",
       mentor: "Akshay P — AI/ML Lead",
-      mentorMeta: "Data Scientist · dSights AI · 4 yrs ML · AML Security specialist",
+      mentorMeta:
+        "Data Scientist · dSights AI · 4 yrs ML · AML Security specialist",
       features: [
-        "Machine learning pipelines & AI-driven solutions",
-        "LangChain, LangGraph, LangFlow for security automation",
-        "AML (Anti-Money Laundering) AI security systems",
-        "AI-powered threat detection & anomaly modelling",
-        "Securing AI systems against adversarial attacks",
-        "Placement support + HR mock interviews",
+        "Understand real-world AI, explore industry use cases, trends, and how companies actually deploy ML",
+        "Core ML concepts, supervised, unsupervised & reinforcement learning with practical algorithm implementation",
+        "Build AI applications, chatbots using LangChain, LangGraph, and agent-based AI systems",
+        "End-to-end ML pipelines, data preprocessing → model training → deployment → scaling in production",
       ],
       buttonLabel: "Apply for AI/ML",
       buttonColor: "#38bdf8",
+      isOnline: true,
     },
   ];
 

@@ -49,13 +49,13 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-x-12 gap-y-6 sm:gap-x-16 md:gap-x-20 lg:gap-x-24">
               <div className="flex flex-col gap-3">
                 <FooterLink href="/" label="Programs" />
-                <FooterLink href="/blog" label="Blog" />
+                <FooterLink href="/" label="Blog" />
                 <FooterLink href="https://form.jotform.com/261102001781440" label="Apply Now" />
               </div>
               <div className="flex flex-col gap-3">
-                <FooterLink href="/" label="Terms & Conditions" />
-                <FooterLink href="/" label="Privacy Policy" />
-                <FooterLink href="/" label="Refund Policy" />
+                <FooterLink href="/terms" label="Terms & Conditions" />
+                <FooterLink href="/privacy" label="Privacy Policy" />
+                <FooterLink href="/refund" label="Refund Policy" />
               </div>
             </div>
 
@@ -87,7 +87,7 @@ export default function Footer() {
         {/* Bottom Row */}
         <div className="flex flex-col items-center justify-between border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-xs tracking-wider opacity-50 uppercase">
-            © 2026 YACS PRIVATE LIMITED
+            © 2026 YACS LLP
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center w-full sm:w-auto gap-3 sm:mt-0">

@@ -100,63 +100,81 @@ const heroKeyframes = `
 export default function Home() {
   return (
     <main className="relative w-full overflow-x-clip font-sans" style={{ maxWidth: "100%" }}>
-      <section id="cybersecurity-cohort" className="mb-0">
-        <h2 className="sr-only">Cybersecurity Cohort Program Kerala | YACS — 4 Months Online</h2>
+      {/* 1. Hero */}
+      <section id="hero" className="mb-0">
+        <h2 className="sr-only">Cybersecurity & AI/ML Training Kerala | YACS</h2>
         <HeroSection />
       </section>
-      <section id="mentors" className="pt-12 pb-4">
-        <h2 className="sr-only">Expert Cybersecurity Mentors | YACS Kerala Program</h2>
+
+      {/* 2. About */}
+      <section id="about">
+        <h2 className="sr-only">About YACS Cohorts</h2>
         <AboutSection />
       </section>
-      <section id="ai-ml-cohort">
-        <h2 className="sr-only">AI & ML Cohort Program Kerala | YACS — Online, Beginner Friendly</h2>
+
+      {/* 3. Mentors */}
+      <section id="mentors">
+        <h2 className="sr-only">Expert Mentors</h2>
+        <Mentors />
+      </section>
+
+      {/* 4. Why Stand Out */}
+      <StandOutSection />
+
+      {/* 5. Target Audience */}
+      <section id="audience">
+        <h2 className="sr-only">Who is this for?</h2>
         <AudienceSection />
       </section>
 
-      <StandOutSection />
-
-      <section id="certifications">
-        <h2 className="sr-only">CompTIA Security+, CEH Certification Prep | YACS Kerala</h2>
+      {/* 6. What You Get (Benefits) */}
+      <section id="benefits">
+        <h2 className="sr-only">Program Benefits</h2>
         <WhatYouGetInside />
       </section>
 
-      <section id="placement">
-        <h2 className="sr-only">Cybersecurity Job Placement Support Kerala | YACS Career Coaching</h2>
-        <CareerAndGrowthSupport />
-      </section>
+      <CommunityExperience />
 
+      {/* 7. Curriculum (4 Phases) */}
       <section id="curriculum">
-        <h2 className="sr-only">Cybersecurity Course Curriculum | 4-Phase Program | YACS Kerala</h2>
+        <h2 className="sr-only">Cybersecurity Course Curriculum | 4-Phase Program</h2>
         <Methodology />
       </section>
 
-      <CommunityExperience />
-      <Mentors />
+      {/* 8. Tools & Skill Stack */}
+      <section id="tools">
+        <SectionReveal delay={70}>
+          <SkillStack
+            eyebrow="SKILL STACK"
+            title="AI & ML Tools you will learn"
+            items={skillItems}
+          />
+          <SkillStack
+            eyebrow="BECOME PRO"
+            title="Hacking Tools you will learn"
+            items={hackingTools}
+          />
+        </SectionReveal>
+      </section>
 
-      <SectionReveal delay={70}>
-        <SkillStack
-          eyebrow="SKILL STACK"
-          title="AI & ML Tools you will learn"
-          items={skillItems}
-        />
-        <SkillStack
-          eyebrow="BECOME PRO"
-          title="Hacking Tools you will learn"
-          items={hackingTools}
-        />
-      </SectionReveal>
+      {/* 9. Career & Placement Support */}
+      <section id="placement">
+        <h2 className="sr-only">Job Placement Support</h2>
+        <CareerAndGrowthSupport />
+        <SectionReveal delay={70}>
+          <PlacementPartners partners={placementPartners} />
+        </SectionReveal>
+      </section>
 
-      <SectionReveal delay={70}>
-        <PlacementPartners partners={placementPartners} />
-      </SectionReveal>
-
+      {/* 10. FAQ (Key Answers) */}
       <section id="faq">
-        <h2 className="sr-only">Cybersecurity Course FAQ Kerala | YACS Program Questions</h2>
+        <h2 className="sr-only">Frequently Asked Questions</h2>
         <FAQ />
       </section>
 
+      {/* 11. Footer / Contact */}
       <section id="apply">
-        <h2 className="sr-only">Apply Now | YACS Cybersecurity Cohort Kerala — Limited Seats</h2>
+        <h2 className="sr-only">Apply Now</h2>
         <SectionReveal>
           <Footer />
         </SectionReveal>
