@@ -367,12 +367,12 @@ function HeroHeadline({ mobile }) {
 
 function HeroDescription({ mobile }) {
   return (
-    <div className="max-w-[720px] mx-auto lg:mx-0">
+    <div className="max-w-[710px] mx-auto lg:mx-0">
       <p
         className="text-center lg:text-left text-[0.92rem] md:text-[1.05rem] leading-relaxed text-white/75"
       >
         A fully online, 6-month cohort-based Cybersecurity & AI/ML program built for career outcomes, not just certificates.
-        Live mentorship from industry professionals, HR-led interview prep, hardware hacking labs and support.
+        Live mentorship from industry professionals, HR-led interview preparation, hardware hacking labs and support.
       </p>
     </div>
   );

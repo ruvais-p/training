@@ -15,6 +15,17 @@ export default function FloatingContact({ isFloating = true }) {
           <Icon icon="mdi:phone-in-talk" className="text-white text-2xl" />
         </a>
 
+        {/* Instagram Button */}
+        <a
+          href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] shadow-[0_4px_20px_rgba(238,42,123,0.3)] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_24px_rgba(238,42,123,0.5)]"
+          aria-label="Follow us on Instagram"
+        >
+          <Icon icon="mdi:instagram" className="text-white text-2xl" />
+        </a>
+
         {/* WhatsApp Button */}
         <a
           href="https://wa.me/+917306648019"
@@ -40,16 +51,27 @@ export default function FloatingContact({ isFloating = true }) {
 
         {/* Call Button */}
         <a
-          href="tel:+910000000000"
+          href="tel:+917306648019"
           className="group flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-[#3F744E] shadow-[0_8px_32px_rgba(63,116,78,0.4)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(63,116,78,0.6)]"
           aria-label="Call Us"
         >
           <Icon icon="mdi:phone-in-talk" className="text-white text-3xl" />
         </a>
 
+        {/* Instagram Button */}
+        <a
+          href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] shadow-[0_8px_32px_rgba(238,42,123,0.4)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(238,42,123,0.6)]"
+          aria-label="Follow us on Instagram"
+        >
+          <Icon icon="mdi:instagram" className="text-white text-3xl" />
+        </a>
+
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/910000000000"
+          href="https://wa.me/+917306648019"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-[#25D366] shadow-[0_8px_32px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(37,211,102,0.6)]"

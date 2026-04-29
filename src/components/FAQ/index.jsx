@@ -11,8 +11,8 @@ const faqItems = [
     answer: "No. YACS is specifically designed for beginners and career switchers. Whether you're a fresh graduate, an IT professional, or completely new to technology, you can join. We start from the fundamentals and build up systematically through 4 structured phases.",
   },
   {
-    question: "Is the YACS program fully online?",
-    answer: "Yes. YACS is 100% online with live mentor sessions. You can join from anywhere in Kerala: Kozhikode, Kochi, Thrissur, Malappuram, Kannur, Calicut, or any other city. All you need is a laptop and a stable internet connection.",
+    question: "The cohort size is limited to 10 participants for the online program to ensure personalized attention.",
+    answer: "Offline sessions are available only for a limited number of participants, strictly focused on maintaining quality over quantity",
   },
   {
     question: "What is the program fee for the YACS cybersecurity cohort?",
@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     question: "What makes YACS different from other cybersecurity courses in Kerala?",
-    answer: "YACS is the only program in Kerala that combines AI and cybersecurity in a single cohort. We also include hardware hacking labs, HR-led mock interviews with real professionals, and a cohort-based structure, none of which are available at competing institutes.",
+    answer: "You will be guided to crack entry-level cybersecurity certifications with confidence. Through expert mentoring sessions, we also help you identify which domain suits you best.",
   },
   {
     question: "Will I get placement support after completing YACS?",
