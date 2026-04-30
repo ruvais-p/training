@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { usePathname } from "next/navigation";
 
 const RegistrationPopup = () => {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -89,6 +91,8 @@ const RegistrationPopup = () => {
       setIsSubmitting(false);
     }
   };
+
+  if (pathname === "/apply") return null;
 
   return (
     <AnimatePresence>
