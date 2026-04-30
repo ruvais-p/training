@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 
 const ctaLines = [
   "BECOME INDUSTRY-READY",
@@ -80,7 +81,8 @@ export default function CTASection() {
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100vh-5rem)] max-w-7xl items-center justify-center">
-        <button
+        <Link
+          href="/apply"
           className="inline-flex items-center gap-4 rounded-full px-9 py-4 text-[1.15rem] transition-transform duration-200 hover:scale-[1.02]"
           style={{
             background: "linear-gradient(135deg, #8ccb98 0%, #b9efc2 100%)",
@@ -101,7 +103,7 @@ export default function CTASection() {
           >
             ↗
           </span>
-        </button>
+        </Link>
       </div>
     </section>
   );

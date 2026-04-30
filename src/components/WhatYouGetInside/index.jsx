@@ -2,6 +2,9 @@
 import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
 import React from "react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 // The four-pointed sparkle icon used in the top headers
 const StarIcon = ({ className }) => (
@@ -188,10 +191,8 @@ export default function FeaturesSection() {
             Go from learning cybersecurity to proving your skills with real-world projects, expert mentorship, and hands-on cybersecurity training in Kerala-designed to make you job-ready.
           </p>
 
-          <motion.a
-            href="https://form.jotform.com/261102001781440"
-            target="_blank"
-            rel="noopener noreferrer"
+          <MotionLink
+            href="/apply"
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.3 }}
@@ -214,7 +215,7 @@ export default function FeaturesSection() {
             }}
           >
             JOIN THE COHORT
-          </motion.a>
+          </MotionLink>
         </div>
       </div>
     </section>

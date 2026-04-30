@@ -48,7 +48,7 @@ const Header = () => {
                 Apply as Mentor
               </Link>
               <Link
-                href="https://form.jotform.com/261102001781440"
+                href="/apply"
                 className="w-[180px] text-center rounded-full bg-tertiary px-6 py-2.5 text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
               >
                 Apply Now
@@ -127,7 +127,7 @@ const Header = () => {
             Apply as Mentor
           </Link>
           <Link
-            href="https://form.jotform.com/261102001781440"
+            href="/apply"
             onClick={() => setNavbarOpen(false)}
             className="flex h-12 w-full max-w-[240px] items-center justify-center rounded-full bg-white text-black px-6 text-sm font-semibold tracking-wider shadow-lg transition-all hover:bg-white/90 active:scale-[0.98]"
           >

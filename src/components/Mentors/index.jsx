@@ -2,6 +2,9 @@ import Image from "next/image";
 import BlurText from "@/components/BlurText";
 import { Linkedin } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const mentors = [
     {
@@ -130,10 +133,8 @@ export default function Mentors() {
                         Click any link above and verify before you apply.
                     </motion.p>
 
-                    <motion.a
-                        href="https://form.jotform.com/261102001781440"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <MotionLink
+                        href="/apply"
                         initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -156,7 +157,7 @@ export default function Mentors() {
                         }}
                     >
                         LEARN FROM THEM
-                    </motion.a>
+                    </MotionLink>
                 </div>
             </div>
         </section>

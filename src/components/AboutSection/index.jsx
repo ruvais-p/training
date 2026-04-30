@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import BlurText from "@/components/BlurText";
 import { Icon } from "@iconify/react";
@@ -128,15 +129,13 @@ const CohortCard = ({
 
     {/* ───── CTA Button ───── */}
     <div className="relative z-10 mt-8">
-      <a
-        href="https://form.jotform.com/261102001781440"
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href="/apply"
         className="inline-block w-full text-center lg:w-auto rounded-full px-6 py-3 text-sm font-bold tracking-wide text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.03] active:scale-[0.98]"
         style={{ background: buttonColor }}
       >
         {buttonLabel}
-      </a>
+      </Link>
     </div>
   </div>
 );

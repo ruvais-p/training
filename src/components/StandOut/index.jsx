@@ -3,6 +3,9 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const standoutCards = [
   {
@@ -106,10 +109,8 @@ export default function StandOutSection() {
             </p>
 
             <div className="mt-12">
-              <motion.a
-                href="https://form.jotform.com/261102001781440"
-                target="_blank"
-                rel="noopener noreferrer"
+              <MotionLink
+                href="/apply"
                 initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -130,7 +131,7 @@ export default function StandOutSection() {
                 }}
               >
                 I WANT TO STAND OUT
-              </motion.a>
+              </MotionLink>
             </div>
           </div>
 

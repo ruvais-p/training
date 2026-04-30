@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ShieldCheck, Sparkles, Zap, ArrowRight, MessageCircle } from "lucide-react";
 import BlurText from "@/components/BlurText";
 import FAQ from "@/components/FAQ";
@@ -388,16 +389,14 @@ function HeroButtons({ mobile }) {
       </div>
 
       <div className={`flex flex-wrap gap-4 justify-center lg:justify-start w-full`}>
-        <a
-          href="https://form.jotform.com/261102001781440"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/apply"
           className="btn-pinstripe group h-12 w-full lg:w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
         >
           <span className="text-black font-mono font-bold text-[13px] tracking-tight uppercase relative z-10">
             Claim Your Seat
           </span>
-        </a>
+        </Link>
 
         <a
           href="https://wa.me/+917306648019"

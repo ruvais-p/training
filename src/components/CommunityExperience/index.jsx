@@ -2,6 +2,9 @@
 
 import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const communityItems = [
   "Hands-on learning to build and use hardware hacking tools",
@@ -56,10 +59,8 @@ export default function CommunityExperience() {
           >
             A cybersecurity cohort in Kerala should feel like a lab, hands-on training, real-world security practice, and a community that keeps you learning beyond live sessions.
           </p>
-          <motion.a
-            href="https://form.jotform.com/261102001781440"
-            target="_blank"
-            rel="noopener noreferrer"
+          <MotionLink
+            href="/apply"
             initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.3 }}
@@ -82,7 +83,7 @@ export default function CommunityExperience() {
             }}
           >
             SECURE A SEAT
-          </motion.a>
+          </MotionLink>
         </div>
 
         <div className="relative pt-4">

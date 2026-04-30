@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import BlurText from "@/components/BlurText";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 const audienceItems = [
   "Students & fresh graduates looking to start a cybersecurity career",
@@ -96,10 +99,8 @@ export default function AudienceSection() {
           </p>
 
           <div className="mt-10">
-            <motion.a
-              href="https://form.jotform.com/261102001781440"
-              target="_blank"
-              rel="noopener noreferrer"
+            <MotionLink
+              href="/apply"
               initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.3 }}
@@ -119,7 +120,7 @@ export default function AudienceSection() {
               }}
             >
               SECURE YOUR SPOT
-            </motion.a>
+            </MotionLink>
           </div>
         </div>
 

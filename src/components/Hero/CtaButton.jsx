@@ -1,11 +1,9 @@
-"use client";
+import Link from "next/link";
 
 export default function CtaButton() {
     return (
-        <a
-            href="https://www.airtribe.live/backend-engineering/apply"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Link
+            href="/apply"
             className="inline-block"
             style={{
                 padding: "1.1rem 2.8rem",
@@ -33,6 +31,6 @@ export default function CtaButton() {
             }}
         >
             Apply Now
-        </a>
+        </Link>
     );
 }
