@@ -58,14 +58,14 @@ const Header = () => {
 
           <div className="flex items-center gap-2.5 lg:hidden">
             <a
-              href="tel:+910000000000"
+              href="tel:+917306648019"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-[#3F744E]/90 border border-white/5 transition-colors hover:bg-white/20 active:scale-95"
               aria-label="Call Us"
             >
               <Icon icon="mdi:phone-in-talk" className="text-white text-lg" />
             </a>
             <a
-              href="https://wa.me/910000000000"
+              href="https://wa.me/+917306648019"
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-[#25D366]/90 border border-white/5 transition-colors hover:bg-[#25D366] active:scale-95"
