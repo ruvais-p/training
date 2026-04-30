@@ -132,7 +132,7 @@ const CohortCard = ({
         href="https://form.jotform.com/261102001781440"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block w-full text-center md:w-auto rounded-full px-6 py-3 text-sm font-bold tracking-wide text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.03] active:scale-[0.98]"
+        className="inline-block w-full text-center lg:w-auto rounded-full px-6 py-3 text-sm font-bold tracking-wide text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.03] active:scale-[0.98]"
         style={{ background: buttonColor }}
       >
         {buttonLabel}

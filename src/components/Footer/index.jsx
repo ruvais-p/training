@@ -45,8 +45,8 @@ export default function Footer() {
           </div>
 
           {/* Nav Links and Socials */}
-          <div className="flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-16 lg:gap-24">
-            <div className="grid grid-cols-2 gap-x-12 gap-y-6 sm:gap-x-16 md:gap-x-20 lg:gap-x-24">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:gap-24">
+            <div className="grid grid-cols-2 gap-x-12 gap-y-8 sm:gap-x-16 md:gap-x-20 lg:gap-x-24">
               <div className="flex flex-col gap-3">
                 <FooterLink href="/" label="Programs" />
                 <FooterLink href="/" label="Blog" />
@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-5 border-t border-white/5 pt-8 md:border-none md:pt-0">
+            <div className="flex justify-center gap-6 border-t border-white/5 pt-10 lg:border-none lg:pt-0">
               <SocialIcon href="/" icon="ri:youtube-fill" label="YouTube" />
               <SocialIcon href="https://www.instagram.com/yacs.io?igsh=MXU3ajF1bXE0dGRqdA%3D%3D&utm_source=qr" icon="ri:instagram-line" label="Instagram" />
               <SocialIcon href="/" icon="ri:linkedin-fill" label="LinkedIn" />
@@ -85,15 +85,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex flex-col items-center justify-between border-t border-white/10 pt-8 sm:flex-row">
+        <div className="flex flex-col items-center justify-between border-t border-white/10 pt-8 lg:flex-row">
           <p className="text-xs tracking-wider opacity-50 uppercase">
             © 2026 YACS LLP
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center w-full sm:w-auto gap-3 sm:mt-0">
+          <div className="mt-6 flex flex-col lg:flex-row items-center w-full lg:w-auto gap-3 lg:mt-0">
             <Link
               href="https://form.jotform.com/261102001781440"
-              className="group flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-[#5A9B68] px-6 py-3 text-white transition-all hover:bg-[#5A9B68]/90 hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-10px_rgba(90,155,104,0.5)]"
+              className="group flex w-full lg:w-auto items-center justify-center gap-2.5 rounded-full bg-[#5A9B68] px-6 py-3 text-white transition-all hover:bg-[#5A9B68]/90 hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-10px_rgba(90,155,104,0.5)]"
             >
               <span className="text-sm font-bold uppercase tracking-wider">Apply Now</span>
               <Icon icon="lucide:arrow-right" className="text-lg transition-transform group-hover:translate-x-1" />
@@ -103,7 +103,7 @@ export default function Footer() {
               href="https://wa.me/+917306648019"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30"
+              className="group flex w-full lg:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30"
             >
               <Icon icon="mdi:chat-outline" className="text-xl text-[#5A9B68]" />
               <span className="text-sm font-semibold">Let's chat</span>
@@ -111,7 +111,7 @@ export default function Footer() {
 
             <button
               onClick={() => window.dispatchEvent(new CustomEvent("show-registration-popup"))}
-              className="group flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30 cursor-pointer"
+              className="group flex w-full lg:w-auto items-center justify-center gap-3 rounded-full bg-white/5 px-6 py-3 border border-white/10 transition-all hover:bg-[#5A9B68]/10 hover:border-[#5A9B68]/30 cursor-pointer"
             >
               <Icon icon="mdi:email-outline" className="text-xl text-[#5A9B68]" />
               <span className="text-sm font-semibold">Contact us</span>

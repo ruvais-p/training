@@ -88,7 +88,7 @@ export default function PlacementPartners({ partners = [] }) {
                     ))}
                 </div>
 
-                <div className="mt-20 flex flex-col items-center justify-center gap-5 text-center md:flex-row md:text-left">
+                <div className="mt-20 flex flex-col items-center justify-center gap-8 text-center lg:flex-row lg:text-left">
                     <p
                         className="max-w-2xl text-[0.98rem] md:text-[1.04rem] leading-7 tracking-[0.01em]"
                         style={{
@@ -103,7 +103,7 @@ export default function PlacementPartners({ partners = [] }) {
                         href="https://form.jotform.com/261102001781440"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex w-full md:w-auto justify-center shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.02]"
+                        className="inline-flex w-full lg:w-auto justify-center shrink-0 items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:-translate-y-[2px] hover:scale-[1.02]"
                         style={{
                             background: "rgba(217, 227, 138, 0.78)",
                             color: "#000000",

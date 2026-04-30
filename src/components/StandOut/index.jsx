@@ -120,7 +120,7 @@ export default function StandOutSection() {
                 }}
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex w-full md:w-fit items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+                className="inline-flex w-full lg:w-fit items-center justify-center rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300"
                 style={{
                   background: "rgba(217, 227, 138, 0.85)",
                   color: "#1a1a1a",

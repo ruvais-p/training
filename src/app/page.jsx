@@ -392,7 +392,7 @@ function HeroButtons({ mobile }) {
           href="https://form.jotform.com/261102001781440"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-pinstripe group h-12 w-full md:w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
+          className="btn-pinstripe group h-12 w-full lg:w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
         >
           <span className="text-black font-mono font-bold text-[13px] tracking-tight uppercase relative z-10">
             Claim Your Seat
@@ -403,7 +403,7 @@ function HeroButtons({ mobile }) {
           href="https://wa.me/+917306648019"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-pinstripe group h-12 w-full md:w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
+          className="btn-pinstripe group h-12 w-full lg:w-[215px] px-6 bg-[#14CF6D] rounded-xl flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-[1.03] active:scale-95 shadow-[0_10px_25px_-8px_rgba(20,207,109,0.4)]"
         >
           <div className="relative z-10 flex items-center gap-2.5 text-center justify-center">
             <svg className="w-4.5 h-4.5 fill-white" viewBox="0 0 24 24">

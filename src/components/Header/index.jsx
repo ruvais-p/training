@@ -86,52 +86,50 @@ const Header = () => {
         </div>
       </header>
 
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${navbarOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+        onClick={() => setNavbarOpen(false)}
+      />
+
+      {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 z-50 h-screen w-full overflow-y-scroll bg-dark-blur p-8 shadow-2xl backdrop-blur-lg transition-transform duration-500 ease-in-out sm:w-[50%] lg:hidden font-editorial-regular ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"
+        className={`fixed top-0 right-0 z-[70] h-screen w-full sm:w-[320px] overflow-y-auto bg-white/10 border-l border-white/20 p-6 shadow-2xl backdrop-blur-2xl transition-transform duration-500 ease-in-out lg:hidden font-editorial-regular ${navbarOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex w-full items-center justify-between text-white">
+        <div className="flex w-full items-center justify-between pb-12">
           <Logo />
           <button
             onClick={() => setNavbarOpen(false)}
             aria-label="Close mobile menu"
-            className="p-1"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-white transition-colors hover:bg-black/20 active:scale-95"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <Icon icon="mdi:close" className="text-2xl" />
           </button>
         </div>
 
-        <nav className="flex flex-col items-center py-6">
+        <nav className="flex flex-col items-center gap-4 py-8">
           {headerData.map((item, index) => (
-            <MobileHeaderLink key={index} item={item} />
+            <div key={index} className="w-full flex justify-center">
+              <MobileHeaderLink item={item} setNavbarOpen={setNavbarOpen} />
+            </div>
           ))}
         </nav>
 
-        <div className="mt-6 flex flex-col items-center gap-3">
+        <div className="mt-8 flex flex-col items-center gap-4 border-t border-white/10 pt-12">
           <Link
             href="/"
-            className="inline-flex w-[240px] justify-center rounded-full border border-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-tertiary transition-colors hover:bg-tertiary/10"
+            onClick={() => setNavbarOpen(false)}
+            className="flex h-12 w-full max-w-[240px] items-center justify-center rounded-full border border-white/30 px-6 text-sm font-semibold tracking-wider text-white transition-all hover:bg-white/10 active:scale-[0.98]"
           >
             Apply as Mentor
           </Link>
           <Link
             href="https://form.jotform.com/261102001781440"
-            className="inline-flex w-[240px] justify-center rounded-full bg-tertiary px-6 py-3 text-center text-[13px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-tertiary/90"
+            onClick={() => setNavbarOpen(false)}
+            className="flex h-12 w-full max-w-[240px] items-center justify-center rounded-full bg-white text-black px-6 text-sm font-semibold tracking-wider shadow-lg transition-all hover:bg-white/90 active:scale-[0.98]"
           >
             Apply Now
           </Link>
