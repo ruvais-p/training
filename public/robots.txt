@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.yacs.io
+
+# Sitemaps
+Sitemap: https://www.yacs.io/sitemap.xml

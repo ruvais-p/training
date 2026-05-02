@@ -60,20 +60,21 @@ export const metadata = {
   metadataBase: new URL("https://www.yacs.io"),
 
   title: {
-    default: "YACS | AI Cybersecurity & AI/ML Cohort — Kerala",
+    default: "YACS | AI Cybersecurity Cohort Kerala",
     template: "%s | YACS",
   },
 
   description:
-    "Join Kerala's only AI-powered Cybersecurity & AI/ML Cohort. 4-month live program, industry mentors, HR coaching, CompTIA/CEH prep + vouchers.",
+    "AI-integrated Cybersecurity & AI/ML cohort with live mentorship, HR coaching, CEH preparation and career support.",
 
-  applicationName: "YACS",
+  alternates: {
+    canonical: "https://www.yacs.io",
+  },
 
   openGraph: {
-    title:
-      "YACS | Kerala's AI Cybersecurity Cohort — Train. Build. Get Hired.",
+    title: "YACS | AI Cybersecurity Cohort Kerala",
     description:
-      "4-month AI-integrated cybersecurity program. Live mentors, HR coaching, CEH prep.",
+      "Train like a pro. Think like a hacker. AI-powered cybersecurity & AI/ML cohort.",
 
     url: "https://www.yacs.io",
     siteName: "YACS",
@@ -100,16 +101,13 @@ export const metadata = {
   },
 
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
+    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 
-  alternates: {
-    canonical: "https://www.yacs.io",
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
