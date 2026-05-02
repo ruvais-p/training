@@ -57,15 +57,59 @@ const ppEditorialUltralight = localFont({
 });
 
 export const metadata = {
-  title: "YACS | AI Cybersecurity & AI/ML Cohort — Kerala",
-  description: "Join Kerala's only AI-powered Cybersecurity & AI/ML Cohort. 4-month live program, industry mentors, HR coaching, CompTIA/CEH prep + vouchers. Limited seats — apply now.",
+  metadataBase: new URL("https://www.yacs.io"),
+
+  title: {
+    default: "YACS | AI Cybersecurity & AI/ML Cohort — Kerala",
+    template: "%s | YACS",
+  },
+
+  description:
+    "Join Kerala's only AI-powered Cybersecurity & AI/ML Cohort. 4-month live program, industry mentors, HR coaching, CompTIA/CEH prep + vouchers.",
+
+  applicationName: "YACS",
+
   openGraph: {
-    title: "YACS | Kerala's AI Cybersecurity Cohort — Train. Build. Get Hired.",
-    description: "4-month AI-integrated cybersecurity program. Live mentors, HR coaching, CEH prep. Kerala-based. Apply now.",
-    url: 'https://yacs.in',
-    siteName: 'YACS',
-    locale: 'en_IN',
-    type: 'website',
+    title:
+      "YACS | Kerala's AI Cybersecurity Cohort — Train. Build. Get Hired.",
+    description:
+      "4-month AI-integrated cybersecurity program. Live mentors, HR coaching, CEH prep.",
+
+    url: "https://www.yacs.io",
+    siteName: "YACS",
+
+    locale: "en_IN",
+    type: "website",
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "YACS",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "YACS",
+    description:
+      "AI-integrated Cybersecurity & AI/ML Cohort from Kerala.",
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+
+  alternates: {
+    canonical: "https://www.yacs.io",
   },
 };
 
