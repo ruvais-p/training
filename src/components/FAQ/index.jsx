@@ -19,12 +19,12 @@ const faqItems = [
     answer: "Program fee details are available on application. We also offer EMI options and certification voucher support to make the program accessible. Contact us on WhatsApp or fill the application form to get complete fee details.",
   },
   {
-    question: "What certifications will I be ready for after YACS?",
-    answer: "You will be prepared for CompTIA A+, CompTIA Security+, and CEH (Certified Ethical Hacker). YACS provides structured exam preparation AND voucher support to cover certification costs.",
+    question: "What makes YACS different from other cybersecurity courses in Kerala?",
+    answer: "Our mentors are active industry professionals with 6+ years of real world experience in offensive security, application security, and AI/ML not just trainers. You learn directly from people who are doing the job, not just teaching it.",
   },
   {
-    question: "What makes YACS different from other cybersecurity courses in Kerala?",
-    answer: "You will be guided to crack entry-level cybersecurity certifications with confidence. Through expert mentoring sessions, we also help you identify which domain suits you best.",
+    question: "What certifications will I be ready for after YACS?",
+    answer: "Get mentored by experts, discover the domain that truly fits your skills, and crack entry-level certifications with the right guidance. Plus, earn the YACS Certificate with official badging to showcase your achievement and stand out",
   },
   {
     question: "Will I get placement support after completing YACS?",
