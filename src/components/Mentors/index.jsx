@@ -4,7 +4,7 @@ import { Linkedin } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const mentors = [
     {
