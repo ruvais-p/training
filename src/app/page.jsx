@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Sparkles, Zap, ArrowRight, MessageCircle } from "lucide-react";
 import BlurText from "@/components/BlurText";
@@ -215,18 +216,16 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Local Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover"
-        >
-          <source src="/home_page/hero_section_video_2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Image
+          src="/home_page/hero_section_photo.png"
+          alt="YACS Hero Background"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
         {/* Bottom blend overlay */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020202] to-transparent z-10" />
       </div>
