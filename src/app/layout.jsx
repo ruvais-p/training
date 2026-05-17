@@ -101,9 +101,16 @@ export const metadata = {
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      {
+        url: "/favicon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
     apple: "/apple-touch-icon.png",
   },
+
 
   robots: {
     index: true,
