@@ -37,6 +37,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Custom-font headings: keep glyph rendering crisp & fully visible on iOS Safari.
+   antialiased smoothing + optimizeLegibility stop tall caps / italic ascenders
+   from being shaved at the edges. Inert on Android/desktop. */
+.font-display,
+.font-metana-black,
+.font-editorial-italic,
+.font-editorial-regular,
+.font-editorial-ultralight {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 .font-display {
   font-family: var(--font-display), Arial, Helvetica, sans-serif;
   font-weight: 900;
@@ -53,6 +66,8 @@ body {
 .font-editorial-italic {
   font-family: var(--font-editorial-italic), Georgia, serif !important;
   font-style: italic;
+  /* Italic glyphs slant past their box on iOS — let them paint fully. */
+  overflow: visible;
 }
 
 .font-editorial-regular {

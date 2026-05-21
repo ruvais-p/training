@@ -23,7 +23,7 @@ export default function SkillStack({
             </p>
 
             <h2
-              className="text-[2.35rem] font-semibold leading-[0.95] tracking-[-0.05em] md:text-[3.75rem]"
+              className="overflow-visible py-1 text-[2.35rem] font-semibold leading-[1.1] tracking-[-0.05em] md:text-[3.75rem]"
               style={{ color: "#f3f7f3" }}
             >
               <BlurText
@@ -32,7 +32,7 @@ export default function SkillStack({
                 delay={300}
                 animateBy="words"
                 direction="top"
-                className="font-editorial-italic inline-flex"
+                className="font-editorial-italic inline-flex overflow-visible pt-1 leading-[1.2]"
                 segmentStyle={{
                   color: "var(--tertiary)",
                   fontFamily: "var(--font-pp-editorial-italic), Georgia, serif",

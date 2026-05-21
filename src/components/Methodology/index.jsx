@@ -50,7 +50,7 @@ export default function Methodology() {
       <div className="relative border-b border-white/10 px-6 py-18 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <h2 className="font-editorial-regular text-center text-[2.7rem] leading-[0.92] tracking-[-0.06em] text-white md:text-[4.7rem]">
+            <h2 className="overflow-visible py-2 font-editorial-regular text-center text-[2.7rem] leading-[1.1] tracking-[-0.06em] text-white md:text-[4.7rem]">
               Your Learning{" "}
               <BlurText
                 text="Journey"
@@ -58,10 +58,10 @@ export default function Methodology() {
                 delay={500}
                 animateBy="words"
                 direction="top"
-                className="font-editorial-italic inline-flex align-baseline"
+                className="font-editorial-italic inline-flex align-baseline overflow-visible px-1 pt-1"
                 segmentStyle={{
                   color: "var(--tertiary)",
-                  lineHeight: 1,
+                  lineHeight: 1.15,
                   fontWeight: 200,
                   fontFamily:
                     "var(--font-pp-editorial-italic), Georgia, serif",
@@ -117,7 +117,7 @@ function MethodCard({ step }) {
     <article className="interactive-card relative px-4 pb-2 pt-1">
       {/* Top */}
       <div className="mb-8 flex items-center justify-between">
-        <span className="text-[4.2rem] font-light leading-none tracking-[-0.06em] text-white md:text-[5rem]">
+        <span className="overflow-visible text-[4.2rem] font-light leading-[1.1] tracking-[-0.06em] text-white md:text-[5rem]">
           {step.number}
         </span>
 
@@ -152,7 +152,7 @@ function MethodCard({ step }) {
           />
         </div>
 
-        <h3 className="font-metana-black text-[1.75rem] md:text-[2rem] font-semibold leading-[1.1] md:leading-[0.95] tracking-[-0.05em] text-white">
+        <h3 className="font-metana-black overflow-visible pt-1 text-[1.75rem] md:text-[2rem] font-semibold leading-[1.1] md:leading-[1.15] tracking-[-0.05em] text-white">
           {step.title}
         </h3>
       </div>
