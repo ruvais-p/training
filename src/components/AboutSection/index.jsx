@@ -62,13 +62,13 @@ const CohortCard = ({
   isOnline,
 }) => (
   <div
-    className="relative flex flex-col justify-between rounded-[28px] 
+    className="glass-clip relative flex flex-col justify-between rounded-[28px]
     border border-white/10 bg-transparent backdrop-blur-xl
     p-8 transition-all duration-300 hover:border-white/20 group overflow-hidden"
     style={{ minHeight: "460px" }}
   >
-    {/* ───── Background Layer ───── */}
-    <div className="absolute inset-0">
+    {/* ───── Background Layer (nested rounded wrapper — Safari clips nested radii more reliably) ───── */}
+    <div className="absolute inset-0 overflow-hidden rounded-[28px]">
       <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
