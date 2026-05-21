@@ -148,7 +148,7 @@ export default function Home() {
         <SectionReveal delay={70}>
           <SkillStack
             eyebrow="SKILL STACK"
-            title="AI & ML Tools you will learn"
+            title="AI&ML Tools you will learn"
             items={skillItems}
           />
           <SkillStack
