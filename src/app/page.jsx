@@ -216,8 +216,10 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Poster image: paints instantly for LCP and stays as the fallback
+            if the video can't load. Sits behind the video (earlier in DOM). */}
         <Image
           src="/home_page/hero_section_photo.png"
           alt="YACS Hero Background"
@@ -226,6 +228,16 @@ function HeroSection() {
           className="object-cover"
           sizes="100vw"
         />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 block h-full w-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="/home_page/hero.webm" type="video/webm" />
+        </video>
         {/* Bottom blend overlay */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020202] to-transparent z-10" />
       </div>

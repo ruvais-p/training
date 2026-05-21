@@ -150,13 +150,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.08) 0px,
-    rgba(0, 0, 0, 0.08) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  background-image: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.08) 0px,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px,
+      transparent 3px);
   pointer-events: none;
 }
 
@@ -178,7 +176,11 @@ body {
    ────────────────────────────────────────────────────────────────────────── */
 .glass-clip,
 .glass-clip-motion {
-  position: relative;
+  /* NOTE: intentionally NOT setting `position` here. These utilities get added
+     to elements that already declare their own positioning (relative cards,
+     but also `fixed` header / sliding sidebar). Forcing `position: relative`
+     would override `fixed`/`absolute` and break layout — the cards that need
+     containment already set `relative` in their own className. */
   isolation: isolate;
   background-clip: padding-box;
 }
@@ -199,6 +201,7 @@ body {
    stops are opaque, so the card stays 100% visible — no vignette. Scoped to
    iOS Safari via -webkit-touch-callout so no other engine is ever affected. */
 @supports (-webkit-touch-callout: none) {
+
   .glass-clip,
   .glass-clip-motion {
     -webkit-mask-image: -webkit-radial-gradient(white, black);

@@ -95,7 +95,24 @@ const BlurText = ({
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}
             transition={spanTransition}
-            style={segmentStyle}
+            style={{
+              // iOS Safari rasterises any filter/transform span into a layer
+              // clipped to its border box. Italic & tall glyphs (e.g. "A", "J")
+              // slant past that box, so without breathing room their edges get
+              // shaved. Padding enlarges the layer's border box so the overhang
+              // sits inside it; equal negative margins cancel the extra layout
+              // space, keeping spacing/alignment pixel-identical to before.
+              paddingTop: '0.16em',
+              paddingBottom: '0.16em',
+              paddingLeft: '0.1em',
+              paddingRight: '0.1em',
+              marginTop: '-0.16em',
+              marginBottom: '-0.16em',
+              marginLeft: '-0.1em',
+              marginRight: '-0.1em',
+              overflow: 'visible',
+              ...segmentStyle,
+            }}
             onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
           >
             {segment === ' ' ? '\u00A0' : segment}
