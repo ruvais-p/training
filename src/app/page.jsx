@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import Link from "next/link";
 import { ShieldCheck, Sparkles, Zap, ArrowRight, MessageCircle } from "lucide-react";
 import BlurText from "@/components/BlurText";
@@ -218,16 +218,7 @@ function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Poster image: paints instantly for LCP and stays as the fallback
-            if the video can't load. Sits behind the video (earlier in DOM). */}
-        <Image
-          src="/home_page/hero_section_photo.png"
-          alt="YACS Hero Background"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+
         <video
           autoPlay
           muted
