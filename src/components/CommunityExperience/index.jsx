@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import BlurText from "@/components/BlurText";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const communityItems = [
   "Hands-on learning to build and use hardware hacking tools",

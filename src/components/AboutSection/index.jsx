@@ -171,7 +171,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative px-6 pt-12 pb-8 md:px-12 bg-transparent overflow-hidden">
+    <section id="about" className="relative px-6 pt-12 pb-8 md:px-12 bg-transparent overflow-hidden" style={{ overflowX: "clip" }}>
       <div className="mx-auto max-w-7xl">
 
         {/* 2x2 Grid Layout */}
@@ -197,7 +197,15 @@ export default function AboutSection() {
             </h3>
 
             {/* Brand Scrolling Marquee */}
-            <div className="relative z-10 w-full mt-4 md:mt-12 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+            {/* contain:paint creates a new stacking context — iOS Safari clips transforms properly inside it */}
+            <div
+              className="relative z-10 w-full mt-4 md:mt-12"
+              style={{ overflow: "hidden", contain: "paint" }}
+            >
+              <div
+                className="[mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]"
+                style={{ overflow: "hidden" }}
+              >
               <div className="flex w-max animate-scroll gap-8 py-4 md:py-10 hover:[animation-play-state:paused] items-center">
                 {/* Double the array for seamless loop */}
                 {[...Array(2)].map((_, i) => (
@@ -218,6 +226,7 @@ export default function AboutSection() {
                     ))}
                   </React.Fragment>
                 ))}
+              </div>
               </div>
             </div>
 

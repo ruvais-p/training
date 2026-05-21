@@ -38,7 +38,8 @@ function MarqueeRow({ items, duration = 22, reverse = false }) {
   const repeated = useMemo(() => [...items, ...items, ...items], [items]);
 
   return (
-    <div className="overflow-hidden">
+    // contain:paint ensures iOS Safari creates a new paint layer and clips the transform properly
+    <div style={{ overflow: "hidden", contain: "paint" }}>
       <div
         className="flex w-max gap-3"
         onMouseEnter={() => setIsPaused(true)}
@@ -63,6 +64,7 @@ export default function CareerAndGrowthSupport() {
       className="relative overflow-hidden px-6 py-20 md:px-12 md:py-24"
       style={{
         background: "transparent",
+        overflowX: "clip",
       }}
     >
       <style>{`
@@ -128,7 +130,11 @@ export default function CareerAndGrowthSupport() {
 
       </div>
 
-      <div className="relative left-1/2 w-screen -translate-x-1/2">
+      {/* overflow:hidden + contain:paint isolates the full-width marquee band on iOS Safari */}
+      <div
+        className="relative left-1/2 w-screen -translate-x-1/2"
+        style={{ overflow: "hidden", contain: "paint" }}
+      >
         <div className="flex flex-col gap-3">
           <MarqueeRow items={careerTags} duration={22} />
           <MarqueeRow items={careerTags} duration={26} reverse />

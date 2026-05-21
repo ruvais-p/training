@@ -4,7 +4,7 @@ import BlurText from "@/components/BlurText";
 import React from "react";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 // The four-pointed sparkle icon used in the top headers
 const StarIcon = ({ className }) => (

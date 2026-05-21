@@ -14,9 +14,10 @@ function MarqueeTextRow({ text, reverse = false, duration = 22, top = "0%" }) {
   const repeated = useMemo(() => [text, text, text], [text]);
 
   return (
+    // contain:paint + overflow:hidden ensures iOS Safari clips the translateX animation
     <div
-      className="absolute left-0 right-0 overflow-hidden"
-      style={{ top, paddingTop: "0.08em" }}
+      className="absolute left-0 right-0"
+      style={{ top, paddingTop: "0.08em", overflow: "hidden", contain: "paint" }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -61,6 +62,7 @@ export default function CTASection() {
         background:
           "radial-gradient(circle at 50% 50%, rgba(90,155,104,0.08), transparent 28%), linear-gradient(180deg, #010503 0%, #020906 100%)",
         fontFamily: "var(--font-pp-editorial-regular), Georgia, serif",
+        overflowX: "clip",
       }}
     >
       <style>{`
@@ -70,7 +72,8 @@ export default function CTASection() {
         }
       `}</style>
 
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* contain:paint ensures iOS Safari clips all marquee row transforms within this boundary */}
+      <div className="pointer-events-none absolute inset-0" style={{ overflow: "hidden", contain: "paint" }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,155,104,0.12),transparent_44%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_58%,rgba(63,116,78,0.1),transparent_34%)]" />
         <div className="absolute inset-0">

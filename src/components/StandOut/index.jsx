@@ -5,7 +5,7 @@ import Image from "next/image";
 import BlurText from "@/components/BlurText";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const standoutCards = [
   {
