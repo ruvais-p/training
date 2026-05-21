@@ -27,9 +27,9 @@ const TopCard = ({
   gradientStyle,
   bgImage,
 }) => (
-  <div className="group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-transparent backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-white/20">
-    {/* ───── Background Layer ───── */}
-    <div className="absolute inset-0">
+  <div className="glass-clip group relative flex h-[350px] md:h-[420px] w-full flex-col justify-between overflow-hidden rounded-[24px] border border-white/10 bg-transparent backdrop-blur-xl p-8 md:p-10 transition-all duration-300 hover:border-white/20">
+    {/* ───── Background Layer (nested rounded wrapper — Safari clips nested radii more reliably) ───── */}
+    <div className="absolute inset-0 overflow-hidden rounded-[24px]">
       <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 

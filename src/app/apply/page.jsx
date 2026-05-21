@@ -70,7 +70,7 @@ export default function ApplyPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          className="relative z-10 max-w-md w-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+          className="glass-clip-motion overflow-hidden relative z-10 max-w-md w-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
         >
           <div className="mx-auto w-16 h-16 md:w-20 md:h-20 bg-[#14CF6D]/20 rounded-full flex items-center justify-center mb-6">
             <CheckCircle2 className="w-8 h-8 md:w-10 md:h-10 text-[#14CF6D]" />
@@ -153,7 +153,7 @@ export default function ApplyPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="bg-white/[0.03] border border-white/10 backdrop-blur-2xl rounded-[1.75rem] md:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
+          className="glass-clip-motion overflow-hidden bg-white/[0.03] border border-white/10 backdrop-blur-2xl rounded-[1.75rem] md:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
         >
           {/* Section: Personal Info */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mb-10 md:mb-14">

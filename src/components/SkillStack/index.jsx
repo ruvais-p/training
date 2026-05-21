@@ -103,7 +103,7 @@ export default function SkillStack({
 function SkillCard({ item }) {
   return (
     <article
-      className="group relative flex min-h-[110px] items-center justify-center overflow-hidden rounded-[1.1rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]"
+      className="glass-clip-motion group relative flex min-h-[110px] items-center justify-center overflow-hidden rounded-[1.1rem] border px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015]"
       style={{
         background: "rgba(255,255,255,0.98)",
         borderColor: "rgba(120,177,131,0.12)",

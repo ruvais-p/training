@@ -173,7 +173,7 @@ function MentorCard({ mentor, index, className }) {
             }}
         >
             {/* Image Container */}
-            <div className="relative h-[420px] sm:h-[420px] md:h-[500px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem] ">
+            <div className="glass-clip relative h-[420px] sm:h-[420px] md:h-[500px] xl:h-[420px] w-full overflow-hidden rounded-[2.5rem] ">
                 <Image
                     src={mentor.imageSrc}
                     alt={mentor.name}

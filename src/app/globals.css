@@ -144,3 +144,48 @@ body {
   );
   pointer-events: none;
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   iOS Safari rounded-corner clip fix
+   ----------------------------------------------------------------------------
+   Safari (iPhone) fails to clip backdrop-filter / gradients / transformed or
+   absolutely-positioned children to a parent's border-radius, leaving the
+   top-left corner visually "broken". These properties force Safari to
+   composite the element onto its own GPU layer so the radius clips cleanly.
+   All of them are visually inert on Android & desktop, so layout/design are
+   preserved across every browser.
+
+   Usage: add `glass-clip` (alongside `overflow-hidden rounded-* relative`) to
+   any glassmorphism card. Use `glass-clip-motion` instead when the SAME element
+   also animates via a transform utility (hover:scale, hover:-translate-y, …) or
+   a motion library — that variant omits the static translateZ so it never
+   overrides the animated transform.
+   ────────────────────────────────────────────────────────────────────────── */
+.glass-clip,
+.glass-clip-motion {
+  position: relative;
+  isolation: isolate;
+  background-clip: padding-box;
+}
+
+.glass-clip {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.glass-clip-motion {
+  /* No static transform (would clobber animated transforms); still hint the
+     compositor so Safari promotes the element to its own layer. */
+  will-change: transform;
+}
+
+/* The actual Safari clip fix: a fully-opaque radial mask forces Safari to
+   rasterise the rounded clip path. In -webkit alpha mask mode both colour
+   stops are opaque, so the card stays 100% visible — no vignette. Scoped to
+   iOS Safari via -webkit-touch-callout so no other engine is ever affected. */
+@supports (-webkit-touch-callout: none) {
+  .glass-clip,
+  .glass-clip-motion {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+}

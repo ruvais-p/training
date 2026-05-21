@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
       <header
-        className="fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500 font-editorial-regular text-center lg:text-left"
+        className="glass-clip fixed top-5 left-[2.5%] z-50 flex h-20 w-[95%] items-center rounded-3xl border border-white/5 bg-white/10 px-4 py-1 shadow-lg backdrop-blur-md transition-all duration-500 font-editorial-regular text-center lg:text-left"
       >
         <div className="container mx-auto flex w-full max-w-full items-center justify-between px-2 py-4 lg:px-4 2xl:max-w-[1400px]">
           <div className="text-white">

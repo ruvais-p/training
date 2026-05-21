@@ -177,7 +177,7 @@ function AudienceListItem({ text, index, isAutoActive }) {
         backgroundColor: "rgba(255,255,255,0.03)",
         scale: 1
       }}
-      className="group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 mb-2.5 overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]"
+      className="glass-clip-motion group relative flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 mb-2.5 overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]"
     >
       {/* Left accent bar */}
       <div 

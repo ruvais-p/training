@@ -6,7 +6,7 @@ import Link from "next/link";
 const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }) => {
     return (
         <div
-            className={`fixed top-0 right-0 h-screen w-full lg:w-[35%] xxl:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 lg:rounded-tl-3xl lg:rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
+            className={`glass-clip-motion fixed top-0 right-0 h-screen w-full lg:w-[35%] xxl:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10 lg:rounded-tl-3xl lg:rounded-bl-3xl z-50 transform transition-transform duration-500 ease-in-out overflow-y-scroll
       ${isOpenSidebar ? "translate-x-0" : "translate-x-full"}`}
         >
             <div className="text-white flex justify-between items-center w-full">

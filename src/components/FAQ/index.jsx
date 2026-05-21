@@ -104,7 +104,7 @@ export default function FAQ() {
               return (
                 <div
                   key={item.question}
-                  className="overflow-hidden rounded-[1.7rem] border backdrop-blur-xl transition-all duration-300"
+                  className="glass-clip overflow-hidden rounded-[1.7rem] border backdrop-blur-xl transition-all duration-300"
                   style={{
                     background: isOpen
                       ? "linear-gradient(135deg, rgba(10,35,28,0.78) 0%, rgba(7,26,21,0.88) 100%)"

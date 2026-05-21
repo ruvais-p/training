@@ -113,7 +113,7 @@ const RegistrationPopup = () => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.8, opacity: 0, y: 40 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-[480px] bg-[#020e04] border border-white/10 rounded-[40px] shadow-2xl p-8 sm:p-12 overflow-hidden"
+            className="glass-clip-motion relative w-full max-w-[480px] bg-[#020e04] border border-white/10 rounded-[40px] shadow-2xl p-8 sm:p-12 overflow-hidden"
           >
             {/* Close Button */}
             <button
