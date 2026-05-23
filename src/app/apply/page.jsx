@@ -132,7 +132,7 @@ export default function ApplyPage() {
             <p className="mt-6 text-base md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto">
               Join Kerala&apos;s most intensive, hands-on cybersecurity & AI cohort.
               Learn from industry veterans, work on real projects, and transform your
-              career in just 6 months.
+              career in just 4 months.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 md:gap-6 items-center justify-center">

@@ -140,7 +140,7 @@ const CohortCard = ({
   </div>
 );
 export default function AboutSection() {
-  const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 6-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
+  const p1 = "Most cybersecurity courses in Kerala teach tools. We train you to think like a real security professional from day one. This 4-month, fully online cybersecurity cohort program in Kerala focuses on AI-integrated training, real-world attack scenarios, and career support beyond graduation, helping you build job-ready skills in ethical hacking.";
 
   const p2 = "No passive lectures or memorisation. In this AI-powered cybersecurity course in Kerala, you'll learn from experienced mentors, AI security engineers, and HR professionals who know what hiring teams expect-preparing you for real-world cybersecurity roles.";
   const cardGradient = "#00e5a0";
