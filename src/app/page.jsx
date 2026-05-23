@@ -386,7 +386,7 @@ function HeroButtons({ mobile }) {
       {/* Lower Badges */}
       <div className="flex flex-wrap justify-center lg:justify-start gap-2.5">
         <SmallBadge text="Live Online Sessions" dotColor="#00e5a0" />
-        <SmallBadge text="Offline Labs • Kozhikode" dotColor="#38bdf8" />
+        <SmallBadge text="Offline Labs" dotColor="#38bdf8" />
       </div>
 
       <div className={`flex flex-wrap gap-4 justify-center lg:justify-start w-full`}>
