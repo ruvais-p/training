@@ -207,6 +207,71 @@ export default function Home() {
           })
         }}
       />
+      {/* SEO keyword block — in DOM for crawlers, invisible to users */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0,0,0,0)",
+          whiteSpace: "nowrap",
+          border: 0,
+        }}
+      >
+        {/* Primary */}
+        <p>cyber security course in Kerala</p>
+        <p>cyber security course in Kochi</p>
+        <p>ethical hacking course in Kochi</p>
+        <p>cyber security course in Kozhikode</p>
+        <p>ethical hacking course in Kozhikode</p>
+        <p>ethical hacking course in Calicut</p>
+        <p>cybersecurity training Kerala</p>
+
+        {/* Secondary */}
+        <p>cybersecurity cohort</p>
+        <p>cohort-based cybersecurity training</p>
+        <p>cyber security bootcamp Kerala</p>
+        <p>ethical hacking training institute Kochi</p>
+        <p>penetration testing course Kerala</p>
+        <p>SOC analyst course Kochi</p>
+        <p>CEH training Kerala</p>
+        <p>VAPT training course</p>
+        <p>cyber security course with placement Kerala</p>
+        <p>best cyber security institute in Kochi</p>
+        <p>cyber security certification Kerala</p>
+
+        {/* Long-tail */}
+        <p>cyber security course in Kochi with placement assistance</p>
+        <p>cohort based cyber security bootcamp in Kerala</p>
+        <p>ethical hacking course in Kozhikode for beginners</p>
+        <p>cyber security course fees in Kerala</p>
+        <p>cyber security course after 12th in Kerala</p>
+        <p>online cyber security cohort India</p>
+        <p>SOC analyst training Kochi with hands-on labs</p>
+        <p>weekend cyber security course Kochi for working professionals</p>
+        <p>how to become an ethical hacker in Kerala</p>
+        <p>cyber security course in Kerala without coding background</p>
+
+        {/* Geo-modified */}
+        <p>cyber security course near me Kochi</p>
+        <p>cyber security course near me Kozhikode</p>
+        <p>cyber security course near me Ernakulam</p>
+        <p>cyber security course near me Calicut</p>
+        <p>cyber security training in Ernakulam</p>
+        <p>ethical hacking classes in Kaloor</p>
+        <p>ethical hacking classes in Kakkanad</p>
+        <p>ethical hacking classes in Infopark Kochi</p>
+        <p>cyber security institute Kozhikode</p>
+        <p>cyber security institute Calicut</p>
+        <p>cybersecurity training Kerala Keralam</p>
+        <p>cyber security course Malappuram</p>
+        <p>cyber security course Thrissur</p>
+        <p>cyber security course Kannur</p>
+      </div>
     </main>
   );
 }
