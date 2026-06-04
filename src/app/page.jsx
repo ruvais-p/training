@@ -159,14 +159,14 @@ export default function Home() {
         </SectionReveal>
       </section>
 
-      {/* 9. Career & Placement Support */}
+      {/* 9. Career & Placement Support
       <section id="placement">
         <h2 className="sr-only">Job Placement Support</h2>
         <CareerAndGrowthSupport />
         <SectionReveal delay={70}>
           <PlacementPartners partners={placementPartners} />
         </SectionReveal>
-      </section>
+      </section> */}
 
       {/* 10. FAQ (Key Answers) */}
       <section id="faq">
