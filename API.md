@@ -1,9 +1,21 @@
 # API Documentation
 
-Data is stored in a local SQLite database (`data/training.db`) and accessed through the
-endpoints below. All responses are JSON.
+Data is stored in a **MySQL** database (any hosted provider — PlanetScale, Aiven,
+Railway, etc.) and accessed through the endpoints below. All responses are JSON.
 
 Base URL (local): `http://localhost:3000`
+
+## Configuration
+
+Set these environment variables (locally in `.env.local`, and in the Vercel
+project's **Settings → Environment Variables**):
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `DATABASE_URL` | yes | MySQL connection string, e.g. `mysql://user:pass@host:3306/dbname` |
+| `DATABASE_SSL` | no | Set to `false` only for a plain local MySQL. Defaults to TLS on (required by most hosted providers). |
+
+Tables (`applications`, `leads`) are created automatically on first request.
 
 ---
 

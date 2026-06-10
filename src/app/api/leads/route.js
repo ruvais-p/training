@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import db from "@/lib/db";
+import { query } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -18,19 +18,12 @@ export async function POST(request) {
       }
     }
 
-    const stmt = db.prepare(`
-      INSERT INTO leads (full_name, phone, email, city)
-      VALUES (@full_name, @phone, @email, @city)
-    `);
+    const result = await query(
+      `INSERT INTO leads (full_name, phone, email, city) VALUES (?, ?, ?, ?)`,
+      [body.full_name, body.phone, body.email, body.city ?? null]
+    );
 
-    const result = stmt.run({
-      full_name: body.full_name,
-      phone: body.phone,
-      email: body.email,
-      city: body.city ?? null,
-    });
-
-    return NextResponse.json({ id: result.lastInsertRowid }, { status: 201 });
+    return NextResponse.json({ id: result.insertId }, { status: 201 });
   } catch (err) {
     console.error("POST /api/leads error:", err);
     return NextResponse.json({ error: "Failed to store lead" }, { status: 500 });
@@ -40,9 +33,7 @@ export async function POST(request) {
 // GET /api/leads — fetch all leads
 export async function GET() {
   try {
-    const rows = db
-      .prepare("SELECT * FROM leads ORDER BY created_at DESC")
-      .all();
+    const rows = await query("SELECT * FROM leads ORDER BY created_at DESC");
     return NextResponse.json({ data: rows });
   } catch (err) {
     console.error("GET /api/leads error:", err);
