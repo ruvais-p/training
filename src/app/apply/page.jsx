@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/lib/supabase";
 import GridBackground from "@/components/TopoBackground";
 import Image from "next/image";
 import { CheckCircle2, AlertCircle, Loader2, ArrowLeft } from "lucide-react";
@@ -37,8 +36,10 @@ export default function ApplyPage() {
     setError(null);
 
     try {
-      const { error: submitError } = await supabase.from("applications").insert([
-        {
+      const res = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           first_name: formData.firstName,
           last_name: formData.lastName,
           phone_number: formData.phoneNumber,
@@ -49,10 +50,10 @@ export default function ApplyPage() {
           current_occupation: formData.currentOccupation,
           educational_qualification: formData.educationalQualification,
           preferred_cohort: formData.preferredCohort,
-        },
-      ]);
+        }),
+      });
 
-      if (submitError) throw submitError;
+      if (!res.ok) throw new Error("Request failed");
 
       setSubmitted(true);
     } catch (err) {

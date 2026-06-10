@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle2 } from "lucide-react";
-import { supabase } from "@/lib/supabase";
 import { usePathname } from "next/navigation";
 
 const RegistrationPopup = () => {
@@ -76,9 +75,13 @@ const RegistrationPopup = () => {
     };
 
     try {
-      const { error } = await supabase.from("leads").insert([payload]);
-      
-      if (error) throw error;
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
 
       setIsSuccess(true);
       setTimeout(() => {
