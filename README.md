@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Configure the database
+
+The app stores form submissions in a **MySQL** database (any hosted provider —
+PlanetScale, Aiven, Railway, etc.). Create a `.env.local` file in the project root:
 
 ```bash
+# MySQL connection string
+DATABASE_URL=mysql://user:pass@host:3306/dbname
+
+# Set to "false" ONLY for a plain local MySQL without TLS.
+# Defaults to TLS on, which most hosted providers require.
+DATABASE_SSL=false
+```
+
+The `applications` and `leads` tables are created automatically on the first request —
+no manual migration step needed.
+
+### 2. Run the development server
+
+```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site captures data through these routes (full reference in [`API.md`](./API.md)):
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| `POST` | `/api/applications` | Store an application (apply form) |
+| `GET`  | `/api/applications` | Fetch all applications |
+| `POST` | `/api/leads` | Store a lead (registration popup) |
+| `GET`  | `/api/leads` | Fetch all leads |
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This app deploys on [Vercel](https://vercel.com). Because Vercel functions run on a
+read-only filesystem, data **must** live in an external database — a hosted MySQL,
+not a local file.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Provision a hosted MySQL (e.g. PlanetScale, Railway, Aiven).
+2. In **Vercel → Settings → Environment Variables**, add `DATABASE_URL` (and
+   `DATABASE_SSL` if needed — leave unset to keep TLS on).
+3. Deploy. Tables are created on the first form submission.
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
