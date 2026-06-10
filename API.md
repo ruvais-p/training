@@ -1,7 +1,7 @@
 # API Documentation
 
-Data is stored in a **MySQL** database (any hosted provider — PlanetScale, Aiven,
-Railway, etc.) and accessed through the endpoints below. All responses are JSON.
+Data is stored in **Supabase** (Postgres) and accessed through the endpoints below.
+The routes run server-side. All responses are JSON.
 
 Base URL (local): `http://localhost:3000`
 
@@ -12,10 +12,14 @@ project's **Settings → Environment Variables**):
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `DATABASE_URL` | yes | MySQL connection string, e.g. `mysql://user:pass@host:3306/dbname` |
-| `DATABASE_SSL` | no | Set to `false` only for a plain local MySQL. Defaults to TLS on (required by most hosted providers). |
+| `NEXT_PUBLIC_SUPABASE_URL` | yes | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | yes | Public anon key |
+| `SUPABASE_SERVICE_ROLE_KEY` | yes | Server-only secret. Bypasses Row Level Security so the API routes can read/write. Never expose to the browser. |
 
-Tables (`applications`, `leads`) are created automatically on first request.
+> **Why the service-role key?** The `applications` and `leads` tables have RLS
+> enabled. Without a key that bypasses RLS (or explicit INSERT/SELECT policies),
+> inserts are rejected with `42501 new row violates row-level security policy` and
+> the forms show *"Something went wrong."*
 
 ---
 

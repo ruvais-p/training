@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { query } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -18,27 +18,28 @@ export async function POST(request) {
       }
     }
 
-    const result = await query(
-      `INSERT INTO applications (
-        first_name, last_name, phone_number, email,
-        street_address, city, state_province,
-        current_occupation, educational_qualification, preferred_cohort
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [
-        body.first_name,
-        body.last_name,
-        body.phone_number,
-        body.email,
-        body.street_address ?? null,
-        body.city ?? null,
-        body.state_province ?? null,
-        body.current_occupation ?? null,
-        body.educational_qualification ?? null,
-        body.preferred_cohort ?? null,
-      ]
-    );
+    const { data, error } = await supabase
+      .from("applications")
+      .insert([
+        {
+          first_name: body.first_name,
+          last_name: body.last_name,
+          phone_number: body.phone_number,
+          email: body.email,
+          street_address: body.street_address ?? null,
+          city: body.city ?? null,
+          state_province: body.state_province ?? null,
+          current_occupation: body.current_occupation ?? null,
+          educational_qualification: body.educational_qualification ?? null,
+          preferred_cohort: body.preferred_cohort ?? null,
+        },
+      ])
+      .select("id")
+      .single();
 
-    return NextResponse.json({ id: result.insertId }, { status: 201 });
+    if (error) throw error;
+
+    return NextResponse.json({ id: data?.id }, { status: 201 });
   } catch (err) {
     console.error("POST /api/applications error:", err);
     return NextResponse.json({ error: "Failed to store application" }, { status: 500 });
@@ -48,8 +49,14 @@ export async function POST(request) {
 // GET /api/applications — fetch all applications
 export async function GET() {
   try {
-    const rows = await query("SELECT * FROM applications ORDER BY created_at DESC");
-    return NextResponse.json({ data: rows });
+    const { data, error } = await supabase
+      .from("applications")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) throw error;
+
+    return NextResponse.json({ data });
   } catch (err) {
     console.error("GET /api/applications error:", err);
     return NextResponse.json({ error: "Failed to fetch applications" }, { status: 500 });

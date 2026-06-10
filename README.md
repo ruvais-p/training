@@ -4,20 +4,23 @@ This is a [Next.js](https://nextjs.org) project.
 
 ### 1. Configure the database
 
-The app stores form submissions in a **MySQL** database (any hosted provider —
-PlanetScale, Aiven, Railway, etc.). Create a `.env.local` file in the project root:
+The app stores form submissions in **Supabase** (Postgres). The API routes run
+server-side and use the **service-role key**, which bypasses Row Level Security so
+they can read and write while the tables stay locked down against public access.
+
+Create a `.env.local` file in the project root:
 
 ```bash
-# MySQL connection string
-DATABASE_URL=mysql://user:pass@host:3306/dbname
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 
-# Set to "false" ONLY for a plain local MySQL without TLS.
-# Defaults to TLS on, which most hosted providers require.
-DATABASE_SSL=false
+# Server-only secret — bypasses RLS. Never prefix with NEXT_PUBLIC.
+# Supabase Dashboard -> Project Settings -> API -> "service_role" secret.
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 ```
 
-The `applications` and `leads` tables are created automatically on the first request —
-no manual migration step needed.
+The `applications` and `leads` tables must exist in your Supabase project with the
+columns used by the API routes (see [`API.md`](./API.md)).
 
 ### 2. Run the development server
 
@@ -41,13 +44,12 @@ The site captures data through these routes (full reference in [`API.md`](./API.
 
 ## Deploy on Vercel
 
-This app deploys on [Vercel](https://vercel.com). Because Vercel functions run on a
-read-only filesystem, data **must** live in an external database — a hosted MySQL,
-not a local file.
+This app deploys on [Vercel](https://vercel.com). Supabase is a hosted service, so it
+works on Vercel without any extra infrastructure.
 
-1. Provision a hosted MySQL (e.g. PlanetScale, Railway, Aiven).
-2. In **Vercel → Settings → Environment Variables**, add `DATABASE_URL` (and
-   `DATABASE_SSL` if needed — leave unset to keep TLS on).
-3. Deploy. Tables are created on the first form submission.
+In **Vercel → Settings → Environment Variables**, add all three variables from
+`.env.local` (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+`SUPABASE_SERVICE_ROLE_KEY`), then **redeploy** — env vars only apply to deployments
+created after they're added.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

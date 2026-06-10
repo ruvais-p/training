@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { query } from "@/lib/db";
+import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -18,12 +18,22 @@ export async function POST(request) {
       }
     }
 
-    const result = await query(
-      `INSERT INTO leads (full_name, phone, email, city) VALUES (?, ?, ?, ?)`,
-      [body.full_name, body.phone, body.email, body.city ?? null]
-    );
+    const { data, error } = await supabase
+      .from("leads")
+      .insert([
+        {
+          full_name: body.full_name,
+          phone: body.phone,
+          email: body.email,
+          city: body.city ?? null,
+        },
+      ])
+      .select("id")
+      .single();
 
-    return NextResponse.json({ id: result.insertId }, { status: 201 });
+    if (error) throw error;
+
+    return NextResponse.json({ id: data?.id }, { status: 201 });
   } catch (err) {
     console.error("POST /api/leads error:", err);
     return NextResponse.json({ error: "Failed to store lead" }, { status: 500 });
@@ -33,8 +43,14 @@ export async function POST(request) {
 // GET /api/leads — fetch all leads
 export async function GET() {
   try {
-    const rows = await query("SELECT * FROM leads ORDER BY created_at DESC");
-    return NextResponse.json({ data: rows });
+    const { data, error } = await supabase
+      .from("leads")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) throw error;
+
+    return NextResponse.json({ data });
   } catch (err) {
     console.error("GET /api/leads error:", err);
     return NextResponse.json({ error: "Failed to fetch leads" }, { status: 500 });
